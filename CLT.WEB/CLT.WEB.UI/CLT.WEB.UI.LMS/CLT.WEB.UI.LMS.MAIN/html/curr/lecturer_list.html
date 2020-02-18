@@ -1,0 +1,117 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/curr-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+
+    <h2 class="page-title">강사관리
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+
+        <!-- 검색 -->
+        <div class="search-box">
+            <div class="search-group">
+                <span class="title">가입기간</span>
+                <input type="text" class="datepick"><span class="gm-text2">~</span><input type="text" class="datepick">
+            </div>
+            <div class="search-group">
+                <span class="title">정렬</span>
+                <select>셀렉트</select>
+            </div>
+            <div class="search-group">
+                <span class="title">키워드</span>
+                <select>셀렉트</select>
+            </div>
+            <button href="#none" class="button-default blue">Search</button>
+        </div>
+
+        <!-- 버튼 -->
+        <div class="button-box right">
+            <a href="#none" class="button-default blue">추가</a>
+            <a href="#none" class="button-default">삭제</a>
+        </div>
+
+        <!-- 페이징 정보 -->
+        <div class="PageInfo">
+            <b>Total</b> : 192 <b>Rows</b>, 1/13 <b>Pages</b>
+        </div>
+
+
+        <!-- Data Table - List type -->
+        <div class="gm-table data-table list-type">
+            <table>
+                <caption>표정보 - 성명, 회사명, 직위, 휴대폰, 이메일, 이력서 등을 제공합니다.</caption>
+                <colgroup>
+                    <col width="5%">
+                    <col width="10%">
+                    <col width="14%">
+                    <col width="10%">
+                    <col width="15%">
+                    <col width="20%">
+                    <col width="10%">
+                    <col width="8%">
+                    <col width="8%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th scope="col"><input type="checkbox"></th>
+                    <th scope="col">성명</th>
+                    <th scope="col">회사명</th>
+                    <th scope="col">직위</th>
+                    <th scope="col">휴대폰</th>
+                    <th scope="col">이메일</th>
+                    <th scope="col">가입일</th>
+                    <th scope="col">이력서</th>
+                    <th scope="col">증빙서류</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><a href="#none">강성현</a></td>
+                    <td>지마린 서비스</td>
+                    <td>대표이사</td>
+                    <td>010-1234-1234</td>
+                    <td>glorylotte@gmarine.com</td>
+                    <td>2019.10.20</td>
+                    <td><a href="#none" class="button-underline">다운로드</a></td>
+                    <td><a href="#none" class="button-underline">다운로드</a></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><a href="#none">강성현</a></td>
+                    <td>지마린 서비스</td>
+                    <td>대표이사</td>
+                    <td>010-1234-1234</td>
+                    <td>glorylotte@gmarine.com</td>
+                    <td>2019.10.20</td>
+                    <td><a href="#none" class="button-underline">다운로드</a></td>
+                    <td><a href="#none" class="button-underline">다운로드</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--// Data Table - List type -->
+
+
+        <div class="gm-paging">
+        </div>
+
+    </section>
+</div>
+
+
+
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

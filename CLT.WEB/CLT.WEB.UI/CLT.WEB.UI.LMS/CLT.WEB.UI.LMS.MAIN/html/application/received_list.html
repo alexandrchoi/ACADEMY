@@ -1,0 +1,118 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/application-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+
+    <h2 class="page-title">접수현황
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+
+        <!-- 검색 -->
+        <div class="search-box">
+            <label for="period">교육기간</label>
+            <input type="text" class="datepick w180" name="period" id="period"> ~ <input type="text" class="datepick w180">
+            <label for="subject">과정명</label>
+            <input type="text" name="subject" id="subject">
+            <label for="type">교육유형</label>
+            <select>
+                <option>타입1</option>
+                <option>타입2</option>
+            </select>
+            <button href="#none" class="button-default blue">Search</button>
+        </div>
+
+        <div class="button-box right">
+            <a href="#none" class="button-default blue">New</a>
+            <a href="#none" class="button-default">Delete</a>
+            <a href="#none" class="button-default">Excel</a>
+            <a href="#none" class="button-default">Notice</a>
+        </div>
+
+        <!-- Data Table - List type -->
+        <div class="gm-table data-table list-type">
+            <table>
+                <caption>표정보 - 번호, 교육유형, 과정명 등을 제공합니다.</caption>
+                <colgroup>
+                    <col width="5%">
+                    <col width="10%">
+                    <col width="*">
+                    <col width="10%">
+                    <col width="15%">
+                    <col width="15%">
+                    <col width="5%">
+                    <col width="10%">
+                    <col width="10%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">교육유형</th>
+                    <th scope="col">과정명</th>
+                    <th scope="col">차수</th>
+                    <th scope="col">수강신청기간</th>
+                    <th scope="col">교육기간</th>
+                    <th scope="col">교육일수</th>
+                    <th scope="col">정원</th>
+                    <th scope="col">Excel</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>집체교육</td>
+                    <td class="left"><a href="#none">2016년 해상직원 교육 니즈조사(한국사관, 부원)</a></td>
+                    <td>2012-14</td>
+                    <td>2019.12.20 ~ 2019.12.30</td>
+                    <td>2019.12.20 ~ 2019.12.30</td>
+                    <td>3</td>
+                    <td>23/20</td>
+                    <td><a href="#none" class="button-underline">Download</a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>집체교육</td>
+                    <td class="left"><a href="#none">2016년 해상직원 교육 니즈조사(한국사관, 부원)</a></td>
+                    <td>2012-14</td>
+                    <td>2019.12.20 ~ 2019.12.30</td>
+                    <td>2019.12.20 ~ 2019.12.30</td>
+                    <td>3</td>
+                    <td>23/20</td>
+                    <td><a href="#none" class="button-underline">Download</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--// Data Table - List type -->
+
+
+        <div class="gm-paging">
+            <a href="#none" class="first"><i class="fas fa-angle-double-left"></i><span class="off-screen">맨 앞으로</span></a>
+            <a href="#none" class="prev"><i class="fas fa-angle-left"></i><span class="off-screen">이전페이지</span></a>
+            <a href="#none">1</a>
+            <a href="#none">2</a>
+            <span class="current">3</span>
+            <a href="#none">4</a>
+            <a href="#none">5</a>
+            <a href="#none" class="next"><i class="fas fa-angle-right"></i><span class="off-screen">다음페이지</span></a>
+            <a href="#none" class="last"><i class="fas fa-angle-double-right"></i><span class="off-screen">맨 뒤로</span></a>
+        </div>
+
+    </section>
+</div>
+
+
+
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

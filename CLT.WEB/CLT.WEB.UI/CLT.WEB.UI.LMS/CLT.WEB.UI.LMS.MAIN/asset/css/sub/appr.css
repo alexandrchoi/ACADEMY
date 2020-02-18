@@ -1,0 +1,31 @@
+/* 역량기준 */
+.stcw-box {
+    position:relative;
+    padding-left:240px;
+}
+.stcw-box h4 {
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:0;
+    top:0;
+    text-align:right;
+}
+.stcw-box h4 span {
+    color:#1e1e1e;
+    display:inline-block;
+    padding-bottom:16px;
+    position:relative;
+    font-weight:400;
+    font-size:24px;
+}
+.stcw-box h4 span:after {
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:#1e1e1e;
+    position:absolute;
+    right:0;
+    bottom:0;
+}

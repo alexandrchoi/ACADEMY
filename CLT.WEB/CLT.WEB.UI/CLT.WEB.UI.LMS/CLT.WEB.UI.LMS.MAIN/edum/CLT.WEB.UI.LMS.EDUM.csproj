@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3FAE7CD6-8A70-4492-9FA9-B257715AD24F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CLT.WEB.UI.LMS.EDUM</RootNamespace>
+    <AssemblyName>CLT.WEB.UI.LMS.EDUM</AssemblyName>
+    <SccProjectName>"%24/CLT.WEB/CLT.WEB.UI/CLT.WEB.UI.LMS/CLT.WEB.UI.LMS.MAIN/CLT.WEB.UI.LMS.EDUM", FTJCAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.C1Excel.2">
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\C1.C1Excel.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Web.C1WebChart.2, Version=2.0.20063.16228, Culture=neutral, PublicKeyToken=360971499c5cdc04, processorArchitecture=MSIL" />
+    <Reference Include="C1.Web.C1WebGrid.2, Version=2.1.20063.84, Culture=neutral, PublicKeyToken=589f1fc067ff4031, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\C1.Web.C1WebGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Web.C1WebReport.2, Version=2.5.20063.223, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\C1.Web.C1WebReport.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Report.2, Version=2.5.20063.223, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\C1.Win.C1Report.2.dll</HintPath>
+    </Reference>
+    <Reference Include="CLT.WEB.BIZ.FX.BIZBASE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\CLT.WEB.BIZ.FX.BIZBASE.dll</HintPath>
+    </Reference>
+    <Reference Include="CLT.WEB.UI.COMMON.BASE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\CLT.WEB.UI.COMMON.BASE.dll</HintPath>
+    </Reference>
+    <Reference Include="CLT.WEB.UI.COMMON.CONTROL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\CLT.WEB.UI.COMMON.CONTROL.dll</HintPath>
+    </Reference>
+    <Reference Include="CLT.WEB.UI.FX.AGENT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\CLT.WEB.UI.FX.AGENT.dll</HintPath>
+    </Reference>
+    <Reference Include="CLT.WEB.UI.FX.UTIL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\CLT.WEB.UI.FX.UTIL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="OpusCryptoLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\OpusCryptoLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="pass.aspx.cs">
+      <DependentUpon>pass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pass.aspx.designer.cs">
+      <DependentUpon>pass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pass_list.aspx.cs">
+      <DependentUpon>pass_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pass_list.aspx.designer.cs">
+      <DependentUpon>pass_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="edu_cmp_y_report.aspx.cs">
+      <DependentUpon>edu_cmp_y_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edu_cmp_y_report.aspx.designer.cs">
+      <DependentUpon>edu_cmp_y_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\CLT.WEB.BIZ\CLT.WEB.BIZ.LMS\CLT.WEB.BIZ.LMS.EDUM\CLT.WEB.BIZ.LMS.EDUM.csproj">
+      <Project>{BDFC3B80-603F-405C-A54B-D962660B9B36}</Project>
+      <Name>CLT.WEB.BIZ.LMS.EDUM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\vp_a_edumng_edu_cmp_n_list_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_edu_cmp_n_list_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_edu_cmp_y_list_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_edu_cmp_y_list_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_pass_list_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_pass_list_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_shipschool_result_list_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_shipschool_result_list_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_progress_list_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_progress_list_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_pass_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_pass_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_ojt_result_list_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_ojt_result_list_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_eduming_issuing_list_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_eduming_issuing_list_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_eduming_issuing_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_eduming_issuing_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_training_record_list_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_training_record_list_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_training_record_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_training_record_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_shipschool_result_wpg.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\vp_a_edumng_shipschool_result_wpg.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="pass.aspx" />
+    <Content Include="pass_list.aspx" />
+    <Content Include="edu_cmp_y_report.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50748</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50748/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

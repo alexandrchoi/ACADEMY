@@ -1,0 +1,26 @@
+
+/* 개인정보 보호정책 */
+.privacy strong {
+    display:inline-block;
+    margin-top:50px;
+    margin-bottom:10px;
+    color:#1e1e1e;
+    font-size:30px;
+    border-bottom:2px solid #1e1e1e;
+}
+
+.term h3 {
+    margin-top:50px;
+    margin-bottom:10px;
+    color:#1e1e1e;
+    font-size:36px;
+}
+.term h4 {
+    margin-bottom:5px;
+    color:#1e1e1e;
+    font-size:24px;
+}
+.term p,
+.term ol {
+    margin-bottom:40px;
+}

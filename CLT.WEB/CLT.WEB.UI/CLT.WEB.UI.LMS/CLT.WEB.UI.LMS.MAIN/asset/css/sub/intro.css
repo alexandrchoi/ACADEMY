@@ -1,0 +1,755 @@
+/* 인사말 */
+.greeting figure {
+    width:20%;
+    float:left;
+}
+.greeting figure img {
+    max-width:90%;
+}
+.greeting .greeting-cont {
+    float:right;
+    width:70%;
+}
+.greeting .greeting-cont .headline {
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+/* 연혁 */
+.history > ol > li {
+    position:relative;
+    padding-bottom:50px;
+}
+.history > ol > li:before {
+    content:"";
+    display:block;
+    position:absolute;
+    left:50%;
+    top:0;
+    width:1px;
+    height:100%;
+    background:#e5e5e5;
+}
+.history > ol > li:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-14px, -35px);
+    background:#5a63fe;
+    border-radius:50%;
+}
+.history > ol > li:nth-child(odd) {
+    padding-right:56%;
+    text-align:right;
+}
+.history > ol > li:nth-child(even) {
+    padding-left:56%;
+}
+.history > ol > li > div {
+    position:relative;
+    padding:30px;
+    border-radius:5px;
+    border:1px solid #e5e5e5;
+}
+.history > ol > li:nth-child(odd) > div {
+    padding-right:150px;
+}
+.history > ol > li:nth-child(even) > div {
+    padding-left:150px;
+}
+.history > ol > li:nth-child(odd) > div {
+    padding-right:150px;
+}
+.history > ol > li > div:before {
+    content:"";
+    display:block;
+    width:16px;
+    height:20px;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:url(/asset/images/icons/history-arrow.gif) 0 0 no-repeat;
+}
+.history > ol > li:nth-child(odd) > div:before {
+    right:-16px;
+    transform:translateY(-50%);
+}
+.history > ol > li:nth-child(even) > div:before {
+    left:-16px;
+    transform:translateY(-50%) rotate(180deg);
+}
+.history > ol > li > div .month {
+    position:absolute;
+    top:30px;
+    font-size:40px;
+    font-weight:600;
+    font-family:'Montserrat', sans-serif;
+    color:#5a63fe;
+    letter-spacing:0;
+    line-height:1;
+}
+.history > ol > li:nth-child(odd) > div .month {
+    right:30px;
+}
+.history > ol > li:nth-child(even) > div .month {
+    left:30px;
+}
+.history > ol > li > div li {
+    margin-bottom:20px;
+}
+
+/** 연혁 Responsive **/
+@media screen and (max-width:1024px) {
+    .history > ol > li:nth-child(odd),
+    .history > ol > li:nth-child(even) {
+        padding-right:0;
+        padding-left:100px;
+        text-align:left;
+    }
+    .history > ol > li::before {
+        left: 30px;
+    }
+    .history > ol > li::after {
+        left:15px;
+        transform:translate(0, -50px)
+    }
+    .history > ol > li:nth-child(odd) > div {
+        padding-right:30px;
+        padding-left:150px;
+    }
+    .history > ol > li:nth-child(odd) > div::before {
+        left:-16px;
+        transform:translateY(-50%) rotate(180deg);
+    }
+    .history > ol > li:nth-child(odd) > div .month {
+        left:30px;
+    }
+}
+
+@media screen and (max-width:680px) {
+    .history > ol > li:nth-child(odd) > div,
+    .history > ol > li:nth-child(even) > div {
+        padding:80px 30px 0;
+        text-align:left;
+    }
+
+}
+
+/* 조직현황 */
+.organization {
+    text-align:center;
+}
+.gm-staff th:last-child {
+    width:50%;
+}
+.org-contact {
+    position:relative;
+    font-size:0;
+    letter-spacing:0;
+}
+.org-contact span {
+    display:inline-block;
+    vertical-align:top;
+}
+.org-contact .org-info {
+    width:60%;
+    text-align:left;
+    line-height:20px;
+}
+.org-contact .org-info:first-child {
+    width:40%;
+}
+.org-contact .org-info .org-content {
+    display:inline-block;
+    font-size:13px;
+}
+
+/* 교육시설 */
+.training {
+    text-align:center;
+}
+.training h3 {
+    color:#1e1e1e;
+    font-size:18px;
+}
+.classroom {
+    margin-bottom:80px;
+}
+
+@media screen and (max-width:1024px) {
+	.training .gm-grid.column-2 .item {
+	    width:100%;
+        padding:20px 0;
+	}
+}
+
+/* 오시는길 */
+.map-box dd > span {
+    display:inline-block;
+    position:relative;
+    margin-left:15px;
+    padding-left:15px;
+}
+.map-box dd > span:before {
+    content:"";
+    display:block;
+    width:1px;
+    height:12px;
+    position:absolute;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    background:#e5e5e5;
+}
+.map-box dd > span:first-child {
+    margin-left:0;
+    padding-left:0;
+}
+.map-box dd > span:first-child:before {
+    display:none;
+}
+.map-box dd span i {
+    margin-right:7px;
+}
+.map {
+    padding-top:70px;
+}
+@media screen and (max-width:1024px) {
+    .map-box dd > span {
+        display:block;
+        margin-left:0;
+        padding-left:0;
+    }
+    .map-box dd > span:before {
+        display:none;
+    }
+}
+
+/* 사업주위탁훈련 */
+.referral .gm-table {
+    margin-top:20px;
+}
+.referral-org {
+    font-size:0;
+}
+.referral-org > div {
+    display:inline-block;
+    position:relative;
+    font-size:16px;
+    vertical-align:top;
+}
+.referral-sides {
+    width:270px;
+    height:270px;
+    border-radius:50%;
+    background-color:#f5f5f5;
+    position:relative;
+    text-align:center;
+    color:#1e1e1e;
+    font-size:18px;
+}
+.referral-sides.company {
+    padding-top:170px;
+}
+.referral-sides.company:before {
+     content:url(/asset/images/sub/referral-img-1.png);
+     display:block;
+     position:absolute;
+     left:60px;
+     top:90px;
+ }
+.referral-sides.company:after {
+    content:url(/asset/images/sub/referral-img-2.png);
+    display:block;
+    position:absolute;
+    left:125px;
+    top:100px;
+}
+.referral-sides.gov {
+    padding-top:150px;
+}
+.referral-sides.gov:after {
+    content:url(/asset/images/sub/referral-img-3.png);
+    display:block;
+    position:absolute;
+    left:50%;
+    top:48%;
+    transform:translate(-50%, -50%);
+}
+
+.referral-sides span {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    font-size:20px;
+}
+.referral-org .steps {
+    width:50%;
+    padding:10px 30px;
+}
+.referral-org .steps ol.list-referral > li {
+    position:relative;
+    margin-top:30px;
+    padding-left:0;
+    line-height:36px;
+    height:36px;
+    background:url(/asset/images/common/dotline-bg.gif) 0 16px repeat-x;
+}
+.referral-org .steps ol.list-referral > li:first-child {
+    margin-top:0;
+}
+.referral-org .steps ol.list-referral > li:after {
+    content:"";
+    display:block;
+    width:14px;
+    height:25px;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:url(/asset/images/common/arrow-bg.gif) 0 0 #fff no-repeat;
+}
+.referral-org .steps ol.list-referral > li:nth-child(odd) {
+    text-align:right;
+    padding-right:54px;
+}
+.referral-org .steps ol.list-referral > li:nth-child(odd):after {
+    right:0;
+}
+.referral-org .steps ol.list-referral > li:nth-child(even) {
+    padding-left:54px;
+}
+.referral-org .steps ol.list-referral > li:nth-child(even):after {
+    left:0;
+    transform:rotate(-180deg) translateY(50%);
+}
+.referral-org .steps ol.list-referral > li span {
+    display:inline-block;
+    padding-right:10px;
+    padding-left:50px;
+    background:#fff;
+    position:relative;
+    z-index:10;
+    color:#5a63fe;
+}
+.referral-org .steps ol.list-referral > li span:before {
+    display:block;
+    width:36px;
+    height:36px;
+    line-height:36px;
+    z-index:999;
+    position:absolute;
+    left:5px;
+    top:0;
+    background:#5a63fe;
+    color:#fff;
+    border-radius:50%;
+    text-align:center;
+    font-size:13px;
+}
+.referral-org .steps ol.list-referral > li:nth-child(1) span:before {
+    content:"1";
+}
+.referral-org .steps ol.list-referral > li:nth-child(2) span:before {
+    content:"2";
+}
+.referral-org .steps ol.list-referral > li:nth-child(3) span:before {
+    content:"3";
+}
+.referral-org .steps ol.list-referral > li:nth-child(4) span:before {
+    content:"4";
+}
+
+.referral .process {
+    position:relative;
+    padding-top:30px;
+    font-size:0;
+}
+.referral .process > div {
+    display:inline-block;
+    vertical-align:top;
+    width:20%;
+    padding:30px;
+    margin-left:20%;
+    text-align:center;
+    background:#f5f5f5;
+}
+.referral .process > div.company {
+    margin-left:0;
+}
+.referral .process > div .logo {
+    display:inline-block;
+    width:170px;
+    height:170px;
+    position:relative;
+    border-radius:50%;
+}
+.referral .process > div .title {
+    width:100%;
+    height:70px;
+    display:block;
+    padding-top:30px;
+    font-size:15px;
+    color:#1e1e1e;
+}
+.referral .process > div.company .logo {
+    background:url(/asset/images/sub/referral-img-1.png) center center #fff no-repeat;
+}
+.referral .process > div.mid-train .logo {
+    background:url(/asset/images/sub/referral-img-2.png) center center #fff no-repeat;
+}
+.referral .process > div.gov .logo {
+    background:url(/asset/images/sub/referral-img-3.png) center top 95px #fff no-repeat;
+}
+.referral .process > div.gov .logo:before {
+    content:url(/asset/images/sub/referral-img-4.png);
+    display:block;
+    position:absolute;
+    left:50%;
+    top:40px;
+    transform:translateX(-50%);
+}
+
+.referral .process > div.process-list {
+    width:60%;
+    height:70px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    text-align:left;
+    margin-left:0;
+    background:none;
+}
+.referral .process > div.process-list li {
+    width:33.333333%;
+    position:absolute;
+    font-size:13px;
+    padding:0 20px;
+    line-height:26px;
+    background:url(/asset/images/common/dotline-bg.gif) 0 center repeat-x;
+}
+.referral .process > div.process-list li:nth-child(1) {
+    left:0;
+    top:0;
+    text-align:right;
+}
+.referral .process > div.process-list li:nth-child(2) {
+    left:66.666666%;
+    top:0;
+    text-align:right;
+}
+.referral .process > div.process-list li:nth-child(3) {
+    left:66.666666%;
+    bottom:0;
+}
+.referral .process > div.process-list li:nth-child(4) {
+    left:0;
+    bottom:0;
+}
+.referral .process > div.process-list li:after {
+    content:"";
+    display:block;
+    width:14px;
+    height:25px;
+    position:absolute;
+    top:0;
+    padding:0 10px;
+    background:url(/asset/images/common/arrow-bg.gif) center 0 #fff no-repeat;
+    z-index:99;
+}
+.referral .process > div.process-list li:nth-child(1):after,
+.referral .process > div.process-list li:nth-child(2):after {
+    right:0;
+}
+.referral .process > div.process-list li:nth-child(3):after,
+.referral .process > div.process-list li:nth-child(4):after {
+    left:0;
+    transform:rotate(180deg);
+}
+.referral .process > div.process-list li span {
+    position:relative;
+    display:inline-block;
+    padding:0 5px 0 32px;
+    line-height:26px;
+    background:#fff;
+}
+.referral .process > div.process-list li span:before {
+    display:block;
+    width:26px;
+    height:26px;
+    position:absolute;
+    left:3px;
+    top:0;
+    text-align:center;
+    background:#999;
+    color:#fff;
+    border-radius:50%;
+}
+.referral .process > div.process-list li:nth-child(1) span:before {
+    content:'1';
+}
+.referral .process > div.process-list li:nth-child(2) span:before {
+    content:'2';
+}
+.referral .process > div.process-list li:nth-child(3) span:before {
+    content:'3';
+}
+.referral .process > div.process-list li:nth-child(4) span:before {
+    content:'4';
+}
+
+.process-step {
+    width:100%;
+    position:relative;
+    text-align:center;
+    font-size:0;
+}
+.process-step > div {
+    width:16.666%;
+    display:inline-block;
+    padding:5px 10px;
+    font-size:13px;
+    vertical-align:top;
+}
+.process-step .title {
+    display:block;
+    position:relative;
+    padding:50px 0 7px;
+    font-size:18px;
+    color:#5a63fe;
+}
+.process-step .title:before {
+    display:inline-block;
+    padding-bottom:12px;
+    position:absolute;
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    color:#1e1e1e;
+    font-size:20px;
+    font-style:italic;
+    font-family:'Montserrat', sans-serif;
+    border-bottom:2px solid #1e1e1e;
+}
+.process-step .step-1 .title:before {
+    content:"01";
+}
+.process-step .step-2 .title:before {
+    content:"02";
+}
+.process-step .step-3 .title:before {
+    content:"03";
+}
+.process-step .step-4 .title:before {
+    content:"04";
+}
+.process-step .step-5 .title:before {
+    content:"05";
+}
+.process-step .step-6 .title:before {
+    content:"06";
+}
+.process-step .button-default {
+    margin-top:15px;
+}
+.proc-contact ul {
+    margin-top:20px;
+}
+.proc-contact li {
+    line-height:40px;
+    font-size:0;
+}
+.proc-contact li a {
+    display:inline-block;
+    font-size:20px;
+}
+
+/* 고용보험환급 */
+.refund-graph {
+    padding-top:30px;
+}
+.refund-graph dl {
+    position:relative;
+    font-size:0;
+}
+.refund-graph dl dt {
+    width:196px;
+    height:200px;
+    display:inline-block;
+    padding-right:30px;
+    font-size:16px;
+    text-align:center;
+    vertical-align:top;
+}
+.refund-graph dl dt:first-child {
+    background:url(/asset/images/sub/refund-graph.gif) 0 0 no-repeat;
+}
+.refund-graph dl dt:nth-child(3) {
+    padding-top:20px;
+    background:url(/asset/images/sub/refund-graph.gif) -198px 0 no-repeat;
+}
+.refund-graph dl dt:nth-child(5) {
+    padding-top:80px;
+    background:url(/asset/images/sub/refund-graph.gif) -396px 0 no-repeat;
+}
+.refund-graph dl dt:nth-child(7) {
+    padding-top:120px;
+    background:url(/asset/images/sub/refund-graph.gif) -594px 0 no-repeat;
+}
+
+.refund-graph dl dd {
+    width:198px;
+    position:absolute;
+    display:inline-block;
+    vertical-align:top;
+    font-size:16px;
+    top:200px;
+}
+.refund-graph dl dd:nth-child(2) {
+    left:0;
+}
+.refund-graph dl dd:nth-child(4) {
+    left:198px;
+}
+.refund-graph dl dd:nth-child(6) {
+    left:396px;
+}
+.refund-graph dl dd:nth-child(8) {
+    left:594px;
+}
+
+/* 컨소시엄 */
+.consortium .content-box .process-step:nth-child(2) > div {
+    width:25%;
+    margin-top:10px;
+    margin-bottom:50px;
+}
+.consortium .content-box .process-step:nth-child(4) > div {
+    width:20%;
+}
+@media screen and (max-width:1024px) {
+    .referral-org {
+        position:relative;
+        padding-top:70px;
+    }
+    .referral-org > div {
+        display:block;
+    }
+    .referral-org > div.referral-sides {
+        width:50%;
+        height:50px;
+        position:absolute;
+        top:0;
+        text-align:center;
+        border-radius:0;
+        padding:0;
+        line-height:50px;
+        background:#5a63fe;
+        color:#fff;
+    }
+    .referral-sides.company {
+        left:0;
+        border-right:1px solid #fff;
+    }
+    .referral-sides.gov {
+        left:50%;
+    }
+    .referral-org .steps {
+        width:100%;
+        padding:10px 0;
+    }
+    .referral-sides.company:before,
+    .referral-sides.company:after,
+    .referral-sides.gov:before,
+    .referral-sides.gov:after {
+        display:none;
+    }
+    .referral-org .steps ol.list-referral > li {
+        padding:0;
+        background:none;
+        font-size:13px;
+    }
+    .referral-org .steps ol.list-referral > li:nth-child(odd) {
+        padding:0;
+        text-align:left;
+    }
+    .referral-org .steps ol.list-referral > li:nth-child(even) {
+        padding:0;
+    }
+    .referral-org .steps ol.list-referral > li::after {
+        background:none;
+    }
+    .referral-org .steps ol.list-order > li {
+        padding-left:20px;
+    }
+    .referral-org .steps ol.list-order > li::before {
+        left:30px;
+    }
+    .referral .process > div {
+        width:33.333333%;
+        margin-bottom:15px;
+        margin-left:0;
+        padding:15px;
+        border-right:1px solid #fff;
+    }
+    .referral .process > div .title {
+        padding-top:0;
+        border-radius:3px;
+    }
+    .referral .process > div .logo {
+        display:none;
+    }
+    .referral .process > div.process-list {
+        width:100%;
+        padding:0;
+    }
+    .referral .process > div.process-list,
+    .referral .process > div.process-list li:nth-child(odd),
+    .referral .process > div.process-list li:nth-child(even) {
+        height:auto;
+        position:relative;
+        left:0;
+        top:0;
+        bottom:0;
+        transform:none;
+    }
+    .referral .process > div.process-list li {
+        width:100%;
+        padding:0;
+        background:none;
+        line-height:40px;
+    }
+
+    .referral .process > div.process-list li:nth-child(1),
+    .referral .process > div.process-list li:nth-child(2),
+    .referral .process > div.process-list li:nth-child(3),
+    .referral .process > div.process-list li:nth-child(4) {
+        left:0;
+        top:0;
+        text-align:left;
+    }
+
+    .referral .process > div.process-list li:nth-child(1):after,
+    .referral .process > div.process-list li:nth-child(2):after,
+    .referral .process > div.process-list li:nth-child(3):after,
+    .referral .process > div.process-list li:nth-child(4):after {
+        display:none;
+    }
+    .process-step > div,
+    .consortium .content-box .process-step:nth-child(2) > div,
+    .consortium .content-box .process-step:nth-child(4) > div {
+        width:100%;
+        margin-bottom:50px;
+    }
+    .proc-contact li a {
+        font-size:13px;
+    }
+    .refund-graph {
+        display:none;
+    }
+}

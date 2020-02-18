@@ -1,0 +1,117 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/curr-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+    <h2 class="page-title">설문조회/등록
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+
+        <div class="notice-text right">필수입력<span class="required">필수입력</span></div>
+        <div class="board-list gm-table data-table read-type">
+            <table>
+                <colgroup>
+                    <col width="15%">
+                    <col width="35%">
+                    <col width="15%">
+                    <col width="35%">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th scope="row">설문제목</th>
+                    <td><input type="text" disabled></td>
+                    <th scope="row">투표기한</th>
+                    <td><input type="text" class="datepick w180" disabled><span class="gm-text2">~</span><input type="text" class="datepick w180" disabled></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="board-list gm-table data-table read-type">
+            <table>
+                <colgroup>
+                    <col width="15%">
+                    <col width="15%">
+                    <col width="*">
+                </colgroup>
+                <tbody>
+
+                <!-- 반복 -->
+                <tr>
+                    <th scope="row" rowspan="4">1번 설문</th>
+                    <th scope="row">질문</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th scope="row">보기형태</th>
+                    <td>
+                        <label class="radio-box">단일선택
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="radiomark"></span>
+                        </label>
+
+                        <label class="radio-box">다중선택
+                            <input type="radio" name="radio">
+                            <span class="radiomark"></span>
+                        </label>
+
+                        <label class="radio-box">서술형
+                            <input type="radio" name="radio">
+                            <span class="radiomark"></span>
+                        </label>
+                        <label class="radio-box">단일선택(혼합형)
+                            <input type="radio" name="radio">
+                            <span class="radiomark"></span>
+                        </label>
+                        <label class="radio-box">다중선택(혼합형)
+                            <input type="radio" name="radio">
+                            <span class="radiomark"></span>
+                        </label>
+                        <label class="radio-box">순서배열
+                            <input type="radio" name="radio">
+                            <span class="radiomark"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">보기항목수</th>
+                    <td>
+                        <select>
+                            <option>1번</option>
+                            <option>2번</option>
+                            <option>3번</option>
+                            <option>4번</option>
+                            <option>5번</option>
+                            <option>6번</option>
+                            <option>7번</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">보기1</th>
+                    <td><input type="text"></td>
+                </tr>
+                <!--// 반복 -->
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="button-group center">
+            <a href="#none" class="button-main-rnd blue lg">Save</a>
+            <a href="#none" class="button-main-rnd lg">List</a>
+        </div>
+    </section>
+</div>
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

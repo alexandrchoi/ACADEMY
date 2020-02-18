@@ -1,0 +1,140 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/info-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+    <h2 class="page-title">개인회원
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+        <!-- 검색 -->
+        <div class="search-box">
+            <div class="search-group">
+                <label for="company">회사명</label>
+                <input type="text" name="company" id="company">
+            </div>
+            <div class="search-group">
+                <label for="apply">직급</label>
+                <select name="apply" id="apply">
+                    <option>선장</option>
+                    <option>선원</option>
+                </select>
+            </div>
+            <div class="search-group">
+                <label for="usergroup">사용자그룹</label>
+                <select name="usergroup" id="usergroup">
+                    <option>관리자</option>
+                    <option>행정담당</option>
+                </select>
+            </div>
+            <div class="search-group">
+                <label for="username">이름</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div class="search-group">
+                <label for="idnum">주민번호</label>
+                <input type="text" name="idnum" id="idnum">
+            </div>
+            <div class="search-group">
+                <label for="state">상태</label>
+                <input type="text" name="state" id="state">
+            </div>
+            <button href="#none" class="button-default blue">Search</button>
+        </div>
+
+        <!-- 버튼 -->
+        <div class="button-box right">
+            <a href="#none" class="button-default blue">NEW</a>
+            <a href="#none" class="button-default">Delete</a>
+            <a href="#none" class="button-default">Approval</a>
+            <a href="#none" class="button-default">Usage</a>
+            <a href="#none" class="button-default">Reject</a>
+        </div>
+
+        <!-- 게시글 개수 -->
+        <div class="PageInfo"></div>
+
+        <!-- Data Table - List type -->
+        <div class="gm-table data-table list-type">
+            <table>
+                <caption>표정보 - ID, 성명, 주민번호, 사용자그룹, 회사명, 전화번호 등의 정보를 제공합니다.</caption>
+                <colgroup>
+                    <col width="3%">
+                    <col width="3%">
+                    <col width="14%">
+                    <col width="14%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="8%">
+                    <col width="8%">
+                    <col width="10%">
+                    <col width="10%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th scope="col"><input type="checkbox"></th>
+                    <th scope="col">아이디</th>
+                    <th scope="col">성명</th>
+                    <th scope="col">주민번호</th>
+                    <th scope="col">사용자그룹</th>
+                    <th scope="col">회사명</th>
+                    <th scope="col">휴대전화번호</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">훈련생구분</th>
+                    <th scope="col">직급</th>
+                    <th scope="col">고용보험취득일</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>PS181051</td>
+                    <td><a href="#none">ABAN WILFREDO B</a></td>
+                    <td>811103-1234567</td>
+                    <td>그룹사 수강자</td>
+                    <td>지마린 서비스</td>
+                    <td>010-123-4567</td>
+                    <td>사용안함</td>
+                    <td>채용예정자</td>
+                    <td>3항사</td>
+                    <td>2019.12.29</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>PS181051</td>
+                    <td><a href="#none">ABAN WILFREDO B</a></td>
+                    <td>811103-1234567</td>
+                    <td>그룹사 수강자</td>
+                    <td>지마린 서비스</td>
+                    <td>010-123-4567</td>
+                    <td>사용안함</td>
+                    <td>채용예정자</td>
+                    <td>3항사</td>
+                    <td>2019.12.29</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--// Data Table - List type -->
+
+        <div class="gm-paging">
+        </div>
+
+    </section>
+</div>
+
+
+
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

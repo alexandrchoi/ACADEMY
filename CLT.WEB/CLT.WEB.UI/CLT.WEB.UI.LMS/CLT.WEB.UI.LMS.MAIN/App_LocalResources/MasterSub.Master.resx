@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LangResource.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="lnkGotoMainResource.Text" xml:space="preserve">
+    <value>본문 바로가기</value>
+  </data>
+  <data name="lnkGotoMenuResource.Text" xml:space="preserve">
+    <value>메뉴 바로가기</value>
+  </data>
+  <data name="lnkHomeResource.Text" xml:space="preserve">
+    <value>지마린서비스 - 아카데미</value>
+  </data>
+  <data name="lnkMyInfoResource.Text" xml:space="preserve">
+    <value>정보수정</value>
+  </data>
+  <data name="lnkSignInResource.Text" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="lnkSignOutResource.Text" xml:space="preserve">
+    <value>로그아웃</value>
+  </data>
+  <data name="lnkSignUpResource.Text" xml:space="preserve">
+    <value>회원가입</value>
+  </data>
+  <data name="txtAddress" xml:space="preserve">
+    <value>부산광역시 동구 중앙대로 331 (초량동, 메리츠화재)</value>
+    <comment>331, Jungang-daero, Dong-gu, Busan, Republic of Korea</comment>
+  </data>
+  <data name="txtBesthrd" xml:space="preserve">
+    <value>Best HRD 인증</value>
+    <comment>Best HRD Certification</comment>
+  </data>
+  <data name="txtChamp" xml:space="preserve">
+    <value>국가인적자원개발 컨소시엄훈련</value>
+    <comment>Consortium for HRD Ability Magnified Program(CHAMP)</comment>
+  </data>
+  <data name="txtCompany" xml:space="preserve">
+    <value>지마린서비스</value>
+    <comment>G-Marine Service</comment>
+  </data>
+  <data name="txtCompanyName" xml:space="preserve">
+    <value>주식회사지마린서비스</value>
+    <comment>G-Marine Service Co., Ltd.</comment>
+  </data>
+  <data name="txtCopyright" xml:space="preserve">
+    <value>저작권보호정책</value>
+    <comment>Copyright Protection Policy</comment>
+  </data>
+  <data name="txtGlovis" xml:space="preserve">
+    <value>현대글로비스</value>
+    <comment>Hyundai Glovis</comment>
+  </data>
+  <data name="txtGoTop" xml:space="preserve">
+    <value>상단으로 가기</value>
+    <comment>Move to Top</comment>
+  </data>
+  <data name="txtHour" xml:space="preserve">
+    <value>평일 09-18시, 토/일/공휴일 휴무</value>
+    <comment>Weekday 09~18:00, Closed on Weekends and Holiday</comment>
+  </data>
+  <data name="txtHrdkorea" xml:space="preserve">
+    <value>한국산업인력공단</value>
+    <comment>Human Resources Development Service of KOREA</comment>
+  </data>
+  <data name="txtHyundai" xml:space="preserve">
+    <value>현대자동차그룹</value>
+    <comment>Hyundai Motor Group</comment>
+  </data>
+  <data name="txtKspa" xml:space="preserve">
+    <value>직업능력개발 우수훈련기관</value>
+    <comment>Excellent training institution for vocational skills development</comment>
+  </data>
+  <data name="txtLogo" xml:space="preserve">
+    <value>지마린 로고</value>
+    <comment>Logo</comment>
+  </data>
+  <data name="txtMenuResource.Text" xml:space="preserve">
+    <value>메뉴</value>
+  </data>
+  <data name="txtMoel" xml:space="preserve">
+    <value>고용노동부</value>
+    <comment>Ministry of Employment and Labor</comment>
+  </data>
+  <data name="txtMof" xml:space="preserve">
+    <value>해양수산부</value>
+    <comment>Ministry of Oceans and Fisheries</comment>
+  </data>
+  <data name="txtPrivacy" xml:space="preserve">
+    <value>개인정보보호정책</value>
+    <comment>Privacy Policy</comment>
+  </data>
+  <data name="txtService" xml:space="preserve">
+    <value>고객센터</value>
+    <comment>Service center</comment>
+  </data>
+  <data name="txtTel" xml:space="preserve">
+    <value>051-603-3400</value>
+    <comment>+82 51-603-3400</comment>
+  </data>
+  <data name="txtTerm" xml:space="preserve">
+    <value>이용약관</value>
+    <comment>Terms of Use</comment>
+  </data>
+  <data name="txtZipcode" xml:space="preserve">
+    <value>48792</value>
+    <comment>48792</comment>
+  </data>
+</root>

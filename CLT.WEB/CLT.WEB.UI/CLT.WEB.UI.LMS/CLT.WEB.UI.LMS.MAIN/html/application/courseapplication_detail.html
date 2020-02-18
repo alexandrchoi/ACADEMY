@@ -1,0 +1,87 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/application-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+
+    <h2 class="page-title">수강신청
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+
+        <!-- Data Table - List type -->
+        <div class="gm-table data-table list-type">
+            <table>
+                <caption>표정보 - 교육기간, 수강신청기간, 수강신청하기 등을 제공합니다.</caption>
+                <colgroup>
+                    <col width="30%">
+                    <col width="30%">
+                    <col width="20%">
+                    <col width="20%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th scope="col">교육기간</th>
+                    <th scope="col">수강신청기간</th>
+                    <th scope="col">차수</th>
+                    <th scope="col">수강신청</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>2019.01.01 ~ 2019.01.02</td>
+                    <td>2019.01.01 ~ 2019.01.02</td>
+                    <td>2020-9</td>
+                    <td><a href="#none" class="button-default blue">Apply</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--// Data Table - List type -->
+
+
+        <!-- Data Table - Read type -->
+        <div class="gm-table data-table read-type">
+            <table>
+                <caption>표정보 - 과정소개, 학습목표, 수료기준 등을 제공합니다.</caption>
+                <colgroup>
+                    <col width="10%">
+                    <col width="40%">
+                    <col width="10%">
+                    <col width="40%">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th scope="row">과정소개</th>
+                    <td><textarea rows="10"></textarea></td>
+                    <th scope="row">학습목표</th>
+                    <td><textarea rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <th scope="row">학습대상</th>
+                    <td><textarea rows="10"></textarea></td>
+                    <th scope="row">수료기준</th>
+                    <td><textarea rows="10"></textarea></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--// Data Table - Read type -->
+
+    </section>
+</div>
+
+
+
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

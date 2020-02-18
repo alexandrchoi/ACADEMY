@@ -1,0 +1,155 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/application-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+
+    <div class="sub-tab">
+        <a href="#none" class="current">SMS 보내기</a>
+        <a href="sms_list.html">전송결과/예약조회</a>
+    </div>
+
+    <h2 class="page-title">SMS
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board sms-send">
+
+        <form action="" method="" name="sms_send">
+            <!-- Data Table - List type -->
+            <div class="gm-table data-table read-type">
+                <table>
+                    <caption>표정보 - 대상조건, 받는사람, 제목, 내용 등을 제공합니다.</caption>
+                    <colgroup>
+                        <col width="20%">
+                        <col width="20%">
+                        <col width="*">
+                    </colgroup>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row" rowspan="3">대상조건선택</th>
+                        <th scope="row">대상조건선택조회기간</th>
+                        <td><input type="text" class="datepick w180"> ~ <input type="text" class="datepick w180"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">과정명</th>
+                        <td>
+                            <select>
+                                <option value="ALL">전체</option>
+                                <option value="title">제목</option>
+                                <option value="writer_name">작성자</option>
+                                <option value="content">내용</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">교육기간</th>
+                        <td>
+                            <select>
+                                <option value="ALL">전체</option>
+                                <option value="title">제목</option>
+                                <option value="writer_name">작성자</option>
+                                <option value="content">내용</option>
+                            </select>
+                            <button type="button" class="button-underline">List add</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">제목</th>
+                        <td colspan="2"><input type="text" name="subject" placeholder="제목을 입력하세요"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">회신번호</th>
+                        <td colspan="2"><input type="text" name="reply_number" placeholder="회신받으실 번호를 입력하세요" class="w50per"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">발송시간</th>
+                        <td colspan="2">
+                            <label class="radio-box">바로발송
+                                <input type="radio" checked="checked" name="send_sms">
+                                <span class="radiomark"></span>
+                            </label>
+
+                            <label class="radio-box">예약발송
+                                <input type="radio" name="send_sms">
+                                <span class="radiomark"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">보낼시간</th>
+                        <td colspan="2" class="many-select">
+                            <select disabled="disabled"></select>년
+                            <select disabled="disabled"></select>월
+                            <select disabled="disabled"></select>일
+                            <select disabled="disabled"></select>시
+                            <select disabled="disabled"></select>분
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">수신자 이름</th>
+                        <td colspan="2">
+                            <input type="text" name="recipient" placeholder="수신자의 이름을 입력하세요" class="w50per">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">수신자 전화번호</th>
+                        <td colspan="2">
+                            <input type="text" name="recipient_number" placeholder="수신자의 전화번호를 입력하세요" class="w50per"><button type="button" class="button-underline">Add</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">수신자목록</th>
+                        <td colspan="2">
+                            <div class="button-group right">
+                                <span class="recipient-list">총 <strong>2</strong>명</span>
+                                <input type="submit" class="button-default" value="Delete">
+                                <input type="submit" class="button-default" value="Clear">
+                            </div>
+                            <textarea rows="4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">내용</th>
+                        <td colspan="2">
+                            <textarea rows="10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">첨부파일</th>
+                        <td colspan="2">
+                            <!-- 파일 첨부 인풋 -->
+                            <div class="file-box">
+                                <input class="upload-name" value="File Name" disabled="disabled">
+                                <label for="ex_filename">찾아보기</label>
+                                <input type="file" id="ex_filename" class="upload-hidden">
+                            </div>
+                            <!--// 파일 첨부 인풋 -->
+                            <input type="submit" class="button-default" value="Excel template">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--// Data Table - List type -->
+
+            <!-- 버튼 -->
+            <div class="button-box center">
+                <button href="#none" class="button-main-rnd lg blue">보내기</button>
+            </div>
+        </form>
+
+    </section>
+</div>
+
+
+
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

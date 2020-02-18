@@ -1,0 +1,7 @@
+.sms-send .many-select select {
+    min-width:120px;
+    margin-left:15px;
+}
+.sms-send .many-select select:first-child {
+    margin-left:0;
+}

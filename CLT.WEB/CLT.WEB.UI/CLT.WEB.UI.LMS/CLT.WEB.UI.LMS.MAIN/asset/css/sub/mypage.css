@@ -1,0 +1,291 @@
+/* 로그인 */
+.login {
+    width:400px;
+    margin:0 auto;
+}
+.idpw {
+    font-size:0;
+}
+.idpw label {
+    width:80px;
+    display:inline-block;
+    font-size:18px;
+}
+
+.idpw label + input[type="text"],
+.idpw label + input[type="password"] {
+    width:320px;
+    font-size:16px;
+    padding:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left:0;
+}
+
+.login-box .button-box {
+    padding:0 !important;
+    margin-top:10px;
+}
+
+.button-login {
+    width:100%;
+    border-radius:2px;
+    background: linear-gradient(45deg, rgba(87,96,248,1) 0%, rgba(49,54,155,1) 100%);
+    color:#fff;
+    line-height:60px;
+    text-align:center;
+    transition:all, .3s;
+}
+.button-login:hover {
+    box-shadow:0 10px 10px rgba(49,54,155,.5);
+}
+
+.save-id {
+    position:relative;
+    margin-top:10px;
+    text-align:right;
+    float:right;
+    clear:both;
+}
+.save-id .label-title {
+    display:inline-block;
+    margin-right:15px;
+}
+
+.log-link {
+    padding-top:80px;
+    text-align:center;
+}
+.log-link a {
+    margin-left:10px;
+    padding-left:10px;
+    position:relative;
+}
+.log-link a:before {
+    content:"";
+    display:block;
+    position:absolute;
+    left:0;
+    top:50%;
+    width:1px;
+    height:12px;
+    background:#e5e5e5;
+    transform:translateY(-50%);
+}
+.log-link a:first-child {
+    margin-left:0;
+    padding-left:0;
+}
+.log-link a:first-child:before {
+    display:none;
+}
+
+
+@media screen and (max-width:680px) {
+    .login {
+        width:90%;
+    }
+    .idpw label {
+        display:block;
+    }
+    .idpw label + input[type="text"],
+    .idpw label + input[type="password"] {
+        width:100%;
+    }
+    .save-id {
+        margin-top:20px;
+    }
+
+}
+
+
+/* 회원가입 선택 */
+.join-box {
+    width:900px;
+    margin:0 auto;
+    font-size:0;
+}
+.join-box > div {
+    display:inline-block;
+    width:50%;
+    padding-right:100px;
+    vertical-align:top;
+    font-size:13px;
+}
+.join-box > div h4 {
+    font-size:20px;
+    color:#1e1e1e;
+    margin-bottom:15px;
+}
+.join-box > div .bullet-list li {
+    text-align:left;
+}
+.join-box > div.join-personal {
+    background:url(/asset/images/icons/join-icon-user.png) right 100px top no-repeat;
+}
+.join-box > div.join-business {
+    background:url(/asset/images/icons/join-icon-company.png) right 100px top no-repeat;
+}
+.join-box > div .button-main-rnd {
+    margin-top:30px;
+}
+
+@media screen and (max-width:780px) {
+    .join-box {
+        width:90%;
+    }
+    .join-box > div {
+        width:100%;
+        padding-top:0;
+        padding-right:0;
+        background:none;
+    }
+    .join-box > div.join-personal {
+        margin-bottom:40px;
+        background-position:right top 50px;
+        background-size:60px;
+    }
+    .join-box > div.join-business {
+        padding-left:0;
+        border-left:0;
+        background-position:right top 50px;
+        background-size:60px;
+    }
+    .join-box > div .button-main-rnd {
+        margin-top:10px;
+    }
+}
+
+/* 회원가입 : 사업자 인증 */
+.join-check .gm-table table {
+    width:auto;
+    margin:0 auto;
+}
+.join-check .table-grid {
+    width:680px;
+}
+/* 회원가입 : 약관동의 */
+.agree-box {
+    margin-bottom:50px;
+}
+.agree-box .agree {
+    margin-bottom:50px;
+}
+.join-agree h3 {
+    margin-top:50px;
+    color:#1e1e1e;
+    font-size:20px;
+    font-weight:500;
+}
+.join-agree h3:first-child {
+    margin-top:0;
+}
+.join-agree h4 {
+    margin-top:30px;
+    margin-bottom:10px;
+    color:#1e1e1e;
+    font-size:16px;
+    font-weight:500;
+}
+.join-agree h3 + h4 {
+    margin-top:10px;
+}
+.join-agree li ul {
+    margin-top:10px;
+}
+.join-agree h3 + p,
+.join-agree h3 + ol,
+.join-agree p + ol {
+    margin-top:10px;
+}
+.agree-box .agree .checkbox-box {
+    margin-right:10px;
+}
+.agree-box .agree label {
+    text-align:left;
+}
+
+/* 회원가입 : 입력폼 */
+.join-form .table-grid {
+    width:680px;
+}
+.join-form .input-button-set {
+    width:500px;
+}
+.join-form .plane-table {
+    border-top:2px solid #1e1e1e;
+}
+.join-addr-cell input {
+    margin-right:3px;
+    margin-bottom:3px;
+}
+.email-cell label + input[type="text"] {
+    margin-left:0;
+}
+.email-cell select {
+    width:105px;
+}
+.join-form .gm-text {
+    margin:3px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 회원가입 완료 */
+.join-complete {
+    padding-top:280px;
+    text-align:center;
+    background:url(/asset/images/sub/bg-join.png) center 0 no-repeat;
+}
+.join-complete-box .button-box {
+    padding-top:50px;
+    padding-left:0;
+}
+
+
+
+@media screen and (max-width:1024px) {
+    .join-check .table-grid,
+    .join-form .table-grid {
+        width:100%;
+    }
+    .join-check .table-grid dd input {
+        margin-bottom:3px;
+    }
+    .join-check .table-grid dd input.w180,
+    .join-form .table-grid dd input.w180 {
+        width:100px !important;
+    }
+    .join-form .table-grid dd input.w80,
+    .join-check .table-grid dd input.w80 {
+        width:50px !important;
+    }
+    .join-form .table-grid dd .gm-text2,
+    .join-check .table-grid dd .gm-text2 {
+        min-width:20px;
+        padding:0 5px;
+    }
+    .table-grid dd input,
+    .table-grid dd select {
+        margin-bottom:2px;
+    }
+    .email-cell select {
+        width:100%;
+        margin-left:0;
+    }
+}

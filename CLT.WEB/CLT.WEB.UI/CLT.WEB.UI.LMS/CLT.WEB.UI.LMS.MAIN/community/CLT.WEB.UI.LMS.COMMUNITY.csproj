@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CEFF976B-49BF-4ED9-B490-3C365955DA24}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CLT.WEB.UI.LMS.COMMUNITY</RootNamespace>
+    <AssemblyName>CLT.WEB.UI.LMS.COMMUNITY</AssemblyName>
+    <SccProjectName>"%24/CLT.WEB/CLT.WEB.UI/CLT.WEB.UI.LMS/CLT.WEB.UI.LMS.MAIN/CLT.WEB.UI.LMS.COMMUNITY", MVKCAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Web.C1WebChart.2, Version=2.0.20063.16228, Culture=neutral, PublicKeyToken=360971499c5cdc04, processorArchitecture=MSIL" />
+    <Reference Include="C1.Web.C1WebGrid.2, Version=2.1.20063.84, Culture=neutral, PublicKeyToken=589f1fc067ff4031, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\C1.Web.C1WebGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Web.Command.2, Version=2.0.20063.108, Culture=neutral, PublicKeyToken=96d8a77dc0c22f6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\C1.Web.Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="CLT.WEB.UI.COMMON.CONTROL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="CLT.WEB.UI.FX.AGENT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\bin\CLT.WEB.UI.FX.AGENT.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="CLT.WEB.UI.FX.UTIL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\bin\CLT.WEB.UI.FX.UTIL.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="FredCK.FCKeditorV2, Version=2.5.2951.23347, Culture=neutral, PublicKeyToken=4f86767c9b519a06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Activities.Build" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="qna_edit.aspx.cs">
+      <DependentUpon>qna_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qna_edit.aspx.designer.cs">
+      <DependentUpon>qna_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qna_detail.aspx.cs">
+      <DependentUpon>qna_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qna_detail.aspx.designer.cs">
+      <DependentUpon>qna_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="data_detail.aspx.cs">
+      <DependentUpon>data_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="data_detail.aspx.designer.cs">
+      <DependentUpon>data_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="data_edit.aspx.cs">
+      <DependentUpon>data_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="data_edit.aspx.designer.cs">
+      <DependentUpon>data_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="notice_edit.aspx.cs">
+      <DependentUpon>notice_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="notice_edit.aspx.designer.cs">
+      <DependentUpon>notice_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="edu_notice_edit.aspx.cs">
+      <DependentUpon>edu_notice_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edu_notice_edit.aspx.designer.cs">
+      <DependentUpon>edu_notice_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="edu_notice_detail.aspx.cs">
+      <DependentUpon>edu_notice_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edu_notice_detail.aspx.designer.cs">
+      <DependentUpon>edu_notice_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="notice_detail.aspx.cs">
+      <DependentUpon>notice_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="notice_detail.aspx.designer.cs">
+      <DependentUpon>notice_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="edu_notice_list.aspx.cs">
+      <DependentUpon>edu_notice_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edu_notice_list.aspx.designer.cs">
+      <DependentUpon>edu_notice_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="data_list.aspx.cs">
+      <DependentUpon>data_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="data_list.aspx.designer.cs">
+      <DependentUpon>data_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qna_list.aspx.cs">
+      <DependentUpon>qna_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qna_list.aspx.designer.cs">
+      <DependentUpon>qna_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="notice_list.aspx.cs">
+      <DependentUpon>notice_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="notice_list.aspx.designer.cs">
+      <DependentUpon>notice_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="survey_answer_detail.aspx.cs">
+      <DependentUpon>survey_answer_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="survey_answer_detail.aspx.designer.cs">
+      <DependentUpon>survey_answer_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="survey_answer_list.aspx.cs">
+      <DependentUpon>survey_answer_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="survey_answer_list.aspx.designer.cs">
+      <DependentUpon>survey_answer_list.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\data_list.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\data_list.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\data_edit.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\data_edit.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\data_detail.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\data_detail.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\qna_list.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\qna_list.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\qna_edit.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\qna_edit.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\qna_detail.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\qna_detail.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="survey_answer_list.aspx" />
+    <Content Include="survey_answer_detail.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CLT.WEB.UI.COMMON\CLT.WEB.UI.COMMON.BASE\CLT.WEB.UI.COMMON.BASE.csproj">
+      <Project>{20C17C63-9F00-4844-A825-122084DEB2C6}</Project>
+      <Name>CLT.WEB.UI.COMMON.BASE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="qna_edit.aspx" />
+    <Content Include="qna_detail.aspx" />
+    <Content Include="data_detail.aspx" />
+    <Content Include="data_edit.aspx" />
+    <Content Include="notice_edit.aspx" />
+    <Content Include="edu_notice_edit.aspx" />
+    <Content Include="edu_notice_detail.aspx" />
+    <Content Include="notice_detail.aspx" />
+    <Content Include="edu_notice_list.aspx" />
+    <Content Include="data_list.aspx" />
+    <Content Include="qna_list.aspx" />
+    <Content Include="notice_list.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\notice_list.aspx.resx" />
+    <Content Include="App_LocalResources\notice_edit.aspx.resx" />
+    <Content Include="App_LocalResources\notice_detail.aspx.resx" />
+    <Content Include="App_LocalResources\edu_notice_list.aspx.resx" />
+    <Content Include="App_LocalResources\edu_notice_edit.aspx.resx" />
+    <Content Include="App_LocalResources\edu_notice_detail.aspx.resx" />
+    <Content Include="App_LocalResources\notice_list.aspx.en.resx" />
+    <Content Include="App_LocalResources\edu_notice_detail.aspx.en.resx" />
+    <Content Include="App_LocalResources\edu_notice_edit.aspx.en.resx" />
+    <Content Include="App_LocalResources\edu_notice_list.aspx.en.resx" />
+    <Content Include="App_LocalResources\notice_detail.aspx.en.resx" />
+    <Content Include="App_LocalResources\notice_edit.aspx.en.resx" />
+    <Content Include="App_LocalResources\survey_answer_detail.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_answer_detail.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_answer_list.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_answer_list.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54773</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54773/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

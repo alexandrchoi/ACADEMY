@@ -1,0 +1,229 @@
+
+
+/* Responsive Web */
+
+@media screen and (max-width:1780px) {
+    .gnb {
+        display:none;
+    }
+}
+
+
+@media screen and (max-width:1440px) {
+    .section-wrap {
+        margin-bottom:100px;
+    }
+    .section-fix {
+        width:90%;
+        margin-right:auto;
+        margin-left:auto;
+    }
+}
+@media screen and (max-width:1280px) {
+    .gm-header {
+        background: linear-gradient(45deg, rgba(87,96,248,1) 0%, rgba(49,54,155,1) 100%);
+    }
+    .gm-header-light .top-logo {
+        background-position: 0 -64px;
+    }
+    .gm-header-light.header-fixed .top-logo {
+        background-position: 0 0;
+    }
+
+    .sub-menu {
+        width:100%;
+    }
+
+    .move-top {
+        width:50px;
+        height:50px;
+        padding-top:10px;
+    }
+    .move-top:hover {
+        padding-top:0;
+    }
+    .move-top img {
+        width:15px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+
+    .top-logo {
+        width:74px;
+        height:32px;
+        left:20px;
+        top:50%;
+        transform:translateY(-50%);
+        background-size:74px;
+    }
+    .gm-header-dark .top-logo,
+    .gm-header-light .top-logo {
+        background-position:0 -32px;
+    }
+    .gm-header-light.header-fixed .top-logo {
+        background-position:0 0;
+    }
+    .gm-header-bg {
+        height:60px;
+    }
+    .user-menu {
+        width:65px;
+        right:5px;
+        top:10px;
+    }
+    .user-menu .gm-log-in,
+    .user-menu .gm-log-out,
+    .user-menu .gm-lang-en,
+    .user-menu .gm-lang-ko {
+        display:none;
+    }
+
+    #sub #wrap {
+        padding-top:60px;
+    }
+    .breadcrumb {
+        display:none;
+    }
+    .goback {
+        display:block;
+        position:absolute;
+        left:0;
+        top:50%;
+        transform:translateY(-50%);
+        text-align:left;
+        font-size:0;
+    }
+    .goback button {
+        width:40px;
+        height:40px;
+        vertical-align:top;
+        position:relative;
+    }
+    .goback button:before {
+        content:"";
+        display:block;
+        width:40px;
+        height:40px;
+        position:absolute;
+        left:0;
+        top:0;
+        background:url(/asset/images/icons/icon-arrow-top.png) center center no-repeat;
+        transform:rotate(-90deg);
+        background-size:50%;
+    }
+    .page-title {
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+
+    .section-wrap {
+        margin-bottom:50px;
+    }
+    .gm-grid {
+        margin:0;
+    }
+    .button-main-rnd.lg {
+        width:100%;
+    }
+    .ex-link {
+        margin-top:70px;
+        padding:20px 0;
+    }
+    .ex-link .section-fix {
+        text-align:center;
+    }
+    .ex-link .section-fix > a {
+        display:none;
+    }
+    .ex-link .section-fix img {
+        float:none;
+        max-width:50px;
+        margin:0 20px;
+    }
+    .footer-logo {
+        display:none;
+    }
+    .gm-footer > div {
+        width:50%;
+        margin-left:0;
+        margin-bottom:40px;
+    }
+    .gm-footer .policy a {
+        margin-left:7px;
+        padding-left:8px;
+    }
+    .gm-footer > div.family-site {
+        float:none;
+        clear:both;
+        width:100%;
+    }
+    .family-site .select-box,
+    .family-site .family-link {
+        width:100%;
+    }
+
+    /* 메뉴 */
+    .user-menu-m {
+        display:block;
+        padding:20px;
+        font-size:0;
+    }
+    .user-menu-m .gm-log-in > a,
+    .user-menu-m .gm-log-out > a,
+    .user-menu-m .gm-lang-ko,
+    .user-menu-m .gm-lang-en {
+        width:80px;
+        border:1px solid #fff;
+        text-align:center;
+        margin-right:5px;
+        font-size:13px;
+        line-height:40px;
+        color:#fff;
+    }
+    .all-menu-box {
+        padding:0 0 70px 0;
+    }
+    .all-menu {
+        width:90%;
+    }
+    .all-menu > li {
+        padding-top:50px;
+        padding-left:0;
+    }
+    .all-menu > li > a::after {
+        display:none;
+    }
+    .all-menu-box .depth-1 > li {
+        width:33.333%;
+    }
+    .all-menu-box .depth-1 > li > a {
+        padding-right:10px;
+        letter-spacing:-1px;
+    }
+    .all-menu-box .depth-2 {
+        display:none;
+    }
+    .all-menu-box .button-close-all-menu {
+        right:30px;
+        top:30px;
+    }
+    .mobile-off {
+        display:none !important;
+    }
+}
+
+@media screen and (max-width:680px) {
+    .gm-footer > div {
+        float:none;
+        clear:both;
+        width:100%;
+    }
+    .move-top {
+        right:20px;
+        bottom:20px;
+    }
+    .all-menu-box {
+        overflow-y:auto;
+    }
+}

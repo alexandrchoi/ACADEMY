@@ -1,0 +1,146 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/info-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+    <h2 class="page-title">메뉴관리
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+        <!-- 검색 -->
+        <div class="search-box">
+            <label for="apply">사용자그룹</label>
+            <select name="apply" id="apply">
+                <option>관리자</option>
+                <option>행정담당</option>
+            </select>
+            <button href="#none" class="button-default blue">Search</button>
+        </div>
+
+        <!-- 버튼 -->
+        <div class="button-box right">
+            <a href="#none" class="button-default blue">Save</a>
+        </div>
+
+        <!-- Data Table - List type -->
+        <div class="gm-table data-table transparent list-type">
+            <table>
+                <caption>표정보 - 회사명, 대표자명, 회사규모, 연락처 등의 정보를 제공합니다.</caption>
+                <colgroup>
+                    <col width="24%">
+                    <col width="24%">
+                    <col width="24%">
+                    <col width="7%">
+                    <col width="7%">
+                    <col width="7%">
+                    <col width="7%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th scope="col">대메뉴</th>
+                    <th scope="col">중메뉴</th>
+                    <th scope="col">소메뉴</th>
+                    <th scope="col">조회권한</th>
+                    <th scope="col">수정권한</th>
+                    <th scope="col">삭제권한</th>
+                    <th scope="col">관리자권한</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <th rowspan="8" scope="row">기관소개</th>
+                    <td>인사말</td>
+                    <td>-</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">조직정보</td>
+                    <td>연혁</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>조직현황</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>교육시설</td>
+                    <td>-</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>오시는길</td>
+                    <td>-</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">사업주위탁훈련</td>
+                    <td>사업주위탁훈련</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>고용보험환급</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>컨소시엄</td>
+                    <td>-</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--// Data Table - List type -->
+
+        <div class="gm-paging">
+            <a href="#none" class="first"><i class="fas fa-angle-double-left"></i><span class="off-screen">맨 앞으로</span></a>
+            <a href="#none" class="prev"><i class="fas fa-angle-left"></i><span class="off-screen">이전페이지</span></a>
+            <a href="#none">1</a>
+            <a href="#none">2</a>
+            <span class="current">3</span>
+            <a href="#none">4</a>
+            <a href="#none">5</a>
+            <a href="#none" class="next"><i class="fas fa-angle-right"></i><span class="off-screen">다음페이지</span></a>
+            <a href="#none" class="last"><i class="fas fa-angle-double-right"></i><span class="off-screen">맨 뒤로</span></a>
+        </div>
+
+    </section>
+</div>
+
+
+
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

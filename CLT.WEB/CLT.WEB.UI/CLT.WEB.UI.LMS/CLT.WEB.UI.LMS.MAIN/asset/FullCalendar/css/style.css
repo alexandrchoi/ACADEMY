@@ -1,0 +1,125 @@
+@charset "UTF-8";
+main.container {
+    padding-top:50px;
+}
+#calendar {
+    position:relative;
+}
+.fc-view, .fc-view > table {
+    box-sizing:border-box;
+}
+#calendar th.fc-day-header {
+    padding:9px;
+    background:#3f4ea3;
+    color:#fff;
+    font-weight:500;
+}
+#calendar .fc-other-month {
+    background:rgba(240,240,240,1);
+}
+#calendar .fc-day-number {
+    padding:7px;
+    font-size:13px;
+    font-family:'Montserrat', sans-serif;
+    text-align:left;
+}
+
+#calendar .fc-event {
+    margin:1px 2px;
+    padding:0 15px;
+    border-radius:1px;
+}
+#calendar .fc-more-cell div {
+    text-align:right;
+}
+#calendar .fc-event-container a:nth-child(odd),
+#calendar .fc-content-skeleton tr:nth-child(odd) .fc-event {
+    background:#ffeaea !important;
+    border-color:#eed1d1 !important;
+    color:#967e7e !important;
+}
+#calendar .fc-event-container a:nth-child(even),
+#calendar .fc-content-skeleton tr:nth-child(even) .fc-event {
+    background:#eaf4ff !important;
+    border-color:#c7d3df !important;
+    color:#758696 !important;
+}
+/** 버튼 **/
+#calendar .fc-state-default {
+    border:0;
+    font-size:13px;
+    background:none;
+}
+
+#calendar .fc-next-button,
+#calendar .fc-prev-button {
+    background:rgba(240,240,240,1);
+}
+#calendar .fc-next-button {
+    position:absolute;
+    right:0;
+    top:50px;
+}
+#calendar .fc-prev-button {
+    position:absolute;
+    left:0;
+    top:50px;
+}
+#calendar .fc-month-button,
+#calendar .fc-basicWeek-button,
+#calendar .fc-today-button {
+    box-shadow:none;
+}
+#calendar .fc-basicWeek-button,
+#calendar .fc-today-button {
+    position:relative;
+}
+#calendar .fc-basicWeek-button:before,
+#calendar .fc-today-button:before {
+    content:"";
+    display:block;
+    width:1px;
+    height:12px;
+    position:absolute;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    background:#ddd;
+}
+#calendar .fc-basicWeek-button.fc-state-down:before,
+#calendar .fc-basicWeek-button.fc-state-active:before,
+#calendar .fc-today-button.fc-state-down:before,
+#calendar .fc-today-button.fc-state-active:before {
+    display:none;
+}
+#calendar .fc-state-active,
+#calendar .fc-state-down {
+    background:#5a63fe;
+    color:#fff;
+    box-shadow:none;
+    border:0;
+}
+
+
+#calendar .fc-toolbar .fc-center {
+    display:block;
+    text-align:center;
+}
+#calendar .fc-toolbar .fc-center h2 {
+    font-size:30px;
+}
+#calendar .fc-toolbar > * > * {
+    float:none;
+    margin-left:0;
+}
+#calendar .fc-day-grid {
+    z-index:9999;
+}
+#calendar .fc-popover {
+    z-index:9999;
+}
+#calendar a.fc-more {
+    font-size:13px;
+    font-family:'Montserrat', sans-serif;
+    letter-spacing:0;
+}

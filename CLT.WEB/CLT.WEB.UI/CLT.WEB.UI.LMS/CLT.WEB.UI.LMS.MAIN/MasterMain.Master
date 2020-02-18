@@ -1,0 +1,206 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterMain.Master.cs" Inherits="CLT.WEB.UI.LMS.MAIN.MasterMain" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>지마린 아카데미</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="author" content="gmarineservice.com" />
+
+    <asp:ContentPlaceHolder id="ContentPlaceHolderHead" runat="server"></asp:ContentPlaceHolder>
+    
+</head>
+
+<body id="main">
+
+    <h1 class="off-screen"><%=GetLocalResourceObject("lnkHomeResource.Text").ToString() %></h1>
+    <div id="skip-to-content">
+        <asp:HyperLink ID="lnkGotoMain" runat="server" NavigateUrl="#container" meta:resourcekey="lnkGotoMainResource" Text="본문 바로가기"></asp:HyperLink>
+        <asp:HyperLink ID="lnkGotoMenu" runat="server" NavigateUrl="#primary-menu" meta:resourcekey="lnkGotoMenuResource" Text="메뉴 바로가기"></asp:HyperLink>
+    </div>
+
+    <div id="wrap">
+    
+    <form id="form1" runat="server">
+
+    <!-- Header -->
+    <header id="header" class="gm-header js-gm-header">
+        <div class="gm-header-bg">
+            <asp:HyperLink ID="lnkHome" runat="server" CssClass="ir img-logo top-logo" NavigateUrl="/" meta:resourcekey="lnkHomeResource" Text="지마린 아카데미"></asp:HyperLink>
+
+            <!-- Primary Menu -->
+            <nav class="gnb">
+                <asp:Literal ID="ltTopMenu" runat="server"></asp:Literal>
+            </nav>
+
+            <!-- User Menu -->
+            <div class="user-menu">
+                <asp:Label ID="ltSign" runat="server" CssClass="gm-log-in">
+                    <asp:Label ID="ltSignT" runat="server" CssClass="tooltip">
+                        <asp:HyperLink ID="lnkSignIn" runat="server" NavigateUrl="/mypage/login.aspx" meta:resourcekey="lnkSignInResource" Text="로그인"></asp:HyperLink>
+                        <asp:HyperLink ID="lnkSignUp" runat="server"  NavigateUrl="/mypage/join.aspx" meta:resourcekey="lnkSignUpResource" Text="회원가입"></asp:HyperLink>
+                        <asp:HyperLink ID="lnkSignOut" runat="server" NavigateUrl="/mypage/login.aspx?mode=logout" meta:resourcekey="lnkSignOutResource" Text="로그아웃"></asp:HyperLink>
+                        <asp:HyperLink ID="lnkMyInfo" runat="server" NavigateUrl="/mypage/myinfo.aspx" meta:resourcekey="lnkMyInfoResource" Text="정보수정"></asp:HyperLink>
+                    </asp:Label>
+                </asp:Label>
+
+                <asp:HyperLink ID="lnkLang" runat="server" CssClass="gm-lang-ko" NavigateUrl="?Lang=EN" >
+                    <asp:Label ID="txtLang" runat="server" CssClass="tooltip" meta:resourcekey="LangResource" Text="English"></asp:Label>
+                </asp:HyperLink>
+            
+                <asp:HyperLink ID="lnkMenuA" runat="server" CssClass="hamburger js-all-menu-ham">
+                    <asp:Label ID="txtBarA" runat="server" CssClass="bar"></asp:Label>
+                    <asp:Label ID="txtMenuA" runat="server" CssClass="tooltip" meta:resourcekey="txtMenuResource" Text="메뉴/All Menu"></asp:Label>
+                </asp:HyperLink>
+            </div>
+        </div>
+    </header>
+
+    <nav class="all-menu-box">
+        <div class="user-menu-m">
+            <asp:Label ID="ltSignA" runat="server" CssClass="gm-log-in">
+                <asp:HyperLink ID="lnkSignInA" runat="server" NavigateUrl="/mypage/login.aspx" meta:resourcekey="lnkSignInResource" Text="로그인" />
+                <asp:HyperLink ID="lnkSignUpA" runat="server" NavigateUrl="/mypage/join.aspx" meta:resourcekey="lnkSignUpResource" Text="회원가입" />
+                <asp:HyperLink ID="lnkSignOutA" runat="server" NavigateUrl="/mypage/login.aspx?mode=logout" meta:resourcekey="lnkSignOutResource" Text="로그아웃" />
+                <asp:HyperLink ID="lnkMyInfoA" runat="server" NavigateUrl="/mypage/myinfo.aspx" meta:resourcekey="lnkMyInfoResource" Text="정보수정" />
+            </asp:Label>
+        
+            <asp:HyperLink ID="lnkLangA" runat="server" NavigateUrl="?Lang=EN" CssClass="gm-lang-ko" meta:resourcekey="LangResource"></asp:HyperLink>
+        </div>
+    
+        <asp:Literal ID="ltTopMenuA" runat="server" />
+    
+        <asp:Label ID="txtMenuC" runat="server" CssClass="button-close-all-menu">
+            <asp:Label ID="txtBarC" runat="server" CssClass="bar"></asp:Label>
+        </asp:Label>
+    </nav>
+    <!-- Header - End -->
+
+
+
+        <!-- Contents -->
+        <main class="container" id="#container">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server"></asp:ContentPlaceHolder>
+
+        </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="ex-link bg-gray">
+            <div class="block section-fix">
+                <a href="http://www.moel.go.kr/" target="_blank" class="fl-left"><img src="/asset/images/common/ex-link-moel.png" alt="<%=GetLocalResourceObject("txtMoel") %>"><!--고용노동부--></a>
+                <a href="http://www.hrdkorea.or.kr/" target="_blank" class="fl-left"><img src="/asset/images/common/ex-link-hrdkorea.png" alt="<%=GetLocalResourceObject("txtHrdkorea") %>"><!--한국산업인력공단--></a>
+                <a href="http://www.mof.go.kr/" target="_blank" class="fl-left"><img src="/asset/images/common/ex-link-mof.png" alt="<%=GetLocalResourceObject("txtMof") %>"><!--해양수산부--></a>
+                <img src="/asset/images/common/ex-link-champ.png" alt="<%=GetLocalResourceObject("txtChamp") %>" class="fl-right"><!--국가인적자원개발 컨소시엄훈련-->
+                <img src="/asset/images/common/ex-link-kspa.png" alt="<%=GetLocalResourceObject("txtKspa") %>" class="fl-right"><!--직업능력개발 우수훈련기관-->
+                <img src="/asset/images/common/ex-link-besthrd.png" alt="<%=GetLocalResourceObject("txtBesthrd") %>" class="fl-right"><!--Best HRD 인증-->
+            </div>
+        </div>
+
+        <div class="gm-footer-box">
+            <div class="gm-footer block section-fix">
+                <a href="#none" class="footer-logo fl-left"><img src="/asset/images/common/footer-logo.png" alt="<%=GetLocalResourceObject("txtLogo") %>"><!--지마린 로고--></a>
+
+                <div class="footer-company fl-left">
+                    <div class="policy">
+                        <a href="javascript:" onclick="saveMenuCD('0', '1', '0', '/etc/privacy.aspx');"><%=GetLocalResourceObject("txtPrivacy") %><!--개인정보보호정책--></a>
+                        <a href="javascript:" onclick="saveMenuCD('0', '2', '0', '/etc/term.aspx');"><%=GetLocalResourceObject("txtTerm") %><!--이용약관--></a>
+                        <a href="javascript:" onclick="saveMenuCD('0', '3', '0', '/etc/copyright.aspx');"><%=GetLocalResourceObject("txtCopyright") %><!--저작권보호정책--></a>
+                    </div>
+
+                    <div class="info">
+                        <span class="company-name"><%=GetLocalResourceObject("txtCompanyName") %><!--주식회사 지마린서비스--></span>
+                        <span class="address"><%=GetLocalResourceObject("txtZipcode").ToString() %><!--600-755--> <%=GetLocalResourceObject("txtAddress") %><!--부산광역시 중구 중장대로 9번길 46--></span>
+                        <span class="tel"><%=GetLocalResourceObject("txtTel").ToString() %><!--82-51-603-3400--></span>
+                    </div>
+                </div>
+
+                <div class="footer-cs fl-left">
+                    <h4><%=GetLocalResourceObject("txtService") %><!--고객센터--></h4>
+                    <span class="tel"><%=GetLocalResourceObject("txtTel").ToString() %><!--051-603-3400--></span>
+                    <span class="office-hours"><%=GetLocalResourceObject("txtHour") %><!--평일 09-18시, 토/일/공휴일 휴무--></span>
+                </div>
+
+                <div class="family-site fl-right">
+                    <div class="select-box">Family site</div>
+                    <div class="family-link">
+                        <a href="http://www.gmarineservice.com/" target="_blank"><%=GetLocalResourceObject("txtCompany") %><!--지마린서비스--></a>
+                        <a href="https://www.hyundai.co.kr/" target="_blank"><%=GetLocalResourceObject("txtHyundai") %><!--현대자동차그룹--></a>
+                        <a href="http://www.glovis.net/" target="_blank"><%=GetLocalResourceObject("txtGlovis") %><!--현대글로비스--></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer - End -->
+    
+        
+        <asp:HiddenField ID="HidLeftStatus" runat="server" />
+    </form>
+
+    </div>
+
+    <script type="text/javascript" language="javascript">
+	
+	    // menu1 : 대메뉴, menu2 : 중메뉴, menu3 : 소메뉴
+        // goUrl : 메뉴관련 URL
+        function saveMenuCD(menu1, menu2, menu3, gourl) {
+            var url = "/SetMenu.aspx";
+            url += "?menucode1=" + menu1;
+            url += "&menucode2=" + menu2;
+            url += "&menucode3=" + menu3;
+            url += "&gourl=" + escape(gourl);
+            //url += "&gourl="    + gourl;
+
+            if (gourl != "") {
+                var xmlRequest;
+                try {
+                    xmlRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {
+
+                    try {
+                        xmlRequest = new XMLHttpRequest();
+                    } catch (e) {
+                        try {
+                            xmlRequest = new ActiveXObject("Msxml2.XMLHTTP");
+                        } catch (e) {
+                            xmlRequest = null;
+                        }
+                    }
+                }
+
+                xmlRequest.open("POST", url, true);
+                xmlRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xmlRequest.onreadystatechange = function () { CallBack(xmlRequest) };
+                xmlRequest.send(null);
+
+                return xmlRequest;
+            }
+        }
+
+        // XMLHTTP로 리턴받은결과
+        function CallBack( xmlRequest )
+        {   
+	        if (xmlRequest == null || xmlRequest.readyState != 4) return;
+	        if(xmlRequest.responseText.length == 0) return;
+
+	        var vals = xmlRequest.responseText.split("\r");
+	        location.href = vals[0];	// URL정보임
+
+        }
+
+    </script> 
+    
+    <a href="#" id="gm-move-top" class="move-top"><img src="/asset/images/icons/icon-arrow-top.png" alt="상단으로 가기"></a>
+    
+    <asp:ContentPlaceHolder id="ContentPlaceHolderFoot" runat="server"></asp:ContentPlaceHolder>
+
+</body>
+</html>

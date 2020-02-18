@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>지마린 아카데미</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="/asset/css/common/reset.css" type="text/css" medial="all">
+    <link rel="stylesheet" href="/asset/css/common/layout.css" type="text/css" medial="all">
+    <link rel="stylesheet" href="/asset/fontawesome/css/all.css" type="text/css" media="all">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="/asset/js/common/layout.js"></script>
+</head>
+<body id="popup">
+<h1 class="off-screen">지마린 아카데미</h1>
+
+<div id="popup">
+    <div class="layer-popup">
+        <div class="pop-container company-register">
+            <h3>기업회원</h3>
+
+            <!-- 팝업 컨텐츠 -->
+            <div class="notice-text right">필수입력<span class="required">필수입력</span></div>
+
+            <div class="gm-table data-table read-type">
+                <table>
+                    <colgroup>
+                        <col width="15%">
+                        <col width="35%">
+                        <col width="15%">
+                        <col width="35%">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th>회사명<span class="required">필수입력</span></th>
+                        <td colspan="3"><input type="text" required></td>
+                    </tr>
+                    <tr>
+                        <th>대표자성명<span class="required">필수입력</span></th>
+                        <td><input type="text" disabled ></td>
+                        <th>사업자등록번호<span class="required">필수입력</span></th>
+                        <td><input type="text" disabled class="w80" required> -<input type="text" disabled class="w80" required> -<input type="text" disabled class="w80" required></td>
+                    </tr>
+                    <tr>
+                        <th>고용보험관리보험<span class="required">필수입력</span></th>
+                        <td><input type="text"></td>
+                        <th>업종<span class="required">필수입력</span></th>
+                        <td><input type="text" required></td>
+                    </tr>
+                    <tr>
+                        <th>회사구분<span class="required">필수입력</span></th>
+                        <td>
+                            <select required>
+                                <option>그룹사</option>
+                                <option>사업주위수탁</option>
+                            </select>
+                        </td>
+                        <th>회사규모<span class="required">필수입력</span></th>
+                        <td>
+                            <select required>
+                                <option>그룹사</option>
+                                <option>사업주위수탁</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>전화번호(-포함)<span class="required">필수입력</span></th>
+                        <td><input type="text"></td>
+                        <th>팩스번호(-포함)<span class="required">필수입력</span></th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>대표이메일<span class="required">필수입력</span></th>
+                        <td>
+                            <input type="text" id="" name="email1" style="width:130px;" placeholder="이메일 입력">
+                            <span class="gm-text2">@</span>
+                            <label for="gm-ipt-1-2" class="off-screen">E-mail 도메인</label>
+                            <input type="text" id="gm-ipt-1-2" name="emailDomain" style="width:130px;">
+                            <label for="gm-sel" class="off-screen">직접입력</label>
+                            <select id="gm-sel" name="emaillist"  style="width:130px;">
+                                <option value="">직접입력</option>
+                                <option value="naver.com">네이버</option>
+                                <option value="gmail.com">Gmail</option>
+                                <option value="nate.com">네이트</option>
+                                <option value="daum.net">다음</option>
+                                <option value="kakao.com">카카오</option>
+                                <option value="outlook.com">Microsoft</option>
+                                <option value="hotmail.com">Hotmail</option>
+                            </select>
+                        </td>
+                        <th>홈페이지<span class="required">필수입력</span></th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>주소<span class="required">필수입력</span></th>
+                        <td colspan="3">
+                            <input type="text" name="zip" class="w80" required><button type="button" onclick="" class="button-default blue zip">검색</button><br>
+                            <input type="text" name="addr1" readonly class="addr-box" required><br>
+                            <input type="text" name="addr2" class="addr-box"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>근로자수(해상직원)</th>
+                        <td><input type="text"></td>
+                        <th>근로자수(육상직원)</th>
+                        <td><input type="text"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>담당자 정보</h4>
+            <div class="gm-table data-table read-type">
+                <table>
+                    <colgroup>
+                        <col width="15%">
+                        <col width="35%">
+                        <col width="15%">
+                        <col width="35%">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th>아이디<span class="required">필수입력</span></th>
+                        <td><input type="text" required disabled></td>
+                        <th>생년월일<span class="required">필수입력</span></th>
+                        <td><input type="text" required></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호<span class="required">필수입력</span></th>
+                        <td><input type="password" required disabled></td>
+                        <th>비밀번호확인<span class="required">필수입력</span></th>
+                        <td><input type="password" required disabled></td>
+                    </tr>
+                    <tr>
+                        <th>담당자성명(한글)<span class="required">필수입력</span></th>
+                        <td><input type="text"></td>
+                        <th>담당자성명(영문)<span class="required">필수입력</span></th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>부서<span class="required">필수입력</span></th>
+                        <td><input type="text"></td>
+                        <th>직급<span class="required">필수입력</span></th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>전화번호</th>
+                        <td><input type="text"></td>
+                        <th>휴대폰<span class="required">필수입력</span></th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>이메일<span class="required">필수입력</span></th>
+                        <td>
+                            <input type="text" id="" name="email1" style="width:130px;" placeholder="이메일 입력">
+                            <span class="gm-text2">@</span>
+                            <label for="gm-ipt-1-2" class="off-screen">E-mail 도메인</label>
+                            <input type="text" id="gm-ipt-1-2" name="emailDomain" style="width:130px;">
+                            <label for="gm-sel" class="off-screen">직접입력</label>
+                            <select id="gm-sel" name="emaillist"  style="width:130px;">
+                                <option value="">직접입력</option>
+                                <option value="naver.com">네이버</option>
+                                <option value="gmail.com">Gmail</option>
+                                <option value="nate.com">네이트</option>
+                                <option value="daum.net">다음</option>
+                                <option value="kakao.com">카카오</option>
+                                <option value="outlook.com">Microsoft</option>
+                                <option value="hotmail.com">Hotmail</option>
+                            </select>
+                        </td>
+                        <th>고용보험취득일</th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>사진업로드</th>
+                        <td colspan="3">
+                            <!-- 파일 첨부 인풋 -->
+                            <div class="file-box">
+                                <input class="upload-name" value="증명사진 3x4size" disabled="disabled">
+                                <label for="ex_filename">찾아보기</label>
+                                <input type="file" id="ex_filename" class="upload-hidden">
+                            </div>
+                            <!--// 파일 첨부 인풋 -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>SMS 수신여부<span class="required">필수입력</span></th>
+                        <td>
+                            <label class="radio-box">예
+                                <input type="radio" checked="checked" name="sms_agree">
+                                <span class="radiomark"></span>
+                            </label>
+
+                            <label class="radio-box">아니오
+                                <input type="radio" name="sms_agree">
+                                <span class="radiomark"></span>
+                            </label>
+                        </td>
+                        <th>메일링서비스 수신여부<span class="required">필수입력</span></th>
+                        <td>
+                            <label class="radio-box">예
+                                <input type="radio" checked="checked" name="mail_agree">
+                                <span class="radiomark"></span>
+                            </label>
+
+                            <label class="radio-box">아니오
+                                <input type="radio" name="mail_agree">
+                                <span class="radiomark"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--// 팝업 컨텐츠 -->
+            <div class="button-box center">
+                <a href="#none" class="button-main-rnd blue lg">저장</a>
+            </div>
+        </div>
+
+        <!-- 팝업창 닫기 버튼 -->
+        <a href="#none" onclick="self.close();" class="button-close"><span class="off-screen">닫기</span></a>
+    </div>
+</div>
+
+</body>
+</html>

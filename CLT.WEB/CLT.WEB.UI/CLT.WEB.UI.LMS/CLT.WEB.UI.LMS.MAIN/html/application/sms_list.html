@@ -1,0 +1,110 @@
+<?include("../../html/include/application-header.html")?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+
+    <div class="sub-tab">
+        <a href="sms_send.html">SMS 보내기</a>
+        <a href="#none" class="current">전송결과/예약조회</a>
+    </div>
+
+    <h2 class="page-title">SMS
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+
+        <!-- 검색 -->
+        <div class="search-box">
+            <ul class="gm-grid column-2">
+                <li class="item">
+                    <span class="search-title">조회할 결과 선택</span>
+                    <label class="radio-box">전송결과 확인
+                        <input type="radio" checked="checked" name="radio">
+                        <span class="radiomark"></span>
+                    </label>
+
+                    <label class="radio-box">예약메세지 확인
+                        <input type="radio" name="radio">
+                        <span class="radiomark"></span>
+                    </label>
+                </li>
+
+                <li class="item">
+                    <span class="search-title">조회기간</span>
+                    <input type="text" class="w180"> ~ <input type="text" class="w180">
+                </li>
+            </ul>
+            <button href="#none" class="button-default blue">Search</button>
+        </div>
+
+        <!-- Data Table - List type -->
+        <div class="gm-table data-table list-type">
+            <table>
+                <caption>표정보 - 번호, 제목 등을 제공합니다.</caption>
+                <colgroup>
+                    <col width="*">
+                    <col width="15%">
+                    <col width="5%">
+                    <col width="5%">
+                    <col width="5%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th scope="col">제목</th>
+                    <th scope="col">전송일시</th>
+                    <th scope="col">수신처</th>
+                    <th scope="col">성공</th>
+                    <th scope="col">실패</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td class="left"><a href="#none">한진해운 운항훈련원 교육 숙박 안내</a></td>
+                    <td>2020-01-02</td>
+                    <td>20</td>
+                    <td>18</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td class="left"><a href="#none">선박조리사 교육 안내</a></td>
+                    <td>2019-12-30</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--// Data Table - List type -->
+
+
+        <div class="gm-paging">
+            <a href="#none" class="first"><i class="fas fa-angle-double-left"></i><span class="off-screen">맨 앞으로</span></a>
+            <a href="#none" class="prev"><i class="fas fa-angle-left"></i><span class="off-screen">이전페이지</span></a>
+            <a href="#none">1</a>
+            <a href="#none">2</a>
+            <span class="current">3</span>
+            <a href="#none">4</a>
+            <a href="#none">5</a>
+            <a href="#none" class="next"><i class="fas fa-angle-right"></i><span class="off-screen">다음페이지</span></a>
+            <a href="#none" class="last"><i class="fas fa-angle-double-right"></i><span class="off-screen">맨 뒤로</span></a>
+        </div>
+
+    </section>
+</div>
+
+
+
+<!--// 서브 컨텐츠 끝 -->
+
+<?include("../../html/include/footer.html")?>

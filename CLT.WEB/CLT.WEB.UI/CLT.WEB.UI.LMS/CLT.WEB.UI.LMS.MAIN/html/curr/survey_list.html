@@ -1,0 +1,113 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/curr-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+
+    <h2 class="page-title">설문조회/등록
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+
+        <!-- 검색 -->
+        <div class="search-box">
+            <label for="period">설문기간</label>
+            <input type="text" class="datepick w180" name="period" id="period"><span class="gm-text2">~</span><input type="text" class="datepick w180">
+            <label for="subject">설문제목</label>
+            <input type="text" name="subject" id="subject">
+            <button href="#none" class="button-default blue">Search</button>
+        </div>
+
+        <div class="button-group right">
+            <a href="#none" class="button-default blue">New</a>
+            <a href="#none" class="button-default">Delete</a>
+            <a href="#none" class="button-default">Excel</a>
+            <a href="#none" class="button-default">Notice</a>
+        </div>
+
+        <!-- Data Table - List type -->
+        <div class="gm-table data-table list-type">
+            <table>
+                <caption>표정보 - 번호, 제목 등을 제공합니다.</caption>
+                <colgroup>
+                    <col width="5">
+                    <col width="*">
+                    <col width="5%">
+                    <col width="10%">
+                    <col width="15%">
+                    <col width="5%">
+                    <col width="5%">
+                    <col width="5%">
+                    <col width="5%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th scope="col"><input type="checkbox"></th>
+                    <th scope="col">설문제목</th>
+                    <th scope="col">항목수</th>
+                    <th scope="col">설문등록일</th>
+                    <th scope="col">응답기간</th>
+                    <th scope="col">게시여부</th>
+                    <th scope="col">총대상자</th>
+                    <th scope="col">응답수</th>
+                    <th scope="col">미응답수</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td class="left"><a href="#none">2016년 해상직원 교육 니즈조사(한국사관, 부원)</a></td>
+                    <td>5</td>
+                    <td>2019.12.10</td>
+                    <td>2019.12.20 ~ 2019.12.30</td>
+                    <td>Y</td>
+                    <td>786</td>
+                    <td>600</td>
+                    <td>186</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td class="left"><a href="#none">2016년 해상직원 교육 니즈조사(한국사관, 부원)</a></td>
+                    <td>5</td>
+                    <td>2019.12.10</td>
+                    <td>2019.12.20 ~ 2019.12.30</td>
+                    <td>Y</td>
+                    <td>786</td>
+                    <td>600</td>
+                    <td>186</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--// Data Table - List type -->
+
+
+        <div class="gm-paging">
+            <a href="#none" class="first"><i class="fas fa-angle-double-left"></i><span class="off-screen">맨 앞으로</span></a>
+            <a href="#none" class="prev"><i class="fas fa-angle-left"></i><span class="off-screen">이전페이지</span></a>
+            <a href="#none">1</a>
+            <a href="#none">2</a>
+            <span class="current">3</span>
+            <a href="#none">4</a>
+            <a href="#none">5</a>
+            <a href="#none" class="next"><i class="fas fa-angle-right"></i><span class="off-screen">다음페이지</span></a>
+            <a href="#none" class="last"><i class="fas fa-angle-double-right"></i><span class="off-screen">맨 뒤로</span></a>
+        </div>
+
+    </section>
+</div>
+
+
+
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

@@ -1,0 +1,60 @@
+<?include("../../html/include/community-header.html")?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-fix">
+    <h2 class="page-title">공지사항
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+
+        <div class="board-list gm-table data-table read-type">
+            <table>
+                <colgroup>
+                    <col width="10%">
+                    <col width="*">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th scope="row">제목</th>
+                    <td>사업주지원훈련 QR코드 출결 관리 시스템 적용 안내</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <dl class="read-info">
+                            <dt>작성자</dt><dd>문서영</dd>
+                            <dt>작성일자</dt><dd>2019.12.25</dd>
+                            <dt>조회수</dt><dd>145</dd>
+                            <dt>첨부파일</dt><dd>QR코드_출결관리_안내.zip</dd>
+                        </dl>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="read-content">
+                            게시글이 여기에...
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="button-box right">
+            <a href="#none" class="button-main-rnd blue md">목록</a>
+            <a href="#none" class="button-main-rnd md">수정</a>
+            <a href="#none" class="button-main-rnd md">삭제</a>
+        </div>
+    </section>
+</div>
+<!--// 서브 컨텐츠 끝 -->
+
+<?include("../../html/include/footer.html")?>

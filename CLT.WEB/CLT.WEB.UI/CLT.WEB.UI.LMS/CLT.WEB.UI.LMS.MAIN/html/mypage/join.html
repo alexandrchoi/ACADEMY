@@ -1,0 +1,45 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/mypage-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-fix">
+    <h2 class="page-title">회원가입
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="join">
+        <p class="headline center mb30">유형에 따라 가입 절차가 다르니 해당하는 유형을 선택해 주세요.</p>
+        <div class="join-box">
+            <div class="join-personal">
+                <h4>개인회원 이용서비스</h4>
+                <ol class="list-order">
+                    <li>약관동의</li>
+                    <li>개인정보 입력</li>
+                    <li>회원가입 신청완료</li>
+                </ol>
+                <a href="/mypage/join_user.html" class="button-main-rnd flex100 green">개인회원 가입하기</a>
+            </div>
+            <div class="join-business">
+                <h4>기업회원 이용서비스</h4>
+                <ol class="list-order">
+                    <li>회원중복체크</li>
+                    <li>약관동의</li>
+                    <li>회사/담당자정보 입력</li>
+                    <li>회원가입 신청완료</li>
+                </ol>
+                <a href="/mypage/join_company1.html" class="button-main-rnd flex100 pink">기업회원 가입하기</a>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

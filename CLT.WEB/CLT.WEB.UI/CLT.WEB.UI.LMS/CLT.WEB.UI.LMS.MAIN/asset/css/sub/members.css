@@ -1,0 +1,99 @@
+.login {
+    width:400px;
+    margin:0 auto;
+}
+.idpw {
+    font-size:0;
+}
+.idpw label {
+    width:80px;
+    display:inline-block;
+    font-size:18px;
+}
+.idpw input {
+    width:320px;
+    font-size:16px;
+    padding:15px;
+    margin:5px 0;
+}
+
+.button-box {
+    padding-top:10px;
+}
+.button-login {
+    width:100%;
+    border-radius:2px;
+    background: linear-gradient(45deg, rgba(87,96,248,1) 0%, rgba(49,54,155,1) 100%);
+    color:#fff;
+    line-height:60px;
+    text-align:center;
+    transition:all, .3s;
+}
+.button-login:hover {
+    box-shadow:0 10px 10px rgba(28,31,90,.3);
+}
+
+.save-id {
+    position:relative;
+    margin-top:10px;
+    padding-left:40px;
+}
+.save-id input[type="checkbox"] {
+    position:absolute;
+    left:0;
+    top:0;
+}
+.log-link {
+    padding-top:40px;
+    text-align:center;
+}
+.log-link a {
+    margin-left:10px;
+    padding-left:10px;
+    position:relative;
+}
+.log-link a:before {
+    content:"";
+    display:block;
+    position:absolute;
+    left:0;
+    top:50%;
+    width:1px;
+    height:12px;
+    background:#ddd;
+    transform:translateY(-50%);
+}
+.log-link a:first-child {
+    margin-left:0;
+    padding-left:0;
+}
+.log-link a:first-child:before {
+    display:none;
+}
+
+
+
+/* 개인정보 보호정책 */
+.privacy strong {
+    display:inline-block;
+    margin-top:50px;
+    margin-bottom:10px;
+    color:#1e1e1e;
+    font-size:30px;
+    border-bottom:2px solid #1e1e1e;
+}
+
+.term h3 {
+    margin-top:50px;
+    margin-bottom:10px;
+    color:#1e1e1e;
+    font-size:36px;
+}
+.term h4 {
+    color:#1e1e1e;
+    font-size:24px;
+}
+.term p,
+.term ol {
+    margin-bottom:40px;
+}

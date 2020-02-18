@@ -1,0 +1,419 @@
+.container {
+    width:100%;
+}
+.main-top {
+    width:100%;
+}
+.main-board-box {
+    width:43%;
+    height:90vh;
+    float:left;
+    padding-top:180px;
+    background:#f5f5f5;
+    box-shadow:10px 10px 20px rgba(28,31,90,.2);
+}
+.main-board {
+    width:460px;
+    float:right;
+    clear:both;
+}
+.main-board-card {
+    width:690px;
+    float:right;
+    margin-right:-230px;
+    z-index:9;
+    position:relative;
+}
+.main-board-card h3 {
+    color:#5a63fe;
+    font-size:18px;
+}
+.main-board-card-list {
+    width:100%;
+    border-radius:5px;
+    background:#fff;
+    box-shadow:5px 5px 10px rgba(28,31,90,.2);
+}
+.main-board-card-list li {
+    width:33.333%;
+    float:left;
+    border-left:1px solid #e5e5e5;
+    text-align:center;
+    transition:all, .3s;
+}
+.main-board-card-list li:hover {
+    background:#f9f9f9;
+}
+.main-board-card-list li.schedule {
+    border-left:0;
+}
+.main-board-card-list li > a {
+    display:block;
+    width:100%;
+    height:100%;
+    padding-top:100px;
+    padding-bottom:43px;
+    color:#1e1e1e;
+    font-weight:500;
+    background-position:center 53px;
+    background-repeat:no-repeat;
+}
+.main-board-card-list li.schedule > a {
+    background-image:url(/asset/images/icons/icon-main-calendar.png);
+}
+.main-board-card-list li.curriculum > a {
+    background-image:url(/asset/images/icons/icon-main-badge.png);
+}
+.main-board-card-list li.apply > a {
+    background-image:url(/asset/images/icons/icon-main-pencil.png);
+}
+
+
+
+.main-board-tab {
+    width:420px;
+    float:right;
+    margin-top:60px;
+    margin-right:40px;
+}
+.tabs {
+    position: relative;
+}
+.tabs::before,
+.tabs::after {
+    content: "";
+    display: table;
+}
+.tabs::after {
+    clear: both;
+}
+.tab {
+    float: left;
+}
+.tab-switch {
+    display: none;
+}
+.tab-label {
+    position: relative;
+    display: block;
+    height: 47px;
+    padding: 0 1.618em;
+    background: #f5f5f5;
+    cursor: pointer;
+    top: 0;
+    transition: all 0.25s;
+    line-height:47px;
+    border-bottom:1px solid #f5f5f5;
+    font-weight:600;
+}
+.tab-label:hover {
+    top: -0.25rem;
+    transition: top 0.25s;
+}
+.tab-content {
+    position: absolute;
+    z-index: 1;
+    top: 45px;
+    left: 0;
+    opacity: 0;
+    transition: all 0.35s;
+}
+.tab-switch:checked + .tab-label {
+    transition: all 0.35s;
+    z-index: 3;
+    top: -0.0625rem;
+    font-size:18px;
+    color:#3d5afe;
+    border:1px solid #e5e5e5;
+    border-bottom:1px solid #f5f5f5;
+}
+.tab-switch:checked + label + .tab-content {
+    z-index: 2;
+    opacity: 1;
+    transition: all 0.35s;
+    border-top:1px solid #e5e5e5;
+}
+
+.main-board-tab .tab-content li {
+    font-size:0;
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px dashed #e5e5e5;
+}
+.main-board-tab .tab-content li:first-child {
+    border-top:0;
+    margin-top:0;
+}
+.main-board-tab .tab-content li > .date,
+.main-board-tab .tab-content li > a {
+    display:inline-block;
+    vertical-align:top;
+    padding-top:5px;
+}
+.main-board-tab .tab-content li > .date {
+    width:60px;
+    height:60px;
+    padding-top:14px;
+    text-align:center;
+    color:#1e1e1e;
+    font-size:22px;
+    background:#fff;
+    border-radius:2px;
+    line-height:1;
+    font-weight:600;
+    letter-spacing:0;
+}
+.main-board-tab .tab-content li:first-child > .date {
+    color:#4a65ff;
+}
+.main-board-tab .tab-content li > .date > span {
+    display:block;
+}
+.main-board-tab .tab-content li > .date .date-month {
+    text-transform:uppercase;
+    font-size:12px;
+    opacity:.6;
+}
+.main-board-tab .tab-content li > a {
+    width:340px;
+    padding-left:20px;
+    font-size:16px;
+    font-weight:400;
+}
+
+/* 메인 비주얼 */
+.main-visual-box {
+    width:57%;
+    height:90vh;
+    position:relative;
+    float:left;
+    background: rgb(74,101,255);
+    background: linear-gradient(70deg, rgba(74,101,255,1) 0%, rgba(20,47,204,1) 100%);
+}
+.main-visual {
+    width:100%;
+    height:90vh;
+    background: url(/asset/images/main/visual.png) no-repeat 0 0;
+}
+.visual-copy {
+    position:absolute;
+    left:315px;
+    top:235px;
+}
+.main-visual p {
+    color:#c8cad8;
+    font-size:16px;
+}
+.main-visual p.key-copy {
+    color:#ffffff;
+    font-size:34px;
+    font-family:'Montserrat', 'Lato', sans-serif;
+    font-weight:700;
+}
+
+/* 메인 배너 3개 */
+.main-banners-box {
+    position:relative;
+    z-index:1;
+}
+.main-banners {
+    font-size:0;
+}
+.main-banners .item div {
+    margin-bottom:-50px;
+    padding:70px 40px 50px;
+    text-align:center;
+    background:#fff;
+    box-shadow:5px 5px 20px rgba(28,31,90,.1);
+}
+.main-banners .item div h3 {
+    margin-top:45px;
+    margin-bottom:15px;
+    color:#1e1e1e;
+    font-size:24px;
+    letter-spacing:-2px;
+    font-weight:500;
+}
+.main-banners .item .button-main-rnd.lg {
+    margin-top:40px;
+    width:100%;
+}
+
+
+
+/* 고정 이미지 */
+.fixed-bg {
+    width:100%;
+    height:540px;
+    margin-bottom:130px;
+    position:relative;
+    background-image:url(/asset/images/main/fixed-img.jpg);
+    background-size:cover;
+    background-position:center center;
+    background-attachment: fixed;
+}
+.fixed-box {
+    width:40%;
+    position:absolute;
+    left:55%;
+    top:50%;
+    transform:translate(0, -50%);
+    color:#fff;
+}
+.fixed-box .title {
+    text-transform:uppercase;
+    font-size:60px;
+    font-weight:300;
+    line-height:1.1;
+    font-family:'Montserrat', sans-serif;
+}
+.fixed-box .title span {
+    font-weight:700;
+}
+.fixed-box p {
+    font-size:18px;
+    font-weight:bold;
+    color:#b5b4cc;
+    line-height:1.1;
+    margin-bottom:60px;
+}
+
+
+/* 지마린 밸류 */
+.gm-value-box {
+    text-align:center;
+    text-transform:uppercase;
+}
+.gm-value-box h3 {
+    color:#1e1e1e;
+    font-size:70px;
+    font-weight:800;
+    line-height:1;
+    font-family:'Montserrat', sans-serif;
+}
+.gm-value-box p {
+    margin-bottom:80px;
+}
+.gm-value .item span {
+    display:block;
+}
+.gm-value .item .numeric {
+    width:90px;
+    height:90px;
+    display:inline-block;
+    border-radius:50%;
+    background:#5a63fe;
+    line-height:90px;
+    font-size:30px;
+    color:#fff;
+    font-weight:600;
+    font-family:'Montserrat', sans-serif;
+}
+.gm-value .item .title-en {
+    margin-top:20px;
+    font-family:'Montserrat', sans-serif;
+    color:#1e1e1e;
+}
+.gm-value .item .title-ko {
+    font-size:18px;
+}
+.gm-value-box .button-main-rnd {
+    margin-top:60px;
+}
+
+
+
+@media screen and (max-width:1600px) {
+    .main-board-card-list li > a {
+        padding-top:80px;
+        padding-bottom:20px;
+        background-position:center 30px;
+        background-repeat:no-repeat;
+    }
+    .main-board-card-list li.schedule > a {
+        background-image:url(/asset/images/icons/icon-main-calendar.png);
+    }
+    .main-board-card-list li.curriculum > a {
+        background-image:url(/asset/images/icons/icon-main-badge.png);
+    }
+    .main-board-card-list li.apply > a {
+        background-image:url(/asset/images/icons/icon-main-pencil.png);
+    }
+}
+
+@media screen and (max-width:1280px) {
+    .main-board-box {
+        width:100%;
+        max-width:100%;
+    }
+    .main-board {
+        width:90%;
+        margin:0 auto;
+        float:none;
+    }
+    .main-board-card {
+        width:100%;
+        float:none;
+        margin:0;
+    }
+    .main-board-tab {
+        width:100%;
+        margin-right:0;
+        float:none;
+    }
+    .main-visual-box {
+        display:none;
+    }
+
+    .tab-content {
+        width:100%;
+    }
+    .main-board-tab .tab-content li > .date {
+        width:10%;
+        min-width:60px;
+    }
+    .main-board-tab .tab-content li > a {
+        width:90%;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .main-board-card-list li > a {
+        background-size:30px;
+    }
+    .main-board-box {
+        height:auto;
+        padding-bottom:40px;
+    }
+
+    .main-board-box {
+        padding-top:100px;
+    }
+
+    .gm-value-box,
+    .fixed-bg {
+        display:none;
+    }
+
+    .main-banners.gm-grid.column-3 .item {
+        width:100%;
+        padding:10px 0;
+    }
+    .main-banners .item div {
+        padding:40px 20px 30px;
+        margin-bottom:30px;
+    }
+    .main-banners .item div img {
+        width:50px;
+    }
+    .main-banners .item div h3 {
+        margin-top:15px;
+        margin-bottom:10px;
+    }
+    .main-banners .item .button-main-rnd.lg {
+        margin-top:20px;
+    }
+    .main-board-tab .tab-content li > a {
+        width:70%;
+    }
+}

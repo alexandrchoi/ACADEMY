@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MSGS LatestAction="2007-10-29 dkkim">
+  <MSG ID="A001" REGISTER="">
+    <EN>{0} was saved successfully.</EN>
+    <KO>{0}이(가) 저장되었습니다.</KO>
+  </MSG>
+  <MSG ID="A002" REGISTER="">
+    <EN>{0} was deleted successfully.</EN>
+    <KO>{0}이(가) 삭제되었습니다.</KO>
+  </MSG>
+  <MSG ID="A003" REGISTER="">
+    <EN>{0} was not selected.</EN>
+    <KO>{0}이(가) 선택되지 않았습니다.</KO>
+  </MSG>
+  <MSG ID="A004" REGISTER="">
+    <EN>{0} was not inputed.</EN>
+    <KO>{0}이(가) 입력되지 않았습니다.</KO>
+  </MSG>
+  <MSG ID="A005" REGISTER="">
+    <EN>{0} could not input over  {1} byte for korean and {2} byte for english.</EN>
+    <KO>{0}은(는) 한글{1}, 영문{2} Byte 이상 입력할 수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A006" REGISTER="">
+    <EN>{0} is maximum {1} byte.</EN>
+    <KO>{0}은(는) 최대 {1} Byte 입니다.</KO>
+  </MSG>
+  <MSG ID="A007" REGISTER="">
+    <EN>{0} is maximum {1}.</EN>
+    <KO>{0}은(는) 최대 {1} 입니다.</KO>
+  </MSG>
+  <MSG ID="A008" REGISTER="">
+    <EN>{0} can input it with {1} byte(s) for english.</EN>
+    <KO>{0}은(는) 영문{1}자로 입력 되어야 합니다.</KO>
+  </MSG>
+  <MSG ID="A009" REGISTER="">
+    <EN>{0} is allowed for only english letter.</EN>
+    <KO>{0}은(는) 영문으로만 입력 되어야 합니다.</KO>
+  </MSG>
+  <MSG ID="A010" REGISTER="">
+    <EN>{0} is abnormal formation.</EN>
+    <KO>{0}은(는) 잘못된 형식 입니다.</KO>
+  </MSG>
+  <MSG ID="A011" REGISTER="">
+    <EN>{0} can input it within {1} byte(s) only.</EN>
+    <KO>{0}은(는) {1}자 이내로 입력 되어야 합니다.</KO>
+  </MSG>
+  <MSG ID="A012" REGISTER="">
+    <EN>{0}｀s essential item input omitted.</EN>
+    <KO>{0}의 필수 항목 입력이 누락되었습니다.</KO>
+  </MSG>
+  <MSG ID="A013" REGISTER="">
+    <EN>Do you want to delete the {0}?</EN>
+    <KO>{0}을(를) 삭제하시겠습니까?</KO>
+  </MSG>
+  <MSG ID="A014" REGISTER="">
+    <EN>{0} is duplicated.</EN>
+    <KO>{0}이(가) 중복 되었습니다.</KO>
+  </MSG>
+  <MSG ID="A015" REGISTER="">
+    <EN>{0} was not registered!</EN>
+    <KO>등록되지 않은 {0}입니다.</KO>
+  </MSG>
+  <MSG ID="A016" REGISTER="">
+    <EN>{0} was not inputted or abnormal formation.</EN>
+    <KO>{0}이(가) 입력되지 않았거나 잘못된 형식입니다.</KO>
+  </MSG>
+  <MSG ID="A017" REGISTER="">
+    <EN>{0} was sent successfully.</EN>
+    <KO>{0}이(가) 발송되었습니다.</KO>
+  </MSG>
+  <MSG ID="A018" REGISTER="">
+    <EN>Please do {0} first</EN>
+    <KO>먼저 {0} 하세요.</KO>
+  </MSG>
+  <MSG ID="A019" REGISTER="">
+    <EN>It was {1} to {0} successfully.</EN>
+    <KO>{0}에 {1} (발송/송부)되었습니다.</KO>
+  </MSG>
+  <MSG ID="A020" REGISTER="">
+    <EN>Cannot select {0}.</EN>
+    <KO>{0}을 선택할 수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A021" REGISTER="">
+    <EN>It was already deliberated to {0}.</EN>
+    <KO>{0}에 이미 심의확정 되었습니다.</KO>
+  </MSG>
+  <MSG ID="A022" REGISTER="">
+    <EN>{0} was confirmed successfully.</EN>
+    <KO>{0}이(가) 확정되었습니다.</KO>
+  </MSG>
+  <MSG ID="A023" REGISTER="">
+    <EN>The data was changed! Please check again.</EN>
+    <KO>변경내용을 재 확인 바랍니다.</KO>
+  </MSG>
+  <MSG ID="A024" REGISTER="">
+    <EN>Cannot delete seleted items.</EN>
+    <KO>선택한 내용을 삭제할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A025" REGISTER="">
+    <EN>Incompleted data of review team was remained.</EN>
+    <KO>검토팀 검토결과 미완료된 데이터가 있습니다.</KO>
+  </MSG>
+  <MSG ID="A026" REGISTER="">
+    <EN>{0} exist.</EN>
+    <KO>{0}이(가) 존재합니다.</KO>
+  </MSG>
+  <MSG ID="A027" REGISTER="">
+    <EN>Do you want to {0}?</EN>
+    <KO>{0} 하시겠습니까?</KO>
+  </MSG>
+  <MSG ID="A028" REGISTER="">
+    <EN>{0} became a search.</EN>
+    <KO>{0}이(가) 검색되었습니다.</KO>
+  </MSG>
+  <MSG ID="A029" REGISTER="">
+    <EN>Cannot save revise date before today.</EN>
+    <KO>수정날짜는 오늘이전으로 저장할 수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A030" REGISTER="">
+    <EN>{0} is large than {1}</EN>
+    <KO>{0}이(가) {1}보다 큽니다.</KO>
+  </MSG>
+  <MSG ID="A031" REGISTER="">
+    <EN>Can｀t {0} a accident report write out vessel.</EN>
+    <KO>선박에서 작성한 보고서는 편집할 수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A032" REGISTER="">
+    <EN>{0} Key Code was changed. Will you store it?</EN>
+    <KO></KO>
+  </MSG>
+  <MSG ID="A033" REGISTER="">
+    <EN>{0} is minimum {1}.</EN>
+    <KO>{0}은(는) 최소 {1} 입니다.</KO>
+  </MSG>
+  <MSG ID="A034" REGISTER="">
+    <EN>{0} join {2} maximum the minimum {1}.</EN>
+    <KO>"{0}은(는) 최소 {1} 최대 {2} 입니다.</KO>
+  </MSG>
+  <MSG ID="A035" REGISTER="">
+    <EN>It was already confirmed.</EN>
+    <KO>이미 확정 되었습니다.</KO>
+  </MSG>
+  <MSG ID="A036" REGISTER="">
+    <EN>If a period is more than {0},\nit takes some more time. Will you make an execution?</EN>
+    <KO>기간이 {0} 이상일 경우 다소 시간이 소요됩니다. 실행 하시겠습니까?</KO>
+  </MSG>
+  <MSG ID="A037" REGISTER="">
+    <EN>The Main chapter can｀t select.\nPlease select the Sub-chapter.</EN>
+    <KO>세부항목 선택</KO>
+  </MSG>
+  <MSG ID="A038" REGISTER="">
+    <EN>There is it so that {0} file opens it.\nClose file, and you should progress again.</EN>
+    <KO>{0} 화일이 열려있습니다. 화일을 닫고 다시 진행하시기 바랍니다.</KO>
+  </MSG>
+  <MSG ID="A039" REGISTER="">
+    <EN>It should modify {0}.</EN>
+    <KO>{0} 를 수정하시기 바랍니다.</KO>
+  </MSG>
+  <MSG ID="A040" REGISTER="">
+    <EN>{0} of {1} goes, and is different with {2} of {3}.</EN>
+    <KO> {1} 의 {0} 이(가) {3} 의 {2} 와 상이합니다.</KO>
+  </MSG>
+  <MSG ID="A041" REGISTER="">
+    <EN>{0} does not exist to {1}.</EN>
+    <KO>{1} 에 {0} 이(가) 존재하지 않습니다.</KO>
+  </MSG>
+  <MSG ID="A042" REGISTER="">
+    <EN>Cannot use {0} on inquiry condition to have increased.</EN>
+    <KO>{0} (은)는 조회 조건으로 사용할 수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A043" REGISTER="">
+    <EN>It takes about {0}. Will you make an inquiry?</EN>
+    <KO>약 {0} 만큼 시간이 소요됩니다. 조회 하시겠습니까?</KO>
+  </MSG>
+  <MSG ID="A044" REGISTER="">
+    <EN>Output works to {1} until {0} maximums.</EN>
+    <KO>최대 {0} 개까지 {1} 로 출력이 됩니다.</KO>
+  </MSG>
+  <MSG ID="A045" REGISTER="">
+    <EN>It takes some more time. Will you make an execution?</EN>
+    <KO>다소 시간이 소요됩니다. 실행 하시겠습니까?</KO>
+  </MSG>
+  <MSG ID="A046" REGISTER="">
+    <EN>{1} is more former than {0}</EN>
+    <KO>{1} 이(가) {0} 보다 이전입니다.</KO>
+  </MSG>
+  <MSG ID="A047" REGISTER="">
+    <EN>You must select at least one more.</EN>
+    <KO>최소 한개이상 선택되어야 합니다.</KO>
+  </MSG>
+  <MSG ID="A048" REGISTER="">
+    <EN>A parenthesis It doesn｀t fit.</EN>
+    <KO>괄호()가 맞지 않습니다.</KO>
+  </MSG>
+  <MSG ID="A049" REGISTER="">
+    <EN>{0} did not exist.</EN>
+    <KO>{0}이(가) 존재하지 않습니다.</KO>
+  </MSG>
+  <MSG ID="A050" REGISTER="">
+    <EN>Imported {0} is incorrect.</EN>
+    <KO>Import된 Excel Data가 잘못 되었습니다.</KO>
+  </MSG>
+  <MSG ID="A051" REGISTER="">
+    <EN>The {2} of {1} make possible the {0} only.</EN>
+    <KO>{0}만{1}{2}가능합니다.</KO>
+  </MSG>
+  <MSG ID="A052" REGISTER="">
+    <EN>The input of {0} make possible the {1} only.</EN>
+    <KO>{0}는 {1}만 입력 가능합니다.</KO>
+  </MSG>
+  <MSG ID="A053" REGISTER="">
+    <EN>The {0} {1} input is impossible.</EN>
+    <KO>{0}는 {1} 입력이 불가 합니다.</KO>
+  </MSG>
+  <MSG ID="A054" REGISTER="">
+    <EN>{0} Completion worked.</EN>
+    <KO>{0} 가 완료 되었습니다.</KO>
+  </MSG>
+  <MSG ID="A055" REGISTER="dkkim">
+    <EN>Referenced Vessels are empty, Please do retrieve for referencing vessels.</EN>
+    <KO>적용된 선박이 없어 저장할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A056" REGISTER="dkkim">
+    <EN>Profile doesn｀t selected. Please Select profile and Try again.</EN>
+    <KO>프로파일이 선택되지 않았습니다. 프로파일 선택후 다시 시도하세요.</KO>
+  </MSG>
+  <MSG ID="A057" REGISTER="dkkim">
+    <EN>Cannot remove unit cost data.</EN>
+    <KO>단가 데이타를 제거할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A058" REGISTER="dkkim">
+    <EN>{0}｀s unit cost data was removed successfully.</EN>
+    <KO>{0}이(가) 제거되었습니다.</KO>
+  </MSG>
+  <MSG ID="A059" REGISTER="dkkim">
+    <EN>{0} was built successfully!</EN>
+    <KO>{0}이(가) 빌드되었습니다.</KO>
+  </MSG>
+  <MSG ID="A060" REGISTER="dkkim">
+    <EN>There｀s no data to retrieve with this search condition.Change search condition and try again!</EN>
+    <KO></KO>
+  </MSG>
+  <MSG ID="A061" REGISTER="dkkim">
+    <EN>Vessel Information don｀t exist, Would you retrieve Vessel Information from Vessel Particular?</EN>
+    <KO></KO>
+  </MSG>
+  <MSG ID="A062" REGISTER="dkkim">
+    <EN>{0} is empty!</EN>
+    <KO>{0}이(가) 없습니다.</KO>
+  </MSG>
+  <MSG ID="A063" REGISTER="dkkim">
+    <EN>Profiles that were marked as final on budget profile cannot be deleted!.Please Check profile｀s final Status and Try again!</EN>
+    <KO></KO>
+  </MSG>
+  <MSG ID="A064" REGISTER="dkkim">
+    <EN>Selected Profile will be deleted permenantly. Are you sure to delete?</EN>
+    <KO>선택한 프로파일은 영구히 삭제됩니다. 정말 삭제하시겠습니까?</KO>
+  </MSG>
+  <MSG ID="A065" REGISTER="dkkim">
+    <EN>For deleting profile,Check profile from list.</EN>
+    <KO>프로파일을 삭제하기위해 리스트에서 삭제할 프로파일을 선택하세요.</KO>
+  </MSG>
+  <MSG ID="A066" REGISTER="dkkim">
+    <EN>{0} was copied successfully.</EN>
+    <KO>{0}이(가) 복사되었습니다.</KO>
+  </MSG>
+  <MSG ID="A067" REGISTER="dkkim">
+    <EN>{0} isn｀t selected.</EN>
+    <KO>{0}이(가) 선택되지 않았습니다.</KO>
+  </MSG>
+  <MSG ID="A068" REGISTER="dkkim">
+    <EN>{0} isn｀t selected or saved.</EN>
+    <KO>{0}이(가) 선택 또는 저장되지 않았습니다.</KO>
+  </MSG>
+  <MSG ID="A069" REGISTER="dkkim">
+    <EN>Retrieve or Refresh OnB for saving</EN>
+    <KO>저장하기위해서 OnB 데이타를 조회하세요.</KO>
+  </MSG>
+  <MSG ID="A070" REGISTER="dkkim">
+    <EN>This delete operation will affect to calculate standard crew cost. Do you really wanna delete?</EN>
+    <KO>이동작은 표준선원비 산출에 영향을 미칩니다. 정말 삭제하시겠습니까?</KO>
+  </MSG>
+  <MSG ID="A071" REGISTER="dkkim">
+    <EN>Expenses Allotment by Month Data does not exist, Please Configure Expenses Allotment and Save!</EN>
+    <KO>비용할당룰이 존재하지 않습니다. 구성후 저장하세요.</KO>
+  </MSG>
+  <MSG ID="A072" REGISTER="dkkim">
+    <EN>Configuration Rule is not available,So can not edit allocation value.</EN>
+    <KO>비용할당룰이 사용불가여서 편집할수 없습니다</KO>
+  </MSG>
+  <MSG ID="A073" REGISTER="dkkim">
+    <EN>Profile that was marked as final on budget profile cannot be modified or deleted!</EN>
+    <KO>예산프로파일에서 final로 사용될경우 삭제 할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A074" REGISTER="dkkim">
+    <EN>{0} isn｀t created.</EN>
+    <KO>{0}이(가) 생성되지 않았습니다.</KO>
+  </MSG>
+  <MSG ID="A075" REGISTER="dkkim">
+    <EN>This operation will permantently delete estabilished vessel｀s budget profile. do you wanna proceed?</EN>
+    <KO>예산프로파일을 영구히 삭제합니다.계속진행 하겠습니까?</KO>
+  </MSG>
+  <MSG ID="A076" REGISTER="dkkim">
+    <EN>Because this budget profile data was sent to VBP, Cannot modify or delete.</EN>
+    <KO>예산프로파일이 VBP로 송부되어 수정또는 삭제할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A077" REGISTER="dkkim">
+    <EN>Budgetting Currency is KRW, Cann｀t use USD.</EN>
+    <KO>예산 설정시 화폐는 원화만 사용할수 있습니다.</KO>
+  </MSG>
+  <MSG ID="A078" REGISTER="dkkim">
+    <EN>There｀s no budget data which｀s marked final!</EN>
+    <KO>Final로 설정된 예산 데이타가 없습니다</KO>
+  </MSG>
+  <MSG ID="A079" REGISTER="dkkim">
+    <EN>This Vessel｀s budget profile marked as final already exists, So Can｀t proceed saving process.</EN>
+    <KO>해당선박의 final 예산 프로파일이 기 존재하여 저장작업을 수행할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A080" REGISTER="">
+    <EN>There｀s no {0} to {1}!</EN>
+    <KO>{1}할 {0}가 없습니다.</KO>
+  </MSG>
+  <MSG ID="A081" REGISTER="">
+    <EN>{0} cannot exceed {1}.</EN>
+    <KO>{0}는{1}를 초과할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A082" REGISTER="">
+    <EN>{0} used in {1}. So cannot delete.</EN>
+    <KO>{0}이 {1}에서 사용중이어서 삭제할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A083" REGISTER="">
+    <EN>{0} has no right.</EN>
+    <KO>{0} 권한이 없습니다.</KO>
+  </MSG>
+  <MSG ID="A084" REGISTER="">
+    <EN>{0} is maximum {1}.</EN>
+    <KO>{0}은(는) 최소 {1} 입니다.</KO>
+  </MSG>
+  <MSG ID="A085" REGISTER="">
+    <EN>Cannot open {0}</EN>
+    <KO>{0} 열 수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A086" REGISTER="">
+    <EN>This operation will override existing built-in wage master. do you want to proceed?</EN>
+    <KO>이 작업은 wage master를 덮어습니다. 계속 진행하시겠습니까?</KO>
+  </MSG>
+  <MSG ID="A087" REGISTER="">
+    <EN>{0} was approved!</EN>
+    <KO>{0} 은(는) 결재 완료되었습니다.</KO>
+  </MSG>
+  <MSG ID="A088" REGISTER="">
+    <EN>Being approved!</EN>
+    <KO>결재가 진행중입니다.</KO>
+  </MSG>
+  <MSG ID="A089" REGISTER="">
+    <EN>Vessel Manager Portal System is already running.</EN>
+    <KO>선박관리 포탈 시스템이 이미 실행중입니다.</KO>
+  </MSG>
+  <MSG ID="A090" REGISTER="">
+    <EN>After {0}, Please do {1}.</EN>
+    <KO>{0} 후 {1} 을(를) 하시기 바랍니다.</KO>
+  </MSG>
+  <MSG ID="A091" REGISTER="">
+    <EN>{0} cannot delete.</EN>
+    <KO>{0}은(는) 삭제할 수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A092" REGISTER="">
+    <EN>You lastest access time is {0}</EN>
+    <KO>최근 접속 시간은 {0} 입니다.</KO>
+  </MSG>
+  <MSG ID="A093" REGISTER="">
+    <EN>Please Check and edit the {0}</EN>
+    <KO>{0} 확인하고 편집 바랍니다.</KO>
+  </MSG>
+  <MSG ID="A094" REGISTER="">
+    <EN>Do you want to reject?</EN>
+    <KO>>반송 하시겠습니까?</KO>
+  </MSG>
+  <MSG ID="A095" REGISTER="">
+    <EN>The {0} was rejected successfully.</EN>
+    <KO>{0} 반송 되었습니다.</KO>
+  </MSG>
+  <MSG ID="A098" REGISTER="">
+    <EN>The {0} was submitted successfully.</EN>
+    <KO>{0} 결재 신청 되었습니다.</KO>
+  </MSG>
+  <MSG ID="A099" REGISTER="">
+    <EN>You can｀t {0} already {1}.</EN>
+    <KO>{1}를 이미 완료하였음으로 {0}할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A100" REGISTER="">
+    <EN>Send email to the receiving situation failed. \n{0}</EN>
+    <KO>수신측의 사정으로 email 발송이 실패하였습니다. \n{0}</KO>
+  </MSG>
+  <MSG ID="A101" REGISTER="">
+    <EN>There was a problem, please contact the {0}.</EN>
+    <KO>정상적으로 처리되지 않았으니, {0} 에게 문의 바랍니다.</KO>
+  </MSG>
+  <MSG ID="A102" REGISTER="">
+    <EN>Accessed through the wrong path</EN>
+    <KO>잘못된 경로를 통해 접근하였습니다.</KO>
+  </MSG>
+  <MSG ID="A103" REGISTER="">
+    <EN>Have not been processed successfully, please contact the administrator.</EN>
+    <KO>정상적으로 처리되지 않았으니, 관리자에게 문의 바랍니다.</KO>
+  </MSG>
+  <MSG ID="A104" REGISTER="">
+    <EN>Please double check ID by clicking the button!</EN>
+    <KO>ID 중복체크 버튼을 클릭하여 주세요!</KO>
+  </MSG>
+  <MSG ID="A105" REGISTER="">
+    <EN>Please enter your password!</EN>
+    <KO>비밀번호를 입력해 주세요!</KO>
+  </MSG>
+  <MSG ID="A106" REGISTER="">
+    <EN>Registered users of the Company, there are Exist!</EN>
+    <KO>해당 법인사로 등록된 사용자가 존재합니다!</KO>
+  </MSG>
+  <MSG ID="A107" REGISTER="">
+    <EN>{0} is can be used</EN>
+    <KO>{0} 는 사용가능 합니다.</KO>
+  </MSG>
+  <MSG ID="A108" REGISTER="">
+    <EN>Is not a valid number format.</EN>
+    <KO>올바른 숫자형식이 아닙니다!</KO>
+  </MSG>
+  <MSG ID="A109" REGISTER="">
+    <EN>Is not queued for Approval.</EN>
+    <KO>승인 대기 상태가 아닙니다!</KO>
+  </MSG>
+  <MSG ID="A110" REGISTER="">
+    <EN>You can not delete a published survey! \nSurvey Title : {0}</EN>
+    <KO>게시된 설문은 삭제 할 수 없습니다! \n설문제목 : {0}</KO>
+  </MSG>
+  <MSG ID="A111" REGISTER="">
+    <EN>Surveys have already been published! \nSurvey Title : {0}</EN>
+    <KO>이미 게시된 설문 입니다! \n설문제목: {0}</KO>
+  </MSG>
+  <MSG ID="A112" REGISTER="">
+    <EN>You can not Update a published survey!</EN>
+    <KO>게시된 설문은 수정 할 수 없습니다!</KO>
+  </MSG>
+  <MSG ID="A113" REGISTER="">
+    <EN>{0} of the Survey Questions did not Enter!</EN>
+    <KO>{0} 번 설문의 질문이 입력되지 않았습니다!</KO>
+  </MSG>
+  <MSG ID="A114" REGISTER="">
+    <EN>{0} of the Survey Questionnaire forms have been Selected!</EN>
+    <KO>{0} 번 설문의 설문형태가 선택되지 않았습니다!</KO>
+  </MSG>
+  <MSG ID="A115" REGISTER="">
+    <EN>Q{0} A{1} has not been Entered in the Survey!</EN>
+    <KO>{0} 번 설문의 {1} 번 보기가 입력되지 않았습니다!</KO>
+  </MSG>
+  <MSG ID="A116" REGISTER="">
+    <EN>You can not Update a published survey!</EN>
+    <KO>전송된 설문은 수정 할 수 없습니다!</KO>
+  </MSG>
+  <MSG ID="A117" REGISTER="">
+    <EN>Usage or Approval of the ID is not idle!</EN>
+    <KO>승인 또는 승인대기 상태의 ID가 아닙니다!</KO>
+  </MSG>
+  <MSG ID="A118" REGISTER="">
+    <EN>Survey has already been transferred!</EN>
+    <KO>이미 전송된 설문 입니다!</KO>
+  </MSG>
+  <MSG ID="A119" REGISTER="">
+    <EN>Do you really wanna delete?</EN>
+    <KO>정말 삭제하시겠습니까?</KO>
+  </MSG>
+  <MSG ID="A120" REGISTER="">
+    <EN>Posts are already deleted.</EN>
+    <KO>이미 삭제된 게시물 입니다.</KO>
+  </MSG>
+  <MSG ID="A121" REGISTER="">
+    <EN>{0} is duplicated. \n{0} : {1}</EN>
+    <KO>{0} 가 중복되었습니다. \n {0}: {1}</KO>
+  </MSG>
+  <MSG ID="A122" REGISTER="">
+    <EN>{0} is not for Approval.</EN>
+    <KO>{0}번째는 승인 상태가 아닙니다!</KO>
+  </MSG>
+  <MSG ID="A123" REGISTER="">
+    <EN>Will be available after login.</EN>
+    <KO>로그인 후 이용할 수 있습니다.</KO>
+  </MSG>
+  <MSG ID="A124" REGISTER="">
+    <EN>{0} has not been Entered in the Remark!</EN>
+    <KO>{0}번째 미승인 일때는 Remark를 입력하셔야 합니다.</KO>
+  </MSG>
+  <MSG ID="A125" REGISTER="">
+    <EN>{0} is empty! please contact the administrator.</EN>
+    <KO>{0}이(가) 없습니다. 관리자에게 문의 바랍니다.</KO>
+  </MSG>
+  <MSG ID="A126" REGISTER="">
+    <EN>{0} Has not been completed.</EN>
+    <KO>{0}이(가) 완료되지 않았습니다.</KO>
+  </MSG>
+  <MSG ID="A127" REGISTER="">
+    <EN>You can not Evaluation on ship people!</EN>
+    <KO>승선한 사람은 평가할 수 없습니다.!</KO>
+  </MSG>
+  <MSG ID="A128" REGISTER="">
+    <EN>Retrieve {0} for saving</EN>
+    <KO>{0}이 맞지 않습니다. 조회 후 저장하세요.</KO>
+  </MSG>
+  <MSG ID="A129" REGISTER="">
+    <EN>Corporation is applying for membership. Adminstrator can log in after Approval\n☎051-460-8278 </EN>
+    <KO>법인회원 가입신청 되었습니다. 관리자 승인 후 로그인 가능합니다.\n☎051-460-8278 으로 문의해 주십시요.</KO>
+  </MSG>
+  <MSG ID="A130" REGISTER="">
+    <EN>{0} has not been Entered in the Remark!</EN>
+    <KO>{0}번째 교육불가사유를 입력하세요.</KO>
+  </MSG>
+  <MSG ID="A131" REGISTER="">
+    <EN>When your pass can not enter {0}th reason for not training!</EN>
+    <KO>{0}번째 확정시 교육불가사유를 입력할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A132" REGISTER="">
+    <EN>You can not Approval if {0}th self cancel</EN>
+    <KO>{0}번째 본인취소인 경우 승인 불가 합니다.</KO>
+  </MSG>
+  <MSG ID="A134" REGISTER="">
+    <EN>When your pass can not choose {0}th reason for not training!</EN>
+    <KO>{0}번째 이수시 미이수사유를 선택할수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A135" REGISTER="">
+    <EN>When your non pass can not {0}th Issued!</EN>
+    <KO>{0}번째 미이수시 발령처리 할 수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A136" REGISTER="">
+    <EN>Can not be added twice the same user per day.</EN>
+    <KO>하루에 같은 대상자를 두번 평가할 수 없습니다.</KO>
+  </MSG>
+  <MSG ID="A137" REGISTER="">
+    <EN>{0} is not subject.</EN>
+    <KO>{0} 대상자가 아닙니다.</KO>
+  </MSG>
+  <MSG ID="A138" REGISTER="">
+    <EN>There are no items in the evaluation.</EN>
+    <KO>평가항목이 없습니다.</KO>
+  </MSG>
+</MSGS>

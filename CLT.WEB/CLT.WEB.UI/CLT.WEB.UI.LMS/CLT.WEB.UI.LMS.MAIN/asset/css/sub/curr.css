@@ -1,0 +1,235 @@
+/* 교육체계도 */
+.category-1st-box {
+    padding-top:30px;
+}
+.category-1st-box .category-1st {
+    position:relative;
+    padding:30px 20px;
+    border-radius:5px;
+    text-align:center;
+}
+.category-1st-box .category-1st.leadership {
+    border:2px solid #5a63fe;
+}
+.category-1st-box .category-1st.primary {
+    border:2px solid #02ad59;
+}
+.category-1st-box .category-1st.job {
+    border:2px solid #ff6170;
+}
+.category-1st-box .category-1st .title {
+    display:inline-block;
+    padding-bottom:3px;
+    margin-bottom:7px;
+    font-family:"Montserrat", sans-serif;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    border-bottom:1px solid #aaa;
+}
+.category-1st-box .category-1st .cont {
+    font-size:20px;
+    color:#1e1e1e;
+}
+.category-1st-box .category-1st .cont span {
+    font-family:"Montserrat", sans-serif;
+}
+.category-1st-box .category-1st.leadership .title,
+.category-1st-box .category-1st.leadership .cont span {
+    color:#5a63fe;
+}
+.category-1st-box .category-1st.primary .title,
+.category-1st-box .category-1st.primary .cont span {
+    color:#02ad59;
+}
+.category-1st-box .category-1st.job .title,
+.category-1st-box .category-1st.job .cont span {
+    color:#ff6170;
+}
+.category-1st-box .category-1st .cont:before {
+    content:"";
+    display:block;
+    width:11px;
+    height:11px;
+    position:absolute;
+    left:50%;
+    top:100%;
+    transform:translateX(-50%);
+    margin-top:-4px;
+    border-radius:50%;
+    z-index:10;
+}
+.category-1st-box .category-1st.leadership:before,
+.category-1st-box .category-1st.leadership .cont:before {
+    background:#5a63fe;
+}
+.category-1st-box .category-1st.primary:before,
+.category-1st-box .category-1st.primary:after,
+.category-1st-box .category-1st.primary .cont:before {
+    background:#02ad59;
+}
+.category-1st-box .category-1st.job:before,
+.category-1st-box .category-1st.job .cont:before {
+    background:#ff6170;
+}
+.category-1st-box .category-1st .cont:after {
+    content:"";
+    display:block;
+    width:1px;
+    height:50px;
+    position:absolute;
+    left:50%;
+    top:100%;
+    transform:translateX(-50%);
+    background:#aaa;
+}
+
+.category-1st-box .category-1st:before,
+.category-1st-box .category-1st:after {
+    content:"";
+    display:block;
+    width:11px;
+    height:11px;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    border-radius:50%;
+    z-index:10;
+}
+.category-1st-box .category-1st.leadership:before {
+    left:100%;
+    margin-left:-4px;
+}
+.category-1st-box .category-1st.primary:before {
+    left:100%;
+    margin-left:-4px;
+}
+.category-1st-box .category-1st.primary:after {
+    left:-6px;
+}
+.category-1st-box .category-1st.job:before {
+    left:-6px;
+}
+.category-1st-box .category-1st.primary .title:before,
+.category-1st-box .category-1st.job .title:before {
+    content:"";
+    display:block;
+    width:40px;
+    height:1px;
+    position:absolute;
+    left:-40px;
+    top:50%;
+    background:#aaa;
+}
+
+.category-2nd-box {
+    margin-top:46px;
+    padding:30px 20px;
+    border:2px solid #1e1e1e;
+    border-radius:5px;
+}
+.category-2nd-box .title {
+    margin-bottom:10px;
+    font-size:20px;
+    color:#1e1e1e;
+}
+.category-2nd {
+    font-size:0;
+}
+.category-2nd span {
+    display:inline-block;
+    padding:0 20px;
+    font-size:18px;
+    position:relative;
+}
+.category-2nd span:first-child:before {
+    content:"";
+    display:block;
+    position:absolute;
+    right:0;
+    top:50%;
+    width:1px;
+    height:10px;
+    background:#e5e5e5;
+    transform:translateY(-50%);
+}
+.category-3rd-box {
+    padding-top:60px;
+}
+.category-3rd-box .item {
+    position:relative;
+    font-size:13px;
+}
+.category-3rd-box .item:before {
+    content:"";
+    display:block;
+    width:1px;
+    height:40px;
+    position:absolute;
+    left:50%;
+    top:-40px;
+    transform:translateX(-50%);
+    background:#aaa;
+}
+.category-3rd-box .item:after {
+    content:"";
+    display:block;
+    width:11px;
+    height:11px;
+    position:absolute;
+    left:50%;
+    top:-46px;
+    transform:translateX(-50%);
+    background:#1e1e1e;
+    border-radius:50%;
+}
+.category-3rd-box .item div {
+    margin-top:-20px;
+    padding-top:20px;
+    border-top:2px solid #1e1e1e;
+}
+
+@media screen and (max-width:1024px) {
+    .curriculum .gm-grid.column-3 .item {
+        width:100%;
+        padding:0;
+    }
+    .category-1st-box .item {
+        margin-bottom:20px;
+    }
+    .category-3rd-box .item:before,
+    .category-3rd-box .item:after,
+    .category-1st-box .category-1st.primary .title::before,
+    .category-1st-box .category-1st.job .title::before,
+    .category-1st-box .category-1st .cont:before,
+    .category-1st-box .category-1st .cont:after,
+    .category-1st-box .category-1st:before,
+    .category-1st-box .category-1st:after {
+        display:none;
+    }
+
+    .gm-grid.column-7 .item {
+        width:100%;
+    }
+}
+
+/* 과정조회/등록 */
+.course-edit .course-top-ui {
+    padding-top:15px;
+    font-size:0;
+}
+.course-edit .course-top-ui > div {
+    display:inline-block;
+    font-size:13px;
+}
+.course-edit .course-top-ui > .notice-text {
+    padding-top:20px;
+}
+.course-edit .course-top-ui > .PageInfo {
+    padding-top:10px;
+}
+.course-edit .course-top-ui + .gm-table {
+    content:"";
+    display:block;
+    clear:both;
+}

@@ -1,0 +1,111 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/mypage-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-fix">
+    <h2 class="page-title">회원가입
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="join-form user-register">
+        <div class="notice-text right">필수입력<span class="required">필수입력</span></div>
+
+        <div class="table-grid gm-des-input">
+            <dl>
+                <dt>아이디<span class="required">필수입력</span></dt>
+                <dd><input type="text" class="w100per" placeholder="아이디를 입력하세요" required></dd>
+                <dt>비밀번호<span class="required">필수입력</span></dt>
+                <dd>
+                    <input type="password" class="w100per" placeholder="비밀번호를 입력하세요" required>
+                    <!--알림 메세지 : <p class="gm-text">비밀번호는 영문, 숫자를 혼용해서 10자리 이상 / 영문,숫자,특수기호를 혼용해서 8자리 이상입니다.</p>-->
+                </dd>
+                <dt>비밀번호 확인<span class="required">필수입력</span></dt>
+                <dd><input type="password" class="w100per" placeholder="비밀번호를 다시 입력하세요" required></dd>
+                <dt>성명(한글)<span class="required">필수입력</span></dt>
+                <dd><input type="text" class="w100per" placeholder="성명을 입력하세요" required></dd>
+                <dt>성명(영문)<span class="required">필수입력</span></dt>
+                <dd><input type="text" class="w100per" placeholder="영문성명을 입력하세요" required></dd>
+                <dt>생년월일<span class="required">필수입력</span></dt>
+                <dd><input type="text" class="w100per" placeholder="생년월일 8자리 - 예) 19810523" required></dd>
+                <dt>부서<span class="required">필수입력</span></dt>
+                <dd><input type="text" class="w100per" placeholder="담당자님이 속한 부서명을 입력하세요." required></dd>
+                <dt>직급<span class="required">필수입력</span></dt>
+                <dd><input type="text" class="w100per" placeholder="담당자님의 직급을 입력하세요." required></dd>
+                <dt>휴대폰<span class="required">필수입력</span></dt>
+                <dd><input type="text" class="w100per" placeholder="-를 포함해서 입력해주세요" required></dd>
+                <dt>전화번호</dt>
+                <dd><input type="text" class="w100per" placeholder="-를 포함해서 입력해주세요"></dd>
+                <dt>Email<span class="required">필수입력</span></dt>
+                <dd class="email-cell">
+                    <input type="text" id="" name="email1" class="w180"  placeholder="이메일 입력">
+                    <span class="gm-text2">@</span>
+                    <label for="gm-ipt-1-2" class="off-screen">E-mail 도메인</label>
+                    <input type="text" id="gm-ipt-1-2" name="emailDomain" class="w180" >
+                    <label for="gm-sel" class="off-screen">직접입력</label>
+                    <select id="gm-sel" name="emaillist">
+                        <option value="">직접입력</option>
+                        <option value="naver.com">네이버</option>
+                        <option value="gmail.com">Gmail</option>
+                        <option value="nate.com">네이트</option>
+                        <option value="daum.net">다음</option>
+                        <option value="kakao.com">카카오</option>
+                        <option value="outlook.com">Microsoft</option>
+                        <option value="hotmail.com">Hotmail</option>
+                    </select>
+                </dd>
+                <dt>고용보험취득일</dt>
+                <dd><input type="text" class="w100per" placeholder="고용보험 취득일자 8자리를 입력하세요. - 예) 20021205"></dd>
+                <dt>사진업로드</dt>
+                <dd>
+                    <!-- 파일 첨부 인풋 -->
+                    <div class="file-box">
+                        <input class="upload-name" value="증명사진 3x4size" disabled="disabled">
+                        <label for="ex_filename">찾아보기</label>
+                        <input type="file" id="ex_filename" class="upload-hidden">
+                    </div>
+                    <!--// 파일 첨부 인풋 -->
+                </dd>
+                <dt>SMS 수신여부<span class="required">필수입력</span></dt>
+                <dd>
+                    <label class="radio-box">예
+                        <input type="radio" checked="checked" name="sms_agree">
+                        <span class="radiomark"></span>
+                    </label>
+
+                    <label class="radio-box">아니오
+                        <input type="radio" name="sms_agree">
+                        <span class="radiomark"></span>
+                    </label>
+                </dd>
+                <dt>메일링서비스 수신여부<span class="required">필수입력</span></dt>
+                <dd>
+                    <label class="radio-box">예
+                        <input type="radio" checked="checked" name="mail_agree">
+                        <span class="radiomark"></span>
+                    </label>
+
+                    <label class="radio-box">아니오
+                        <input type="radio" name="mail_agreev">
+                        <span class="radiomark"></span>
+                    </label>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="button-box center">
+            <button class="button-main-rnd xlg blue">회원가입</button>
+        </div>
+
+    </section>
+
+</div>
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

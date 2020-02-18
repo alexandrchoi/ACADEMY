@@ -1,0 +1,72 @@
+<?include("../../html/include/community-header.html")?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-fix">
+    <h2 class="page-title">공지사항
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+        <!-- 검색 -->
+        <div class="board-search">
+            <input type="text" class="board-keyword"><input type="submit" value="Search" class="button-board-search">
+        </div>
+
+        <div class="board-list gm-table data-table list-type">
+            <table>
+                <colgroup>
+                    <col width="7%">
+                    <col width="*">
+                    <col width="15%">
+                    <col width="12%">
+                    <col width="10%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">순번</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">작성자</th>
+                        <th scope="col">작성일자</th>
+                        <th scope="col">조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td class="left"><a href="#none">사업주지원훈련 QR코드 출결 관리 시스템 적용 안내</a></td>
+                    <td>지마린아카데미</td>
+                    <td>2019.12.25</td>
+                    <td>194</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="button-box right">
+            <a href="#none" class="button-main-rnd md blue">글쓰기</a>
+        </div>
+
+        <div class="gm-paging">
+            <a href="#none" class="first"><i class="fas fa-angle-double-left"></i><span class="off-screen">맨 앞으로</span></a>
+            <a href="#none" class="prev"><i class="fas fa-angle-left"></i><span class="off-screen">이전페이지</span></a>
+            <a href="#none">1</a>
+            <a href="#none">2</a>
+            <span class="current">3</span>
+            <a href="#none">4</a>
+            <a href="#none">5</a>
+            <a href="#none" class="next"><i class="fas fa-angle-right"></i><span class="off-screen">다음페이지</span></a>
+            <a href="#none" class="last"><i class="fas fa-angle-double-right"></i><span class="off-screen">맨 뒤로</span></a>
+        </div>
+
+    </section>
+</div>
+<!--// 서브 컨텐츠 끝 -->
+
+<?include("../../html/include/footer.html")?>

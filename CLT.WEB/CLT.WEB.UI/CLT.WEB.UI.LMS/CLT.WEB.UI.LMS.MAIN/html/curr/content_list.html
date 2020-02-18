@@ -1,0 +1,120 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/curr-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+
+    <h2 class="page-title">컨텐츠 수정/조회
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+
+        <!-- 검색 -->
+        <div class="search-box">
+            <div class="search-group">
+                <span class="title">컨텐츠명</span>
+                <input type="text">
+            </div>
+            <div class="search-group">
+                <span class="title">분류</span>
+                <select>셀렉트</select>
+            </div>
+            <div class="search-group">
+                <span class="title">언어</span>
+                <select>셀렉트</select>
+            </div>
+            <div class="search-group">
+                <span class="title">비고</span>
+                <input type="text">
+            </div>
+            <button href="#none" class="button-default blue">Search</button>
+        </div>
+
+        <div class="button-box right">
+            <a href="#none" class="button-default blue">New</a>
+            <a href="#none" class="button-default">Excel</a>
+        </div>
+
+        <div class="PageInfo">
+            <b>Total</b> : 5 <b>Rows</b>, 1/13 <b>Pages</b>
+        </div>
+
+
+        <!-- Data Table - List type -->
+        <div class="gm-table data-table list-type">
+            <table>
+                <caption>표정보 - 분류, 교재명, 저자, 출판사, 언어 등을 제공합니다.</caption>
+                <colgroup>
+                    <col width="4%">
+                    <col width="20%">
+                    <col width="12%">
+                    <col width="8%">
+                    <col width="8%">
+                    <col width="*">
+                    <col width="12%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">컨텐츠명</th>
+                    <th scope="col">파일명</th>
+                    <th scope="col">분류</th>
+                    <th scope="col">언어</th>
+                    <th scope="col">Remark</th>
+                    <th scope="col">등록일</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>5</td>
+                    <td class="left"><a href="#none">Full voltage starter, Non-reversing</a></td>
+                    <td>ncd04.swf</td>
+                    <td>항해</td>
+                    <td>한국어</td>
+                    <td class="left">Control Machinery & circuit basic - Full voltage starter, Long time</td>
+                    <td>2020.01.20</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td class="left"><a href="#none">Full voltage starter, Non-reversing</a></td>
+                    <td>ncd04.swf</td>
+                    <td>항해</td>
+                    <td>한국어</td>
+                    <td class="left">Control Machinery & circuit basic - Full voltage starter, Long time</td>
+                    <td>2020.01.20</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--// Data Table - List type -->
+
+
+        <div class="gm-paging">
+            <a href="#none" class="first"><span class="off-screen">맨 앞으로</span></a>
+            <a href="#none" class="prev"><span class="off-screen">이전페이지</span></a>
+            <a href="#none">1</a>
+            <a href="#none">2</a>
+            <span class="current">3</span>
+            <a href="#none">4</a>
+            <a href="#none">5</a>
+            <a href="#none" class="next"><span class="off-screen">다음페이지</span></a>
+            <a href="#none" class="last"><span class="off-screen">맨 뒤로</span></a>
+        </div>
+
+    </section>
+</div>
+
+
+
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

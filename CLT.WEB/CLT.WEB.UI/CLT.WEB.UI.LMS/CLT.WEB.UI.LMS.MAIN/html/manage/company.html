@@ -1,0 +1,117 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/info-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+    <h2 class="page-title">기업회원
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+        <!-- 검색 -->
+        <div class="search-box">
+            <div class="search-group">
+                <label for="company">회사명</label>
+                <input type="text" name="company" id="company">
+            </div>
+            <div class="search-group">
+                <label for="apply">승인여부</label>
+                <select name="apply" id="apply">
+                    <option>승인</option>
+                    <option>미승인</option>
+                </select>
+            </div>
+            <div class="search-group">
+                <label for="period1">가입기간</label>
+                <input type="text" class="w180" id="period1"> ~ <input type="text" class="w180" id="period2">
+            </div>
+            <button href="#none" class="button-default blue">Search</button>
+        </div>
+
+        <!-- 버튼 -->
+        <div class="button-box right">
+            <a href="#none" class="button-default blue">NEW</a>
+            <a href="#none" class="button-default">Delete</a>
+            <a href="#none" class="button-default">Approval</a>
+            <a href="#none" class="button-default">Usage</a>
+            <a href="#none" class="button-default">Reject</a>
+        </div>
+
+        <!-- 게시글 개수 -->
+        <div class="PageInfo"></div>
+
+        <!-- Data Table - List type -->
+        <div class="gm-table data-table list-type">
+            <table>
+                <caption>표정보 - 회사명, 대표자명, 회사규모, 연락처 등의 정보를 제공합니다.</caption>
+                <colgroup>
+                    <col width="5%">
+                    <col width="5%">
+                    <col width="20%">
+                    <col width="18%">
+                    <col width="16%">
+                    <col width="8%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="8%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th scope="col"><input type="checkbox"></th>
+                    <th scope="col">순번</th>
+                    <th scope="col">회사명</th>
+                    <th scope="col">대표자명</th>
+                    <th scope="col">회사규모</th>
+                    <th scope="col">업체담당자</th>
+                    <th scope="col">연락처</th>
+                    <th scope="col">가입일자</th>
+                    <th scope="col">승인</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td><a href="#none">(주)내가제일잘나가</a></td>
+                    <td>홍길동</td>
+                    <td>스타트업</td>
+                    <td>김둘리</td>
+                    <td>051-123-4567</td>
+                    <td>2019.12.29</td>
+                    <td>승인대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>100</td>
+                    <td><a href="#none">에스티엑스마린서비스 주식회사</a></td>
+                    <td>김펭수</td>
+                    <td>대기업</td>
+                    <td>도우너</td>
+                    <td>051-123-4567</td>
+                    <td>2019.12.29</td>
+                    <td>승인</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--// Data Table - List type -->
+
+        <div class="gm-paging">
+        </div>
+
+    </section>
+</div>
+
+
+
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

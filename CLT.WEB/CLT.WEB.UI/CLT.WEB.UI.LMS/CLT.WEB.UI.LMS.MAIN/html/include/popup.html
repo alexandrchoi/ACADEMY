@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>지마린 아카데미</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="/asset/css/common/reset.css" type="text/css" medial="all">
+    <link rel="stylesheet" href="/asset/css/common/layout.css" type="text/css" medial="all">
+    <link rel="stylesheet" href="/asset/fontawesome/css/all.css" type="text/css" media="all">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="/asset/js/common/layout.js"></script>
+</head>
+<body id="popup">
+<h1 class="off-screen">지마린 아카데미</h1>
+
+<div id="popup">
+    <div class="layer-popup">
+        <div class="pop-container">
+            <h3>공통코드</h3>
+
+            <!-- 팝업 컨텐츠 -->
+            <div class="notice-text right">필수입력항목<span class="required">필수입력</span></div>
+
+            <div class="gm-table data-table read-type">
+                <table>
+                    <caption>표정보 - 번호, 제목 등을 제공합니다.</caption>
+                    <colgroup>
+                        <col width="30%">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th scope="row">코드<span class="required">필수입력</span></th>
+                        <td><input type="text" class="min100" required></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">코드명<span class="required">필수입력</span></th>
+                        <td><input type="text" class="min100" required></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">영문명<span class="required">필수입력</span></th>
+                        <td><input type="text" class="min100" required></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">한글명<span class="required">필수입력</span></th>
+                        <td><input type="text" class="min100" required></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">사용유무</th>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">사용자코드 유무</th>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="button-box center">
+                <a href="#none" class="button-default blue">Save</a>
+                <a href="#none" class="button-default">Rewrite</a>
+            </div>
+            <!--// 팝업 컨텐츠 -->
+
+        </div>
+
+        <!-- 팝업창 닫기 버튼 -->
+        <a href="#none" onclick="self.close();" class="button-close"><span class="off-screen">닫기</span></a>
+
+    </div>
+</div>
+
+</body>
+</html>

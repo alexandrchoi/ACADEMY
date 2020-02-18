@@ -1,0 +1,50 @@
+<?include("../../html/include/community-header.html")?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-fix">
+    <h2 class="page-title">공지사항
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+
+        <div class="board-list gm-table data-table read-type">
+            <table>
+                <colgroup>
+                    <col width="10%">
+                    <col width="*">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th scope="row">제목</th>
+                    <td class="subject"><input type="text"></td>
+                </tr>
+                <tr>
+                    <th scope="row">내용</th>
+                    <td class="contents"><textarea rows="10" cols="100"></textarea></td>
+                </tr>
+                <tr>
+                    <th scope="row">첨부파일</th>
+                    <td class="file"><input type="file" name="FileName"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="button-box right">
+            <a href="#none" class="button-main-rnd blue md">저장</a>
+            <a href="#none" class="button-main-rnd md">목록</a>
+        </div>
+    </section>
+</div>
+<!--// 서브 컨텐츠 끝 -->
+
+<?include("../../html/include/footer.html")?>

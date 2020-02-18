@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A3E5B6B1-B0A4-45C2-9408-DC66FD0AD98B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CLT.WEB.UI.LMS.CURR</RootNamespace>
+    <AssemblyName>CLT.WEB.UI.LMS.CURR</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Web.C1WebChart.2, Version=2.0.20063.16228, Culture=neutral, PublicKeyToken=360971499c5cdc04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LMS47\CLT.WEB\CLT.WEB.LIBRARY\C1.Web.C1WebChart.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Web.C1WebGrid.2, Version=2.1.20063.84, Culture=neutral, PublicKeyToken=589f1fc067ff4031, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\C1.Web.C1WebGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Web.Command.2, Version=2.0.20063.108, Culture=neutral, PublicKeyToken=96d8a77dc0c22f6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\C1.Web.Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Chart.2, Version=2.0.20063.16228, Culture=neutral, PublicKeyToken=a22e16972c085838, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\C1.Win.C1Chart.2.dll</HintPath>
+    </Reference>
+    <Reference Include="CLT.WEB.UI.COMMON.CONTROL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\CLT.WEB.UI.COMMON.CONTROL.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.IAMVIRTUALAGENTCOMLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\Interop.IAMVIRTUALAGENTCOMLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CLT.WEB.LIBRARY\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="assess_edit.aspx.cs">
+      <DependentUpon>assess_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assess_edit.aspx.designer.cs">
+      <DependentUpon>assess_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assess_list.aspx.cs">
+      <DependentUpon>assess_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assess_list.aspx.designer.cs">
+      <DependentUpon>assess_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lecturer_edit.aspx.cs">
+      <DependentUpon>lecturer_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lecturer_edit.aspx.designer.cs">
+      <DependentUpon>lecturer_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lecturer_list.aspx.cs">
+      <DependentUpon>lecturer_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lecturer_list.aspx.designer.cs">
+      <DependentUpon>lecturer_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content_edit.aspx.cs">
+      <DependentUpon>content_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content_edit.aspx.designer.cs">
+      <DependentUpon>content_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content_list.aspx.cs">
+      <DependentUpon>content_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content_list.aspx.designer.cs">
+      <DependentUpon>content_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content_mix.aspx.cs">
+      <DependentUpon>content_mix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content_mix.aspx.designer.cs">
+      <DependentUpon>content_mix.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="course.aspx.cs">
+      <DependentUpon>course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="course.aspx.designer.cs">
+      <DependentUpon>course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="course_edit.aspx.cs">
+      <DependentUpon>course_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="course_edit.aspx.designer.cs">
+      <DependentUpon>course_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="course_list.aspx.cs">
+      <DependentUpon>course_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="course_list.aspx.designer.cs">
+      <DependentUpon>course_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="course_pop_assess.aspx.cs">
+      <DependentUpon>course_pop_assess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="course_pop_assess.aspx.designer.cs">
+      <DependentUpon>course_pop_assess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="course_pop_contents.aspx.cs">
+      <DependentUpon>course_pop_contents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="course_pop_contents.aspx.designer.cs">
+      <DependentUpon>course_pop_contents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="course_pop_subject.aspx.cs">
+      <DependentUpon>course_pop_subject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="course_pop_subject.aspx.designer.cs">
+      <DependentUpon>course_pop_subject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="course_pop_textbook.aspx.cs">
+      <DependentUpon>course_pop_textbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="course_pop_textbook.aspx.designer.cs">
+      <DependentUpon>course_pop_textbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="course_subject_add.aspx.cs">
+      <DependentUpon>course_subject_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="course_subject_add.aspx.designer.cs">
+      <DependentUpon>course_subject_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="course_subject_new.aspx.cs">
+      <DependentUpon>course_subject_new.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="course_subject_new.aspx.designer.cs">
+      <DependentUpon>course_subject_new.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="course_subject_sort.aspx.cs">
+      <DependentUpon>course_subject_sort.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="course_subject_sort.aspx.designer.cs">
+      <DependentUpon>course_subject_sort.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="curriculum.aspx.cs">
+      <DependentUpon>curriculum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="curriculum.aspx.designer.cs">
+      <DependentUpon>curriculum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="opencourse_edit.aspx.cs">
+      <DependentUpon>opencourse_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="opencourse_edit.aspx.designer.cs">
+      <DependentUpon>opencourse_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="opencourse_list.aspx.cs">
+      <DependentUpon>opencourse_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="opencourse_list.aspx.designer.cs">
+      <DependentUpon>opencourse_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="opencourse_pop_survey.aspx.cs">
+      <DependentUpon>opencourse_pop_survey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="opencourse_pop_survey.aspx.designer.cs">
+      <DependentUpon>opencourse_pop_survey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="subject_edit.aspx.cs">
+      <DependentUpon>subject_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="subject_edit.aspx.designer.cs">
+      <DependentUpon>subject_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="subject_list.aspx.cs">
+      <DependentUpon>subject_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="subject_list.aspx.designer.cs">
+      <DependentUpon>subject_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="survey_results_detail.aspx.cs">
+      <DependentUpon>survey_results_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="survey_results_detail.aspx.designer.cs">
+      <DependentUpon>survey_results_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="survey_insdetail.aspx.cs">
+      <DependentUpon>survey_insdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="survey_insdetail.aspx.designer.cs">
+      <DependentUpon>survey_insdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="survey_ins.aspx.cs">
+      <DependentUpon>survey_ins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="survey_ins.aspx.designer.cs">
+      <DependentUpon>survey_ins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="survey_results.aspx.cs">
+      <DependentUpon>survey_results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="survey_results.aspx.designer.cs">
+      <DependentUpon>survey_results.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="survey_list.aspx.cs">
+      <DependentUpon>survey_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="survey_list.aspx.designer.cs">
+      <DependentUpon>survey_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="textbook_edit.aspx.cs">
+      <DependentUpon>textbook_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="textbook_edit.aspx.designer.cs">
+      <DependentUpon>textbook_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="textbook_list.aspx.cs">
+      <DependentUpon>textbook_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="textbook_list.aspx.designer.cs">
+      <DependentUpon>textbook_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="textbook_mix.aspx.cs">
+      <DependentUpon>textbook_mix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="textbook_mix.aspx.designer.cs">
+      <DependentUpon>textbook_mix.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CLT.WEB.UI.COMMON\CLT.WEB.UI.COMMON.BASE\CLT.WEB.UI.COMMON.BASE.csproj">
+      <Project>{20C17C63-9F00-4844-A825-122084DEB2C6}</Project>
+      <Name>CLT.WEB.UI.COMMON.BASE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\CLT.WEB.UI.FX\CLT.WEB.UI.FX.AGENT\CLT.WEB.UI.FX.AGENT.csproj">
+      <Project>{4A65BB74-4709-4DFE-99D3-FD5DF24B5185}</Project>
+      <Name>CLT.WEB.UI.FX.AGENT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\CLT.WEB.UI.FX\CLT.WEB.UI.FX.UTIL\CLT.WEB.UI.FX.UTIL.csproj">
+      <Project>{A7254BFE-6011-40AC-821C-D9DB21540289}</Project>
+      <Name>CLT.WEB.UI.FX.UTIL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assess_edit.aspx" />
+    <Content Include="assess_list.aspx" />
+    <Content Include="lecturer_edit.aspx" />
+    <Content Include="lecturer_list.aspx" />
+    <Content Include="content_edit.aspx" />
+    <Content Include="content_list.aspx" />
+    <Content Include="content_mix.aspx" />
+    <Content Include="course.aspx" />
+    <Content Include="course_edit.aspx" />
+    <Content Include="course_list.aspx" />
+    <Content Include="course_pop_assess.aspx" />
+    <Content Include="course_pop_contents.aspx" />
+    <Content Include="course_pop_subject.aspx" />
+    <Content Include="course_pop_textbook.aspx" />
+    <Content Include="course_subject_add.aspx" />
+    <Content Include="course_subject_new.aspx" />
+    <Content Include="course_subject_sort.aspx" />
+    <Content Include="curriculum.aspx" />
+    <Content Include="opencourse_edit.aspx" />
+    <Content Include="opencourse_list.aspx" />
+    <Content Include="opencourse_pop_survey.aspx" />
+    <Content Include="subject_edit.aspx" />
+    <Content Include="subject_list.aspx" />
+    <Content Include="survey_results_detail.aspx" />
+    <Content Include="survey_insdetail.aspx" />
+    <Content Include="survey_ins.aspx" />
+    <Content Include="survey_results.aspx" />
+    <Content Include="survey_list.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\survey_ins.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_ins.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_insdetail.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_insdetail.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_list.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_list.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_results_detail.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_results_detail.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\survey_results.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\assess_edit.aspx.en.resx" />
+    <Content Include="App_LocalResources\assess_edit.aspx.resx" />
+    <Content Include="App_LocalResources\assess_list.aspx.en.resx" />
+    <Content Include="App_LocalResources\assess_list.aspx.resx" />
+    <Content Include="App_LocalResources\content_edit.aspx.en.resx" />
+    <Content Include="App_LocalResources\content_edit.aspx.resx" />
+    <Content Include="App_LocalResources\content_list.aspx.en.resx" />
+    <Content Include="App_LocalResources\content_list.aspx.resx" />
+    <Content Include="App_LocalResources\content_mix.aspx.en.resx" />
+    <Content Include="App_LocalResources\content_mix.aspx.resx" />
+    <Content Include="App_LocalResources\course_edit.aspx.en.resx" />
+    <Content Include="App_LocalResources\course_edit.aspx.resx" />
+    <Content Include="App_LocalResources\course_list.aspx.en.resx" />
+    <Content Include="App_LocalResources\course_list.aspx.resx" />
+    <Content Include="App_LocalResources\course_pop_assess.aspx.en.resx" />
+    <Content Include="App_LocalResources\course_pop_assess.aspx.resx" />
+    <Content Include="App_LocalResources\course_pop_contents.aspx.en.resx" />
+    <Content Include="App_LocalResources\course_pop_contents.aspx.resx" />
+    <Content Include="App_LocalResources\course_pop_subject.aspx.en.resx" />
+    <Content Include="App_LocalResources\course_pop_subject.aspx.resx" />
+    <Content Include="App_LocalResources\course_pop_textbook.aspx.en.resx" />
+    <Content Include="App_LocalResources\course_pop_textbook.aspx.resx" />
+    <Content Include="App_LocalResources\course_pop_textbook.aspx.resx.en.resx" />
+    <Content Include="App_LocalResources\course_subject_add.aspx.en.resx" />
+    <Content Include="App_LocalResources\course_subject_add.aspx.resx" />
+    <Content Include="App_LocalResources\course_subject_new.aspx.en.resx" />
+    <Content Include="App_LocalResources\course_subject_new.aspx.resx" />
+    <Content Include="App_LocalResources\course_subject_sort.aspx.en.resx" />
+    <Content Include="App_LocalResources\course_subject_sort.aspx.resx" />
+    <Content Include="App_LocalResources\opencourse_edit.aspx.en.resx" />
+    <Content Include="App_LocalResources\opencourse_edit.aspx.resx" />
+    <Content Include="App_LocalResources\opencourse_list.aspx.en.resx" />
+    <Content Include="App_LocalResources\opencourse_list.aspx.resx" />
+    <Content Include="App_LocalResources\opencourse_pop_survey.aspx.en.resx" />
+    <Content Include="App_LocalResources\opencourse_pop_survey.aspx.resx" />
+    <Content Include="App_LocalResources\subject_edit.aspx.en.resx" />
+    <Content Include="App_LocalResources\subject_edit.aspx.resx" />
+    <Content Include="App_LocalResources\subject_list.aspx.en.resx" />
+    <Content Include="App_LocalResources\subject_list.aspx.resx" />
+    <Content Include="App_LocalResources\survey_results.aspx.en.resx" />
+    <Content Include="App_LocalResources\textbook_edit.aspx.en.resx" />
+    <Content Include="App_LocalResources\textbook_edit.aspx.resx" />
+    <Content Include="App_LocalResources\textbook_list.aspx.en.resx" />
+    <Content Include="App_LocalResources\textbook_list.aspx.resx" />
+    <Content Include="App_LocalResources\textbook_mix.aspx.en.resx" />
+    <Content Include="App_LocalResources\textbook_mix.aspx.resx" />
+    <Content Include="App_LocalResources\lecturer_list.aspx.resx" />
+    <Content Include="App_LocalResources\lecturer_edit.aspx.en.resx" />
+    <Content Include="App_LocalResources\lecturer_edit.aspx.resx" />
+    <Content Include="App_LocalResources\lecturer_list.aspx.en.resx" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="textbook_edit.aspx" />
+    <Content Include="textbook_list.aspx" />
+    <Content Include="textbook_mix.aspx" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54766</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54766/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

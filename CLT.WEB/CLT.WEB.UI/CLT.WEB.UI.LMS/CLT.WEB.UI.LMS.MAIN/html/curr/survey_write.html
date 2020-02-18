@@ -1,0 +1,100 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/curr-header.html" ?>
+
+<!-- 서브 컨텐츠 시작 -->
+<div class="section-full">
+    <h2 class="page-title">설문조회/등록
+        <!-- 모바일 뒤로 가기 -->
+        <span class="goback">
+			    <button onclick="goBack()"><i class="fas fa-chevron-left"></i><span class="off-screen">뒤로가기</span></button>
+			</span>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </h2>
+
+    <section class="section-board">
+
+        <div class="notice-text right">필수입력<span class="required">필수입력</span></div>
+        <div class="board-list gm-table data-table read-type">
+            <table>
+                <colgroup>
+                    <col width="15%">
+                    <col width="10%">
+                    <col width="30%">
+                    <col width="15%">
+                    <col width="30%">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th scope="row" rowspan="3">설문대상자</th>
+                    <th scope="row">선박발송여부</th>
+                    <td><input type="checkbox"></td>
+                    <th scope="row">설문구분</th>
+                    <td class="subject">
+                        <label class="radio-box">일반설문
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="radiomark"></span>
+                        </label>
+
+                        <label class="radio-box">과정설문
+                            <input type="radio" name="radio">
+                            <span class="radiomark"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">회사명</th>
+                    <td>
+                        <select>
+                            <option>회사명1</option>
+                        </select>
+                    </td>
+                    <th scope="row">회원그룹별<span class="required">필수입력</span></th>
+                    <td>
+                        <select>
+                            <option>회사명1</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">신분구분</th>
+                    <td>
+                        <select>
+                            <option>회사명1</option>
+                        </select>
+                    </td>
+                    <th scope="row">직급</th>
+                    <td>
+                        <select>
+                            <option>회사명1</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="2">설문제목<span class="required">필수입력</span></th>
+                    <td><input type="text"></td>
+                    <th scope="row">설문문항<span class="required">필수입력</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="2">투표기한<span class="required">필수입력</span></th>
+                    <td colspan="3"><input type="text" class="w180"><span class="gm-text2">~</span><input type="text" class="w180"></td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="2">설문목적<span class="required">필수입력</span></th>
+                    <td colspan="3"><textarea></textarea></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="button-group center">
+            <a href="#none" class="button-main-rnd blue lg">Next</a>
+        </div>
+    </section>
+</div>
+<!--// 서브 컨텐츠 끝 -->
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/html/include/footer.html" ?>

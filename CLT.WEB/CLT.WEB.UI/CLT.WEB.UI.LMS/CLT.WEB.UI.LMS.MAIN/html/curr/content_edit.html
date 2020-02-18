@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>지마린 아카데미</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="/asset/css/common/reset.css" type="text/css" medial="all">
+    <link rel="stylesheet" href="/asset/css/common/layout.css" type="text/css" medial="all">
+    <link rel="stylesheet" href="/asset/fontawesome/css/all.css" type="text/css" media="all">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="/asset/js/common/layout.js"></script>
+</head>
+<body id="popup">
+<h1 class="off-screen">지마린 아카데미</h1>
+
+<div id="popup">
+    <div class="layer-popup">
+        <div class="pop-container">
+            <h3>컨텐츠 수정/조회</h3>
+
+            <!-- 팝업 컨텐츠 -->
+            <div class="notice-text right">필수입력항목<span class="required">필수입력</span></div>
+
+            <div class="gm-table data-table read-type">
+                <table>
+                    <caption>표정보 - 번호, 제목 등을 제공합니다.</caption>
+                    <colgroup>
+                        <col width="30%">
+                        <col width="70%">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th scope="row">기관<span class="required">필수입력</span></th>
+                        <td><select>셀렉트박스</select></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">언어<span class="required">필수입력</span></th>
+                        <td><select>셀렉트박스</select></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">컨텐츠명<span class="required">필수입력</span></th>
+                        <td><input type="text" class="min100" required></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">비고</th>
+                        <td><input type="text" class="min100"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">컨텐츠파일</th>
+                        <td>
+                            <!-- 파일 첨부 인풋 -->
+                            <div class="file-box">
+                                <input class="upload-name" value="File Name" disabled="disabled">
+                                <label for="ex_filename">찾아보기</label>
+                                <input type="file" id="ex_filename" class="upload-hidden">
+                            </div>
+                            <!--// 파일 첨부 인풋 -->
+                            <input type="text" class="w180">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="button-box center">
+                <a href="#none" class="button-default blue">Send</a>
+                <a href="#none" class="button-default">Temp Save</a>
+            </div>
+            <!--// 팝업 컨텐츠 -->
+
+        </div>
+
+        <!-- 팝업창 닫기 버튼 -->
+        <a href="#none" onclick="self.close();" class="button-close"><span class="off-screen">닫기</span></a>
+
+    </div>
+</div>
+
+</body>
+</html>
