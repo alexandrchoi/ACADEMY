@@ -5,3 +5,8 @@
 .sms-send .many-select select:first-child {
     margin-left:0;
 }
+@media screen and (max-width:780px) {
+    .couseapplication-list .search-group input + input {
+        margin-left:140px;
+    }
+}

@@ -47,6 +47,15 @@
 	        document.getElementById('<%=txtAddr2.ClientID %>').value = addrDetail;
             document.getElementById('<%=txtZipCode.ClientID %>').value = zipNo;
         }
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            } else {
+                return true;
+            }      
+}
     </script>
 
 </asp:Content>
@@ -139,11 +148,11 @@
                         </dd>
                         <dt><asp:Label ID="lblEmpCountVessel" runat="server" Text="근로자수(해상직원)" meta:resourcekey="lblEmpCountVessel" /></dt>
                         <dd>
-                            <asp:TextBox ID="txtEmpCountVessel" runat="server" CssClass="w100per" meta:resourcekey="txtEmpCountVessel" />
+                            <asp:TextBox ID="txtEmpCountVessel" runat="server" CssClass="w100per" onkeypress="return isNumberKey(event)" meta:resourcekey="txtEmpCountVessel" />
                         </dd>
                         <dt><asp:Label ID="lblEmpCountShore" runat="server" Text="근로자수(육상직원)" meta:resourcekey="lblEmpCountShore" /></dt>
                         <dd>
-                            <asp:TextBox ID="txtEmpCountShore" runat="server" CssClass="w100per" meta:resourcekey="txtEmpCountShore" />
+                            <asp:TextBox ID="txtEmpCountShore" runat="server" CssClass="w100per" onkeypress="return isNumberKey(event)" meta:resourcekey="txtEmpCountShore" />
                         </dd>
                     </dl>
                 </div>

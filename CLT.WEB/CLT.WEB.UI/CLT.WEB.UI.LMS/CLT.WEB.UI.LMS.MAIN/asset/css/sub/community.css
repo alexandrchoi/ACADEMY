@@ -133,3 +133,22 @@
     transform:translateY(-50%);
     margin-top:0;
 }
+
+@media screen and (max-width:1024px) {
+    .search-box.at-bottom {
+        width:100%;
+        padding:10px 0 50px;
+    }
+    .search-box.at-bottom .search-group,
+    .search-box.at-bottom .search-group:first-child,
+    .search-box.at-bottom .search-group:nth-child(2),
+    .search-box.at-bottom .search-group select,
+    .search-box.at-bottom .search-group input[type="text"] {
+        width:100%;
+    }
+    .search-box.at-bottom .button-default {
+        width:100%;
+        top:100px;
+        transform:translateY(0);
+    }
+}

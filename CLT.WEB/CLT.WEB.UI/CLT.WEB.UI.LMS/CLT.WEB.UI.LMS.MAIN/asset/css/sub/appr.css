@@ -29,3 +29,18 @@
     right:0;
     bottom:0;
 }
+@media screen and (max-width:1024px) {
+    .stcw-box {
+        margin-bottom:40px;
+        padding-left:0;
+    }
+    .stcw-box h4 {
+        width:100%;
+        height:auto;
+        position:relative;
+        text-align:left;
+    }
+    .stcw-box h4 span:after {
+        left:0;
+    }
+}

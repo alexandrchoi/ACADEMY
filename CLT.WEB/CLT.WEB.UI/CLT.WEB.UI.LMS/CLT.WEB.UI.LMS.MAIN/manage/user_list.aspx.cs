@@ -165,7 +165,7 @@ namespace CLT.WEB.UI.LMS.MANAGE
         //{
         //    try
         //    {
-        //        string xScriptContent = string.Format("<script>openPopWindow('/manage/user_edit.aspx?EDITMODE=NEW&MenuCode={0}', 'user_edit', '1024', '721');</script>", Session["MENU_CODE"]);
+        //        string xScriptContent = string.Format("<script>openPopWindow('/manage/user_edit.aspx?EDITMODE=NEW&MenuCode={0}', 'user_edit', '1280', '721');</script>", Session["MENU_CODE"]);
         //        ScriptHelper.ScriptBlock(this, "user_edit", xScriptContent);
         //        //
         //    }
@@ -611,34 +611,36 @@ namespace CLT.WEB.UI.LMS.MANAGE
             {
                 if (e.Item.ItemType == C1ListItemType.Header)
                 {
-                    xHeader = new string[12];
+                    xHeader = new string[13];
                     if (this.IsSettingKorean())
                     {
                         e.Item.Cells[1].Text = "ID";
                         e.Item.Cells[2].Text = "성명";
                         e.Item.Cells[3].Text = "주민번호";
-                        e.Item.Cells[4].Text = "회사명";
-                        e.Item.Cells[5].Text = "부서명";
-                        e.Item.Cells[6].Text = "직급";
-                        e.Item.Cells[7].Text = "휴대폰";
-                        e.Item.Cells[8].Text = "이메일";
-                        e.Item.Cells[9].Text = "수강횟수";
-                        e.Item.Cells[10].Text = "등록일";
-                        e.Item.Cells[11].Text = "상태";
+                        e.Item.Cells[4].Text = "사용자그룹";
+                        e.Item.Cells[5].Text = "회사명";
+                        e.Item.Cells[6].Text = "부서명";
+                        e.Item.Cells[7].Text = "직급";
+                        e.Item.Cells[8].Text = "휴대폰";
+                        e.Item.Cells[9].Text = "이메일";
+                        e.Item.Cells[10].Text = "수강횟수";
+                        e.Item.Cells[11].Text = "등록일";
+                        e.Item.Cells[12].Text = "상태";
                     }
                     else
                     {
                         e.Item.Cells[1].Text = "ID";
                         e.Item.Cells[2].Text = "Name";
                         e.Item.Cells[3].Text = "Registration";
+                        e.Item.Cells[4].Text = "User Group";
                         e.Item.Cells[5].Text = "Company";
-                        e.Item.Cells[5].Text = "Dept.";
-                        e.Item.Cells[9].Text = "Grade";
-                        e.Item.Cells[6].Text = "Mobile";
-                        e.Item.Cells[4].Text = "E-mail";
-                        e.Item.Cells[8].Text = "Course";
-                        e.Item.Cells[10].Text = "Regist Date ";
-                        e.Item.Cells[11].Text = "Status";
+                        e.Item.Cells[6].Text = "Dept.";
+                        e.Item.Cells[7].Text = "Grade";
+                        e.Item.Cells[8].Text = "Mobile";
+                        e.Item.Cells[9].Text = "E-mail";
+                        e.Item.Cells[10].Text = "Course";
+                        e.Item.Cells[11].Text = "Regist Date ";
+                        e.Item.Cells[12].Text = "Status";
                     }
 
                     xHeader[0] = e.Item.Cells[1].Text;
@@ -652,6 +654,7 @@ namespace CLT.WEB.UI.LMS.MANAGE
                     xHeader[8] = e.Item.Cells[9].Text;
                     xHeader[9] = e.Item.Cells[10].Text;
                     xHeader[10] = e.Item.Cells[11].Text;
+                    xHeader[11] = e.Item.Cells[12].Text;
                 }
             }
             catch (Exception ex)

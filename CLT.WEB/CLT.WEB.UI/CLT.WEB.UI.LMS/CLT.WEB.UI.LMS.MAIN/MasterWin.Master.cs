@@ -139,6 +139,7 @@ namespace CLT.WEB.UI.LMS.MAIN
                     + "                 showMonthAfterYear: true, " + "\r\n"
                     + "                 dateFormat: 'yy.mm.dd', " + "\r\n"
                     + "                 showAnim: anim, " + "\r\n"
+                    + "                 yearRange: '-100:+10',  " + "\r\n"
                     + "         }); " + "\r\n"
                     + "     }); " + "\r\n"
                     + " }); " + "\r\n"

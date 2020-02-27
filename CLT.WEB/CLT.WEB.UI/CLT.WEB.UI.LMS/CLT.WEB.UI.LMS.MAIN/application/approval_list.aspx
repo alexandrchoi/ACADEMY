@@ -33,6 +33,7 @@
 			<button onclick="goBack();return false;"><asp:Label ID="txtGoback" runat="server" CssClass="off-screen" Text="뒤로가기" meta:resourcekey="txtGobackResource" /></button>
 		</span>
     </h2>
+    <p>관리자가 개인 수강신청/기업 교육접수 및 승인 처리 할 수 있습니다.</p>
 
     <section class="section-board">
 

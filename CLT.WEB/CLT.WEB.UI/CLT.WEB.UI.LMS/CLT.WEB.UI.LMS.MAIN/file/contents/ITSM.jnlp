@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="http://itsm.hanjin.com:8080/ITSM">
+  <information>
+    <title>ITSM System </title>
+    <vendor>Cyberlogitec Co.ltd</vendor>
+    <description>Quality Management System</description>
+    <description kind="short">Copyright(c) 2008 by Cyberlogitec Corp. All Rights Reserved Cyberlogitec</description>
+    <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <update check="always" policy="always"/>
+  <resources>
+    <j2se version="1.5+" java-vm-args="-Xms64m -Xmx256m -XX:MaxPermSize=32m" />
+    <property name="swing.noxp" value="true"/>
+    <property name="python.cachedir" value="C:/Program Files/jython-cachedir"/>
+    <jar href="app/vox-lib/ivox-jw.jar" download="eager" main="true"/>
+    <jar href="app/vox-lib/max-itsm.jar" download="eager" main="false"/>
+    <jar href="app/vox-lib/chartdir_java-4.1.1.jar"/> 
+    <jar href="app/vox-lib/commons-codec-1.3.jar"/> 
+    <jar href="app/vox-lib/commons-collections-3.1.jar"/> 
+    <jar href="app/vox-lib/commons-httpclient-3.0.jar"/> 
+    <jar href="app/vox-lib/commons-logging-1.0.4.jar"/> 
+    <jar href="app/vox-lib/commons-logging-api-1.0.4.jar"/> 
+    <jar href="app/vox-lib/commons-pool-1.2.jar"/> 
+    <jar href="app/vox-lib/ivox-control-jw.jar"/> 
+    <jar href="app/vox-lib/ivox-server-jw.jar"/> 
+    <jar href="app/vox-lib/jdom-1.0.jar"/> 
+    <jar href="app/vox-lib/jython-2.2.jar"/> 
+    <jar href="app/vox-lib/piccolo-1.1.jar"/> 
+    <jar href="app/vox-lib/piccolox_v1.x.jar"/> 
+    <jar href="app/vox-lib/migcalendarbean.jar"/> 
+    <jar href="app/vox-lib/openproj.jar"/> 
+    <jar href="app/vox-lib/dsuite3.0.jar"/> 
+    <jar href="app/vox-lib/jide/xerces.jar"/> 
+    <jar href="app/vox-lib/jide/velocity-dep-1.4.jar"/> 
+    <jar href="app/vox-lib/jide/jide-rss.jar"/> 
+    <jar href="app/vox-lib/jide/jide-pivot.jar"/> 
+    <jar href="app/vox-lib/jide/jide-grids.jar"/> 
+    <jar href="app/vox-lib/jide/jide-dashboard.jar"/> 
+    <jar href="app/vox-lib/jide/jide-components.jar"/> 
+    <jar href="app/vox-lib/jide/jide-common.jar"/> 
+    <jar href="app/vox-lib/jide/jide-beaninfo.jar"/> 
+    <jar href="app/vox-lib/jide/informa.jar"/> 
+    <jar href="app/vox-lib/jide/hssf.jar"/> 
+    <jar href="app/vox-lib/jide/hsqldb.jar"/>
+    <jar href="app/vox-lib/jasper/itext-1.3.1.jar"/>
+    <jar href="app/vox-lib/jasper/iTextAsian.jar"/>
+    <jar href="app/vox-lib/jasper/ivox-rpt.jar"/>
+    <jar href="app/vox-lib/jasper/mail.jar"/>
+    <jar href="app/vox-lib/visual_net/com-eca-control-netbeans-relation.jar"/>
+    <jar href="app/vox-lib/jython-lib.jar"/> 
+    <jar href="app/vox-lib/SCMRcAPI.jar"/> 
+    <jar href="app/vox-lib/dj_project/DJNativeSwing.jar"/> 
+    <jar href="app/vox-lib/dj_project/DJNativeSwing-SWT.jar"/> 
+    <jar href="app/vox-lib/dj_project/jna-3.0.7.jar"/> 
+    <jar href="app/vox-lib/dj_project/jna_WindowUtils.jar"/> 
+    <jar href="app/vox-lib/dj_project/swt-3.6M1-win32-win32-x86.jar"/> 
+  </resources>
+  <application-desc main-class="com.eca.display.main.VoxClient">
+    <argument>WEB_CLIENT</argument>
+    <argument>ITSM</argument>
+    <argument>app</argument>
+    <argument>/prcomponent</argument>
+    <argument>MAIN</argument>
+    <argument>ITSM.MainUI</argument>
+    <argument>CSS</argument>
+    <argument>true</argument>
+    <argument>SESSION.LOGIN_SESSION.LOGIN_ID:2000550</argument>
+  </application-desc>
+</jnlp>

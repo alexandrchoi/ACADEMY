@@ -283,7 +283,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
 
                 HyperLink hlkUserNMKor = ((HyperLink)e.Item.FindControl("hlkUserNMKor"));
                 hlkUserNMKor.Text = Convert.ToString(DRV["USER_NM_KOR"]);
-                hlkUserNMKor.NavigateUrl = "javascript:openPopWindow('/manage/user_edit.aspx?EDITMODE=EDIT&USER_ID=" + Convert.ToString(DRV["USER_ID"]) + "','user_edit', '1024', '821');";
+                hlkUserNMKor.NavigateUrl = "javascript:openPopWindow('/manage/user_edit.aspx?EDITMODE=EDIT&USER_ID=" + Convert.ToString(DRV["USER_ID"]) + "','user_edit', '1280', '821');";
 
                 if (DRV["APPROVAL_FLG"].ToString() == "000001") //승인일경우
                 {

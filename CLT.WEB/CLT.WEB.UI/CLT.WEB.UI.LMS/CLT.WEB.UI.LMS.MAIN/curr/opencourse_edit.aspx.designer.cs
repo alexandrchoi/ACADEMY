@@ -364,6 +364,24 @@ namespace CLT.WEB.UI.LMS.CURR {
         protected global::System.Web.UI.WebControls.TextBox txtResEndDt;
         
         /// <summary>
+        /// txtMaxCount 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMaxCount;
+        
+        /// <summary>
+        /// lblMaxCount 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMaxCount;
+        
+        /// <summary>
         /// lblMinCount 컨트롤입니다.
         /// </summary>
         /// <remarks>
@@ -382,22 +400,22 @@ namespace CLT.WEB.UI.LMS.CURR {
         protected global::System.Web.UI.WebControls.TextBox txtMinCount;
         
         /// <summary>
-        /// lblMaxCount 컨트롤입니다.
+        /// lblManager 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMaxCount;
+        protected global::System.Web.UI.WebControls.Label lblManager;
         
         /// <summary>
-        /// txtMaxCount 컨트롤입니다.
+        /// txtManager 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMaxCount;
+        protected global::System.Web.UI.WebControls.TextBox txtManager;
         
         /// <summary>
         /// lblCompanyAccept 컨트롤입니다.

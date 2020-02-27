@@ -66,7 +66,8 @@
                 var grdIds = chks.item(i).id.split('_');
                 var grdItemCtl = grdIds[0]+'_'+grdIds[1];
                 
-                //미이수시 미이수 사유 꼭입력
+                //미이수시 미이수 사유 꼭입력
+
                 if(!((document.getElementById(grdItemCtl+'_ddlPassFlg').value == "000004" && document.getElementById(grdItemCtl+'_chkPassFlg').checked == true) ||(document.getElementById(grdItemCtl+'_ddlPassFlg').value == "000001")))
                 {   
                     if(isEmpty(document.getElementById(grdItemCtl+'_ddlNonPassCD'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A067", new string[] { "'+(chkCnt)+'번째 미이수사유" }, new string[] { "'+(chkCnt)+'th Non Pass"}, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) 

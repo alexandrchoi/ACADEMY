@@ -69,6 +69,51 @@
                 </tr>
                 <tr>
                     <th scope="row" >
+                        <!--교육시간-->
+                        <asp:Label ID="lblTime" runat="server" meta:resourcekey="lblTime" />
+                    </th>
+                    <td>
+                        <asp:TextBox ID="txtTime" runat="server" MaxLength="5" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" >
+                        <!--강사명1-->
+                        <asp:Label ID="lblInstructor" runat="server" meta:resourcekey="lblInstructor" />
+                    </th>
+                    <td>
+                        <asp:TextBox ID="txtInstructor" runat="server" MaxLength="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" >
+                        <!--강사명2-->
+                        <asp:Label ID="lblInstructor1" runat="server" meta:resourcekey="lblInstructor1" />
+                    </th>
+                    <td>
+                        <asp:TextBox ID="txtInstructor1" runat="server" MaxLength="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" >
+                        <!--교육목표-->
+                        <asp:Label ID="lblPoint" runat="server" meta:resourcekey="lblPoint" />
+                    </th>
+                    <td>
+                        <asp:TextBox ID="txtPoint" runat="server"  MaxLength="200" Height = "50px" TextMode="MultiLine" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" >
+                        <!--교육내용-->
+                        <asp:Label ID="lblContents" runat="server" meta:resourcekey="lblContents" />
+                    </th>
+                    <td>
+                        <asp:TextBox ID="txtContents" runat="server" MaxLength="200" Height ="50px" TextMode="MultiLine" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" >
                         <!--분류-->
                         <asp:Label ID="lblClass" runat="server" meta:resourcekey="lblClass" />
                         <span class="required"></span>
@@ -95,42 +140,6 @@
                     </th>
                     <td>
                         <asp:DropDownList ID="ddlLang" runat="server" />
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row" >
-                        <!--교육시간-->
-                        <asp:Label ID="lblTime" runat="server" meta:resourcekey="lblTime" />
-                    </th>
-                    <td>
-                        <asp:TextBox ID="txtTime" runat="server" MaxLength="5" />
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row" >
-                        <!--강사명-->
-                        <asp:Label ID="lblInstructor" runat="server" meta:resourcekey="lblInstructor" />
-                    </th>
-                    <td>
-                        <asp:TextBox ID="txtInstructor" runat="server" MaxLength="50" />
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row" >
-                        <!--교육내용-->
-                        <asp:Label ID="lblContents" runat="server" meta:resourcekey="lblContents" />
-                    </th>
-                    <td>
-                        <asp:TextBox ID="txtContents" runat="server" MaxLength="200" Height ="50px" TextMode="MultiLine" />
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row" >
-                        <!--교육목표-->
-                        <asp:Label ID="lblPoint" runat="server" meta:resourcekey="lblPoint" />
-                    </th>
-                    <td>
-                        <asp:TextBox ID="txtPoint" runat="server"  MaxLength="200" Height = "50px" TextMode="MultiLine" />
                     </td>
                 </tr>
                 <tr>

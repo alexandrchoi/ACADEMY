@@ -183,4 +183,7 @@
   <data name="lblVslType.Text" xml:space="preserve">
     <value>선종</value>
   </data>
+  <data name="lblManager.Text" xml:space="preserve">
+    <value>과정 담당자</value>
+  </data>
 </root>

@@ -90,9 +90,11 @@ function allMenu() {
         $('body').removeClass('fixed');
     });
 
+    /*
     $(window).on("load",function(){
         $(".all-menu-box").mCustomScrollbar();
     });
+    */
 
     $(window).resize(function () {
         if ($(window).width() > 768) {

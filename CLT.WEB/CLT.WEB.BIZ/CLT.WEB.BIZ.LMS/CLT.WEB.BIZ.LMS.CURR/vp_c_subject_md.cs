@@ -181,7 +181,8 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                 , SUBJECT_TYPE         = :SUBJECT_TYPE       
                                 , SUBJECT_LANG         = :SUBJECT_LANG       
                                 , LEARNING_TIME        = :LEARNING_TIME      
-                                , LECTURER_NM          = :LECTURER_NM        
+                                , LECTURER_NM          = :LECTURER_NM      
+                                , LECTURER1_NM          = :LECTURER1_NM        
                                 , LEARNING_DESC        = :LEARNING_DESC      
                                 , LEARNING_OBJECTIVE   = :LEARNING_OBJECTIVE 
                                 , USE_FLG              = :USE_FLG                                    
@@ -190,7 +191,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             WHERE SUBJECT_ID = :SUBJECT_ID
                             ";
 
-                            xPara = new OracleParameter[11];
+                            xPara = new OracleParameter[12];
                             xPara[0] = base.AddParam("SUBJECT_ID", OracleType.VarChar, xQID);
                             xPara[1] = base.AddParam("SUBJECT_NM", OracleType.VarChar, rParams[1]);
                             xPara[2] = base.AddParam("SUBJECT_KIND", OracleType.VarChar, rParams[2]);
@@ -198,10 +199,11 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             xPara[4] = base.AddParam("SUBJECT_LANG", OracleType.VarChar, rParams[4]);
                             xPara[5] = base.AddParam("LEARNING_TIME", OracleType.Number, rParams[5]);
                             xPara[6] = base.AddParam("LECTURER_NM", OracleType.VarChar, rParams[6]);
-                            xPara[7] = base.AddParam("LEARNING_DESC", OracleType.VarChar, rParams[7]);
-                            xPara[8] = base.AddParam("LEARNING_OBJECTIVE", OracleType.VarChar, rParams[8]);
-                            xPara[9] = base.AddParam("USE_FLG", OracleType.VarChar, rParams[9]);
-                            xPara[10] = base.AddParam("UPT_ID", OracleType.VarChar, rParams[11]);
+                            xPara[7] = base.AddParam("LECTURER1_NM", OracleType.VarChar, rParams[12]);
+                            xPara[8] = base.AddParam("LEARNING_DESC", OracleType.VarChar, rParams[7]);
+                            xPara[9] = base.AddParam("LEARNING_OBJECTIVE", OracleType.VarChar, rParams[8]);
+                            xPara[10] = base.AddParam("USE_FLG", OracleType.VarChar, rParams[9]);
+                            xPara[11] = base.AddParam("UPT_ID", OracleType.VarChar, rParams[11]);
 
                             xCmdLMS.CommandText = xSql;
                             base.Execute(db, xCmdLMS, xPara, xTransLMS);
@@ -219,6 +221,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                         ,SUBJECT_LANG
                                         ,LEARNING_TIME
                                         ,LECTURER_NM
+                                        ,LECTURER1_NM
                                         ,LEARNING_DESC
                                         ,LEARNING_OBJECTIVE
                                         ,INS_ID
@@ -236,7 +239,8 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                         ,:SUBJECT_TYPE 
                                         ,:SUBJECT_LANG 
                                         ,:LEARNING_TIME
-                                        ,:LECTURER_NM  
+                                        ,:LECTURER_NM
+                                        ,:LECTURER1_NM  
                                         ,:LEARNING_DESC
                                         ,:LEARNING_OBJECTIVE
                                         ,:INS_ID       
@@ -252,7 +256,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             vp_l_common_md com = new vp_l_common_md();
                             xQID = com.GetMaxIDOfTable(new string[] { "T_SUBJECT", "SUBJECT_ID" });
 
-                            xPara = new OracleParameter[14];
+                            xPara = new OracleParameter[15];
                             xPara[0] = base.AddParam("SUBJECT_ID", OracleType.VarChar, xQID);
                             xPara[1] = base.AddParam("SUBJECT_NM", OracleType.VarChar, rParams[1]);
                             xPara[2] = base.AddParam("SUBJECT_KIND", OracleType.VarChar, rParams[2]);
@@ -260,13 +264,14 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             xPara[4] = base.AddParam("SUBJECT_LANG", OracleType.VarChar, rParams[4]);
                             xPara[5] = base.AddParam("LEARNING_TIME", OracleType.Number, rParams[5]);
                             xPara[6] = base.AddParam("LECTURER_NM", OracleType.VarChar, rParams[6]);
-                            xPara[7] = base.AddParam("LEARNING_DESC", OracleType.VarChar, rParams[7]);
-                            xPara[8] = base.AddParam("LEARNING_OBJECTIVE", OracleType.VarChar, rParams[8]);
-                            xPara[9] = base.AddParam("INS_ID", OracleType.VarChar, rParams[11]);
-                            xPara[10] = base.AddParam("SEND_DT", OracleType.DateTime, DBNull.Value);
-                            xPara[11] = base.AddParam("SEND_FLG", OracleType.VarChar, "1");
-                            xPara[12] = base.AddParam("USE_FLG", OracleType.VarChar, rParams[9]);
-                            xPara[13] = base.AddParam("TEMP_SAVE_FLG", OracleType.VarChar, rParams[10]);
+                            xPara[7] = base.AddParam("LECTURER1_NM", OracleType.VarChar, rParams[12]);
+                            xPara[8] = base.AddParam("LEARNING_DESC", OracleType.VarChar, rParams[7]);
+                            xPara[9] = base.AddParam("LEARNING_OBJECTIVE", OracleType.VarChar, rParams[8]);
+                            xPara[10] = base.AddParam("INS_ID", OracleType.VarChar, rParams[11]);
+                            xPara[11] = base.AddParam("SEND_DT", OracleType.DateTime, DBNull.Value);
+                            xPara[12] = base.AddParam("SEND_FLG", OracleType.VarChar, "1");
+                            xPara[13] = base.AddParam("USE_FLG", OracleType.VarChar, rParams[9]);
+                            xPara[14] = base.AddParam("TEMP_SAVE_FLG", OracleType.VarChar, rParams[10]);
 
                             xCmdLMS.CommandText = xSql;
                             base.Execute(db, xCmdLMS, xPara, xTransLMS);

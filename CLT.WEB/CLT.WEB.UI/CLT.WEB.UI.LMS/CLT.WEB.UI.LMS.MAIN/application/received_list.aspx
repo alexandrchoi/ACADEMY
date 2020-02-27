@@ -22,6 +22,7 @@
 			<button onclick="goBack();return false;"><asp:Label ID="txtGoback" runat="server" CssClass="off-screen" Text="뒤로가기" meta:resourcekey="txtGobackResource" /></button>
 		</span>
     </h2>
+    <p>과정명 클릭시 기업 교육접수 할 수 있습니다.</p>
 
     <section class="section-board">
 

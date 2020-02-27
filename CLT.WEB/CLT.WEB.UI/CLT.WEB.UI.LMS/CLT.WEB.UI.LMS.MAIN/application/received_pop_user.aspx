@@ -48,7 +48,7 @@
         
         <div class="button-box right">
             <input type="button" id="btnNew" value="<%=GetLocalResourceObject("btnNewResource.Text").ToString() %>" class="button-default" title="소속 개인회원 등록"
-                onclick="javascript:openPopWindow('/manage/user_edit.aspx?editmode=NEW&MenuCode=<%=Session["MENU_CODE"]%>','user_edit', '1024', '821');" />
+                onclick="javascript:openPopWindow('/manage/user_edit.aspx?editmode=NEW&MenuCode=<%=Session["MENU_CODE"]%>','user_edit', '1280', '821');" />
 
             <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="button-default blue" OnClick="btnAdd_Click" ToolTip="교육 대상자 등록" meta:resourcekey="btnAddResource" />
         </div>
@@ -75,7 +75,7 @@
                                     
                     <C1WebGrid:C1TemplateColumn >
                         <ItemTemplate>                                            
-                            <a href="#" onclick="openPopWindow('/manage/user_edit.aspx?editmode=EDIT&user_id=<%# DataBinder.Eval(Container.DataItem, "user_id")%>&MenuCode=<%=Session["MENU_CODE"]%>','user_edit', '1024', '821');">
+                            <a href="#" onclick="openPopWindow('/manage/user_edit.aspx?editmode=EDIT&user_id=<%# DataBinder.Eval(Container.DataItem, "user_id")%>&MenuCode=<%=Session["MENU_CODE"]%>','user_edit', '1280', '821');">
                             <%# DataBinder.Eval(Container.DataItem, "user_nm_kor")%></a> 
                         </ItemTemplate>
                         <ItemStyle Width="9%" CssClass ="left" />

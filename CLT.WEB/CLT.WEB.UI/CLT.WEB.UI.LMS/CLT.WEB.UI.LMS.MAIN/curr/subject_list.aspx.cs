@@ -206,24 +206,22 @@ namespace CLT.WEB.UI.LMS.CURR
                     if (this.IsSettingKorean())
                     {
                         e.Item.Cells[0].Text = "No.";
-                        e.Item.Cells[1].Text = "언어";
-                        e.Item.Cells[2].Text = "분류";
-                        e.Item.Cells[3].Text = "과목명";
-                        e.Item.Cells[4].Text = "교육시간";
-                        e.Item.Cells[5].Text = "강사명";
-                        e.Item.Cells[6].Text = "Usage";
-                        e.Item.Cells[7].Text = "등록일자";
+                        e.Item.Cells[1].Text = "분류";
+                        e.Item.Cells[2].Text = "과목명";
+                        e.Item.Cells[3].Text = "시간";
+                        e.Item.Cells[4].Text = "강사명";
+                        e.Item.Cells[5].Text = "사용여부";
+                        e.Item.Cells[6].Text = "등록일자";
                     }
                     else
                     {
                         e.Item.Cells[0].Text = "No.";
-                        e.Item.Cells[1].Text = "Language";
-                        e.Item.Cells[2].Text = "Classification";
-                        e.Item.Cells[3].Text = "Subject";
-                        e.Item.Cells[4].Text = "Learinig Time";
-                        e.Item.Cells[5].Text = "Instructor";
-                        e.Item.Cells[6].Text = "Usage";
-                        e.Item.Cells[7].Text = "Reg. Date";
+                        e.Item.Cells[1].Text = "Classification";
+                        e.Item.Cells[2].Text = "Subject";
+                        e.Item.Cells[3].Text = "Learinig Time";
+                        e.Item.Cells[4].Text = "Instructor";
+                        e.Item.Cells[5].Text = "Usage";
+                        e.Item.Cells[6].Text = "Reg. Date";
                     }
                 }
             }

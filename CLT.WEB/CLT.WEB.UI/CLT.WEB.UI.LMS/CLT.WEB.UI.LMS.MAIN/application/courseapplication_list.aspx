@@ -22,7 +22,7 @@
     
 
 <!-- 서브 컨텐츠 시작 -->
-<div class="section-full">
+<div class="section-full couseapplication-list">
     <h2 class="page-title"><asp:Label ID="lblMenuTitle" runat="server" Text="개인수강신청" meta:resourcekey="lblMenuTitle" />
 
         <!-- 모바일 뒤로 가기 -->
@@ -30,7 +30,7 @@
 			<button onclick="goBack();return false;"><asp:Label ID="txtGoback" runat="server" CssClass="off-screen" Text="뒤로가기" meta:resourcekey="txtGobackResource" /></button>
 		</span>
     </h2>
-    <p>과정명을 클릭하여 개인 수강 신청</p>
+    <p>과정명 클릭시 개인 수강신청 할 수 있습니다.</p>
 
     <section class="section-board">
 

@@ -56,7 +56,7 @@
                     <td style="height:50px;"></td>
                 </tr>
                 <tr>
-                    <td style="height:200px;font-size:40pt; font-weight: bold;text-align:center;">수&nbsp;&nbsp;&nbsp;료&nbsp;&nbsp;&nbsp;증</td>
+                    <td style="height:200px;font-size:40pt; font-weight: bold;text-align:center;">수&nbsp;&nbsp;&nbsp;료&nbsp;&nbsp;&nbsp;증2</td>
                 </tr>
                 <tr>
                     <td style="height:30px;"></td>
@@ -111,7 +111,7 @@
                     <td style="height:100px;"></td>
                 </tr>
                 <tr>
-                    <td style="border:none;width:100%; height:200px;font-weight: bold;font-size:17pt; line-height:55px; padding-left:45px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;위 사람은 한진해운 운항훈련원에서 실시한 상기 교육<br/>훈련과정을 수료하였으므로 이 증서를 수여합니다.</td>
+                    <td style="border:none;width:100%; height:200px;font-weight: bold;font-size:17pt; line-height:55px; padding-left:45px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;위 사람은 한진해운 운항훈련원에서 실시한 상기 교육<br/>훈련과정을 수료하였으므로 이 증서를 수여합니다.2</td>
                 </tr>
                 <tr>
                     <td style="height:70px;"></td>

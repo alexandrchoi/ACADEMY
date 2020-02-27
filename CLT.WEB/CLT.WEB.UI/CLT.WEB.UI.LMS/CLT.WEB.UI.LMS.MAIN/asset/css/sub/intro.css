@@ -15,6 +15,17 @@
     margin-bottom:20px;
 }
 
+@media screen and (max-width:1024px) {
+    .greeting figure {
+        width:100%;
+    }
+    .greeting figure img {
+        max-width:100%;
+    }
+    .greeting .greeting-cont {
+        width:100%;
+    }
+}
 /* 연혁 */
 .history > ol > li {
     position:relative;

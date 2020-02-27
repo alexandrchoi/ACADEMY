@@ -40,7 +40,8 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                   t.textbook_type, t.textbook_lang, t.course_group, t.course_field,
                                   t.publisher, t.author, t.price, t.textbook_desc,
                                   c1.d_knm as textbook_type_nm, c2.d_knm as textbook_lang_nm,
-                                  c3.d_knm as course_group_nm, c4.d_knm as course_field_nm
+                                  c3.d_knm as course_group_nm, c4.d_knm as course_field_nm,
+                                  TO_CHAR(t.pub_dt, 'YYYY.MM.DD') as pub_dt
                                   FROM t_textbook t
                                   INNER JOIN t_code_detail c1
                                   ON t.textbook_type = c1.d_cd
@@ -265,10 +266,11 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                 , TEXTBOOK_FILE_NM = :TEXTBOOK_FILE_NM
                                 , UPT_ID = :INS_ID
                                 , UPT_DT = SYSDATE
+                                , PUB_DT = :PUB_DT
                                 WHERE TEXTBOOK_ID = :TEXTBOOK_ID
                                 ";
 
-                            xPara = new OracleParameter[14];
+                            xPara = new OracleParameter[15];
                             xPara[0] = base.AddParam("textbook_id", OracleType.VarChar, rParams[15]);
                             xPara[1] = base.AddParam("textbook_type", OracleType.VarChar, rParams[0]);
                             xPara[2] = base.AddParam("textbook_lang", OracleType.VarChar, rParams[1]);
@@ -287,6 +289,8 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             xPara[12] = base.AddParam("textbook_file_nm", OracleType.VarChar, rParams[11]);
                             xPara[13] = base.AddParam("ins_id", OracleType.VarChar, rParams[12]);
 
+                            xPara[14] = base.AddParam("pub_dt", OracleType.VarChar, rParams[16]);
+
                             xCmdLMS.CommandText = xSql;
                             base.Execute(db, xCmdLMS, xPara, xTransLMS);
 
@@ -301,19 +305,19 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                     textbook_id, textbook_type, textbook_lang, course_group, 
                                     course_field, author, price, publisher, textbook_desc, textbook_intro, 
                                     textbook_nm, textbook_file, textbook_file_nm, ins_id, INS_DT, UPT_ID, UPT_DT, send_flg
-                                    , TEMP_SAVE_FLG 
+                                    , TEMP_SAVE_FLG , PUB_DT 
                                 )
                                 VALUES(
                                     :textbook_id, :textbook_type, :textbook_lang, :course_group, 
                                     :course_field, :author, :price, :publisher, :textbook_desc, :textbook_intro, 
                                     :textbook_nm, :textbook_file, :textbook_file_nm, :ins_id, SYSDATE, :INS_ID, SYSDATE, :send_flg
-                                    , :TEMP_SAVE_FLG 
+                                    , :TEMP_SAVE_FLG , :PUB_DT 
                                 )";
 
                             vp_l_common_md com = new vp_l_common_md();
                             xQID = com.GetMaxIDOfTable(new string[] { "t_textbook", "textbook_id" });                            
 
-                            xPara = new OracleParameter[16];
+                            xPara = new OracleParameter[17];
                             xPara[0] = base.AddParam("textbook_id", OracleType.VarChar, xQID);
                             xPara[1] = base.AddParam("textbook_type", OracleType.VarChar, rParams[0]);
                             xPara[2] = base.AddParam("textbook_lang", OracleType.VarChar, rParams[1]);
@@ -333,6 +337,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             xPara[13] = base.AddParam("ins_id", OracleType.VarChar, rParams[12]);
                             xPara[14] = base.AddParam("send_flg", OracleType.VarChar, rParams[13]);
                             xPara[15] = base.AddParam("TEMP_SAVE_FLG", OracleType.VarChar, rParams[14]);
+                            xPara[16] = base.AddParam("PUB_DT", OracleType.VarChar, rParams[16]);
 
                             xCmdLMS.CommandText = xSql;
                             base.Execute(db, xCmdLMS, xPara, xTransLMS);

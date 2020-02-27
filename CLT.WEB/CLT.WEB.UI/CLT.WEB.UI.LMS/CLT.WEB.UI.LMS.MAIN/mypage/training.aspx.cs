@@ -314,7 +314,7 @@ namespace CLT.WEB.UI.LMS.MYPAGE
                     if (xbtn.UniqueID == xtemp.UniqueID)
                     {
                         //print
-                        xPath = "/edum/edu_cmp_y_report.aspx?rpt=vp_s_agreement_certificate_report.xml&open_course_id=" + this.grd.Items[i].Cells[0].Text + "&user_id=" + Session["user_id"].ToString();
+                        xPath = "/edum/edu_cmp_y_report.aspx?rpt=agreement_certificate_report.xml&open_course_id=" + this.grd.Items[i].Cells[0].Text + "&user_id=" + Session["user_id"].ToString();
                         ClientScript.RegisterStartupScript(this.GetType(), "Report", "<script language='javascript'>OpenReport(\"" + xPath + "\");</script>");
                     }
                 }

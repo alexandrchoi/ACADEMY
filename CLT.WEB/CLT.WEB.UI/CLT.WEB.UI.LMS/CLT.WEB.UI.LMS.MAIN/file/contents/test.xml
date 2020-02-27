@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pluginList>
+    <plugin>
+        <Guid value="D3D97AF7-1B96-4992-BFF1-BF2D36852DE4" />
+        <Name value="문자대화" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <InstallConfirmMsg value="문자대화 메세지가 도착했습니다. 문자대화 플러그인을 설치하시겠습니까?" />
+        <UpgradeConfirmMsg value="문자대화 메세지가 도착했습니다. 문자대화 플러그인을 업그레이드해야합니다. 업그레이드하시겠습니까?" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_talksms_20111024.zip" />
+        <zip_hash value="NaNlVM2zODNkvKHq9pKbqrj+PdM=" />
+        <hash>
+            <hash_file value="TalkSMSMain.exe" hash="t35oYxBkB9H5WVoULwEq0qds3Qw=" />
+            <hash_file value="TalkSMSDLL.dll" hash="QwPTWkTaTFXpDZ7yZ7l+8PYIDcw=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="문자 메세지를 대화창에서 보내고 받을 수 있습니다." />
+        <Menu value="MESSAGE:5;BUDDY:11" />
+        <menu_text value="문자대화 하기(J)&#x09;Ctrl+J" />
+        <Open value="y" />
+        <Insert_First value="Y" />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <Toolimage value="http://nateon.nate.com/plugin/coolshot_20061219.bmp" />
+        <ToolimageVer value="6" />
+        <dependency value="4AC02E64-51C4-49F7-A436-A061F94FC52F;" />
+        <shared_file value="MSVCRT.DLL;msvcr80.dll;unicows.dll;SLDB.dll;SRControl.dll" />
+        <update_event value="Ticket;Mapping;AddrBook" />
+    </plugin>
+    <plugin>
+        <Guid value="7AEF7E74-08E8-47b9-96F3-BC4A07E4D5E8" />
+        <Name value="화상/음성대화" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_avchat_20111024.zip" />
+        <zip_hash value="4CVpvjIBnFPx1er/L1XkMMGL42s=" />
+        <hash>
+            <hash_file value="AVChatAgent.exe" hash="JHxyg5uuPHWNyD5Hdj/UHJAidCg=" />
+            <hash_file value="AVChatDLL.dll" hash="c1vPHpJbok9gGKWKJlWQyakxOO8=" />
+            <hash_file value="DeviceSettingWizard.dll" hash="YPn6YFdL20ZKQNdtdt/2YzCA7Nw=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="화상/음성으로 상대방과 대화를 할 수 있습니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="msvcr80.dll;MSVCRT.DLL;unicows.dll;" />
+        <update_event value="Ticket" />
+    </plugin>
+    <plugin>
+        <Guid value="4AC02E64-51C4-49F7-A436-A061F94FC52F" />
+        <Name value="주소록" />
+        <plugin_Type value="cust" />
+        <SilentInstall value="y" />
+        <not_check_exe_sign value="n" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_contacts_20111024.zip" />
+        <zip_hash value="jdWAyVSHRTwNd503jIFT9kYd8lM=" />
+        <hash>
+            <hash_file value="NateAddrBook.dll" hash="AUx/Lf+BtJwK9karIIVcT4agaX4=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="고객님의 주소를 관리해줍니다." />
+        <Menu value="" />
+        <NateOn_Limit_Version value="4.1.5.0" />
+    </plugin>
+    <plugin>
+        <Guid value="54E70798-B9FE-4e74-83F9-B11E1DE1DEF7" />
+        <Name value="메모짱" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_memozzang_20111026.zip" />
+        <zip_hash value="UdPGcwT030ls2zJJVznVK7WidkE=" />
+        <hash>
+            <hash_file value="MemoZzangPlugin.dll" hash="ZPgUMd0UKEFw17eKBeKFyUNIcqk=" />
+            <hash_file value="MemoZzangInstall.dll" hash="7L53UM45EOgSYXfyOhvq6fAHfpA=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="약속 및 일정을 관리해줍니다." />
+        <Menu value="TOOLBAR" />
+        <Open value="y" />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="MSVCRT.DLL;unicows.dll" />
+    </plugin>
+    <plugin>
+        <Guid value="37A90507-CF63-49D8-8E1E-F32E4A869CB8" />
+        <Name value="통합메시지함" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_tmsgbox_20111109.zip" />
+        <zip_hash value="8TeKTsZ6xY9N4BvLwN5CxSaK1Jc=" />
+        <hash>
+            <hash_file value="TMsgBox.exe" hash="jh6YUR/9+d8iPR4t3k56s8oVrhI=" />
+            <hash_file value="TMsgBoxDLL.dll" hash="ALelQoSBsyfaV+U5Hx+d3Q80YN8=" />
+        </hash>
+        <Limit_Version value="4.1.6.0" />
+        <Latest_Version value="4.1.6.0" />
+        <Made_by value="SK Communications" />
+        <Description value="메일,쪽지,대화,SMS,주소록을 한 곳에서 관리할 수 있습니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <dependency value="4AC02E64-51C4-49F7-A436-A061F94FC52F;" />
+        <shared_file value="msvcr80.dll;MSVCRT.DLL;unicows.dll;SLDB.dll;SRControl.dll" />
+        <update_event value="Ticket;Mapping;AddrBook" />
+    </plugin>
+    <plugin>
+        <Guid value="022C7120-2ABF-49E8-9214-D02BACDA9E4B" />
+        <Name value="플래시콘(기프티콘)" />
+        <plugin_Type value="cust" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_flcon_20111227.zip" />
+        <zip_hash value="tzKJGoZkhXo+15jar63jc7SsGvI=" />
+        <hash>
+            <hash_file value="Flashcon.dll" hash="K0ypF661hYCYc4g5R8JWjtz5ZxQ=" />
+            <hash_file value="Gifticon.dll" hash="2jNRXd8qGEFcLB42WMCG1H4hndY=" />
+            <hash_file value="FlconPlayer9x.exe" hash="CmF2cnTdbvanjDgGjKA6WnnAhA0=" />
+            <hash_file value="FlconPlayerNT.exe" hash="C9vd80HvJewueDuU3IH8FQ//S7A=" />
+        </hash>
+        <Limit_Version value="4.1.8.0" />
+        <Latest_Version value="4.1.8.0" />
+        <Made_by value="SK Communications" />
+        <Description value="플래시콘 플러그인입니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="MSVCRT.DLL;unicows.dll;" />
+        <dependency value="8CD2EAA9-13D2-409D-B234-A439883BE2A0;" />
+    </plugin>
+    <plugin>
+        <Guid value="55DE2F44-502B-40fe-8689-1518EF3DDFA2" />
+        <Name value="약속잡기" />
+        <plugin_Type value="cust" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_diary_20111025.zip" />
+        <zip_hash value="0TpFoLQSPgrHf/rzM0tpgjLOsHg=" />
+        <hash>
+            <hash_file value="NateDiary.dll" hash="y7djutu1c7g4OUO6XkZdCDKnE2A=" />
+            <hash_file value="NateDiaryResDLL_KOR.dll" hash="9SRItefmSpq+vmk13dc2owZfDfg=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="약속잡기 플러그인입니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="msvcr80.dll;MSVCRT.DLL;unicows.dll;SRControl.dll" />
+    </plugin>
+    <plugin>
+        <Guid value="AA76A730-ABE2-43b7-8F31-C92F1C39F71C" />
+        <Name value="공유작업" />
+        <plugin_Type value="cust" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_sharectrl_20111026.zip" />
+        <zip_hash value="7inf6bTJ2zlAnCeJLbzu3hO9aY0=" />
+        <hash>
+            <hash_file value="NateWhiteBoard.dll" hash="ZWzQfwJdvOgH4tlp0GNAjujTtlM=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="상대방과 작업을 공유합니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="MSVCRT.DLL;unicows.dll" />
+    </plugin>
+    <plugin>
+        <Guid value="94105F28-B220-4BD9-BAC3-792EDC68F3DD" />
+        <Name value="웹사이트 함께보기" />
+        <plugin_Type value="cust" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_webshare_20111024.zip" />
+        <zip_hash value="7cnzOWDDVi8NlWqV3Yqcg0yc6/Q=" />
+        <hash>
+            <hash_file value="NateWebShare.dll" hash="BD2G76m+EfCRqLticeKhdIJQ20Y=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="상대방과 웹사이트를 합께봅니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="MSVCRT.DLL;unicows.dll" />
+    </plugin>
+    <plugin>
+        <Guid value="5D1A9EDE-ED23-4790-8C04-CCABA1FC888B" />
+        <Name value="원격제어" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_rcmodule_20111026.zip" />
+        <zip_hash value="vDtKIinDjCad3r0jHmh7Uowi+FU=" />
+        <hash>
+            <hash_file value="NateRSRCPlugin.dll" hash="8EasH5x1y/KvWEPR24FUVvIklY8=" />
+        </hash>
+        <Limit_Version value="4.3.3.5" />
+        <Latest_Version value="4.3.3.5" />
+        <Made_by value="RSupport" />
+        <Description value="원격제어 프로그램입니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <AcceptConfirmMsg value="원격제어를 수락하면 상대방이 내 컴퓨터 화면을 보면서 마우스나 키보드를 움직일 수 있습니다." />
+        <AlertSingleExe value="원격제어 기능이 이미 동작중입니다...." />
+        <allow_single_exec value="y" />
+    </plugin>
+    <plugin>
+        <Guid value="965AC526-B52C-4846-9A22-DAAAAE76E9CA" />
+        <Name value="네이트온폰" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_nateonphone_20111024.zip" />
+        <zip_hash value="GCXIWlNNdIhuHHniSrsjdtGcdjk=" />
+        <hash>
+            <hash_file value="NateSoftPhoneMain.exe" hash="Bc+/uFn7tmcnz/ydW34iSB9siCM=" />
+            <hash_file value="NateSoftPhoneDll.dll" hash="P3D6L6AbWnvsSZuGBbVcDRVh4zQ=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="인터넷 전화 프로그램입니다." />
+        <ClearConfirmMsg value="네이트온을 로그아웃하면 네이트온폰도 함께 종료됩니다.\n계속 하시겠습니까?" />
+        <Open value="y" />
+        <Insert_First value="Y" />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <Toolimage value="http://nateon.nate.com/plugin/nateonphone_20110719.bmp" />
+        <ToolimageVer value="4" />
+        <dependency value="4AC02E64-51C4-49F7-A436-A061F94FC52F;" />
+        <shared_file value="MSVCRT.DLL;unicows.dll" />
+        <update_event value="Ticket;Mapping;AddrBook" />
+    </plugin>
+    <plugin>
+        <Guid value="A1C69557-7BAA-45A6-9E85-1B887C0C57A3" />
+        <Name value="상담시스템" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <not_check_exe_sign value="n" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_consult_20111108.zip" />
+        <zip_hash value="P+68b1/LOH2MRojkYXeqFTP18I8=" />
+        <hash>
+            <hash_file value="NateConsultDLL.dll" hash="CWx/S518hk91uqoDYhDhHD7fXp0=" />
+            <hash_file value="NateConsult.exe" hash="EaBxhJ0uYk6PPvS0fJLDUPaI3PA=" />
+        </hash>
+        <Limit_Version value="4.1.5.1" />
+        <Latest_Version value="4.1.5.1" />
+        <Made_by value="SK Communications" />
+        <Description value="네이트온 상담시스템 입니다" />
+        <ClearConfirmMsg value="상담 프로그램이 동작중입니다.\n상담 서비스가 중지되고, 프로그램이 강제로 종료됩니다.\n\n계속 진행하시겠습니까?" />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <dependency value="AA76A730-ABE2-43b7-8F31-C92F1C39F71C;94105F28-B220-4BD9-BAC3-792EDC68F3DD;7AEF7E74-08E8-47b9-96F3-BC4A07E4D5E8;" />
+        <shared_file value="msvcr80.dll;MSVCRT.DLL;unicows.dll;SLDB.dll;SRControl.dll" />
+        <update_event value="Ticket;Mapping;" />
+    </plugin>
+    <plugin>
+        <Guid value="8CD2EAA9-13D2-409D-B234-A439883BE2A0" />
+        <Name value="네이트온 브라우져 컨트롤" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_browser_20111024.zip" />
+        <zip_hash value="EqeruttDrlzQtUTfFpUyvtNgfCY=" />
+        <hash>
+            <hash_file value="IELauncher.exe" hash="5M+CBA50KHuWzLAbSh55ENNWPOs=" />
+            <hash_file value="IELauncherDLL.dll" hash="EmMj2ffP2SwGgEA+tHm0IXKW6Rw=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="네이트온과 연동되는 웹페이지들을 관리해주는 모듈입니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="msvcr80.dll;MSVCRT.DLL;unicows.dll" />
+        <update_event value="Ticket;Mapping;" />
+    </plugin>
+    <plugin>
+        <Guid value="08880AE9-EC64-46cf-B1E1-42A035CEA8AE" />
+        <Name value="KBS라디오 콩" />
+        <plugin_Type value="cust" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_kong_20111025.zip" />
+        <zip_hash value="Sev4hG+yoYlYdFhGKst+KYDqAwQ=" />
+        <not_check_exe_sign value="y" />
+        <hash>
+            <hash_file value="KONGinNateOnAddin.dll" hash="qARS60wkA/stLlpa4Qe5jkp9GjI=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="KBS라디오를 들을 수 있습니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <update_event value="Ticket;" />
+    </plugin>
+    <plugin>
+        <Guid value="C7F25E31-7B70-4810-B53A-DD7CE12B0D34" />
+        <Name value="프로그램 실행 도우미" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_applauncher_20111024.zip" />
+        <zip_hash value="DtOVvMc1lkr2PH7DJnUPCiZ37sE=" />
+        <hash>
+            <hash_file value="AppLauncher.dll" hash="11OCzeBn5pR6mgyXt0rG6rCSaDI=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="프로그램 실행을 돕기 위한 플러그인 입니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="msvcr80.dll;MSVCR" />
+    </plugin>
+    <plugin>
+        <Guid value="C4C116D8-BD82-493e-8616-14D18CE52FA0" />
+        <Name value="미니클럽" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <not_check_exe_sign value="n" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_miniclub_20111024.zip" />
+        <zip_hash value="oDhnw3Yju6j3x61mQWKAawvKrLg=" />
+        <hash>
+            <hash_file value="ShareBoard.exe" hash="hFzxAgFzYPUX/04I4UGyeJ2EnhE=" />
+            <hash_file value="ShareBoardDll.dll" hash="bJZ0QsECMGFrA0x01WNOI6D1U6o=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="미니클럽" />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="msvcr80.dll;MSVCRT.DLL;unicows.dll;SLDB.dll;SRControl.dll" />
+        <update_event value="Ticket" />
+    </plugin>
+    <plugin>
+        <Guid value="00D4CBAF-D02C-499f-BB2F-6B755A8FC34E" />
+        <Name value="뮤직 Launcher" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <not_check_exe_sign value="n" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_musiclauncher_20111024.zip" />
+        <zip_hash value="up0Rv2ZtFY4kJ/dLpTa+4LPmbk4=" />
+        <hash>
+            <hash_file value="MusicLauncher.exe" hash="Br2wHSvlvNp/sO+egUWxs90vddY=" />
+            <hash_file value="MusicLauncherDLL.dll" hash="hKrjsptCRDM2Eanz24qUT1ptJ9w=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="싸이월드 BGM앨범을 들을 수 있도록 도와줍니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="msvcr80.dll;MSVCRT.DLL;unicows.dll" />
+        <update_event value="" />
+    </plugin>
+    <plugin>
+        <Guid value="0044636D-5E63-486a-A1C1-843B0DADE4E1" />
+        <Name value="싸이글꼴" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_fancyfont_20111123.zip" />
+        <zip_hash value="Jq/dPIo72CwlvaUqyU6PCA7hmJk=" />
+        <hash>
+            <hash_file value="FancyFont.dll" hash="HvprrODFELrsbM1P8HlqgpYmpEk=" />
+        </hash>
+        <Limit_Version value="4.1.5.1" />
+        <Latest_Version value="4.1.5.1" />
+        <Limit OS="" Version="" value="6" />
+        <Made_by value="SK Communications" />
+        <Description value="글꼴입니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="MSVCRT.DLL;unicows.dll" />
+    </plugin>
+    <plugin>
+        <Guid value="77CA5BCD-833B-4b59-9E4E-84E548DD2452" />
+        <Name value="네이트온 악성코드 검사" />
+        <plugin_Type value="cust" />
+        <SilentInstall value="y" />
+        <HiddenInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_viruscheck_20111025.zip" />
+        <zip_hash value="AER7B+68xIabj87ZBPmsTZfCmJY=" />
+        <hash>
+            <hash_file value="NateV3Fn.dll" hash="DLff3AIgFkSrGGfXwxtYPNGL+UQ=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="네이트온 악성코드 검사플러그인입니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <update_event value="Ticket;" />
+    </plugin>
+    <plugin>
+        <Guid value="D8558182-2209-4DBC-BFDF-500ED12625BF" />
+        <Name value="네이트 메일함" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_mailviewer_20111024.zip" />
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="메일을 어플리케이션으로 이용하실 수 있습니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="msvcr80.dll;MSVCRT.DLL;unicows.dll;SLDB.dll" />
+        <update_event value="Ticket;Mapping;AddrBook" />
+        <not_check_exe_sign value="n" />
+        <zip_hash value="iU0+6vl5zncSz7ADPhk3C7lecbo=" />
+        <hash>
+            <hash_file value="MailViewer.exe" hash="V8DovKH/yk0yBOVyI2j9BgVaKrA=" />
+            <hash_file value="MailViewerDLL.dll" hash="nRN+d+B6qG601rW5zu6INs29osk=" />
+        </hash>
+    </plugin>
+    <plugin>
+        <Guid value="AB4F4B06-32BA-4ABC-ACB2-9F84CA8AC284" />
+        <Name value="네이트 게임" />
+        <plugin_Type value="cust" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_gameon_20111017.zip" />
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="네이트온의 게임탭입니다." />
+        <zip_hash value="M2ymhcD3WZ37YmSOwGg6QYFMB5g=" />
+        <hash>
+            <hash_file value="NateGameOn.dll" hash="5QQjj7CijxNti5gbWIJes6E6IDE=" />
+        </hash>
+        <not_check_exe_sign value="n" />
+        <Menu value="" />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="unicows.dll" />
+    </plugin>
+    <plugin>
+        <Guid value="9C88B4C4-6175-4f18-95BE-AC2E164980E5" />
+        <Name value="네이트 메일로 파일 전송" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_simplemail_20111024.zip" />
+        <zip_hash value="nNt+ifbOB5Fpt8gIqr4BNzV43RI=" />
+        <hash>
+            <hash_file value="SimpleMail.dll" hash="kX4apBYf3V9VOe0yv6N9pgfKRT8=" />
+            <hash_file value="SimpleMail.exe" hash="HETZoslStQTC8TWD1vLBXtNmy6A=" />
+        </hash>
+        <not_check_exe_sign value="n" />
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="네이트 메일로 파일 전송" />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="msvcr80.dll;MSVCRT.DLL;unicows.dll" />
+        <update_event value="" />
+    </plugin>
+    <plugin>
+        <Guid value="DDF4F59A-6D73-42db-B701-4545C6242B6F" />
+        <Name value="커뮤니케이션뷰어" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_commviewer_20111025.zip" />
+        <zip_hash value="wQ+D3bMJcgMSOQFZV11476QbhUA=" />
+        <hash>
+            <hash_file value="CommViewerDLL.dll" hash="gAA9JrqFa6p4nC8p90WycWxXvw0=" />
+            <hash_file value="CommViewer.exe" hash="zwIO8oYQTGhpCVEI09XY8YrKU48=" />
+            <hash_file value="AVChatFileInfo.dll" hash="dPQTmEtSvzRwZH+mCrwbeU5H0qg=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="로컬PC에 저장되었던 쪽지,대화,메일을 보실 수 있으며, 음화상대화내용을 보실 수 있습니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="msvcr80.dll;MSVCRT.DLL;unicows.dll;SLDB.dll;SRControl.dll" />
+        <update_event value="Ticket" />
+    </plugin>
+    <plugin>
+        <Guid value="AAEB33C8-3089-4147-9071-6A6FEB637239" />
+        <Name value="MBC라디오 mini" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_mini_20111024.zip" />
+        <zip_hash value="v7+Laypm8yY6N1aentPWIvMoMtc=" />
+        <hash>
+            <hash_file value="MiniLauncher.dll" hash="EJfFGY5wpVelxPC5+MWKirqc/AM=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="iMBC" />
+        <Description value="MBC라디오 mini입니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <update_event value="" />
+    </plugin>
+    <plugin>
+        <Guid value="CC4E65A5-3ED6-48ba-AD72-3EE3F3C6725E" />
+        <Name value="본인 인증" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_authsign_20111024.zip" />
+        <zip_hash value="Y3avUCUMprWTPH+zftotNb8xZfw=" />
+        <hash>
+            <hash_file value="AuthSign.dll" hash="nPuMx/Uy5YiFJgjvyunu3wT6GFs=" />
+        </hash>
+        <not_check_exe_sign value="n" />
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="본인인증 플러그인입니다." />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <shared_file value="MSVCRT.DLL;unicows.dll" />
+        <update_event value="" />
+    </plugin>
+    <plugin>
+        <Guid value="7641745A-2980-4761-9471-583C8BF10FF8" />
+        <Name value="외부메일 도착 알리미" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <HiddenInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_pop3agent_20111024.zip" />
+        <zip_hash value="OTXMVsbxXtPJKzeJWSPPliBqC7k=" />
+        <hash>
+            <hash_file value="POP3AgentDLL.dll" hash="zSZ7WjrXuDUaC7AQgmFrLT9xOy0=" />
+            <hash_file value="POP3Agent.exe" hash="N4BvQXtos9ZmXK378nqxsv+/z8o=" />
+            <hash_file value="POP3.exe" hash="Oybc2ecjd200zUAwYv084l59nA4=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <Made_by value="SK Communications" />
+        <Description value="외부메일 도착 알리미" />
+        <NateOn_Limit_Version value="4.1.5.0" />
+        <update_event value="Ticket" />
+    </plugin>
+    <plugin>
+        <Guid value="99B558F3-D936-4866-9666-141E0E759023" />
+        <Name value="SBS 고릴라" />
+        <plugin_Type value="dll" />
+        <SilentInstall value="y" />
+        <URL value="http://nateondownload.nate.com/plugin/nateon41_gorealra_20111025.zip" />
+        <zip_hash value="Z+0M+roR9xkpFV5qCvqUhmnFx1E=" />
+        <not_check_exe_sign value="y" />
+        <hash>
+            <hash_file value="gorealra.dll" hash="HFLBkkpUx5RmbnnNmt2UETN3hVQ=" />
+        </hash>
+        <Limit_Version value="4.1.5.0" />
+        <Latest_Version value="4.1.5.0" />
+        <shared_file value="" />
+        <update_event value="Ticket;Mapping;" />
+    </plugin>
+</pluginList>

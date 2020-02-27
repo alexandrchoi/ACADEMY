@@ -226,7 +226,8 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                 string xSql = "SELECT user_id, user_no, personal_no, user_nm_kor, user_nm_eng_first, user_nm_eng_last, " +
                               "       tuser.duty_step, mobile_phone, email_id, office_phone, tuser.company_id, user_zip_code, " +
                               "       tcompany.company_nm, user_addr, tuser.user_group, sms_yn, mail_yn " +
-                              " , trainee_class, to_char(enter_dt, 'yyyy.MM.dd') as enter_dt, pic_file_nm, pic_file " + 
+                              " , tuser.dept_code, nvl((SELECT dept_name FROM v_hdeptcode WHERE dept_code = tuser.dept_code), tuser.dept_code) AS dept_name " +
+                              " , trainee_class, to_char(enter_dt, 'yyyy.MM.dd') as enter_dt, to_char(birth_dt, 'yyyy.MM.dd') as birth_dt, pic_file_nm, pic_file " + 
                               "  FROM t_user tuser, t_company tcompany " +
                               " WHERE tuser.user_id = '" + rParams.GetValue(0) + "'" +
                               "   AND tuser.company_id = tcompany.company_id(+) ";
@@ -304,7 +305,11 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                 }
                 // 암호화 모듈제거
                 //xSql += "        SELECT  tuser.user_no, tuser.user_nm_kor, tuser.SEC_PERSONAL_NO, code.d_knm user_group, tcompany.company_nm, tuser.mobile_phone, ";
-                xSql += "        SELECT  tuser.user_no, tuser.user_nm_kor, tuser.PERSONAL_NO, code.d_knm user_group, tcompany.company_nm, tuser.mobile_phone, ";
+                xSql += "        SELECT  tuser.user_no, tuser.user_nm_kor, ";
+                // 복호화
+                xSql += " REGEXP_REPLACE(HINDEV.CRYPTO_AES256.DEC_AES(tuser.PERSONAL_NO),'\\d','*', 9) AS PERSONAL_NO, ";
+
+                xSql += "                code.d_knm user_group, tcompany.company_nm, tuser.mobile_phone, ";
                 xSql += "                code2.d_knm status, ";  // hdutystep.step_name dutystep, datachk.dname socialpos
 
                 // 직급 
@@ -614,7 +619,9 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                                                     " user_nm_eng_last, " +    // 
                                                     " sms_yn, " +    // 
                                                     " mail_yn, " +    // 
-                                                    " enter_dt) " +    // 
+                                                    " dept_code, " +    // 
+                                                    " enter_dt, " +    // 
+                                                    " birth_dt) " +    // 
                                                    " VALUES( '" + rParams[0] + "', " +  // 사용자 ID
                                                             "'" + rParams[1] + "', " +  // 비밀번호
                                                             "'" + rParams[8] + "', " +  // 담당자명
@@ -636,11 +643,17 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                                                             "'" + rParams[24] + "', " + // 영문명 First
                                                             "'" + rParams[25] + "', " + // 영문명 Last
                                                             "'" + rParams[30] + "', " + // SMS 수신여부
-                                                            "'" + rParams[31] + "',  "; // MAIL 수신여부
+                                                            "'" + rParams[31] + "',  "+ // MAIL 수신여부
+                                                            "'" + rParams[27] + "',  "; // MAIL 수신여부
+
                     if (rParams[29] == null)
-                        xSql += string.Format(" null ", rParams[29]);
+                        xSql += string.Format(" null, ", rParams[29]);
                     else
-                        xSql += string.Format(" TO_DATE('{0}', 'yyyy.MM.dd') ", rParams[29]);
+                        xSql += string.Format(" TO_DATE('{0}', 'yyyy.MM.dd'), ", rParams[29]);
+                    if (rParams[32] == null)
+                        xSql += string.Format(" null ", rParams[32]);  // 생년월일
+                    else
+                        xSql += string.Format(" TO_DATE('{0}', 'yyyy.MM.dd') ", rParams[32]);
                     xSql += ")";
 
 
@@ -814,7 +827,8 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                                                       " ins_dt, " +  // 등록일자
                                                       " upt_id, " +  // 수정자 
                                                       " upt_dt, " +  // 수정일자
-                                                      " trainee_class) " +
+                                                      " trainee_class, " +  // 
+                                                      " birth_dt) " +  // 생년월일
                                                       " VALUES( ";
                     xSql += string.Format(" '{0}', ", rParams[0]);  // 사용자 ID
                     xSql += string.Format(" '{0}', ", rParams[1]);  // 비밀번호
@@ -861,10 +875,15 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
 
 
                     xSql += " SYSDATE, "; // 수정일자
-                    xSql += string.Format(" '{0}') ", rParams[28]);  // 등록자
+                    xSql += string.Format(" '{0}', ", rParams[28]);  // 등록자
+
+                    if (rParams[29] == null)
+                        xSql += string.Format(" null ", rParams[29]);  // 생년월일
+                    else
+                        xSql += string.Format(" TO_DATE('{0}', 'yyyy.MM.dd') ", rParams[29]);
 
 
-
+                    xSql += " ) ";
 
                     xCmdLMS.CommandText = xSql;
                     base.Execute(db, xCmdLMS, xTransLMS);
@@ -1053,7 +1072,7 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                     xsql += string.Format(" sms_yn = '{0}', ", rParams[14]);
                     xsql += string.Format(" mail_yn = '{0}', ", rParams[15]);
                     xsql += string.Format(" upt_id = '{0}', ", rParams[16]);
-                    if (rParams.Length == 21)
+                    if (rParams.Length == 22)
                     {
                         if (rParams[20] == "000001")
                             xsql += string.Format(" user_group = '{0}', ", rParams[17]);
@@ -1065,6 +1084,14 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                         xsql += string.Format(" enter_dt = null, ", rParams[19]);
                     else 
                         xsql += string.Format(" enter_dt = TO_DATE('{0}', 'yyyy.MM.dd'), ", rParams[19]);
+
+                    if (rParams[21] == null)
+                        xsql += string.Format(" birth_dt = null, ", rParams[21]);
+                    else
+                        xsql += string.Format(" birth_dt = TO_DATE('{0}', 'yyyy.MM.dd'), ", rParams[21]);
+
+                    if (rParams[22] != null)
+                        xsql += string.Format(" dept_code = '{0}', ", rParams[22]);
 
                     xsql += " upt_dt = SYSDATE ";
                     xsql += string.Format(" WHERE UPPER(user_id) = UPPER('{0}') ", rParams[0]);
@@ -1801,6 +1828,14 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                         xsql += string.Format(" enter_dt = null, ", rParams[19]);
                     else
                         xsql += string.Format(" enter_dt = TO_DATE('{0}', 'yyyy.MM.dd'), ", rParams[19]);
+
+                    if (rParams[21] == null)
+                        xsql += string.Format(" birth_dt = null, ", rParams[21]);
+                    else
+                        xsql += string.Format(" birth_dt = TO_DATE('{0}', 'yyyy.MM.dd'), ", rParams[21]);
+
+                    if (rParams[22] != null)
+                        xsql += string.Format(" dept_code = '{0}', ", rParams[22]);
 
                     xsql += " upt_dt = SYSDATE ";
                     xsql += string.Format(" WHERE UPPER(user_id) = UPPER('{0}') ", rParams[0]);

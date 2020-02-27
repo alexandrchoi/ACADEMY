@@ -94,7 +94,7 @@
 
                         <div class="tab">
                             <input type="radio" name="tabs" id="tab-2" class="tab-switch">
-                            <label for="tab-2" class="tab-label"><asp:Label ID="tab_2" runat="server" text="소식" meta:resourcekey="tab_2Resource" /></label>
+                            <label for="tab-2" class="tab-label"><asp:Label ID="tab_2" runat="server" text="공지사항" meta:resourcekey="tab_2Resource" /></label>
                             <div class="tab-content">
                                 <ul>
                                     <asp:Literal ID="NoticeList" runat="server" />
@@ -133,10 +133,9 @@
         <div class="main-visual-box">
             <div class="main-visual">
                 <div class="visual-copy">
-                    <p class="key-copy"><asp:Label ID="bhpTitle" runat="server" Text="Best HRD Provider!" meta:resourcekey="bhpTitleResource" /></p>
+                    <p class="key-copy"><asp:Label ID="bhpTitle" runat="server" Text="Best HRD Provider" meta:resourcekey="bhpTitleResource" /></p>
                     <p>
-                        <asp:Label ID="bhpDesc" runat="server" text="풀이 피부가 얼음 끝에 그들은 뿐이다. 튼튼하며,<br>
-                        하는 그림자는 사랑의 우리 투명하되 인도하겠다는 듣는다." meta:resourcekey="bhpDescResource" />
+                        <asp:Label ID="bhpDesc" runat="server" text="Global Ocean Leader Training Center Your Best HRD Partner! G-MARINE ACADEMY" meta:resourcekey="bhpDescResource" />
                     </p>
                 </div>
             </div>
@@ -148,7 +147,7 @@
             <div class="item">
                 <div class=" banner-1">
                     <img src="/asset/images/main/main-icon1.png" alt="아이콘">
-                    <h3><asp:Label ID="entrTitle" runat="server" Text="사업주위탁신청" meta:resourcekey="entrTitleResource" /></h3>
+                    <h3><asp:Label ID="entrTitle" runat="server" Text="사업주위탁훈련" meta:resourcekey="entrTitleResource" /></h3>
                     <p><asp:Label ID="entrDesc" runat="server" Text="사업소개, 신청방법, 과정안내를 확인하세요." meta:resourcekey="entrDescResource" /></p>
                     <asp:HyperLink ID="lnkEntr" runat="server" CssClass="button-main-rnd lg" Text="자세히보기" NavigateUrl="/intro/consignment.aspx" meta:resourcekey="lnkResource" />
                 </div>
@@ -178,7 +177,7 @@
         <div class="fixed-box">
             <h3 class="title"><span>best hrd</span><br>provider</h3>
             <p><asp:Label ID="bhpDesc1" runat="server" text="2019년도 인적자원개발 우수기관으로 선정" meta:resourcekey="bhpDesc1Resource" /></p>
-            <asp:HyperLink ID="lnkbhp" runat="server" CssClass="button-underline lt" Text="자세히보기" NavigateUrl="#" meta:resourcekey="lnkResource" />
+            <asp:HyperLink ID="lnkbhp" runat="server" CssClass="button-underline lt" Text="자세히보기" NavigateUrl="/community/notice_detail.aspx?rseq=237&MenuCode=620&delYN=N" meta:resourcekey="lnkResource" />
         </div>
     </div>
 
@@ -207,7 +206,7 @@
                 <asp:Label ID="scDesc" runat="server" CssClass="title-ko" text="6개 해양수산부 지정 교육과정" meta:resourcekey="scDescResource" />
             </div>
         </div>
-        <asp:HyperLink ID="lnkEduList" runat="server" CssClass="button-main-rnd lg" Text="자세히보기" NavigateUrl="#" meta:resourcekey="lnkResource" />
+        <asp:HyperLink ID="lnkEduList" runat="server" CssClass="button-main-rnd lg" Text="자세히보기" NavigateUrl="/curr/curriculum.aspx" meta:resourcekey="lnkResource" />
     </div>
 
 </asp:Content>

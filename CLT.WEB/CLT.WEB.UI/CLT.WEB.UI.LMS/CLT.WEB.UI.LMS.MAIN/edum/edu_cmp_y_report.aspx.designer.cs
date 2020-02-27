@@ -7,11 +7,13 @@
 // </자동 생성됨>
 //------------------------------------------------------------------------------
 
-namespace CLT.WEB.UI.LMS.EDUM {
-    
-    
-    public partial class edu_cmp_y_report {
-        
+namespace CLT.WEB.UI.LMS.EDUM
+{
+
+
+    public partial class edu_cmp_y_report
+    {
+
         /// <summary>
         /// Head1 컨트롤입니다.
         /// </summary>

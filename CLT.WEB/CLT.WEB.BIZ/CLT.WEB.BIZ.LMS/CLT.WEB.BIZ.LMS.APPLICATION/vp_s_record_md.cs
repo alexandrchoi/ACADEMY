@@ -215,7 +215,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                 xSql = " SELECT ";
                 xSql += " c.company_nm, ";
                 xSql += " b.user_nm_kor, ";
-                xSql += " b.personal_no, ";
+                xSql += " HINDEV.CRYPTO_AES256.DEC_AES(b.personal_no) as personal_no, ";
                 xSql += " f.course_nm, ";
                 xSql += " TO_CHAR(e.course_begin_dt, 'yyyy.MM.dd') || '~' || TO_CHAR(e.course_end_dt, 'yyyy.MM.dd') AS course_begin_end_dt, ";
                 xSql += " TO_CHAR(sysdate, 'yyyy') || '년 ' || TO_CHAR(sysdate, 'mm') || '월 ' || TO_CHAR(sysdate, 'dd') || '일' AS agree_datetime, ";

@@ -111,15 +111,6 @@
                     </div>
                 </li>
 
-                <li>
-                    <div>
-                        <div class="month">2006</div>
-                        <ol>
-                            <li><asp:Label ID="lblYear20061" runat="server" Text="(주)한진에스엠 창립" meta:resourcekey="lblYear20061Resource" /></li>
-                        </ol>
-                    </div>
-                </li>
-
             </ol>
         </section>
 

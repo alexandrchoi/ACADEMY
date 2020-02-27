@@ -287,6 +287,7 @@
     left:0;
     z-index:99;
     box-sizing:border-box;
+    overflow-y:auto;
 }
 .user-menu-m {
     display:none;
@@ -294,6 +295,7 @@
 .all-menu {
     width:90%;
     margin:0 auto;
+    padding-bottom:40px;
 }
 .all-menu > li {
     position:relative;
@@ -601,9 +603,11 @@
     line-height:79px;
 }
 .sub-tab {
-    padding-top:50px;
     padding-bottom:40px;
     text-align:center;
+}
+.headline + .sub-tab {
+    padding-top:40px;
 }
 .sub-tab a {
     position:relative;
@@ -832,15 +836,25 @@
     .search-box input {
         margin-bottom:3px;
     }
+    .search-box .search-group .datepick {
+        width:60px;
+    }
     .search-box .button-default {
         margin-left:0;
     }
 }
 @media screen and (max-width:780px) {
-    .search-box label {
+    .search-box .search-group {
+        display:block;
+    }
+    .search-box .search-group > span,
+    .search-box .search-group > label {
         display:inline-block;
-        width:30%;
+        width:20%;
         margin-left:0;
+    }
+    .search-box .search-group > span.gm-text2 {
+        width:auto;
     }
     .search-box select,
     .search-box input[type="text"] {
@@ -870,7 +884,7 @@
     margin-right:0;
 }
 @media screen and (max-width:1024px) {
-    .PageInfo {
+    .button-box + .PageInfo {
         margin-bottom:7px;
     }
 }
@@ -1002,7 +1016,14 @@
     border:1px solid #eddfdf;
     color:#ff6170;
 }
-
+.only-mobile {
+    display:none;
+}
+@media screen and (max-width:1024px) {
+    .only-mobile {
+        display:block;
+    }
+}
 
 /* 팝업 */
 /** 회원사 등록 : manage > company  **/

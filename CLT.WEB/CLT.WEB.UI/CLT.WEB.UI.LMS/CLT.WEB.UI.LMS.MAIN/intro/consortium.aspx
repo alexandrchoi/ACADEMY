@@ -17,6 +17,10 @@
         <h3>컨소시엄 교육훈련 운영 개요</h3>
         <div class="content-box">
             <p class="mb30">재직근로자 및 채용예정자를 대상으로 한 직무능력 향상/양성 훈련 실시 지원</p>
+            <ul class="dash-list">
+                <li>재직근로자 : 고용보험 가입자</li>
+                <li>채용예정자 : 고용보험 미가입자 (3개월내 가입예정자)</li>
+            </ul>
             <figure class="center">
                 <img src="/asset/images/sub/consortium-dia1.gif" alt="컨소시엄 교육훈련 운영 개요">
             </figure>

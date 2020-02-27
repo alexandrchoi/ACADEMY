@@ -72,18 +72,15 @@
                         </ItemTemplate>
                         <ItemStyle Width="5%" />
                     </C1WebGrid:C1TemplateColumn>
-                    <C1WebGrid:C1BoundColumn DataField="subject_lang">
-                        <ItemStyle Width="8%"/>
-                    </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="subject_kind" >
-                        <ItemStyle Width="8%"/>
+                        <ItemStyle Width="10%"/>
                     </C1WebGrid:C1BoundColumn>
 
                    <C1WebGrid:C1TemplateColumn>
                         <ItemTemplate>
                             <a href="#" onclick="javascript:openPopWindow('/curr/subject_edit.aspx?subject_id=<%# DataBinder.Eval(Container.DataItem, "SUBJECT_ID")%>&MenuCode=<%=Session["MENU_CODE"]%>','subject_edit_win', '800', '750');"><%# DataBinder.Eval(Container.DataItem, "subject_nm")%></a>
                         </ItemTemplate>
-                        <ItemStyle Width="35%" CssClass ="left"/>
+                        <ItemStyle Width="" CssClass ="left"/>
                     </C1WebGrid:C1TemplateColumn>
 
                    <C1WebGrid:C1BoundColumn DataField="learning_time" >

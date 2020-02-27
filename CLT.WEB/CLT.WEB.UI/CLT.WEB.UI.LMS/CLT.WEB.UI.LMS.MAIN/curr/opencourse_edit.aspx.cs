@@ -277,6 +277,8 @@ namespace CLT.WEB.UI.LMS.CURR
                     ViewState["COURSE_INOUT"] = dr["COURSE_INOUT"].ToString();
                     ViewState["COURSE_PLACE"] = dr["COURSE_PLACE"].ToString();
 
+                    ViewState["MANAGER"] = dr["MANAGER"].ToString();
+
                     this.txtCourseID.Value = dr["COURSE_ID"].ToString();
                     this.txtCourseNM.Value = dr["COURSE_NM"].ToString();
 
@@ -347,6 +349,9 @@ namespace CLT.WEB.UI.LMS.CURR
 
                     this.txtMinCount.Text = dr["MIN_MAN_COUNT"].ToString();
                     this.txtMaxCount.Text = dr["MAX_MAN_COUNT"].ToString();
+
+
+                    this.txtManager.Text = dr["MANAGER"].ToString();
 
                     string[] xComp = dr["COMPANY_ACCEPT"].ToString().Split('|');
                     //초기화 후 
@@ -556,6 +561,9 @@ namespace CLT.WEB.UI.LMS.CURR
 
                 else if (ViewState["RES_NO"].ToString() != this.txtResId.Value)
                     return true;
+
+                else if (ViewState["MANAGER"].ToString() != this.txtManager.Text)
+                    return true;
             }
             catch (Exception ex)
             {
@@ -658,7 +666,7 @@ namespace CLT.WEB.UI.LMS.CURR
                 {
                     if (this.IsDataValidation())
                     {
-                        string[] xParams = new string[27];
+                        string[] xParams = new string[28];
 
                         xParams[0] = ViewState["OPEN_COURSE_ID"].ToString();
                         xParams[1] = this.txtCourseID.Value;
@@ -692,6 +700,8 @@ namespace CLT.WEB.UI.LMS.CURR
                         xParams[24] = this.ddlInOut.SelectedItem.Value.Replace("*", string.Empty);
                         xParams[25] = this.ddlPlace.SelectedItem.Value.Replace("*", string.Empty);
                         xParams[26] = this.rdoCourseGubun.SelectedValue;   //국토해양부 과정 여부
+
+                        xParams[27] = this.txtManager.Text;
 
                         string xRtn = SBROKER.GetString("CLT.WEB.BIZ.LMS.CURR.vp_c_opencourse_md",
                                                         "SetOpencourseInfo",

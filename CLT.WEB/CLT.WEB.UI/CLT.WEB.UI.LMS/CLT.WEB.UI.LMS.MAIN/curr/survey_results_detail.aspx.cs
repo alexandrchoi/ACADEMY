@@ -53,6 +53,10 @@ namespace CLT.WEB.UI.LMS.CURR
         
         string iChartStyle = string.Empty;
 
+
+        C1WebGrid[] iGrids = new C1WebGrid[0];
+        DataTable iMasterDt = new DataTable();
+
         /************************************************************
         * Function name : Page_Load
         * Purpose       : 설문조사 페이지 Load 이벤트
@@ -288,10 +292,9 @@ namespace CLT.WEB.UI.LMS.CURR
                             nCnt++;
                         }
 
-
                         AddGrid(xTB_Master, xParams, xMasterDt.Rows[0]["res_typecode"].ToString(), i, xGridDt); // Grid 출력
                         if (xMasterDt.Rows[0]["res_typecode"].ToString() != "000003") // 서술형이 아니면
-                            AddChart(xTB_Master, xParams, i, xGridDt, xMasterDt.Rows[0]["res_content"].ToString());
+                        AddChart(xTB_Master, xParams, i, xGridDt, xMasterDt.Rows[0]["res_content"].ToString());
 
 
                     }
@@ -431,6 +434,7 @@ namespace CLT.WEB.UI.LMS.CURR
 
                     //colDutyStep.ItemStyle.Width = Unit.Percentage(20);
 
+
                     xGrid.Columns.Add(colDutyStep);
                     for (int j = 1; j < xGridDt.Columns.Count; j++)
                     {
@@ -551,6 +555,29 @@ namespace CLT.WEB.UI.LMS.CURR
         {
             int xCount = Convert.ToInt32(rResQueCnt); // 설문 항목수(문제갯수)
 
+            ///////////////////////////////////////////////////////////////////////////////////////
+            iGrids = new C1WebGrid[xCount + 1];
+
+            iGrids[0] = new C1WebGrid();
+            C1BoundColumn colResSeq = new C1BoundColumn();
+            colResSeq.HeaderText = "Seq";
+            colResSeq.DataField = "res_seq";
+            C1BoundColumn colResContent = new C1BoundColumn();
+            colResContent.HeaderText = "Question";
+            colResContent.DataField = "res_content";
+            C1BoundColumn colResType = new C1BoundColumn();
+            colResType.HeaderText = "Answer Type";
+            colResType.DataField = "res_type";
+
+            iGrids[0].Columns.Add(colResSeq);
+            iGrids[0].Columns.Add(colResContent);
+            iGrids[0].Columns.Add(colResType);
+            
+            iMasterDt.Columns.Add("res_seq");
+            iMasterDt.Columns.Add("res_content");
+            iMasterDt.Columns.Add("res_type");
+            ///////////////////////////////////////////////////////////////////////////////////////
+            
             // 설문 문제만큼 TR, TD 생성
             for (int i = 0; i < xCount; i++)
             {
@@ -689,7 +716,8 @@ namespace CLT.WEB.UI.LMS.CURR
                               LMS_SYSTEM.CURRICULUM,
                              "CLT.WEB.UI.LMS.CURR",
                              (object)xParams);
-
+                #region chart
+                /*
                 if (xMasterDt.Rows[0]["res_typecode"].ToString() != "000003" && xMasterDt.Rows[0]["res_typecode"].ToString() != "000006")  // 서술형이 아닐 경우만 차트와 그리드 생성
                 {
 
@@ -756,7 +784,8 @@ namespace CLT.WEB.UI.LMS.CURR
                     xTR_Chart.Controls.Add(xTC_Chart);
                     xTB_Master.Controls.Add(xTR_Chart);
                 }
-
+                */
+                #endregion chart
 
                 C1WebGrid WebGrid = new C1WebGrid();
                 WebGrid.Width = Unit.Percentage(98);
@@ -1053,6 +1082,18 @@ namespace CLT.WEB.UI.LMS.CURR
                 WebGrid.AutoGenerateColumns = false;
                 WebGrid.DataSource = xDetailDt;
                 WebGrid.DataBind();
+                
+
+                ///////////////////////////////////////////////////////////////////////////////////////
+                DataRow xRow = iMasterDt.NewRow();
+                xRow["res_seq"] = i + 1;
+                xRow["res_content"] = xMasterDt.Rows[0]["res_content"];
+                xRow["res_type"] = xMasterDt.Rows[0]["res_type"];
+
+                iMasterDt.Rows.Add(xRow);
+
+                iGrids[i+1] = WebGrid;
+                ///////////////////////////////////////////////////////////////////////////////////////
 
                 xTC_Grid.Controls.Add(WebGrid);
                 xTR_Grid.Controls.Add(xTC_Grid00);
@@ -1076,6 +1117,9 @@ namespace CLT.WEB.UI.LMS.CURR
                 this.ph01.Controls.Add(xTB_Master);
 
             }
+
+            iGrids[0].DataSource = iMasterDt;
+            iGrids[0].DataBind();
         }
         #endregion
         
@@ -1735,6 +1779,131 @@ namespace CLT.WEB.UI.LMS.CURR
             return c1Chart;
         }
         #endregion SequencingChart
+
+        /************************************************************
+        * Function name : btnExcel_Click
+        * Purpose       : 조회 조건에 대한 결과를 Excel로 출력하는 처리
+        * Input         : void
+        * Output        : void
+        *************************************************************/
+        protected void btnExcel_Click(object sender, EventArgs e)
+        {
+
+
+
+            DataSet ds = new DataSet();
+            foreach(C1WebGrid grid in iGrids)
+            {
+
+                DataTable xDt = new DataTable();
+                foreach(C1Column col in grid.Columns)
+                {
+                    xDt.Columns.Add(col.HeaderText);
+                }
+
+                //xDt.Columns.Add("KEYS");
+                //xDt.Columns.Add("APPROVAL_FLG");
+                //xDt.Columns.Add("EMPLOYED_STATE");
+                //xDt.Columns.Add("INSURANCE_FLG");
+                //xDt.Columns.Add("INSURANCE_DT");
+                //xDt.Columns.Add("non_approval_cd");
+                //xDt.Columns.Add("non_approval_remark");
+                //xDt.Columns.Add("COURSE_START_FLG");
+                
+
+
+                for (int i = 0; i < grid.Items.Count; i++)
+                {
+                    DataRow xRow = xDt.NewRow();
+
+                    for (int j = 0; j < grid.Columns.Count; j++)
+                    {
+                        xRow[j] = grid.Items[i].Cells[j].Text;
+                    }
+
+                    xDt.Rows.Add(xRow);
+                    
+                    ////DataRow xRow = xDt.NewRow();
+                    //xRow["KEYS"] = grid.DataKeys[i].ToString();
+                    //xRow["APPROVAL_FLG"] = ((HtmlInputCheckBox)((C1.Web.C1WebGrid.C1GridItem)grid.Items[i]).FindControl("chkApproval")).Checked ? "000001" : "000002";
+                    //xRow["EMPLOYED_STATE"] = ((DropDownList)((C1.Web.C1WebGrid.C1GridItem)grid.Items[i]).FindControl("ddlEmployedState")).SelectedValue;
+                    //xRow["INSURANCE_FLG"] = "";
+                    //xRow["INSURANCE_DT"] = "";
+                    //xRow["non_approval_cd"] = ((DropDownList)((C1.Web.C1WebGrid.C1GridItem)grid.Items[i]).FindControl("ddlNonApprovalCD")).SelectedValue;
+                    //xRow["non_approval_remark"] = ((TextBox)((C1.Web.C1WebGrid.C1GridItem)grid.Items[i]).FindControl("txtNonApprovalRemark")).Text;
+                    //xRow["COURSE_START_FLG"] = ((HtmlInputCheckBox)((C1.Web.C1WebGrid.C1GridItem)grid.Items[i]).FindControl("chkStartFlg")).Checked ? "Y" : "N";
+
+                    //xDt.Rows.Add(xRow);
+                }
+
+                ds.Tables.Add(xDt);
+
+            }
+
+            this.GetExcelFileDs(ds);
+            
+        }
+
+
+        /************************************************************
+        * Function name : GetExcelFile
+        * Purpose       : 컬럼명 없이 Excel 파일 생성하는 처리
+        * Input         : DataTable rDt
+        * Output        : void
+        *************************************************************/
+        protected void GetExcelFileDs(DataSet rDs)
+        {
+            C1.C1Excel.C1XLBook c1Excel = new C1.C1Excel.C1XLBook();
+
+            c1Excel.Clear();
+
+            if (c1Excel.Sheets.Count < rDs.Tables.Count)
+            {
+                int xSheetCount = c1Excel.Sheets.Count;
+                for (int x = 0; x < rDs.Tables.Count - xSheetCount; x++)
+                {
+                    c1Excel.Sheets.Add();
+                }
+
+            }
+
+            for (int i = 0; i < rDs.Tables.Count; i++)
+            {
+                DataTable rDt = rDs.Tables[i];
+
+                C1.C1Excel.XLSheet sheet = c1Excel.Sheets[i];
+                sheet.Name = i == 0 ? "Questions" : "A" + i;
+
+                c1Excel.DefaultFont = new System.Drawing.Font("돋움", 11);
+
+                for (int j = 0; j < rDt.Columns.Count; j++)
+                {
+                    sheet[0, j].Value = rDt.Columns[j].ColumnName;
+                }
+
+                for (int k = 0; k < rDt.Rows.Count; k++)
+                {
+                    for (int j = 0; j < rDt.Columns.Count; j++)
+                    {
+                        sheet[k + 1, j].Value = rDt.Rows[k][j].ToString();
+                    }
+                }
+
+            }
+            string filename = ((Random)new Random()).Next(10000000, 99999999).ToString() + ".xls";
+            string savename = Server.MapPath(this.TempFilePath) + filename;
+            c1Excel.Save(savename);
+
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Response.AddHeader("content-disposition", "attachment;");
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.WriteFile(savename);
+            Response.Flush();
+            Response.Close();
+
+            System.IO.File.Delete(savename);
+        }
 
     }
 }

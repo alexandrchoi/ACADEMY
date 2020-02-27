@@ -236,28 +236,28 @@ namespace CLT.WEB.UI.LMS.CURR
                 if (this.IsSettingKorean())
                 {
                     xHeader[0] = "No.";
-                    xHeader[1] = "Year";
-                    xHeader[2] = "과정코드";
+                    xHeader[1] = "년도";
+                    xHeader[2] = "교육구분";
                     xHeader[3] = "과정명";
-                    xHeader[4] = "언어";
-                    xHeader[5] = "차수";
-                    xHeader[6] = "수강신청기간";
-                    xHeader[7] = "교육기간";
-                    xHeader[8] = "등록일자";
-                    xHeader[9] = "사용여부";
+                    xHeader[4] = "차수";
+                    xHeader[5] = "수강신청기간";
+                    xHeader[6] = "교육기간";
+                    xHeader[7] = "개설일자";
+                    xHeader[8] = "사용여부";
+                    xHeader[9] = "담당자";
                 }
                 else
                 {
                     xHeader[0] = "No.";
                     xHeader[1] = "Year";
-                    xHeader[2] = "Course Code";
+                    xHeader[2] = "Course Type";
                     xHeader[3] = "Course Name";
-                    xHeader[4] = "Language";
-                    xHeader[5] = "Course Sequence";
-                    xHeader[6] = "Apply Period";
-                    xHeader[7] = "Learning Period";
-                    xHeader[8] = "Date";
-                    xHeader[9] = "Usage";
+                    xHeader[4] = "Course Sequence";
+                    xHeader[5] = "Apply Period";
+                    xHeader[6] = "Learning Period";
+                    xHeader[7] = "Date";
+                    xHeader[8] = "Usage";
+                    xHeader[9] = "Manager";
                 }
 
                 this.GetExcelFile(xDt, xHeader);
@@ -268,11 +268,89 @@ namespace CLT.WEB.UI.LMS.CURR
             }
         }
 
+        /************************************************************
+        * Function name : C1WebGrid1_ItemDataBound
+        * Purpose       : 그리드 Databound 이벤트
+        * Input         : void
+        * Output        : void
+        *************************************************************/
+        #region C1WebGrid1_ItemDataBound(object sender, C1ItemEventArgs e)
+        protected void C1WebGrid1_ItemDataBound(object sender, C1ItemEventArgs e)
+        {
+            try
+            {
+                DataRowView xItem = (DataRowView)e.Item.DataItem;
+
+                if (e.Item.ItemType == C1ListItemType.Item || e.Item.ItemType == C1ListItemType.AlternatingItem)
+                {
+                    Label lblType = ((Label)e.Item.FindControl("lblCourseType"));
+
+                    if (xItem["course_type"] != null)
+                    {
+                        string[] xType = xItem["course_type"].ToString().Split('|');
+                        foreach (string xCourseType in xType)
+                        {
+                            if (string.IsNullOrEmpty(lblType.Text))
+                                lblType.Text += GetCourseType(xCourseType);
+                            else
+                                lblType.Text = lblType.Text + "<BR>" + GetCourseType(xCourseType);
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                base.NotifyError(ex);
+            }
+        }
+        #endregion
+        /************************************************************
+        * Function name : GetCourseType
+        * Purpose       : 개설과정에 대한 교육유형명칭을 가져온다.
+        * Input         : void
+        * Output        : void
+        *************************************************************/
+        #region
+        public string GetCourseType(string rCode)
+        {
+            string xResult = string.Empty;
+            try
+            {
+                if (Thread.CurrentThread.CurrentCulture.Name.ToLower() == "ko-kr")
+                {
+                    if (rCode == "000001") // 자체교육
+                        xResult = "자체교육";
+                    else if (rCode == "000002")  // 사업주위탁
+
+                        xResult = "사업주위탁";
+                    else if (rCode == "000003") // 청년취업아카데미
+                        xResult = "청년취업아카데미";
+                }
+                else
+                {
+                    if (rCode == "000001") // 자체교육
+                        xResult = "Internal Training";
+                    else if (rCode == "000002")  // 사업주위탁
+
+                        xResult = "Commissioned Education";
+                    else if (rCode == "000003") // 청년취업아카데미
+                        xResult = "Youth Job Academy";
+                }
+            }
+            catch (Exception ex)
+            {
+                bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
+                if (rethrow) throw;
+            }
+            return xResult;
+        }
+        #endregion
 
         /************************************************************
         * Function name : C1WebGrid1_ItemCreated
-        * Purpose       : C1WebGrid의 Item이 생성될때 호출되는 이벤트 핸들러
-                          C1WebGrid 해더의 언어설정 적용을 위한 부분
+        * Purpose       : C1WebGrid의 Item이 생성될때 호출되는 이벤트 핸들러
+                          C1WebGrid 해더의 언어설정 적용을 위한 부분
         * Input         : void
         * Output        : void
         *************************************************************/
@@ -286,28 +364,28 @@ namespace CLT.WEB.UI.LMS.CURR
                     if (this.IsSettingKorean())
                     {
                         e.Item.Cells[0].Text = "No.";
-                        e.Item.Cells[1].Text = "Year";
-                        e.Item.Cells[2].Text = "과정코드";
+                        e.Item.Cells[1].Text = "년도";
+                        e.Item.Cells[2].Text = "교육구분";
                         e.Item.Cells[3].Text = "과정명";
-                        e.Item.Cells[4].Text = "언어";
-                        e.Item.Cells[5].Text = "차수";
-                        e.Item.Cells[6].Text = "수강신청기간";
-                        e.Item.Cells[7].Text = "교육기간";
-                        e.Item.Cells[8].Text = "등록일자";
-                        e.Item.Cells[9].Text = "사용여부";
+                        e.Item.Cells[4].Text = "차수";
+                        e.Item.Cells[5].Text = "수강신청기간";
+                        e.Item.Cells[6].Text = "교육기간";
+                        e.Item.Cells[7].Text = "개설일자";
+                        e.Item.Cells[8].Text = "사용여부";
+                        e.Item.Cells[9].Text = "담당자";
                     }
                     else
                     {
                         e.Item.Cells[0].Text = "No.";
                         e.Item.Cells[1].Text = "Year";
-                        e.Item.Cells[2].Text = "Course Code";
+                        e.Item.Cells[2].Text = "Course Type";
                         e.Item.Cells[3].Text = "Course Name";
-                        e.Item.Cells[4].Text = "Language";
-                        e.Item.Cells[5].Text = "Course Sequence";
-                        e.Item.Cells[6].Text = "Apply Period";
-                        e.Item.Cells[7].Text = "Learning Period";
-                        e.Item.Cells[8].Text = "Date";
-                        e.Item.Cells[9].Text = "Usage";
+                        e.Item.Cells[4].Text = "Course Sequence";
+                        e.Item.Cells[5].Text = "Apply Period";
+                        e.Item.Cells[6].Text = "Learning Period";
+                        e.Item.Cells[7].Text = "Date";
+                        e.Item.Cells[8].Text = "Usage";
+                        e.Item.Cells[9].Text = "Manager";
                     }
                 }
             }
@@ -320,7 +398,7 @@ namespace CLT.WEB.UI.LMS.CURR
 
         /************************************************************
         * Function name : PageNavigator1_OnPageIndexChanged
-        * Purpose       : C1WebGrid의 페이징 처리를 위한 이벤트 핸들러
+        * Purpose       : C1WebGrid의 페이징 처리를 위한 이벤트 핸들러
         * Input         : void
         * Output        : void
         *************************************************************/

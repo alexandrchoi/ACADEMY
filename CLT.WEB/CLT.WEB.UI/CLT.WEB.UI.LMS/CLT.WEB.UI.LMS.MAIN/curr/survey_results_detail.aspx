@@ -24,6 +24,12 @@
             <button onclick="goBack();return false;"><asp:Label ID="txtGoback" runat="server" CssClass="off-screen" Text="뒤로가기" meta:resourcekey="txtGobackResource" /></button>
         </span>
     </h2>
+    
+    <!-- 상단 버튼-->
+    <div class="button-box right">
+        <asp:Button ID="btnExcel" runat="server" Text="엑셀출력" CssClass="button-default blue" OnClick="btnExcel_Click" meta:resourcekey="btnExcelResource" />
+        <asp:Button ID="btnList" CssClass="button-default" Text="List" OnClick="btnList_OnClick" runat="server" meta:resourcekey="btnListResource" />
+    </div>
 
     <section class="section-board">
 
@@ -33,7 +39,7 @@
 
         <!-- 버튼 -->
         <div class="button-group center">
-            <asp:Button ID="btnList" CssClass="button-main-rnd lg" Text="List" OnClick="btnList_OnClick" runat="server" meta:resourcekey="btnListResource" />
+            <asp:Button ID="btnList1" CssClass="button-main-rnd lg" Text="List" OnClick="btnList_OnClick" runat="server" meta:resourcekey="btnListResource" />
         </div>
     </section>
 </div>

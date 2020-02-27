@@ -121,10 +121,10 @@
                         <ItemTemplate>
                             <input type="checkbox" id="chkEdit" name="chkEdit" runat="server" />
                         </ItemTemplate>
-                        <ItemStyle Width="3%" />
+                        <ItemStyle Width="5%" />
                     </C1WebGrid:C1TemplateColumn >
                     <C1WebGrid:C1BoundColumn DataField="rnum" HeaderText="번호">
-                        <ItemStyle Width="3%" />
+                        <ItemStyle Width="5%" />
                     </C1WebGrid:C1BoundColumn>                
                     <C1WebGrid:C1TemplateColumn HeaderText="회사명">
                         <ItemTemplate>
@@ -133,25 +133,25 @@
                         <ItemStyle Width="" />
                     </C1WebGrid:C1TemplateColumn>
                     <C1WebGrid:C1BoundColumn DataField="company_ceo" HeaderText="대표자명">
-                        <ItemStyle Width="7%" />
+                        <ItemStyle Width="10%" />
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="kindknm" HeaderText="회사규모">
-                        <ItemStyle Width="7%" />
+                        <ItemStyle Width="12%" />
                     </C1WebGrid:C1BoundColumn>                
                     <C1WebGrid:C1BoundColumn DataField="user_nm" HeaderText="담당자명">
-                        <ItemStyle Width="8%" />
+                        <ItemStyle Width="10%" />
                     </C1WebGrid:C1BoundColumn>                                
                     <C1WebGrid:C1BoundColumn DataField="tel_no" HeaderText="담당자연락처">
-                        <ItemStyle Width="8%" />
+                        <ItemStyle Width="12%" />
                     </C1WebGrid:C1BoundColumn>                                                
                     <C1WebGrid:C1BoundColumn DataField="emp_cnt" HeaderText="근로자수">
                         <ItemStyle Width="8%" />
                     </C1WebGrid:C1BoundColumn>                                                
                     <C1WebGrid:C1BoundColumn DataField="company_dt" HeaderText="등록일">
-                        <ItemStyle Width="8%" />
+                        <ItemStyle Width="10%" />
                     </C1WebGrid:C1BoundColumn>                                                
                     <C1WebGrid:C1BoundColumn DataField="statusknm" HeaderText="승인">
-                        <ItemStyle Width="5%" />
+                        <ItemStyle Width="7%" />
                     </C1WebGrid:C1BoundColumn> 
                     <C1WebGrid:C1BoundColumn Visible="false" DataField="companystatus" HeaderText="">
                         <ItemStyle Width="0%" />

@@ -123,6 +123,18 @@ namespace CLT.WEB.UI.LMS.MYPAGE
                                      "CLT.WEB.UI.LMS.MANAGE", (object)xParams, Thread.CurrentThread.CurrentCulture);
                     WebControlHelper.SetDropDownList(this.ddlComapnyduty, xDt, "step_name", "duty_step");
                 }
+
+
+                xParams = new string[2];
+                xParams[0] = "";
+                xParams[1] = "";
+                xDt = SBROKER.GetTable("CLT.WEB.BIZ.LMS.COMMON.vp_l_common_md",
+                                     "GetVHDeptCode",
+                                     LMS_SYSTEM.MANAGE,
+                                     "CLT.WEB.UI.LMS.MANAGE",
+                                     xParams,
+                                     " ORDER BY dept_name ");
+                WebControlHelper.SetDropDownList(ddlDept, xDt, "dept_name", "dept_code", WebControlHelper.ComboType.NullAble);
             }
             catch (Exception ex)
             {
@@ -203,8 +215,17 @@ namespace CLT.WEB.UI.LMS.MYPAGE
                     this.rbMail_y.Checked = false;
                     this.rbMail_n.Checked = true;
                 }
-                
+
                 this.txtAcquisition.Text = xDr["enter_dt"].ToString();
+                this.txtBirth_dt.Text = xDr["birth_dt"].ToString();
+
+                WebControlHelper.SetSelectItem_DropDownList(ddlDept, xDr["dept_code"].ToString());
+                txtDept.Text = xDr["dept_name"].ToString();
+
+                if (xDr["dept_code"].ToString() != xDr["dept_name"].ToString())
+                {
+                    txtDept.ReadOnly = true;
+                }
 
                 if (xDr["pic_file"] != DBNull.Value && !string.IsNullOrEmpty(xDr["pic_file"].ToString()))
                 {
@@ -217,6 +238,10 @@ namespace CLT.WEB.UI.LMS.MYPAGE
                             string base64 = Convert.ToBase64String((byte[])xDr["pic_file"]);
 
                             img_pic_file.ImageUrl = string.Format("data:{0};base64,{1}", mimeType, base64);
+
+                            Unit xUnit = img_pic_file.Width;
+
+                            if (xUnit.Value > 150) img_pic_file.Width = 150;
                         }
                     }
                     catch { }
@@ -252,7 +277,7 @@ namespace CLT.WEB.UI.LMS.MYPAGE
             {
                 string xRtn = Boolean.FalseString;
                 string xScriptMsg = string.Empty;
-                string[] xParams = new string[21];
+                string[] xParams = new string[23];
 
                 //VirtualAgentClass xx = new VirtualAgentClass();
 
@@ -288,6 +313,8 @@ namespace CLT.WEB.UI.LMS.MYPAGE
                 //xParams[18] = this.ddlTrainee.SelectedItem.Value.ToString().Replace("*", ""); //훈련생 구분
                 xParams[19] = this.txtAcquisition.Text.Replace(".", "").Trim() == string.Empty ? null : this.txtAcquisition.Text; //고용보험취득일 
                 xParams[20] = Session["user_group"].ToString();
+                xParams[21] = txtBirth_dt.Text.Replace(".", "").Trim() == string.Empty ? null : txtBirth_dt.Text; //생년월일 
+                xParams[22] = string.IsNullOrEmpty(ddlDept.SelectedValue.ToString()) ? txtDept.Text.Replace("'", "''") : ddlDept.SelectedValue.ToString(); // 사용자 부서 dept_code
 
                 xRtn = SBROKER.GetString("CLT.WEB.BIZ.LMS.MANAGE.vp_m_user_md",
                              "SetMyInfoEdit",

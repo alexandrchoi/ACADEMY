@@ -192,18 +192,16 @@
     <!-- 팝업 컨텐츠 시작 -->
     <div class="pop-container user-edit">
         <h3><asp:Label ID="lblMenuTitle" runat="server" Text="개인회원" meta:resourcekey="lblMenuTitle" /></h3>
-    
-        
         <div class="notice-text right"><asp:Label ID="lblRequired" runat="server" Text="필수입력항목" meta:resourcekey="lblRequired" /><span class="required"></span></div>
 
-        <div class="gm-table data-table read-type">
-                
+        <div id="div-info" class="gm-table data-table read-type">
             <table>
                 <colgroup>
                     <col width="15%">
                     <col width="35%">
                     <col width="15%">
-                    <col width="35%">
+                    <col width="25%">
+                    <col width="10%">
                 </colgroup>
                 <tbody>
                 <tr>
@@ -214,6 +212,11 @@
                     <td colspan="3">
                         <asp:TextBox ID="txtID" runat="server" imeMode="disabled" MaxLength="10" onkeyup="javascript:this.value = this.value.toLowerCase();" onKeypress="if ((event.keyCode > 32 && event.keyCode < 48) || (event.keyCode > 57 && event.keyCode < 65) || (event.keyCode > 90 && event.keyCode < 97)) event.returnValue = false;" />
                         <asp:Button ID="btnIDcheck" runat="server" Text="중복체크" OnClick="btnIDCheck_OnClick" CssClass="button-default blue" meta:resourcekey="btnIDcheck" />
+                    </td>
+                    <td rowspan="5">
+                        <div class="figure">
+                            <asp:Image ID="img_pic_file" runat="server" ImageUrl='/asset/images/blank.gif' Width="150" />
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -262,7 +265,7 @@
                     <th scope="row">
                         <asp:Label ID="lblbirth_dt" runat="server" Text="생년월일" meta:resourcekey="lblbirth_dt" />
                     </th>
-                    <td colspan="3">
+                    <td>
                         <asp:TextBox ID="txtBirth_dt" runat="server" CssClass="datepick" />
                     </td>
                 </tr>
@@ -285,7 +288,7 @@
                     <td colspan="2">
                         <asp:TextBox ID="txtAddr1" runat="server" CssClass="w100per" />
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:TextBox ID="txtAddr2" runat="server" CssClass="w100per" />
                     </td>
                 </tr>
@@ -294,7 +297,7 @@
                         <asp:Label ID="lblCompany" runat="server" Text="회사명" meta:resourcekey="lblCompany" />
                         <span class="required"></span>
                     </th>
-                    <td colspan="3">
+                    <td colspan="4">
                         <asp:TextBox ID="txtCompany" runat="server" />
                         <input type="button" id="btnComapny" class="button-default blue"  value="<%=GetLocalResourceObject("btnFindCompany.Text").ToString() %>"
                             onclick="openPopWindow('/manage/company_select.aspx?opener_textCompany_NM=<%=txtCompany.ClientID %>&opener_Company_id=<%= hidCompany_id.ClientID %>&USERGROUP=<%=Session["USER_GROUP"]%>&COMPANY_ID=<%=Session["COMPANY_ID"] %>', 'company_select', '550', '600');" />
@@ -305,13 +308,14 @@
                         <asp:Label ID="lblDept" runat="server" Text="부서" meta:resourcekey="lblDept" />
                     </th>
                     <td>
-                        <asp:TextBox ID="txtDept" runat="server" MaxLength="50" />
+                        <asp:DropDownList ID="ddlDept" runat="server" AutoPostBack="False" CssClass="w50per" />
+                        <asp:TextBox ID="txtDept" runat="server" MaxLength="50" CssClass="w30per" />
                     </td>
                     <th scope="row">
                         <asp:Label ID="lblDuty" runat="server" Text="직급" meta:resourcekey="lblDuty" />
                         <span class="required"></span>
                     </th>
-                    <td>
+                    <td colspan="2">
                         <asp:DropDownList ID="ddlComapnyduty" runat="server" />
                     </td>
                 </tr>
@@ -327,7 +331,7 @@
                         <asp:Label ID="lblMobilePhone" runat="server" Text="휴대폰" meta:resourcekey="lblMobilePhone" />
                         <span class="required"></span>
                     </th>
-                    <td>
+                    <td colspan="2">
                         <asp:TextBox ID="txtMobilePhone" runat="server" />
                     </td>
                 </tr>
@@ -341,7 +345,7 @@
                     <th scope="row">
                         <asp:Label ID="lblAcquisition" runat="server" Text="고용보험취득일" meta:resourcekey="lblAcquisition" />
                     </th>
-                    <td>
+                    <td colspan="2">
                         <asp:TextBox ID="txtAcquisition" runat="server" MaxLength="10" CssClass="datepick" />
                     </td>
                 </tr>
@@ -356,7 +360,7 @@
                     <th scope="row">
                         <asp:Label ID="lblTrainee" runat="server" Text="훈련생구분" meta:resourcekey="lblTrainee" />
                     </th>
-                    <td>
+                    <td colspan="2">
                         <asp:DropDownList ID="ddlTrainee" runat="server" />
                     </td>
                 </tr>
@@ -364,9 +368,8 @@
                     <th scope="row">
                         <asp:Label ID="lblUpload_photo" runat="server" Text="사진업로드" meta:resourcekey="lblUpload_photo" />
                     </th>
-                    <td colspan="3">
+                    <td colspan="4">
                         
-                        <asp:Image ID="img_pic_file" runat="server" ImageUrl='/asset/images/blank.gif' /> <!--# DataBinder.Eval(Container.DataItem, "PIC_FILE")-->
                         <!-- 파일 첨부 인풋 -->
                         <div class="file-box">
                            <input class="upload-name" value="증명사진 3x4size" disabled="disabled" />
@@ -377,8 +380,6 @@
 
                     </td>
                 </tr>
-
-
 
                 <tr>
                     <th scope="row">
@@ -397,7 +398,7 @@
                     <th scope="row">
                         <asp:Label ID="lblMail_yn" runat="server" Text="메일링서비스 수신여부" meta:resourcekey="lblMail_yn" />
                     </th>
-                    <td>
+                    <td colspan="2">
                         <label class="radio-box">
                             <asp:RadioButton ID="rbMail_y" GroupName="mail" runat="server" Checked="true" Text="예" meta:resourcekey="rbMail_y" AutoPostBack="false" />
                             <span class="radiomark"></span>

@@ -15,7 +15,7 @@
 
     function GoUserForm()
     {	
-        openPopWindow('/manage/user_edit.aspx?EDITMODE=NEW&MenuCode=<%=Session["MENU_CODE"]%>', 'user_edit', '1024', '821');
+        openPopWindow('/manage/user_edit.aspx?EDITMODE=NEW&MenuCode=<%=Session["MENU_CODE"]%>', 'user_edit', '1280', '821');
         return false;
     }
 </script>
@@ -99,33 +99,36 @@
                     </C1WebGrid:C1BoundColumn>                                                
                     <C1WebGrid:C1TemplateColumn HeaderText="성명">
                         <ItemTemplate>
-                            <a href="#" onclick="javascript:openPopWindow('/manage/user_edit.aspx?EDITMODE=EDIT&USER_ID=<%# DataBinder.Eval(Container.DataItem, "user_id")%>&MenuCode=<%=Session["MENU_CODE"]%>','user_edit', '1024', '821');"><%# DataBinder.Eval(Container.DataItem, "user_nm_kor")%></a>
+                            <a href="#" onclick="javascript:openPopWindow('/manage/user_edit.aspx?EDITMODE=EDIT&USER_ID=<%# DataBinder.Eval(Container.DataItem, "user_id")%>&MenuCode=<%=Session["MENU_CODE"]%>','user_edit', '1280', '821');"><%# DataBinder.Eval(Container.DataItem, "user_nm_kor")%></a>
                         </ItemTemplate>
-                        <ItemStyle Width="12%" />
+                        <ItemStyle Width="9%" />
                     </C1WebGrid:C1TemplateColumn>
                     <C1WebGrid:C1BoundColumn DataField="personal_no" HeaderText="주민번호">
-                        <ItemStyle Width="10%" />
+                        <ItemStyle Width="9%" />
+                    </C1WebGrid:C1BoundColumn>
+                    <C1WebGrid:C1BoundColumn DataField="user_group" HeaderText="사용자그룹">
+                        <ItemStyle Width="7%" />
                     </C1WebGrid:C1BoundColumn>                                                
                     <C1WebGrid:C1BoundColumn DataField="company_nm" HeaderText="회사명">
-                        <ItemStyle Width="10%" />
+                        <ItemStyle Width="9%" />
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="dept_nm" HeaderText="부서명">
-                        <ItemStyle Width="10%" />
+                        <ItemStyle Width="8%" />
                     </C1WebGrid:C1BoundColumn>    
                     <C1WebGrid:C1BoundColumn DataField="dutystep" HeaderText="직급">
-                        <ItemStyle Width="8%" />
+                        <ItemStyle Width="7%" />
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="mobile_phone" HeaderText="휴대폰">
-                        <ItemStyle Width="10%" />
+                        <ItemStyle Width="8%" />
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="email_id" HeaderText="이메일">
-                        <ItemStyle Width="14%" />
+                        <ItemStyle Width="13%" />
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn  DataField="edu_cnt" HeaderText="수강횟수">
                         <ItemStyle Width="5%"  />
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn  DataField="ins_dt" HeaderText="등록일">
-                        <ItemStyle Width="7%"  />
+                        <ItemStyle Width="6%"  />
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn  DataField="status" HeaderText="상태">
                         <ItemStyle Width="5%"  />

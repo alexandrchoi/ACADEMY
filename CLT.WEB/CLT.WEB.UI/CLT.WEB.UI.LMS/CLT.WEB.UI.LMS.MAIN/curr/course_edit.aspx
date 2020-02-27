@@ -264,11 +264,17 @@
                             <asp:Label ID="lblUsage" runat="server" meta:resourcekey="lblUsage" />
                             <span class="required"></span>
                         </th>
-                        <td colspan="3">
+                        <td>
                             <asp:RadioButtonList ID="rdoUsage" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow" Width="100%">
                                 <asp:ListItem Value="Y"> Yes &nbsp; &nbsp; </asp:ListItem>
                                 <asp:ListItem Value="N"> No &nbsp; &nbsp; </asp:ListItem>
                             </asp:RadioButtonList>
+                        </td>
+                        <th scope="row">
+                            <asp:Label ID="lblManager" runat="server" meta:resourcekey="lblManager" />
+                        </th>
+                        <td>
+                            <asp:TextBox ID="txtManager" runat="server" MaxLength="50" />
                         </td>
                     </tr>
                     </tbody>

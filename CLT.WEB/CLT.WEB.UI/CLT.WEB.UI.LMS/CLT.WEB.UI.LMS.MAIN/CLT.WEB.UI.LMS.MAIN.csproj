@@ -117,6 +117,7 @@
     <Content Include="asset\css\common\popup.css" />
     <Content Include="asset\css\common\reset.css" />
     <Content Include="asset\css\common\responsive.css" />
+    <Content Include="asset\css\report\certificate.css" />
     <Content Include="asset\css\sub\application.css" />
     <Content Include="asset\css\sub\community.css" />
     <Content Include="asset\css\sub\curr.css" />
@@ -1767,6 +1768,10 @@
     <Content Include="asset\images\main\main-icon2.png" />
     <Content Include="asset\images\main\main-icon3.png" />
     <Content Include="asset\images\main\visual.png" />
+    <Content Include="asset\images\report\logo-mof.png" />
+    <Content Include="asset\images\report\picture.jpg" />
+    <Content Include="asset\images\report\signature.png" />
+    <Content Include="asset\images\report\stamp.png" />
     <Content Include="asset\images\sub\bg-join.png" />
     <Content Include="asset\images\sub\classroom1.jpg" />
     <Content Include="asset\images\sub\classroom2.jpg" />
@@ -2005,6 +2010,7 @@
     <Content Include="html\curr\survey_list.html" />
     <Content Include="html\curr\survey_write.html" />
     <Content Include="html\curr\survey_write2.html" />
+    <Content Include="html\edum\certificate-sample.html" />
     <Content Include="html\include\footer-eng.html" />
     <Content Include="html\include\footer.html" />
     <Content Include="html\include\gnb.html" />
@@ -2048,6 +2054,7 @@
     <Content Include="report\cert_1\6.GIF" />
     <Content Include="report\cert_1\imagesCA6L1ULL.jpg" />
     <Content Include="report\cert_1\imagesCAU2ECXT.jpg" />
+    <Content Include="report\cert_1_report.xml" />
     <Content Include="report\cert_2\1.GIF" />
     <Content Include="report\cert_2\2.GIF" />
     <Content Include="report\cert_2\3_000002.GIF" />
@@ -2056,11 +2063,16 @@
     <Content Include="report\cert_2\3_000005.GIF" />
     <Content Include="report\cert_2\3_000006.GIF" />
     <Content Include="report\cert_2\3_000007.GIF" />
+    <Content Include="report\cert_2\3_000012.GIF" />
+    <Content Include="report\cert_2\3_000013.GIF" />
+    <Content Include="report\cert_2\3_000014.GIF" />
+    <Content Include="report\cert_2\3_000015.GIF" />
+    <Content Include="report\cert_2\3_000016.GIF" />
+    <Content Include="report\cert_2\3_000017.GIF" />
     <Content Include="report\cert_2\4.GIF" />
     <Content Include="report\cert_2\5.GIF" />
     <Content Include="report\cert_2\7.GIF" />
     <Content Include="report\cert_2\8.jpg" />
-    <Content Include="report\edumng_cert_1_report.xml" />
     <Content Include="report\hsm_sign.jpg" />
     <Content Include="report\sign01.jpg" />
     <Content Include="report\sign02.gif" />
@@ -2252,6 +2264,30 @@
     <Content Include="file\download\item_list.xls" />
     <Content Include="file\download\sms.xls" />
     <Content Include="file\download\user_excel.xls" />
+    <Content Include="file\download\consignment_contract.xlsx" />
+    <Content Include="file\download\consortium_apply.xlsx" />
+    <Content Include="file\download\consortium_intent.hwp" />
+    <Content Include="file\download\web.config" />
+    <Content Include="file\curr\01_car_carry.pdf" />
+    <Content Include="file\curr\02_car_fire.pdf" />
+    <Content Include="file\curr\03_car_gear.pdf" />
+    <Content Include="file\curr\04_ship_plan.pdf" />
+    <Content Include="file\curr\05_sail_plan.pdf" />
+    <Content Include="file\curr\06_elec_navi.pdf" />
+    <Content Include="file\curr\07_danger_carry.pdf" />
+    <Content Include="file\curr\08_elec_engine.pdf" />
+    <Content Include="file\curr\09_medical.pdf" />
+    <Content Include="file\curr\10_accident_report.pdf" />
+    <Content Include="file\curr\11_road_manage.pdf" />
+    <Content Include="file\curr\12_ship_plan_high.pdf" />
+    <Content Include="file\curr\13_sail_plan_high.pdf" />
+    <Content Include="file\curr\14_elec_navi_high.pdf" />
+    <Content Include="file\curr\15_ecdis_edu.pdf" />
+    <Content Include="file\curr\16_ers_edu.pdf" />
+    <Content Include="file\curr\17_simulation.pdf" />
+    <Content Include="file\curr\18_leadership_teamwork.pdf" />
+    <Content Include="file\curr\19_leadership_manage.pdf" />
+    <Content Include="file\curr\20_shs_edu.pdf" />
     <None Include="reference\Msg_Defs.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

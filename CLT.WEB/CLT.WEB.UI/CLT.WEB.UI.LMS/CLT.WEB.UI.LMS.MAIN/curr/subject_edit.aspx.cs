@@ -208,6 +208,7 @@ namespace CLT.WEB.UI.LMS.CURR
 
                     this.txtTime.Text = dr["LEARNING_TIME"].ToString();
                     this.txtInstructor.Text = dr["LECTURER_NM"].ToString();
+                    this.txtInstructor1.Text = dr["LECTURER1_NM"].ToString();
                     this.txtContents.Text = dr["LEARNING_DESC"].ToString();
                     this.txtPoint.Text = dr["LEARNING_OBJECTIVE"].ToString();
 
@@ -259,6 +260,8 @@ namespace CLT.WEB.UI.LMS.CURR
                 else if (ViewState["LEARNING_TIME"].ToString() != this.txtTime.Text)
                     return true;
                 else if (ViewState["LECTURER_NM"].ToString() != this.txtInstructor.Text)
+                    return true;
+                else if (ViewState["LECTURER1_NM"].ToString() != this.txtInstructor1.Text)
                     return true;
                 else if (ViewState["LEARNING_DESC"].ToString() != this.txtContents.Text)
                     return true;
@@ -321,7 +324,7 @@ namespace CLT.WEB.UI.LMS.CURR
                 {
                     if (this.IsDataValidation())
                     {
-                        string[] xParams = new string[12];
+                        string[] xParams = new string[13];
 
                         xParams[0] = ViewState["SUBJECT_ID"].ToString();
                         xParams[1] = this.txtSubject.Text;
@@ -335,6 +338,7 @@ namespace CLT.WEB.UI.LMS.CURR
                         xParams[9] = this.rdoUsage.SelectedValue;
                         xParams[10] = (Request.QueryString["TEMP_FLG"] != null && Request.QueryString["TEMP_FLG"].ToString() == "Y") ? "Y" : "N";
                         xParams[11] = Session["USER_ID"].ToString();
+                        xParams[12] = this.txtInstructor1.Text;
 
                         string xRtn = SBROKER.GetString("CLT.WEB.BIZ.LMS.CURR.vp_c_subject_md",
                                                         "SetSubjectInfo",

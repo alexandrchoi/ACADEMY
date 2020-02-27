@@ -124,11 +124,10 @@
     <value>2019년도 인적자원개발 우수기관으로 선정</value>
   </data>
   <data name="bhpDescResource.Text" xml:space="preserve">
-    <value>풀이 피부가 얼음 끝에 그들은 뿐이다. 튼튼하며,&lt;br&gt;
-                        하는 그림자는 사랑의 우리 투명하되 인도하겠다는 듣는다.</value>
+    <value>Global Ocean Leader Training Center&lt;br&gt;Your Best HRD Partner! G-MARINE ACADEMY</value>
   </data>
   <data name="bhpTitleResource.Text" xml:space="preserve">
-    <value>Best HRD Provider!</value>
+    <value>Best HRD Provider</value>
   </data>
   <data name="classEduResource.Text" xml:space="preserve">
     <value>교육과정</value>
@@ -143,7 +142,7 @@
     <value>사업소개, 신청방법, 과정안내를 확인하세요.</value>
   </data>
   <data name="entrTitleResource.Text" xml:space="preserve">
-    <value>사업주위탁신청</value>
+    <value>사업주위탁훈련</value>
   </data>
   <data name="lnkResource.Text" xml:space="preserve">
     <value>자세히보기</value>
@@ -176,7 +175,7 @@
     <value>교육안내</value>
   </data>
   <data name="tab_2Resource.Text" xml:space="preserve">
-    <value>소식</value>
+    <value>공지사항</value>
   </data>
   <data name="tolDescResource.Text" xml:space="preserve">
     <value>지마린 아카데미에서는 다양하고 체계적인 훈련 커리큘럼을 통해 선원의 역량과 자질을 높은 수준으로 유지하고 있습니다.</value>

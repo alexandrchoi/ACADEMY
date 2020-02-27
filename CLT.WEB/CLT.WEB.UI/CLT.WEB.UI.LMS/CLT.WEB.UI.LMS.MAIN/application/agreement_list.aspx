@@ -49,8 +49,10 @@
             </div>
             <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve" CssClass="button-default blue" OnClick="btnRetrieve_Click" />
         </div>
-
+        
         <div class="button-box right">
+            <input type="button" name="btnDnConsignment" value="사업주위탁훈련계약서" onclick="location.href='/file/download/consignment_contract.xlsx';" id="btnDnConsignment" class="button-default" />
+            <input type="button" name="btnDnConsortium" value="컨소시엄 수강신청서" onclick="location.href='/file/download/consortium_apply.xlsx';" id="btnDnConsortium" class="button-default" />
         </div>
 
         <!-- Data Table - List type -->
@@ -75,15 +77,19 @@
                         <ItemTemplate>
                             <%# Container.DataItemIndex + 1 + this.PageSize * (this.CurrentPageIndex - 1)%>
                         </ItemTemplate> 
-                        <ItemStyle Width="4%" />
+                        <ItemStyle Width="5%" />
                     </C1WebGrid:C1TemplateColumn> 
                 
-                    <C1WebGrid:C1BoundColumn DataField="course_nm" >
-                        <ItemStyle Width="40%" />
+                    <C1WebGrid:C1BoundColumn DataField="course_nm">
+                        <ItemStyle Width="" CssClass ="left" />
                     </C1WebGrid:C1BoundColumn>                               
                
                     <C1WebGrid:C1BoundColumn DataField="course_dt" >
-                        <ItemStyle Width="30%" />
+                        <ItemStyle Width="20%" />
+                    </C1WebGrid:C1BoundColumn> 
+               
+                    <C1WebGrid:C1BoundColumn DataField="reg_count" >
+                        <ItemStyle Width="10%" />
                     </C1WebGrid:C1BoundColumn> 
                
                     <C1WebGrid:C1TemplateColumn>

@@ -444,6 +444,7 @@ namespace CLT.WEB.UI.LMS.CURR
                     this.txtDays.Text = dr["COURSE_DAY"].ToString();
                     this.txtHours.Text = dr["COURSE_TIME"].ToString();
                     this.rdoUsage.SelectedValue = dr["USE_FLG"].ToString();
+                    this.txtManager.Text = dr["MANAGER"].ToString();
                 }
             }
             catch (Exception ex)
@@ -797,7 +798,7 @@ namespace CLT.WEB.UI.LMS.CURR
                         }
                     }
 
-                    string[] xParams = new string[21];
+                    string[] xParams = new string[22];
                     xParams[0] = ViewState["COURSE_ID"] != null ? ViewState["COURSE_ID"].ToString() : string.Empty;
                     xParams[1] = this.ddlLang.SelectedValue;
                     xParams[2] = this.rdoInsu.SelectedValue;
@@ -820,6 +821,7 @@ namespace CLT.WEB.UI.LMS.CURR
                     xParams[18] = this.txtHours.Text;
                     xParams[19] = this.rdoUsage.SelectedValue;
                     xParams[20] = Session["USER_ID"].ToString();
+                    xParams[21] = this.txtManager.Text;
 
                     string xRtn = SBROKER.GetString("CLT.WEB.BIZ.LMS.CURR.vp_c_course_md",
                                                         "SetCourseInfo",

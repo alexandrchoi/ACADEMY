@@ -183,4 +183,7 @@
   <data name="lblVslType.Text" xml:space="preserve">
     <value>Vessel Type</value>
   </data>
+  <data name="lblManager.Text" xml:space="preserve">
+    <value>Course Manager</value>
+  </data>
 </root>

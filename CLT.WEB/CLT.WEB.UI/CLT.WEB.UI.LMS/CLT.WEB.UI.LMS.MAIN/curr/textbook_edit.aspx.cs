@@ -112,6 +112,7 @@ namespace CLT.WEB.UI.LMS.CURR
                 ViewState["TEXTBOOK_FILE_NM"] = string.Empty;
 
                 ViewState["TEMP_SAVE_FLG"] = string.Empty;
+                ViewState["PUB_DT"] = string.Empty;
 
             }
             catch (Exception ex)
@@ -221,6 +222,9 @@ namespace CLT.WEB.UI.LMS.CURR
                     ViewState["TEXTBOOK_FILE_NM"] = xDt.Rows[0]["textbook_file_nm"].ToString();
                     ViewState["TEMP_SAVE_FLG"] = xDt.Rows[0]["temp_save_flg"].ToString();
 
+
+                    ViewState["PUB_DT"] = xDt.Rows[0]["pub_dt"].ToString();
+
                     // TextBook Type 설정
                     WebControlHelper.SetSelectItem_DropDownList(this.ddlTextBookType, xDt.Rows[0]["textbook_type"].ToString());
                     // TextBook Lang 설정
@@ -238,6 +242,8 @@ namespace CLT.WEB.UI.LMS.CURR
                     this.txtTextBookIntro.Text = xDt.Rows[0]["textbook_intro"].ToString();
                     this.txtTextBookDesc.Text = xDt.Rows[0]["textbook_desc"].ToString();
                     this.txtFileNM.Value = xDt.Rows[0]["textbook_file_nm"].ToString();
+
+                    this.txtPubDt.Text = xDt.Rows[0]["pub_dt"].ToString();
                 }
             }
             catch (Exception ex)
@@ -291,7 +297,7 @@ namespace CLT.WEB.UI.LMS.CURR
                         else
                         {
                             // 입력 처리
-                            object[] xParams = new object[16];
+                            object[] xParams = new object[17];
 
                             xParams[0] = this.ddlTextBookType.SelectedItem.Value; // textbook_type
                             xParams[1] = this.ddlTextBookLang.SelectedItem.Value; // textbook_lang
@@ -333,6 +339,8 @@ namespace CLT.WEB.UI.LMS.CURR
                             xParams[13] = "1"; // send_flg                
                             xParams[14] = (Request.QueryString["TEMP_FLG"] != null && Request.QueryString["TEMP_FLG"].ToString() == "Y") ? "Y" : "N";
                             xParams[15] = ViewState["TEXTBOOK_ID"].ToString();
+
+                            xParams[16] = txtPubDt.Text.Replace(".", "").Trim() == string.Empty ? null : txtPubDt.Text; // 사용자 입사일자 enter_dt
 
                             xRtn = SBROKER.GetString("CLT.WEB.BIZ.LMS.CURR.vp_c_textbook_md",
                                                              "SetTextBookInsert",
@@ -475,6 +483,8 @@ namespace CLT.WEB.UI.LMS.CURR
                     return false;
                 if (this.txtFileNM.Value == string.Empty)
                     return false;
+                if (this.txtPubDt.Text == string.Empty)
+                    return false;
 
                 //if(this.txtFileNM
 
@@ -536,6 +546,9 @@ namespace CLT.WEB.UI.LMS.CURR
                     return true;
 
                 else if (ViewState["TEXTBOOK_DESC"].ToString() != this.txtTextBookDesc.Text)
+                    return true;
+
+                else if (ViewState["PUB_DT"].ToString() != this.txtPubDt.Text)
                     return true;
 
                 // 파일 처리 (null인 경우, 파일관련 작업이 없었다고 보면 됨.)

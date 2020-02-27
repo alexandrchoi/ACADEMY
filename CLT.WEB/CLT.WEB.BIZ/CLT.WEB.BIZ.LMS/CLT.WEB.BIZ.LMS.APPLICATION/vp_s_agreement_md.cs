@@ -45,6 +45,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                             --, R.USER_COURSE_BEGIN_DT, R.USER_COURSE_END_DT     
                             --, TO_CHAR(R.USER_COURSE_BEGIN_DT, 'YYYY.MM.DD') || ' ~ ' || TO_CHAR(R.USER_COURSE_END_DT, 'YYYY.MM.DD') AS COURSE_DT
                             , COUNT(*) OVER() TOTALRECORDCOUNT 
+                            , COUNT(DISTINCT U.USER_ID) AS REG_COUNT 
                         FROM T_COURSE C, T_OPEN_COURSE O, T_COURSE_RESULT R , T_USER U
                         WHERE C.COURSE_ID = O.COURSE_ID
                           AND O.OPEN_COURSE_ID = R.OPEN_COURSE_ID

@@ -24,15 +24,15 @@ namespace CLT.WEB.UI.LMS.EDUM
             get { return iDtCourseResult; }
             set { iDtCourseResult = value; }
         }
-	
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
                 if (Session["USER_GROUP"].ToString() == this.GuestUserID)
                 {
-                    string xScriptMsg = string.Format("<script>alert('사용권한이 없습니다.');window.location.href='/';</script>", Session["MENU_CODE"]);
-                    ScriptHelper.ScriptBlock(this, "vp_y_community_notice_list_wpg", xScriptMsg);
+                    string xScriptMsg = string.Format("<script>alert('사용권한이 없습니다.');window.close();</script>", Session["MENU_CODE"]);
+                    ScriptHelper.ScriptBlock(this, "edu_cmp_y_report", xScriptMsg);
 
                     return;
                 }
@@ -41,7 +41,7 @@ namespace CLT.WEB.UI.LMS.EDUM
                 {
                     string rRptName = Request.QueryString["rpt"];  //report xml파일명을 받아서, 분기 시키면 될듯. 
 
-                    if (rRptName == "vp_s_agreement_certificate_report.xml")
+                    if (rRptName == "agreement_certificate_report.xml")
                     {
                         //마이페이지 > 수료현황 > 수료증 출력에서 사용함 
                         this.Report_Mypage_Certificate(rRptName);
@@ -64,17 +64,17 @@ namespace CLT.WEB.UI.LMS.EDUM
                 if (string.IsNullOrEmpty(xUser))
                 {
                     string[] xPara = xOpencourse.Split('|');
-                    iDtCourseResult = SBROKER.GetTable("CLT.WEB.BIZ.LMS.COMMISSION.vp_s_record_md",
+                    iDtCourseResult = SBROKER.GetTable("CLT.WEB.BIZ.LMS.APPLICATION.vp_s_record_md",
                                                      "GetAgreementCertificateReport",
-                                                     LMS_SYSTEM.COMMISSION,
-                                                     "CLT.WEB.UI.LMS.COMMISSION.vp_s_report_wpg", (object)xPara, "");
+                                                     LMS_SYSTEM.EDUMANAGEMENT,
+                                                     "CLT.WEB.UI.LMS.EDUM", (object)xPara, "");
                 }
                 else
-                {   
+                {
                     iDtCourseResult = SBROKER.GetTable("CLT.WEB.BIZ.LMS.MYPAGE.vp_p_training_md",
                                                      "GetTrainingReport",
-                                                     LMS_SYSTEM.MYPAGE,
-                                                     "CLT.WEB.UI.LMS.COMMISSION.vp_s_report_wpg", xOpencourse, xUser, "");
+                                                     LMS_SYSTEM.EDUMANAGEMENT,
+                                                     "CLT.WEB.UI.LMS.EDUM", xOpencourse, xUser, "");
                 }
             }
             catch (Exception ex)

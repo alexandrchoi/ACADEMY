@@ -1,0 +1,229 @@
+﻿@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+/*
+
+=========== G - M A R I N E  S E R V I C E ===========
+
+   Project Name : G-Marine Service Academy
+   Project URL : http://academy.gmarineservice.com
+   Author : G-Marine Service
+   Author Email :
+
+*/
+/** ----------------------------------------------------------------------------
+ * Table of Contents:
+ *
+ * 1.0 - Normalize
+ * 2.0 - Common
+ * 3.0 - Heading
+ * 4.0 - Image Replace
+ * 5.0 - Grid
+ * 6.0 - Button
+ * 7.0 - List
+ * 8.0 - Table
+ * 9.0 - Form
+ * 10.0 - Boxes
+ * 11.0 - Popup
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+/** ----------------------------------------------------------------------------
+ * 1.0 - Normalize
+ * -----------------------------------------------------------------------------
+ */
+html, body, div,
+dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+pre, code, form, fieldset,
+legend, input, textarea, p,
+blockquote, th, td, img {
+    margin:0;
+    padding:0;
+    outline:0;
+    border:0;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+body,
+div,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+form,
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+img {
+    border: 0;
+    vertical-align: middle;
+}
+ul,
+ol,
+li,
+dl,
+menu {
+    list-style: none;
+}
+
+/** ----------------------------------------------------------------------------
+ * 2.0 - Common
+ * -----------------------------------------------------------------------------
+ */
+body {
+    position:relative;
+    padding:10px;
+    font-family: 'Nanum Myeongjo', serif;
+    color:rgba(0,0,0,1);
+    font-size:1rem;
+    font-weight:normal;
+}
+#wrap {
+    width:1240px;
+    height:848px;
+    margin:0 auto;
+    padding:15px;
+    position:relative;
+}
+#wrap:before {
+    content:"";
+    display:block;
+    width:1240px;
+    height:848px;
+    position:absolute;
+    left:0;
+    top:0;
+    border:1px solid rgba(0,0,0,1);
+}
+#wrap:after {
+    content:"";
+    display:block;
+    width:1260px;
+    height:868px;
+    position:absolute;
+    left:-10px;
+    top:-10px;
+    border:3px solid rgba(0,0,0,1);
+}
+.cert-box {
+    width:50%;
+    position:relative;
+    z-index:99;
+}
+.cert-ko {
+    float:left;
+    padding-right:100px;
+    position:relative;
+}
+.cert-en {
+    float:right;
+    padding-left:100px;
+}
+.title {
+    display:inline-block;
+    margin-right:8px;
+}
+.cert-box h1 {
+    padding-top:50px;
+    padding-bottom:50px;
+    text-align:center;
+    font-size:2.25rem;
+}
+.cert-box .completer {
+    position:relative;
+}
+.cert-box .completer li {
+    margin-bottom:30px;
+    font-family: '맑은 고딕', 'Malgun Gothic', 'Noto Serif KR', 'Noto Serif', serif;
+}
+.cert-box .completer .picture {
+    position:absolute;
+    right:0;
+    top:-40px;
+}
+.cert-box .graduate-cont {
+    height:240px;
+    position:relative;
+    overflow:hidden;
+    line-height:2;
+    font-size:1.25rem;
+    margin-bottom:40px;
+}
+.cert-box .graduate-cont:before {
+    content:"";
+    display:inline-block;
+    width:20px;
+    height:10px;
+}
+.cert-box .graduate-date li {
+    margin-bottom:20px;
+    font-family: '맑은 고딕', 'Malgun Gothic', 'Noto Serif KR', 'Noto Serif', serif;
+}
+.stamp {
+    position:absolute;
+    right:100px;
+    bottom:0;
+}
+.mof {
+    position:absolute;
+    right:0;
+    bottom:0;
+}
+.mof img {
+    width:140px;
+}
+footer {
+    position:relative;
+    width:100%;
+    height:100px;
+}
+.cert-ko footer {
+    padding-top:50px;
+    font-size:1.5rem;
+    letter-spacing:3px;
+    text-align:center;
+}
+.cert-en footer .sign img {
+    width:80px;
+}
+.copyright {
+    font-size:0.875rem;
+}
+.copyright .designed {
+    display:block;
+    font-size:0.75rem;
+}

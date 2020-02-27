@@ -10,8 +10,8 @@
 	    {
 	        // 필수 입력값 체크    
 	        if (isEmpty(document.getElementById('<%=txtPass.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblPass.Text }, new string[] { lblPass.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false; // 비밀번호를 입력해 주세요!
-	        if (isEmpty(document.getElementById('<%=txtuser_nm_eng_first.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lbluser_nm_eng.Text }, new string[] { lbluser_nm_eng.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
-	        if (isEmpty(document.getElementById('<%=txtuser_nm_eng_last.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lbluser_nm_eng.Text }, new string[] { lbluser_nm_eng.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+	        //if (isEmpty(document.getElementById('<%=txtuser_nm_eng_first.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lbluser_nm_eng.Text }, new string[] { lbluser_nm_eng.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+	        //if (isEmpty(document.getElementById('<%=txtuser_nm_eng_last.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lbluser_nm_eng.Text }, new string[] { lbluser_nm_eng.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
             //if (isEmpty(document.getElementById('<%=txtZipCode.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblZipCode.Text }, new string[] { lblZipCode.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
 	        //if (isEmpty(document.getElementById('<%=txtAddr1.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblAddr.Text }, new string[] { lblAddr.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
 	        //if (isEmpty(document.getElementById('<%=txtAddr2.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblAddr.Text }, new string[] { lblAddr.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
@@ -67,14 +67,15 @@
         
         <div class="notice-text right"><asp:Label ID="lblRequired" runat="server" Text="필수입력항목" meta:resourcekey="lblRequired" /><span class="required"></span></div>
 
-        <div class="gm-table data-table read-type">
-                
+        <div id="div-info" class="gm-table data-table read-type">
+
             <table>
                 <colgroup>
                     <col width="15%">
                     <col width="35%">
                     <col width="15%">
-                    <col width="35%">
+                    <col width="25%">
+                    <col width="10%">
                 </colgroup>
                 <tbody>
                 <tr>
@@ -83,6 +84,11 @@
                     </th>
                     <td colspan="3">
                         <asp:Label ID="txtID" runat="server" />
+                    </td>
+                    <td rowspan="5">
+                        <div class="figure">
+                            <asp:Image ID="img_pic_file" runat="server" ImageUrl='/asset/images/blank.gif' Width="150" />
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -137,7 +143,7 @@
                         <asp:Label ID="lblZipCode" runat="server" Text="우편번호" meta:resourcekey="lblZipCode" />
                         <span class="required"></span>
                     </th>
-                    <td colspan="3">
+                    <td colspan="4">
                         <asp:TextBox ID="txtZipCode" runat="server" />
                         <input type="button" id="btnFindAddr" class="button-default blue" value="<%=GetLocalResourceObject("btnFindAddr.Text").ToString() %>"
                                                     onclick="openPopWindow('/common/zipcode.aspx?opener_textZipCode_id=<%=txtZipCode.ClientID %>&opener_Addr1_id=<%=txtAddr1.ClientID %>', 'zipcode', '500', '360');" />
@@ -151,7 +157,7 @@
                     <td colspan="2">
                         <asp:TextBox ID="txtAddr1" runat="server" CssClass="w100per" />
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:TextBox ID="txtAddr2" runat="server" CssClass="w100per" />
                     </td>
                 </tr>
@@ -165,7 +171,7 @@
                     <th scope="row">
                         <asp:Label ID="lblAcquisition" runat="server" Text="고용보험취득일" meta:resourcekey="lblAcquisition" />
                     </th>
-                    <td>
+                    <td colspan="2">
                         <asp:TextBox ID="txtAcquisition" runat="server" MaxLength="10" CssClass="datepick" />
                     </td>
                 </tr>
@@ -174,20 +180,20 @@
                         <asp:Label ID="lblDept" runat="server" Text="부서" meta:resourcekey="lblDept" />
                     </th>
                     <td>
-                        <asp:TextBox ID="txtDept" runat="server" MaxLength="50" />
+                        <asp:DropDownList ID="ddlDept" runat="server" AutoPostBack="False" CssClass="w30per" Visible="false" />
+                        <asp:TextBox ID="txtDept" runat="server" MaxLength="50" CssClass="w50per" />
                     </td>
                     <th scope="row">
                         <asp:Label ID="lblDuty" runat="server" Text="직급" meta:resourcekey="lblDuty" />
                         <span class="required"></span>
                     </th>
-                    <td>
+                    <td colspan="2">
                         <asp:DropDownList ID="ddlComapnyduty" runat="server" />
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">
                         <asp:Label ID="lblPhone" runat="server" Text="연락처" meta:resourcekey="lblPhone" />
-                        <span class="required"></span>
                     </th>
                     <td>
                         <asp:TextBox ID="txtPhone" runat="server" />
@@ -196,7 +202,7 @@
                         <asp:Label ID="lblMobilePhone" runat="server" Text="휴대폰" meta:resourcekey="lblMobilePhone" />
                         <span class="required"></span>
                     </th>
-                    <td>
+                    <td colspan="2">
                         <asp:TextBox ID="txtMobilePhone" runat="server" />
                     </td>
                 </tr>
@@ -204,7 +210,7 @@
                     <th scope="row">
                         <asp:Label ID="lblEmail" runat="server" Text="E-Mail" meta:resourcekey="lblEmail" />
                     </th>
-                    <td colspan="3">
+                    <td colspan="4">
                         <asp:TextBox ID="txtEmail" runat="server" />
                     </td>
                 </tr>
@@ -212,9 +218,8 @@
                     <th scope="row">
                         <asp:Label ID="lblUpload_photo" runat="server" Text="사진업로드" meta:resourcekey="lblUpload_photo" />
                     </th>
-                    <td colspan="3">
+                    <td colspan="4">
                         
-                        <asp:Image ID="img_pic_file" runat="server" ImageUrl='/asset/images/blank.gif' /> <!--# DataBinder.Eval(Container.DataItem, "PIC_FILE")-->
                         <!-- 파일 첨부 인풋 -->
                         <div class="file-box">
                            <input class="upload-name" value="증명사진 3x4size" disabled="disabled" />
@@ -243,7 +248,7 @@
                     <th scope="row">
                         <asp:Label ID="lblMail_yn" runat="server" Text="메일링서비스 수신여부" meta:resourcekey="lblMail_yn" />
                     </th>
-                    <td>
+                    <td colspan="2">
                         <label class="radio-box">
                             <asp:RadioButton ID="rbMail_y" GroupName="mail" runat="server" Checked="true" Text="예" meta:resourcekey="rbMail_y" AutoPostBack="false" />
                             <span class="radiomark"></span>

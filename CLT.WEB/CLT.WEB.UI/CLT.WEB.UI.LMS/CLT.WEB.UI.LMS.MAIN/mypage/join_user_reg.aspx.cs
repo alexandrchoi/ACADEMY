@@ -237,11 +237,11 @@ namespace CLT.WEB.UI.LMS.MYPAGE
                     this.txtAddr2.Focus();
                     return;
                 }
-                else if (string.IsNullOrEmpty(this.txtPhone.Text))
+                else if (string.IsNullOrEmpty(this.txtDept.Text))
                 {
-                    //xScriptContent = "<script>alert('전화번호를 입력해 주세요!');</script>";
-                    ScriptHelper.Page_Alert(this.Page, MsgInfo.GetMsg("A004", new string[] { "전화번호" }, new string[] { "Phone Number" }, Thread.CurrentThread.CurrentCulture));
-                    this.txtPhone.Focus();
+                    //xScriptContent = "<script>alert('부서를 입력해 주세요!');</script>";
+                    ScriptHelper.Page_Alert(this.Page, MsgInfo.GetMsg("A004", new string[] { "부서" }, new string[] { "Dept" }, Thread.CurrentThread.CurrentCulture));
+                    this.txtDept.Focus();
                     return;
                 }
                 else if (this.ddlComapnyduty.SelectedItem.Text == "*")
@@ -303,6 +303,7 @@ namespace CLT.WEB.UI.LMS.MYPAGE
                 xParams[26] = xParams[0];
                 xParams[27] = xParams[0];
                 xParams[28] = "000001";
+                xParams[29] = txtBirth_dt.Text.Replace(".", "").Trim() == string.Empty ? null : txtBirth_dt.Text; //생년월일
 
                 xRtn = SBROKER.GetString("CLT.WEB.BIZ.LMS.MANAGE.vp_m_user_md",
                                          "SetUser",

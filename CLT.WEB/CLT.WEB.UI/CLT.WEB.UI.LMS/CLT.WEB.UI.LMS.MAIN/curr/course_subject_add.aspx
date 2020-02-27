@@ -69,8 +69,9 @@
             <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="button-default blue" OnClick="btnAdd_Click" />
         </div>
 
+        <p class="only-mobile">과목명을 클릭하시면 페이지 아래에서 상세내용을 보실 수 있습니다.</p>
+        <div class="gm-grid m-grid column-2">
 
-        <div class="gm-grid column-2">
             <div class="item">
                 <CLTWebControl:PageInfo ID="PageInfo1" runat="server" />
 

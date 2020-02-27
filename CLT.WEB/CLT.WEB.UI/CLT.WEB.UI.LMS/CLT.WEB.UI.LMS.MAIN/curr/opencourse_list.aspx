@@ -58,7 +58,7 @@
         <!-- 개발자 수정 영역 3 - Grid 추가 영역 Start -->
         <CLTWebControl:PageInfo ID="PageInfo1" runat="server" />
         <div class="gm-table data-table list-type">
-            <C1WebGrid:C1WebGrid ID="grd" runat="server" AllowSorting="True" GridLines="None" AllowColSizing="True" CssClass="grid_main" AutoGenerateColumns="false" OnItemCreated="grd_ItemCreated">
+            <C1WebGrid:C1WebGrid ID="grd" runat="server" AllowSorting="True" GridLines="None" AllowColSizing="True" AutoGenerateColumns="false" OnItemDataBound="C1WebGrid1_ItemDataBound" OnItemCreated="grd_ItemCreated">
                 <Columns>
 
                     <C1WebGrid:C1TemplateColumn >
@@ -71,20 +71,21 @@
                     <C1WebGrid:C1BoundColumn DataField="course_year">
                         <ItemStyle Width="4%"/>
                     </C1WebGrid:C1BoundColumn>
-                    <C1WebGrid:C1BoundColumn DataField="course_id" >
-                        <ItemStyle Width="7%"/>
-                    </C1WebGrid:C1BoundColumn>
+                    
+                    <C1WebGrid:C1TemplateColumn HeaderText="교육구분">
+                        <ItemTemplate>
+                            <asp:Label ID="lblCourseType" runat="server"></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle Width="12%" />
+                    </C1WebGrid:C1TemplateColumn>
 
                     <C1WebGrid:C1TemplateColumn>
                         <ItemTemplate>
                         <a href="#" onclick="javascript:openPopWindow('/curr/opencourse_edit.aspx?open_course_id=<%# DataBinder.Eval(Container.DataItem, "OPEN_COURSE_ID")%>&MenuCode=<%=Session["MENU_CODE"]%>','opencourse_edit_win', '1024', '800');"><%# DataBinder.Eval(Container.DataItem, "COURSE_NM")%></a>
                         </ItemTemplate>
-                        <ItemStyle Width="15%" CssClass ="left" />
+                        <ItemStyle Width="13%" CssClass ="left" />
                     </C1WebGrid:C1TemplateColumn>
 
-                    <C1WebGrid:C1BoundColumn DataField="course_lang" >
-                        <ItemStyle Width="9%"/>
-                    </C1WebGrid:C1BoundColumn>
                    <C1WebGrid:C1BoundColumn DataField="course_seq" >
                         <ItemStyle Width="8%"/>
                     </C1WebGrid:C1BoundColumn>
@@ -99,6 +100,9 @@
                     </C1WebGrid:C1BoundColumn>
                    <C1WebGrid:C1BoundColumn DataField="use_flg" >
                         <ItemStyle Width="7%"/>
+                    </C1WebGrid:C1BoundColumn>
+                    <C1WebGrid:C1BoundColumn DataField="manager" >
+                        <ItemStyle Width="9%"/>
                     </C1WebGrid:C1BoundColumn>
 
                 </Columns>

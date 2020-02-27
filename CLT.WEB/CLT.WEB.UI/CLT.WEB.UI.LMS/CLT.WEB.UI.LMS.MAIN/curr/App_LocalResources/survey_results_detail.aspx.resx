@@ -112,18 +112,24 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnExcelResource.Text" xml:space="preserve">
+    <value>엑셀출력</value>
+  </data>
+  <data name="btnListResource.Text" xml:space="preserve">
+    <value>목록보기</value>
+  </data>
   <data name="lblMenuDscr.Text" xml:space="preserve">
     <value>설문결과값을 보여줍니다.</value>
   </data>
-  <data name="lblMenuPath.Text" xml:space="preserve">
-    <value>HOME &gt; 관리 &gt; 설문관리 &gt; 설문결과</value>
-  </data>
   <data name="lblMenuTitle.Text" xml:space="preserve">
     <value>설문결과</value>
+  </data>
+  <data name="txtGobackResource.Text" xml:space="preserve">
+    <value>뒤로가기</value>
   </data>
 </root>

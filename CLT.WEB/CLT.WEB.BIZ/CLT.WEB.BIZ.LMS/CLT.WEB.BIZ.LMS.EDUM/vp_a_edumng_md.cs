@@ -44,10 +44,8 @@ namespace CLT.WEB.BIZ.LMS.EDUM
     ///        * Source
     ///          vp_a_edumng_md
     ///        * Comment 
-    ///          교육 대상자 선발 시 자사+타사 교육 이력 조회 시 기존 현재사번이 아닌 공통사번을 기준으로 대상자 제외하도록 변경
-
-    ///          교육 이수증발급 시 국토해양부 과정여부 체크하여 국토해양부 로그 표시되어 출력되도록 변경
-
+    ///          교육 대상자 선발 시 자사+타사 교육 이력 조회 시 기존 현재사번이 아닌 공통사번을 기준으로 대상자 제외하도록 변경    
+    ///          교육 이수증발급 시 국토해양부 과정여부 체크하여 국토해양부 로그 표시되어 출력되도록 변경    
     /// 
     /// </summary>
     public class vp_a_edumng_md : DAC
@@ -634,7 +632,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
         /************************************************************
         * Function name : GetEduSelectList
-        * Purpose       : 교육과정 리스트
+        * Purpose       : 교육과정 리스트
         * Input         : string[] rParams (0: pagesize, 1: pageno)
         * Output        : DataTable
         *************************************************************/
@@ -1572,7 +1570,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
         /************************************************************
         * Function name : GetEduUserList
-        * Purpose       : 전체해상직원-승선중인 사람중에서 해당과정 미이수자, 유효기간 6개월 만료예정자
+        * Purpose       : 전체해상직원-승선중인 사람중에서 해당과정 미이수자, 유효기간 6개월 만료예정자
         * Input         : string[] rParams (0: pagesize, 1: pageno)
         * Output        : DataTable
         *************************************************************/
@@ -1794,7 +1792,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
         /************************************************************
        * Function name : SetEduList
-       * Purpose       : 교육대상자, 전체해상직원 저장
+       * Purpose       : 교육대상자, 전체해상직원 저장
        * Input         : DataTable
        * Output        : DataTable
        *************************************************************/
@@ -1986,7 +1984,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
         /************************************************************
         * Function name : GetEduApprovalList
-        * Purpose       : 수강신청/승인리스트
+        * Purpose       : 수강신청/승인리스트
         * Input         : string[] rParams (0: pagesize, 1: pageno)
         * Output        : DataSet
         *************************************************************/
@@ -2114,7 +2112,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
         /************************************************************
        * Function name : GetEduApprovalExcel
-       * Purpose       : 수강신청/승인 수강자 리스트가져오기
+       * Purpose       : 수강신청/승인 수강자 리스트가져오기
        * Input         : string[] rParams (0: pagesize, 1: pageno)
        * Output        : DataSet
        *************************************************************/
@@ -2191,7 +2189,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
         /************************************************************
         * Function name : GetEduApprovalUserList
-        * Purpose       : 수강신청/승인리스트 USER 리스트
+        * Purpose       : 수강신청/승인리스트 USER 리스트
         * Input         : string[] rParams (0: pagesize, 1: pageno)
         * Output        : DataSet
         *************************************************************/
@@ -2594,11 +2592,10 @@ namespace CLT.WEB.BIZ.LMS.EDUM
             }
             return xDs; ;
         }
-
-
+        
         /************************************************************
         * Function name : GetEduPassList
-        * Purpose       : 수료처리리스트
+        * Purpose       : 수료처리리스트
         * Input         : string[] rParams (0: pagesize, 1: pageno)
         * Output        : DataSet
         *************************************************************/
@@ -2710,7 +2707,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
         /************************************************************
         * Function name : GetEduPassUserList
-        * Purpose       : 수강신청/승인리스트 USER 리스트
+        * Purpose       : 수강신청/승인리스트 USER 리스트
         * Input         : string[] rParams (0: pagesize, 1: pageno)
         * Output        : DataSet
         *************************************************************/
@@ -2833,8 +2830,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
             return xDs; ;
         }
-
-
+        
         /************************************************************
        * Function name : SetEduPassUserList
        * Purpose       : 수료처리
@@ -3397,7 +3393,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
         /************************************************************
         * Function name : GetEduIssuingUserList
-        * Purpose       : 수강신청/승인리스트 USER 리스트
+        * Purpose       : 수강신청/승인리스트 USER 리스트
         * Input         : string[] rParams (0: pagesize, 1: pageno)
         * Output        : DataSet
         *************************************************************/
@@ -3439,7 +3435,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                 xSql += "          , a.* " + "\r\n";
                 xSql += "     FROM ( " + "\r\n";
                 xSql += @"     SELECT 
-                                        R.USER_ID ||'^'|| R.OPEN_COURSE_ID||'^'|| R.COURSE_RESULT_SEQ AS KEYS
+                                          R.USER_ID ||'^'|| R.OPEN_COURSE_ID||'^'|| R.COURSE_RESULT_SEQ AS KEYS
                                         , R.OPEN_COURSE_ID
                                         , R.COURSE_RESULT_SEQ
                                         , R.USER_ID ";
@@ -3472,32 +3468,40 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                 xSql += @"              , U.DUTY_STEP ";
                 if (rArgCultureInfo.Name.ToLower() == "ko-kr")
                 {
-                    xSql += @"          , (SELECT STEP_NAME FROM V_HDUTYSTEP WHERE DUTY_STEP = U.DUTY_STEP) AS STEP_NAME ";
+                    xSql += @"          , (SELECT STEP_NAME FROM V_HDUTYSTEP WHERE DUTY_STEP = U.DUTY_STEP) AS STEP_NAME
+                                        , I.COURSE_NM ";
                 }
                 else
                 {
-                    xSql += @"          , (SELECT STEP_ENAME FROM V_HDUTYSTEP WHERE DUTY_STEP = U.DUTY_STEP) AS STEP_NAME ";
+                    xSql += @"          , (SELECT STEP_ENAME FROM V_HDUTYSTEP WHERE DUTY_STEP = U.DUTY_STEP) AS STEP_NAME
+                                        , I.COURSE_NM_ABBR AS COURSE_NM ";
                 }
-                xSql += @"              , TO_CHAR(O.COURSE_BEGIN_DT, 'YYYY.MM.DD') AS COURSE_BEGIN_DT
-                                        , TO_CHAR(O.COURSE_END_DT, 'YYYY.MM.DD') AS COURSE_END_DT
+                xSql += @"              , R.CERTIFICATE_NAME || R.CERTIFICATE_KEY           AS CERTIFICATE_NO
+                                        , R.CERTIFICATE_KEY
+                                        , R.CERTIFICATE_NAME
+                                        , TO_CHAR(O.COURSE_BEGIN_DT, 'YYYY.MM.DD')          AS COURSE_BEGIN_DT
+                                        , TO_CHAR(O.COURSE_END_DT, 'YYYY.MM.DD')            AS COURSE_END_DT
                                         , R.PASS_FLG
                                         , R.ORDER_FLG
                                         , R.NON_PASS_CD
                                         , R.NON_PASS_REMARK
-                                        , U.PERSONAL_NO
+                                        , REGEXP_REPLACE(HINDEV.CRYPTO_AES256.DEC_AES(U.PERSONAL_NO), '\d', '*', 9) AS PERSONAL_NO
                                         , U.PIC_FILE
-                                  FROM  T_OPEN_COURSE O
+                                        , DECODE(U.pic_file_nm, NULL, 'Ⅹ', '○') AS is_pic_file
+                                        , DECODE((select count(*) from t_course_report_hist where user_id = r.user_id and open_course_id = r.open_course_id and course_result_seq = r.course_result_seq), 0, '', 'disabled') as is_disabled
+                                  FROM    T_OPEN_COURSE O
+                                        , T_COURSE I
                                         , (select * from T_COURSE_RESULT where PASS_FLG = '000001') R 
                                         , T_USER U
                                         , T_COMPANY C
                                         , V_HDUTYSTEP S
-                                 WHERE 
-                                        O.OPEN_COURSE_ID = R.OPEN_COURSE_ID
-                                        AND R.USER_ID = U.USER_ID
-                                        AND U.COMPANY_ID = C.COMPANY_ID(+)
-                                        AND U.DUTY_STEP = S.DUTY_STEP
+                                 WHERE    O.COURSE_ID = I.COURSE_ID
+                                      AND O.OPEN_COURSE_ID = R.OPEN_COURSE_ID
+                                      AND R.USER_ID = U.USER_ID
+                                      AND U.COMPANY_ID = C.COMPANY_ID(+)
+                                      AND U.DUTY_STEP = S.DUTY_STEP
                                         " + xWhere;
-                xSql += @"    ORDER BY STEP_SEQ, USER_NM_KOR " + "\r\n";
+                xSql += @"    ORDER BY R.CERTIFICATE_NAME, R.CERTIFICATE_KEY, STEP_SEQ, U.USER_NM_KOR " + "\r\n";
                 xSql += @"         ) a " + "\r\n";
                 xSql += @"  ) a " + "\r\n";
 
@@ -3527,7 +3531,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
         /************************************************************
         * Function name : GetEduIssuingUserReport
-        * Purpose       : 수강신청/승인 리포트 리스트
+        * Purpose       : 수강신청/승인 리포트 리스트
         * Input         : string[] rParams 
         * Output        : DataSet
         *************************************************************/
@@ -3672,7 +3676,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                 , u.user_nm_eng_first
                                 , u.user_nm_eng_last
                                 , (select step_ename from v_hdutystep where duty_step = u.duty_step) as step_name
-                                , u.personal_no
+                                , HINDEV.CRYPTO_AES256.DEC_AES(u.personal_no) as personal_no
                                 , to_char(o.course_begin_dt, 'YYYY.MM.DD') as course_begin_dt
                                 , to_char(o.course_end_dt, 'yyyy.mm.dd') as course_end_dt            
                                 , u.pic_file_nm
@@ -3693,6 +3697,17 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                 , T.REPORT_TYPE_ID
                                 , O.COURSE_GUBUN   -- 국토해양부 과정 여부 
                                 , R.CERTIFICATE_NAME || R.CERTIFICATE_KEY as CERTIFICATE_CODE -- 증서번호
+
+                                /* 리더십 및 팀워크교육(20020005), 리더십 및 관리기술 직무교육(20020006)을 항해/기관으로 분류
+                                   : 회원정보의 현재 직급으로 분류
+                                    - 분류가 안되면 항해를 우선 출력 (해상 -> 육상으로 변경하여 현 직급이 구분이 안될 경우)
+                                */
+                                , '01' as me_gubun
+                                /* 선박위험물관리교육(20020010)을 내부/수탁으로 분류
+                                   : 과정 개설시, 사내/외구분 코드로 분류함
+                                */
+                                , O.course_inout    /* 000001 사내 000002 사외 */
+
                             FROM T_COURSE C 
                                 , T_COURSE_REPORT_ID I
                                 , T_COURSE_REPORT_TYPE T
@@ -3800,36 +3815,60 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                         SHS초급과정 - SHS (08050002)
                         ECDIS과정 - ECDIS (08070001)
                         경력사관입사교육(SHEQ) - FML (09030007)
-
                      */
-                    if (sCourseId == "07080001")
+                    /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+                     * 2020.02 변경
+                        구분                    설명                                    NO      증서명/과정명                           증서번호
+                                                                                                                                        기관-과정-년도(2)-발급번호(3)     교육과정코드
+                    ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                        해수부지정              해양수산부 지정과정 및 MAKER 증서       1       선박조종시뮬레이터 교육                 GMS-SHS-20001                     20020001
+                                                                                        2       선박모의조종 및 선교 팀워크 교육        GMS-SBT-20001                     20020002
+                                                                                        3       엔진룸 시뮬레이터 교육                  GMS-ERS-20001                     20020003
+                                                                                        4       전자해도장치 교육                       GMS-ECDIS-20001                   20020004
+                                                                                        5       리더십 및 팀워크교육                    GMS-LAT-20001                     20020005
+                                                                                        6       리더십 및 관리기술 직무교육             GMS-LTM-20001                     20020006
+                                                                                        7       JRC ECDIS TST(901)                      GMS-TST-20001                     20020007
+                                                                                        8       JRC ECDIS TST(9201)                     GMS-TST-20001                     20020008
+                        선박요청                선내교육에 따른 발급 증서               1       선박평형수관리협약교육                  GMS-BWMS-20001                    20020009
+                                                                                        2       선박위험물관리교육                      GMS-IMDG-20001                    20020010
+                        X(수료현황출력)공통수료증              기타 일반과정 수료증                    1       전과정                                  GMS-TC-20001       나머지과정모두
+                    -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+                    switch (sCourseId)
                     {
-                        sCertificate_Name = "CMT-BRTM-";
-                    }
-                    else if(sCourseId == "01010042")
-                    {
-                        sCertificate_Name = "CMT-ERM-";
-                    }
-                    //S.H.S고급과정과 S.H.S초급과정은 묶어서 생성
-                    else if (sCourseId == "07110005" || sCourseId == "08050002")
-                    {
-                        sCertificate_Name = "CMT-SHS-";
-                    }
-                    else if(sCourseId == "08070001" )
-                    {
-                        sCertificate_Name = "CMT-ECDIS-";
-                    }
-                    else if(sCourseId == "09030007")
-                    {
-                        sCertificate_Name = "CMT-FML-";
-                    }
-                    else    
-                    {
-                        return;
+                        case "20020001":
+                            sCertificate_Name = "GMS-SHS-";
+                            break;
+                        case "20020002":
+                            sCertificate_Name = "GMS-SBT-";
+                            break;
+                        case "20020003":
+                            sCertificate_Name = "GMS-ERS-";
+                            break;
+                        case "20020004":
+                            sCertificate_Name = "GMS-ECDIS-";
+                            break;
+                        case "20020005":
+                            sCertificate_Name = "GMS-LAT-";
+                            break;
+                        case "20020006":
+                            sCertificate_Name = "GMS-LTM-";
+                            break;
+                        case "20020007":
+                        case "20020008":
+                            sCertificate_Name = "GMS-TST-";
+                            break;
+                        case "20020009":
+                            sCertificate_Name = "GMS-BWMS-";
+                            break;
+                        case "20020010":
+                            sCertificate_Name = "GMS-IMDG-";
+                            break;
+                        default:
+                            //sCertificate_Name = "GMS-TC-";
+                            //break;
+                            return;
                     }
                     
-
-
                     sSql = @"
                     SELECT CERTIFICATE_KEY 
                       FROM T_COURSE_RESULT R 
@@ -3847,7 +3886,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                                 FROM T_COURSE_RESULT R, T_OPEN_COURSE O
                                                WHERE R.OPEN_COURSE_ID = O.OPEN_COURSE_ID
                                                  -- AND O.COURSE_ID = :P_COURSE_ID
-                                                 AND DECODE(O.COURSE_ID,'07110005','99999999','08050002','99999999',O.COURSE_ID) = DECODE(:P_COURSE_ID,'07110005','99999999','08050002','99999999',:P_COURSE_ID) -- S.H.S고급과정과 S.H.S초급과정은 묶어서 생성하기 위해
+                                                 AND DECODE(O.COURSE_ID,'20020007','99999999','20020008','99999999',O.COURSE_ID) = DECODE(:P_COURSE_ID,'20020007','99999999','20020008','99999999',:P_COURSE_ID) -- JRC ECDIS TST(901)과정과 JRC ECDIS TST(9201)과정은 묶어서 생성하기 위해
                                                  AND SUBSTR(R.CERTIFICATE_KEY, 1, 2) = :P_YEAR2),
                             CERTIFICATE_NAME = :P_CERTIFICATE_NAME                           
                         WHERE A.USER_ID || A.OPEN_COURSE_ID || A.COURSE_RESULT_SEQ = ";
@@ -3893,133 +3932,132 @@ namespace CLT.WEB.BIZ.LMS.EDUM
        * Input         : string[] rParams 
        * Output        : DataSet
        *************************************************************/
-        //        public string GetEduIssuingUserReportNo(string[] xKeys, OracleConnection xCnnLMS, OracleTransaction xTransLMS, OracleCommand xCmdLMS)
-        //        {
-        //            Database db = null;
-        //            string xSql = string.Empty;
-        //            string xCertNo = string.Empty;
+                    //        public string GetEduIssuingUserReportNo(string[] xKeys, OracleConnection xCnnLMS, OracleTransaction xTransLMS, OracleCommand xCmdLMS)
+                    //        {
+                    //            Database db = null;
+                    //            string xSql = string.Empty;
+                    //            string xCertNo = string.Empty;
 
-        //            try
-        //            {
-        //                db = base.GetDataBase("LMS"); //Database 생성
+                    //            try
+                    //            {
+                    //                db = base.GetDataBase("LMS"); //Database 생성
 
-        //               // using (OracleConnection xCnnLMS = (OracleConnection)db.CreateConnection())
-        //                //{
-        //                    //xCnnLMS.Open();
-        //                    //OracleTransaction xTransLMS = xCnnLMS.BeginTransaction(); // 트랜잭션 시작
-        //                   // OracleCommand xCmdLMS = null;
+                    //               // using (OracleConnection xCnnLMS = (OracleConnection)db.CreateConnection())
+                    //                //{
+                    //                    //xCnnLMS.Open();
+                    //                    //OracleTransaction xTransLMS = xCnnLMS.BeginTransaction(); // 트랜잭션 시작
+                    //                   // OracleCommand xCmdLMS = null;
 
-        //                    try
-        //                    {
+                    //                    try
+                    //                    {
 
-        //                        string xYear = System.DateTime.Now.Year.ToString("00").Substring(2);
-        //                        xSql = @" 
-        //                              SELECT T.REPORT_TYPE_ID
-        //                                     , T.REPORT_YEAR
-        //                                FROM T_COURSE C
-        //                                    , T_OPEN_COURSE O
-        //                                    , T_COURSE_REPORT_ID I
-        //                                    , T_COURSE_REPORT_TYPE T
-        //                             WHERE  C.COURSE_ID = O.COURSE_ID
-        //                                AND C.COURSE_ID = I.COURSE_ID
-        //                                AND I.REPORT_TYPE_ID = T.REPORT_TYPE_ID
-        //                                AND O.OPEN_COURSE_ID = '" + xKeys[1] + @"'
-        //                                AND T.REPORT_YEAR = '" + xYear + @"'
-        //                            ";
-        //                        xCmdLMS.CommandText = xSql;
-        //                        DataSet xDsType = base.ExecuteDataSet(db, xCmdLMS, xTransLMS);
-        //                        xCmdLMS.Parameters.Clear();
+                    //                        string xYear = System.DateTime.Now.Year.ToString("00").Substring(2);
+                    //                        xSql = @" 
+                    //                              SELECT T.REPORT_TYPE_ID
+                    //                                     , T.REPORT_YEAR
+                    //                                FROM T_COURSE C
+                    //                                    , T_OPEN_COURSE O
+                    //                                    , T_COURSE_REPORT_ID I
+                    //                                    , T_COURSE_REPORT_TYPE T
+                    //                             WHERE  C.COURSE_ID = O.COURSE_ID
+                    //                                AND C.COURSE_ID = I.COURSE_ID
+                    //                                AND I.REPORT_TYPE_ID = T.REPORT_TYPE_ID
+                    //                                AND O.OPEN_COURSE_ID = '" + xKeys[1] + @"'
+                    //                                AND T.REPORT_YEAR = '" + xYear + @"'
+                    //                            ";
+                    //                        xCmdLMS.CommandText = xSql;
+                    //                        DataSet xDsType = base.ExecuteDataSet(db, xCmdLMS, xTransLMS);
+                    //                        xCmdLMS.Parameters.Clear();
 
-        //                        DataTable xDtType = xDsType.Tables[0];
-        //                        if (xDtType.Rows.Count > 0)
-        //                        {
-        //                            xSql = @" 
-        //                                    UPDATE T_COURSE_REPORT_TYPE
-        //                                       SET REPORT_CNT = (SELECT NVL(MAX(REPORT_CNT), 0) +1 FROM T_COURSE_REPORT_TYPE WHERE REPORT_YEAR = :REPORT_YEAR AND REPORT_TYPE_ID = :REPORT_TYPE_ID)
-        //                                     WHERE REPORT_YEAR = :REPORT_YEAR
-        //                                            AND REPORT_TYPE_ID = :REPORT_TYPE_ID
-        //                                    ";
-        //                            OracleParameter[] xPara = new OracleParameter[2];
-        //                            xPara[0] = base.AddParam("REPORT_YEAR", OracleType.VarChar, xDtType.Rows[0]["REPORT_YEAR"]);
-        //                            xPara[1] = base.AddParam("REPORT_TYPE_ID", OracleType.VarChar, xDtType.Rows[0]["REPORT_TYPE_ID"]);
+                    //                        DataTable xDtType = xDsType.Tables[0];
+                    //                        if (xDtType.Rows.Count > 0)
+                    //                        {
+                    //                            xSql = @" 
+                    //                                    UPDATE T_COURSE_REPORT_TYPE
+                    //                                       SET REPORT_CNT = (SELECT NVL(MAX(REPORT_CNT), 0) +1 FROM T_COURSE_REPORT_TYPE WHERE REPORT_YEAR = :REPORT_YEAR AND REPORT_TYPE_ID = :REPORT_TYPE_ID)
+                    //                                     WHERE REPORT_YEAR = :REPORT_YEAR
+                    //                                            AND REPORT_TYPE_ID = :REPORT_TYPE_ID
+                    //                                    ";
+                    //                            OracleParameter[] xPara = new OracleParameter[2];
+                    //                            xPara[0] = base.AddParam("REPORT_YEAR", OracleType.VarChar, xDtType.Rows[0]["REPORT_YEAR"]);
+                    //                            xPara[1] = base.AddParam("REPORT_TYPE_ID", OracleType.VarChar, xDtType.Rows[0]["REPORT_TYPE_ID"]);
 
-        //                            xCmdLMS.CommandText = xSql;
-        //                            base.Execute(db, xCmdLMS, xPara, xTransLMS);
-        //                            xCmdLMS.Parameters.Clear();
-        //                        }
-        //                        else
-        //                        {
-        //                            xSql = @" 
-        //                                    UPDATE T_COURSE_REPORT_TYPE
-        //                                       SET REPORT_YEAR = :REPORT_YEAR
-        //                                            , REPORT_CNT = 1
-        //                                     WHERE REPORT_TYPE_ID 
-        //                                            =
-        //                                            (
-        //                                              SELECT T.REPORT_TYPE_ID
-        //                                                FROM T_COURSE C
-        //                                                    , T_OPEN_COURSE O
-        //                                                    , T_COURSE_REPORT_ID I
-        //                                                    , T_COURSE_REPORT_TYPE T
-        //                                             WHERE  ROWNUM=1
-        //                                                AND C.COURSE_ID = O.COURSE_ID
-        //                                                AND C.COURSE_ID = I.COURSE_ID
-        //                                                AND I.REPORT_TYPE_ID = T.REPORT_TYPE_ID
-        //                                                AND O.OPEN_COURSE_ID = :OPEN_COURSE_ID
-        //                                            )
-        //                                    ";
-        //                            OracleParameter[] xPara = new OracleParameter[2];
-        //                            xPara[0] = base.AddParam("REPORT_YEAR", OracleType.VarChar, xYear);
-        //                            xPara[1] = base.AddParam("OPEN_COURSE_ID", OracleType.VarChar, xKeys[1]);
+                    //                            xCmdLMS.CommandText = xSql;
+                    //                            base.Execute(db, xCmdLMS, xPara, xTransLMS);
+                    //                            xCmdLMS.Parameters.Clear();
+                    //                        }
+                    //                        else
+                    //                        {
+                    //                            xSql = @" 
+                    //                                    UPDATE T_COURSE_REPORT_TYPE
+                    //                                       SET REPORT_YEAR = :REPORT_YEAR
+                    //                                            , REPORT_CNT = 1
+                    //                                     WHERE REPORT_TYPE_ID 
+                    //                                            =
+                    //                                            (
+                    //                                              SELECT T.REPORT_TYPE_ID
+                    //                                                FROM T_COURSE C
+                    //                                                    , T_OPEN_COURSE O
+                    //                                                    , T_COURSE_REPORT_ID I
+                    //                                                    , T_COURSE_REPORT_TYPE T
+                    //                                             WHERE  ROWNUM=1
+                    //                                                AND C.COURSE_ID = O.COURSE_ID
+                    //                                                AND C.COURSE_ID = I.COURSE_ID
+                    //                                                AND I.REPORT_TYPE_ID = T.REPORT_TYPE_ID
+                    //                                                AND O.OPEN_COURSE_ID = :OPEN_COURSE_ID
+                    //                                            )
+                    //                                    ";
+                    //                            OracleParameter[] xPara = new OracleParameter[2];
+                    //                            xPara[0] = base.AddParam("REPORT_YEAR", OracleType.VarChar, xYear);
+                    //                            xPara[1] = base.AddParam("OPEN_COURSE_ID", OracleType.VarChar, xKeys[1]);
 
-        //                            xCmdLMS.CommandText = xSql;
-        //                            base.Execute(db, xCmdLMS, xPara, xTransLMS);
-        //                            xCmdLMS.Parameters.Clear();
-        //                        }
+                    //                            xCmdLMS.CommandText = xSql;
+                    //                            base.Execute(db, xCmdLMS, xPara, xTransLMS);
+                    //                            xCmdLMS.Parameters.Clear();
+                    //                        }
 
-        //                        xTransLMS.Commit(); //트렌잭션 커밋
+                    //                        xTransLMS.Commit(); //트렌잭션 커밋
 
-        //                     }
-        //                    catch (Exception ex)
-        //                    {
-        //                        // 트랜잭션 롤백
-        //                        xTransLMS.Rollback();
+                    //                     }
+                    //                    catch (Exception ex)
+                    //                    {
+                    //                        // 트랜잭션 롤백
+                    //                        xTransLMS.Rollback();
 
-        //                        bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
-        //                        if (rethrow) throw;
-        //                    }
-        //                    finally
-        //                    {
-        //                        if (xCmdLMS != null) xCmdLMS.Dispose();
-        //                        if (xTransLMS != null) xTransLMS.Dispose();
-        //                        if (xCnnLMS != null)
-        //                        { if (xCnnLMS.State == ConnectionState.Open) xCnnLMS.Close(); }
-        //                    }
+                    //                        bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
+                    //                        if (rethrow) throw;
+                    //                    }
+                    //                    finally
+                    //                    {
+                    //                        if (xCmdLMS != null) xCmdLMS.Dispose();
+                    //                        if (xTransLMS != null) xTransLMS.Dispose();
+                    //                        if (xCnnLMS != null)
+                    //                        { if (xCnnLMS.State == ConnectionState.Open) xCnnLMS.Close(); }
+                    //                    }
 
-        //                }
-        //            //}
-        //                catch (Exception ex)
-        //                {
-        //                    bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
-        //                    if (rethrow) throw;
-        //                }
+                    //                }
+                    //            //}
+                    //                catch (Exception ex)
+                    //                {
+                    //                    bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
+                    //                    if (rethrow) throw;
+                    //                }
 
-        //                finally
-        //                {
-        //                    db = null;
-        //                }
-        //               // return xDs;
+                    //                finally
+                    //                {
+                    //                    db = null;
+                    //                }
+                    //               // return xDs;
 
-        //        }
+                    //        }
 
-
-        /************************************************************
-        * Function name : GetEduTrainigRecordList
-        * Purpose       : 교육이력입력 리스트
-        * Input         : string[] rParams (0: pagesize, 1: pageno)
-        * Output        : DataSet
-        *************************************************************/
-        public DataSet GetEduTrainigRecordList(string[] rParams
+                    /************************************************************
+                    * Function name : GetEduTrainigRecordList
+                    * Purpose       : 교육이력입력 리스트
+                    * Input         : string[] rParams (0: pagesize, 1: pageno)
+                    * Output        : DataSet
+                    *************************************************************/
+                    public DataSet GetEduTrainigRecordList(string[] rParams
                                             , string rGubun, CultureInfo rArgCultureInfo)
         {
             Database db = null;
@@ -4319,8 +4357,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
 
             return xDt;
         }
-
-
+        
         /************************************************************
         * Function name : GetEduTrainigRecordDelete
         * Purpose       : 평가 항목 삭제
@@ -4391,7 +4428,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
         #region public void SetFileAtt(string rKind, byte[] rFile, string rFileName, string rSeq, string rAttKey)
         /************************************************************
         *  Function name : SetFileAtt
-        *  Purpose       : 파일 저장
+        *  Purpose       : 파일 저장
         *  Input         : string rKind, byte[] rFile, string rFileName, string rSeq, string rAttKey
         *  Output        : 
         **************************************************************/
@@ -4409,7 +4446,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                    UPDATE T_USER
                       SET PIC_FILE_NM = :PIC_FILE_NM
                             , PIC_FILE = :PIC_FILE
-                    WHERE USER_ID = :USER_ID
+                    WHERE UPPER(USER_ID) = :USER_ID
                 ";
                 oraParams = new OracleParameter[3];
                 oraParams[0] = base.AddParam("PIC_FILE_NM", OracleType.VarChar, rFileName);
@@ -4426,6 +4463,210 @@ namespace CLT.WEB.BIZ.LMS.EDUM
         }
         #endregion
 
+        #region DataTable GetEduIssuingUserHistory(DataTable rDt, CultureInfo rArgCultureInfo)
+        /************************************************************
+        * Function name : GetEduIssuingHistory
+        * Purpose       : 증서발급이력 조회
+        * Input         : string[] rParams (0: pagesize, 1: pageno)
+        * Output        : DataTable
+        *************************************************************/
+        public DataTable GetEduIssuingHistory(string[] rParams , string rGubun, CultureInfo rArgCultureInfo)
+        {
+            Database db = base.GetDataBase("LMS");
+            string xSql = string.Empty;
+            DataTable xDt = null;
 
+            try
+            {
+                string xWhere = "";
+
+                //발급일자
+                xWhere += @" AND H.INS_DT >= TO_DATE('" + rParams[2] + "','YYYY.MM.DD') " + "\r\n";
+                xWhere += @" AND H.INS_DT <= TO_DATE('" + rParams[3] + "','YYYY.MM.DD') " + "\r\n";
+
+                //교육유형
+                if (rParams[4] != "*" && !Util.IsNullOrEmptyObject(rParams[4]))
+                    xWhere += @" AND C.COURSE_TYPE = '" + rParams[4] + "' " + "\r\n";
+
+                //과정명
+                if (!Util.IsNullOrEmptyObject(rParams[5]))
+                    xWhere += @" AND UPPER(C.COURSE_NM) LIKE  '%" + rParams[5].ToUpper() + "%' " + "\r\n";
+
+                //성명
+                if (!Util.IsNullOrEmptyObject(rParams[6]))
+                {
+                    xWhere += @" AND U.USER_NM_KOR || ' ' || U.USER_NM_ENG_FIRST || ' ' || U.USER_NM_ENG_LAST LIKE '%" + rParams[6] + "%' " + "\r\n";
+                }
+                
+                xSql += @"   
+                            select *
+                            from (
+                            select  rownum rnum ";
+                xSql += "         , A.* " + "\r\n";
+                xSql += "     FROM ( " + "\r\n";
+                xSql += @"  SELECT 
+                                  H.USER_ID||'^'||H.OPEN_COURSE_ID||'^'||H.COURSE_RESULT_SEQ||'^'||H.SEQ AS KEYS
+                                , C.COURSE_ID
+                                , H.OPEN_COURSE_ID
+                                , H.COURSE_RESULT_SEQ
+                                , H.SEQ
+                                , C.COURSE_TYPE
+                                , NVL(P.COMPANY_NM, ' ') AS COMPANY_NM ";
+                if (rArgCultureInfo.Name.ToLower() == "ko-kr")
+                {
+                    xSql += @"  , (SELECT D_KNM FROM T_CODE_DETAIL WHERE M_CD='0006' AND D_CD = C.COURSE_TYPE) AS COURSE_TYPE_NM
+                                , C.COURSE_NM ";
+                }
+                else
+                {
+                    xSql += @"  , (SELECT D_ENM FROM T_CODE_DETAIL WHERE M_CD='0006' AND D_CD = C.COURSE_TYPE) AS COURSE_TYPE_NM
+                                , C.COURSE_NM_ABBR AS COURSE_NM ";
+                }
+                xSql += @"      , H.CERTIFICATE_NAME || H.CERTIFICATE_KEY           AS CERTIFICATE_NO
+                                , U.USER_NM_KOR                                     AS USER_NM_KOR
+                                , U.USER_NM_ENG_FIRST || ' ' || USER_NM_ENG_LAST    AS USER_NM_ENG
+                                , TO_CHAR(U.BIRTH_DT,'YYYY.MM.DD') AS BIRTH_DATE
+                                , O.COURSE_BEGIN_DT
+                                , O.COURSE_END_DT
+                                , TO_CHAR(O.COURSE_BEGIN_DT,'YYYY.MM.DD') ||'~'|| TO_CHAR(O.COURSE_END_DT,'YYYY.MM.DD') AS COURSE_DATE
+                                , TO_CHAR(H.INS_DT,'YYYY.MM.DD') AS ISSUE_DATE
+                                , H.REASON
+                                , T.REPORT_TYPE_ID
+                                , T.REPORT_NM
+                                , T.PAGE_HV
+                                , count(*) over() totalrecordcount 
+                             FROM T_COURSE_REPORT_HIST H
+                                , T_COURSE_RESULT R
+                                , T_COURSE C
+                                , T_COURSE_REPORT_ID I
+                                , T_COURSE_REPORT_TYPE T
+                                , T_OPEN_COURSE O
+                                , T_USER U
+                                , T_COMPANY P
+                              WHERE H.USER_ID = R.USER_ID
+                                AND H.OPEN_COURSE_ID = R.OPEN_COURSE_ID
+                                AND H.COURSE_RESULT_SEQ = R.COURSE_RESULT_SEQ
+                                AND C.COURSE_ID = I.COURSE_ID
+                                AND I.REPORT_TYPE_ID = T.REPORT_TYPE_ID
+                                AND C.COURSE_ID = O.COURSE_ID
+                                AND O.OPEN_COURSE_ID = R.OPEN_COURSE_ID
+                                AND R.USER_ID = U.USER_ID
+                                AND U.COMPANY_ID = P.COMPANY_ID(+)
+                                " + xWhere;
+                xSql += @" ORDER BY H.INS_DT desc, C.COURSE_ID, H.OPEN_COURSE_ID, H.COURSE_RESULT_SEQ, H.SEQ " + "\r\n";
+                xSql += @"         ) A " + "\r\n";
+                xSql += @"  ) A " + "\r\n";
+
+                if (rGubun != "all")
+                {
+                    if (!String.IsNullOrEmpty(rParams[0]) && !String.IsNullOrEmpty(rParams[1]))
+                    {
+                        xSql += string.Format(" WHERE a.rnum > {0} " + "\r\n", Convert.ToInt32(rParams[0]) * (Convert.ToInt32(rParams[1]) - 1));
+                        xSql += string.Format("   AND a.rnum <= {0} " + "\r\n", Convert.ToInt32(rParams[0]) * Convert.ToInt32(rParams[1]));
+                    }
+                }
+                    
+                xDt = base.ExecuteDataTable(db, xSql);
+            }
+            catch (Exception ex)
+            {
+                bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
+                if (rethrow) throw;
+            }
+            finally
+            {
+                db = null;
+            }
+            return xDt; ;
+        }
+        #endregion
+
+        
+
+        /************************************************************
+        * Function name : SetReportHistory
+        * Purpose       : 증서발급 History Insert
+        * Input         : string[] rParams (0: menu_group), (1: user_id)
+        *                                  (2: inquiry_yn), (3: edit_yn)
+        *                                  (4: del_yn),     (5: admin_yn)
+        * Output        : String Bollean Type
+        *************************************************************/
+        public string SetReportHistory(string[,] rParams)
+        {
+            string xRtn = Boolean.FalseString;
+
+            Database db = base.GetDataBase("LMS");
+
+            OracleConnection xCnnLMS = (OracleConnection)db.CreateConnection();
+            xCnnLMS.Open();
+            OracleTransaction xTrnsLMS = null;
+            OracleCommand xCmdLMS = null;
+
+            try
+            {
+                xTrnsLMS = xCnnLMS.BeginTransaction();  // 트랜잭션 시작
+                xCmdLMS = base.GetSqlCommand(db);
+                xCmdLMS.Connection = xCnnLMS;
+                xCmdLMS.Transaction = xTrnsLMS;
+
+                try
+                {
+
+                    for (int i = 0; i < rParams.GetLength(0); i++)
+                    {
+                        string xSql = string.Empty;
+
+                        xSql = string.Empty;
+                        xSql += " INSERT INTO t_course_report_hist ( ";
+                        xSql += " user_id, ";
+                        xSql += " open_course_id, ";
+                        xSql += " course_result_seq, ";
+                        xSql += " seq, ";
+                        xSql += " certificate_key, ";
+                        xSql += " certificate_name, ";
+                        xSql += " reason, ";
+                        xSql += " ins_id, ";
+                        xSql += " ins_dt ";
+                        xSql += " ) ";
+                        xSql += " VALUES ( ";
+                        xSql += string.Format(" '{0}', ", rParams[i, 0]);
+                        xSql += string.Format(" '{0}', ", rParams[i, 1]);
+                        xSql += string.Format(" {0}, ", rParams[i, 2]);
+                        xSql += string.Format(" (select (NVL(max(seq),0)+1) from t_course_report_hist WHERE user_id='{0}' AND open_course_id='{1}' AND course_result_seq={2}), ", rParams[i, 0], rParams[i, 1], rParams[i, 2]);
+                        xSql += string.Format(" '{0}', ", rParams[i, 3]);
+                        xSql += string.Format(" '{0}', ", rParams[i, 4]);
+                        xSql += string.Format(" '{0}', ", rParams[i, 5]);
+                        xSql += string.Format(" '{0}', ", rParams[i, 6]);
+                        xSql += " SYSDATE ";
+                        xSql += " ) ";
+                        
+                        xCmdLMS.CommandText = xSql;
+                        base.Execute(db, xCmdLMS, xTrnsLMS);
+                        
+                    }
+                    xTrnsLMS.Commit(); // 트랜잭션 커밋
+                    xRtn = Boolean.TrueString;
+
+                }
+                catch (Exception ex)
+                {
+                    xTrnsLMS.Rollback(); // Exception 발생시 롤백처리...
+                    throw ex;
+                }
+                finally
+                {
+                    if (xCmdLMS != null)
+                        xCmdLMS.Dispose();
+
+                    if (xTrnsLMS != null)
+                        xTrnsLMS.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return xRtn;
+        }
     }
 }

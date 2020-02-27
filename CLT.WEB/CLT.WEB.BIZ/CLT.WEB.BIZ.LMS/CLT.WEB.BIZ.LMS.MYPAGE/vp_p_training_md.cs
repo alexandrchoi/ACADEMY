@@ -226,7 +226,7 @@ namespace CLT.WEB.BIZ.LMS.MYPAGE
                         SELECT 
                             P.COMPANY_NM
                             , U.USER_NM_KOR
-                            , U.PERSONAL_NO 
+                            , HINDEV.CRYPTO_AES256.DEC_AES(U.PERSONAL_NO) as PERSONAL_NO 
                             , C.COURSE_NM 
                             , CASE 
                                 WHEN R.USER_COURSE_BEGIN_DT IS NOT NULL THEN (TO_CHAR(R.USER_COURSE_BEGIN_DT,'YYYY.MM.DD') ||' ~ '|| TO_CHAR(R.USER_COURSE_END_DT,'YYYY.MM.DD')) 

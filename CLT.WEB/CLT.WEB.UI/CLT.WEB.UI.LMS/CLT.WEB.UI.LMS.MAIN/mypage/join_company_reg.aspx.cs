@@ -223,7 +223,7 @@ namespace CLT.WEB.UI.LMS.MYPAGE
             {
                 string xRtn = Boolean.TrueString;
                 string xScriptContent = string.Empty;
-                string[] xParams = new string[32];
+                string[] xParams = new string[33];
 
                 if (this.txtID.Enabled == true)
                 {
@@ -395,8 +395,10 @@ namespace CLT.WEB.UI.LMS.MYPAGE
                     xParams[31] = "Y"; // MAIL 수신여부
                 else
                     xParams[31] = "N"; // MAIL 수신여부
-                
-                    xRtn = SBROKER.GetString("CLT.WEB.BIZ.LMS.MANAGE.vp_m_user_md",
+
+                xParams[32] = txtBirth_dt.Text.Replace(".", "").Trim() == string.Empty ? null : txtBirth_dt.Text; //생년월일
+
+                xRtn = SBROKER.GetString("CLT.WEB.BIZ.LMS.MANAGE.vp_m_user_md",
                              "SetUserInfo",
                              LMS_SYSTEM.MANAGE,
                              "CLT.WEB.UI.LMS.MANAGE",

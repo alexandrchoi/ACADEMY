@@ -422,7 +422,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             , C.TEMP_SAVE_FLG 
                             , COUNT(*) OVER() TOTALRECORDCOUNT
                             , (SELECT D_KNM FROM T_CODE_DETAIL WHERE M_CD = '0004' AND D_CD = C.COURSE_FIELD) AS COURSE_FIELD
-                            , ' ' AS MANAGER
+                            , C.MANAGER
                         FROM T_COURSE C
                         WHERE 1=1                         
                         ";
@@ -1001,12 +1001,13 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                 ,EXPIRED_PERIOD    = :EXPIRED_PERIOD  
                                 ,INSURANCE_FLG     = :INSURANCE_FLG   
                                 ,USE_FLG           = :USE_FLG         
+                                ,MANAGER           = :MANAGER         
                                 , UPT_ID = :INS_ID
                                 , UPT_DT = SYSDATE 
                             WHERE COURSE_ID = :COURSE_ID
                             ";
 
-                            xPara = new OracleParameter[21];
+                            xPara = new OracleParameter[22];
                             xPara[0] = base.AddParam("COURSE_LANG", OracleType.VarChar, rParams[1]);
                             xPara[1] = base.AddParam("COURSE_TYPE", OracleType.VarChar, rParams[6]);
                             xPara[2] = base.AddParam("COURSE_GROUP", OracleType.VarChar, rParams[5]);
@@ -1026,6 +1027,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             xPara[16] = base.AddParam("EXPIRED_PERIOD", OracleType.Number, rParams[16]);
                             xPara[17] = base.AddParam("INSURANCE_FLG", OracleType.VarChar, rParams[2]);
                             xPara[18] = base.AddParam("USE_FLG", OracleType.VarChar, rParams[19]);
+                            xPara[19] = base.AddParam("MANAGER", OracleType.VarChar, rParams[21]);
                             xPara[19] = base.AddParam("INS_ID", OracleType.VarChar, rParams[20]);
                             xPara[20] = base.AddParam("COURSE_ID", OracleType.VarChar, xQID);
 
@@ -1066,6 +1068,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                         ,USE_FLG         
                                         ,TEMP_SAVE_FLG
                                         ,HRISCODE
+                                        ,MANAGER
                                     ) VALUES (
                                         :COURSE_ID       
                                         ,:COURSE_LANG     
@@ -1095,6 +1098,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                         ,:USE_FLG         
                                         ,:TEMP_SAVE_FLG 
                                         ,:HRISCODE 
+                                        ,:MANAGER 
                                     ) ";
 
                             vp_l_common_md com = new vp_l_common_md();
@@ -1104,7 +1108,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                              2013.05.02
                              * 과정개설시 HRISCODE 자동입력되도록(COURSE_ID와 동일하게)
                              */
-                            xPara = new OracleParameter[25];
+                            xPara = new OracleParameter[26];
                             xPara[0] = base.AddParam("COURSE_LANG", OracleType.VarChar, rParams[1]);
                             xPara[1] = base.AddParam("COURSE_TYPE", OracleType.VarChar, rParams[6]);
                             xPara[2] = base.AddParam("COURSE_GROUP", OracleType.VarChar, rParams[5]);
@@ -1130,6 +1134,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             xPara[22] = base.AddParam("TEMP_SAVE_FLG", OracleType.VarChar, "Y");
                             xPara[23] = base.AddParam("COURSE_ID", OracleType.VarChar, xQID);
                             xPara[24] = base.AddParam("HRISCODE", OracleType.VarChar, xQID);
+                            xPara[25] = base.AddParam("MANAGER", OracleType.VarChar, rParams[21]);
 
                             xCmdLMS.CommandText = xSql;
                             base.Execute(db, xCmdLMS, xPara, xTransLMS);                           

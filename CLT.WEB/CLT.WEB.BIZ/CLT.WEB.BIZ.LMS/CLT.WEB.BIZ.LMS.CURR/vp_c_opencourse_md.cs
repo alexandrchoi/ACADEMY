@@ -64,7 +64,8 @@ namespace CLT.WEB.BIZ.LMS.CURR
                         SELECT
                             O.OPEN_COURSE_ID 
                             , O.COURSE_YEAR                            
-                            , C.COURSE_ID ";
+                            , C.COURSE_ID
+                        ";
 
                         if (rArgCultureInfo.Name.ToLower() == "ko-kr")
                         {
@@ -93,6 +94,8 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             , O.INS_DT
                             , DECODE(O.USE_FLG , 'Y', 'YES', 'NO') AS USE_FLG 
                             , COUNT(*) OVER() TOTALRECORDCOUNT 
+                            , C.COURSE_TYPE
+                            , O.MANAGER
                         FROM T_OPEN_COURSE O, T_COURSE C
                         WHERE O.COURSE_ID = C.COURSE_ID(+) 
                             AND C.COURSE_TYPE <> '000005'  /* COURSE에서 COURSE_TYPE이 OJT일 경우 제외하여 DISPLAY*/
@@ -281,6 +284,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                     , OC.RES_NO 
                     , R.RES_SUB
                     , OC.COURSE_GUBUN
+                    , OC.MANAGER
                 FROM T_OPEN_COURSE OC, T_COURSE C, T_RESEARCH R
                 WHERE OC.COURSE_ID = C.COURSE_ID(+)
                   AND OC.RES_NO = R.RES_NO(+)
@@ -387,6 +391,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                     , COURSE_INOUT
                                     , COURSE_PLACE
                                     , COURSE_GUBUN
+                                    , MANAGER
                                     ) VALUES (
                                     :OPEN_COURSE_ID
                                     , :COURSE_ID
@@ -419,12 +424,13 @@ namespace CLT.WEB.BIZ.LMS.CURR
                                     , :COURSE_INOUT
                                     , :COURSE_PLACE
                                     , :COURSE_GUBUN
+                                    , :MANAGER
                                     ) ";
 
                         vp_l_common_md com = new vp_l_common_md();
                         string xQID = com.GetMaxIDOfTable(new string[] { "T_OPEN_COURSE", "OPEN_COURSE_ID" });
 
-                        xPara = new OracleParameter[29];
+                        xPara = new OracleParameter[30];
                         xPara[0] = base.AddParam("OPEN_COURSE_ID", OracleType.VarChar, xQID);
                         xPara[1] = base.AddParam("COURSE_ID", OracleType.VarChar, rParams[1]);
                         xPara[2] = base.AddParam("COURSE_YEAR", OracleType.VarChar, rParams[2]);
@@ -458,6 +464,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                         xPara[26] = base.AddParam("RES_NO", OracleType.VarChar, rParams[23]);
                         xPara[27] = base.AddParam("COURSE_PLACE", OracleType.VarChar, rParams[25]);
                         xPara[28] = base.AddParam("COURSE_GUBUN", OracleType.Char, rParams[26]);  // 국토해양부 과정여부 추가
+                        xPara[29] = base.AddParam("MANAGER", OracleType.VarChar, rParams[27]);  //
 
                         xCmdLMS.CommandText = xSql;
                         base.Execute(db, xCmdLMS, xPara, xTransLMS);

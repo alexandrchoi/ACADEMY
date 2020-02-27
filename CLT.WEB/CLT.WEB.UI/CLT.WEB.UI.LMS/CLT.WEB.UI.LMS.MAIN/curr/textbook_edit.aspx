@@ -108,8 +108,14 @@
                         <asp:Label ID="lblTextBookNM" runat="server" meta:resourcekey="lblTextBookNM" />
                         <span class="required"></span>
                     </th>
-                    <td colspan="5">
+                    <td colspan="3">
                         <asp:TextBox ID="txtTextBookNM" runat="server" MaxLength="200" />
+                    </td>
+                    <th scope="row">
+                        <asp:Label ID="lblPubDt" runat="server" Text="출판일" meta:resourcekey="lblPubDt" />
+                    </th>
+                    <td style="text-wrap:none; overflow-wrap:break-word; word-wrap:break-word;">
+                        <asp:TextBox ID="txtPubDt" runat="server" MaxLength="10" CssClass="datepick" Width="120" />
                     </td>
                     <th scope="row" >
                         <asp:Label ID="lblPublisher" runat="server" meta:resourcekey="lblPublisher" />
