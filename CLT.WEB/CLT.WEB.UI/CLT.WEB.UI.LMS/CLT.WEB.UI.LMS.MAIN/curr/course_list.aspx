@@ -89,12 +89,15 @@
                         <ItemStyle Width="5%" />
                     </C1WebGrid:C1TemplateColumn>
                     <C1WebGrid:C1BoundColumn DataField="course_type">
-                        <ItemStyle Width="8%" />
+                        <ItemStyle Width="7%" />
                     </C1WebGrid:C1BoundColumn>
                    <C1WebGrid:C1BoundColumn DataField="course_field" >
-                        <ItemStyle Width="8%" />
+                        <ItemStyle Width="7%" />
                     </C1WebGrid:C1BoundColumn>
-
+                    
+                   <C1WebGrid:C1BoundColumn DataField="course_id" >
+                        <ItemStyle Width="7%" />
+                    </C1WebGrid:C1BoundColumn>
                    <C1WebGrid:C1TemplateColumn>
                         <ItemTemplate>
                             <a href="#" onclick="javascript:location.href='/curr/course_edit.aspx?course_id=<%# DataBinder.Eval(Container.DataItem, "COURSE_ID")%>&MenuCode=<%=Session["MENU_CODE"]%>'">
@@ -105,7 +108,7 @@
                     </C1WebGrid:C1TemplateColumn>
 
                    <C1WebGrid:C1BoundColumn DataField="expired_period" >
-                        <ItemStyle Width="8%" />
+                        <ItemStyle Width="7%" />
                     </C1WebGrid:C1BoundColumn>
 
                    <C1WebGrid:C1BoundColumn DataField="vsl_type" >
@@ -113,11 +116,11 @@
                     </C1WebGrid:C1BoundColumn>
 
                    <C1WebGrid:C1BoundColumn DataField="use_flg">
-                        <ItemStyle Width="8%" />
+                        <ItemStyle Width="5%" />
                     </C1WebGrid:C1BoundColumn>
 
                    <C1WebGrid:C1BoundColumn DataField="manager" >
-                        <ItemStyle Width="8%"/>
+                        <ItemStyle Width="7%"/>
                     </C1WebGrid:C1BoundColumn>
 
                     <C1WebGrid:C1BoundColumn DataField="ins_dt" DataFormatString="{0:yyyy.MM.dd}">

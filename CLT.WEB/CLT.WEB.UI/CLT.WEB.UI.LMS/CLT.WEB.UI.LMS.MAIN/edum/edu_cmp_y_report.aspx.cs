@@ -76,6 +76,25 @@ namespace CLT.WEB.UI.LMS.EDUM
                                                      LMS_SYSTEM.EDUMANAGEMENT,
                                                      "CLT.WEB.UI.LMS.EDUM", xOpencourse, xUser, "");
                 }
+
+
+                for (int i = 0; i < iDtCourseResult.Rows.Count; i++)
+                {
+                    if (string.IsNullOrEmpty(Convert.ToString(iDtCourseResult.Rows[i]["birth_dt"])))
+                    {
+                        if (!string.IsNullOrEmpty(Convert.ToString(iDtCourseResult.Rows[i]["personal_no"])) && Convert.ToString(iDtCourseResult.Rows[i]["personal_no"]).Length > 6)
+                        {
+                            string xYear = "19";
+                            string xCond = Convert.ToString(iDtCourseResult.Rows[i]["personal_no"]).Substring(7, 1);
+                            if (xCond == "3" || xCond == "4" || xCond == "7" || xCond == "8") xYear = "20";
+
+                            string xBirthDay = Convert.ToString(iDtCourseResult.Rows[i]["personal_no"]).Substring(0, 6);
+                            iDtCourseResult.Rows[i]["birth_dt"] = xYear + "" + xBirthDay.Substring(0, 2) + "." + xBirthDay.Substring(2, 2) + "." + xBirthDay.Substring(4, 2);
+                            //DateTime xBirthDt = Convert.ToDateTime(iDtCourseResult.Rows[i]["birth_dt"]);
+                            //iDtCourseResult.Rows[i]["birth_dt_eng"] = xBirthDt.ToString("MMMM", System.Globalization.CultureInfo.InvariantCulture) + " " + Convert.ToInt32(xBirthDt.ToString("dd")) + ", " + xBirthDt.ToString("yyyy");
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {

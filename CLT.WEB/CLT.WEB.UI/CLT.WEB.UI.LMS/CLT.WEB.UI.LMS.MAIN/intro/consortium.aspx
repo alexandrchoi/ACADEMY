@@ -46,8 +46,7 @@
                     <ol>
                         <li><span>교육훈련수료</span></li>
                         <li><span>교육신고</span></li>
-                        <li><span>교육비환급</span></li>
-                        <li><span>환급교육비지급(전달)</span></li>
+                        <li><span>교육비지원</span></li>
                     </ol>
                 </div>
             </div>
@@ -84,45 +83,63 @@
         <div class="content-box">
             <h4 class="center">컨소시엄 협약 절차</h4>
             <div class="process-step">
-            <div class="step-1">
-                <span class="title">지마린아카데미 홈페이지 접속</span>
-                <p>협약관련문의 : 051.330.9386</p>
-            </div>
-            <div class="step-2">
-                <span class="title">협약신청서 다운로드</span>
-                <p><a href="/file/download/consortium_intent.hwp" target="_blank" class="button-underline">다운로드</a></p>
-            </div>
-            <div class="step-3">
-                <span class="title">컨소시엄 가입신청</span>
-                <p>trainingcenter@gmarineservice.com</p>
-            </div>
-            <div class="step-4">
-                <span class="title">컨소시엄 협약완료</span>
-                <p>담당자 확인 요청<br>051.330.9386</p>
-            </div>
+                <div class="step-1">
+                    <div>
+                        <span class="title">지마린아카데미 홈페이지 접속</span>
+                        <p>협약관련문의 : 051.330.9386</p>
+                    </div>
+                </div>
+                <div class="step-2">
+                    <div>
+                        <span class="title">협약신청서 다운로드</span>
+                        <p><a href="/file/download/consortium_intent.hwp" target="_blank" class="button-underline">다운로드</a></p>
+                    </div>
+                </div>
+                <div class="step-3">
+                    <div>
+                        <span class="title">컨소시엄 가입신청</span>
+                        <p>trainingcenter@gmarineservice.com</p>
+                    </div>
+                </div>
+                <div class="step-4">
+                    <div>
+                        <span class="title">컨소시엄 협약완료</span>
+                        <p>담당자 확인 요청<br>051.330.9386</p>
+                    </div>
+                </div>
             </div>
             <h4 class="center">교육신청 절차</h4>
             <div class="process-step">
-            <div class="step-1">
-                <span class="title">지마린아카데미 홈페이지 접속</span>
-                <p>교육신청문의 : 051.330.9386/9387</p>
-            </div>
-            <div class="step-2">
-                <span class="title">교육신청서 다운로드</span>
-                <a href="/file/download/consortium_apply.xlsx" target="_blank" class="button-underline">다운로드</a>
-            </div>
-            <div class="step-3">
-                <span class="title">교육신청 이메일 발송</span>
-                <p>trainingcenter@gmarineservice.com</p>
-            </div>
-            <div class="step-4">
-                <span class="title">교육신청 완료</span>
-                <p>담당자 확인 요청<br>051.330.9386/9387</p>
-            </div>
-            <div class="step-5">
-                <span class="title">교육안내</span>
-                <p>개별 문자 안내 및 교육 참여</p>
-            </div>
+                <div class="step-1">
+                    <div>
+                        <span class="title">지마린아카데미 홈페이지 접속</span>
+                        <p>교육신청문의 : 051.330.9386/9387</p>
+                    </div>
+                </div>
+                <div class="step-2">
+                    <div>
+                        <span class="title">교육신청서 다운로드</span>
+                        <a href="/file/download/consortium_apply.xlsx" target="_blank" class="button-underline">다운로드</a>
+                    </div>
+                </div>
+                <div class="step-3">
+                    <div>
+                        <span class="title">교육신청 이메일 발송</span>
+                        <p>trainingcenter@gmarineservice.com</p>
+                    </div>
+                </div>
+                <div class="step-4">
+                    <div>
+                        <span class="title">교육신청 완료</span>
+                        <p>담당자 확인 요청<br>051.330.9386/9387</p>
+                    </div>
+                </div>
+                <div class="step-5">
+                    <div>
+                        <span class="title">교육안내</span>
+                        <p>개별 문자 안내 및 교육 참여</p>
+                    </div>
+                </div>
             </div>
         </div>
 

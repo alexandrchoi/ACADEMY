@@ -166,10 +166,10 @@
     <value>훈련생구분</value>
   </data>
   <data name="lbluser_nm_eng_first.Text" xml:space="preserve">
-    <value>First</value>
+    <value>성</value>
   </data>
   <data name="lbluser_nm_eng_last.Text" xml:space="preserve">
-    <value>Last</value>
+    <value>이름</value>
   </data>
   <data name="lbluser_nm_kor.Text" xml:space="preserve">
     <value>이름</value>

@@ -124,10 +124,10 @@
                         <asp:Label ID="lbluser_nm_eng" runat="server" Text="영문이름" meta:resourcekey="lbluser_nm_eng" />
                     </th>
                     <td>
-                        <asp:Label ID="lbluser_nm_eng_first" runat="server" Text="First" Visible="false" meta:resourcekey="lbluser_nm_eng_first" />
-                        <asp:TextBox ID="txtuser_nm_eng_first" runat="server" CssClass="w30per" placeholder="First" />
-                        <asp:Label ID="lbluser_nm_eng_last" runat="server" Text="Last" Visible="false" meta:resourcekey="lbluser_nm_eng_last" />
-                        <asp:TextBox ID="txtuser_nm_eng_last" runat="server" CssClass="w30per" placeholder="Last" />
+                        <asp:Label ID="lbluser_nm_eng_first" runat="server" Text="성" Visible="false" meta:resourcekey="lbluser_nm_eng_first" />
+                        <asp:TextBox ID="txtuser_nm_eng_first" runat="server" CssClass="w30per" placeholder="성" />
+                        <asp:Label ID="lbluser_nm_eng_last" runat="server" Text="이름" Visible="false" meta:resourcekey="lbluser_nm_eng_last" />
+                        <asp:TextBox ID="txtuser_nm_eng_last" runat="server" CssClass="w30per" placeholder="이름" />
                     </td>
                 </tr>
                 <tr>

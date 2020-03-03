@@ -226,6 +226,9 @@ namespace CLT.WEB.BIZ.LMS.MYPAGE
                         SELECT 
                             P.COMPANY_NM
                             , U.USER_NM_KOR
+                            , u.user_nm_eng_first 
+                            , u.user_nm_eng_last 
+                            , TO_CHAR(u.birth_dt, 'yyyy.MM.dd') AS birth_dt 
                             , HINDEV.CRYPTO_AES256.DEC_AES(U.PERSONAL_NO) as PERSONAL_NO 
                             , C.COURSE_NM 
                             , CASE 
@@ -233,8 +236,11 @@ namespace CLT.WEB.BIZ.LMS.MYPAGE
                                 ELSE (TO_CHAR(O.COURSE_BEGIN_DT,'YYYY.MM.DD') ||' ~ '|| TO_CHAR(O.COURSE_END_DT,'YYYY.MM.DD'))    
                               END                                                               AS COURSE_BEGIN_END_DT
                             --, TO_CHAR(O.COURSE_BEGIN_DT, 'YYYY.MM.DD') || '~' || TO_CHAR(O.COURSE_END_DT, 'YYYY.MM.DD') AS COURSE_BEGIN_END_DT
-                            , TO_CHAR(SYSDATE, 'YYYY') || '년 ' || TO_CHAR(SYSDATE, 'MM') || '월 ' || TO_CHAR(SYSDATE, 'DD') || '일' AS AGREE_DATETIME                                                      
-                            ";
+                            , TO_CHAR(SYSDATE, 'YYYY') || '년 ' || TO_CHAR(SYSDATE, 'MM') || '월 ' || TO_CHAR(SYSDATE, 'DD') || '일' AS AGREE_DATETIME      
+                            , replace(to_char(o.course_begin_dt, 'Monthdd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), ' 0', ' ') as course_begin_dt_eng
+                            , replace(to_char(o.course_end_dt, 'Monthdd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), ' 0', ' ') as course_end_dt_eng
+                            , replace(to_char(r.approval_dt, 'Monthdd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), ' 0', ' ') AS approval_dt_eng
+                ";
                 xSql += " , '" + rImgPath + "' AS logo1 ";
                 xSql += @"
                         FROM T_COURSE C, T_OPEN_COURSE O, T_COURSE_RESULT R, T_USER U , T_COMPANY P 

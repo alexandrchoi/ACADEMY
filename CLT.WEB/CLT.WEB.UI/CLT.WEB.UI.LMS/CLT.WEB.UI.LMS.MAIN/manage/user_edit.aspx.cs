@@ -1058,50 +1058,14 @@ namespace CLT.WEB.UI.LMS.MANAGE
 
             sUserGroup = ddlUserGroup.SelectedValue.ToString();
 
-            //비밀번호와 주민등록번호는 "법인사 관리자", "법인사 수강자"일 경우만 입력가능하게 한다.
-            if (sUserGroup == "000008" || sUserGroup == "000007")
+            if (Session["USER_GROUP"].ToString() == "000001")
             {
-                //법인수강자 신규 등록시는 비번 안넣음. 무조건 주민번호 뒷자리
-                if (ViewState["EDITMODE"].ToString() == "NEW" && sUserGroup == "000008")
-                {
-                    txtPass.ReadOnly = true;
-                    txtPass.BackColor = Color.FromName("#dcdcdc");
+                txtPass.ReadOnly = false;
+                txtPass.BackColor = Color.FromName("#ffffff");
 
-                    txtPassCheck.ReadOnly = true;
-                    txtPassCheck.BackColor = Color.FromName("#dcdcdc");
+                txtPassCheck.ReadOnly = false;
+                txtPassCheck.BackColor = Color.FromName("#ffffff");
 
-                    txtID.ReadOnly = true;
-                    txtID.BackColor = Color.FromName("#dcdcdc");
-                    btnIDcheck.Enabled = false;
-
-                    txtID.Text = string.Empty;
-                    txtPass.Text = string.Empty;
-                    txtPassCheck.Text = string.Empty;
-                }
-                //법인관리자 신규 등록시는 비번 안넣음. 무조건 사업자 뒷자리
-                else if (ViewState["EDITMODE"].ToString() == "NEW" && sUserGroup == "000007")
-                {
-                    txtPass.ReadOnly = true;
-                    txtPass.BackColor = Color.FromName("#dcdcdc");
-
-                    txtPassCheck.ReadOnly = true;
-                    txtPassCheck.BackColor = Color.FromName("#dcdcdc");
-
-                    txtPass.Text = string.Empty;
-                    txtPassCheck.Text = string.Empty;
-                }
-                else
-                {
-                    txtPass.ReadOnly = false;
-                    txtPass.BackColor = Color.FromName("#ffffff");
-
-                    txtPassCheck.ReadOnly = false;
-                    txtPassCheck.BackColor = Color.FromName("#ffffff");
-                    
-                    txtID.ReadOnly = false;
-                    txtID.BackColor = Color.FromName("#ffffff");
-                    btnIDcheck.Enabled = true;
-                }
                 txtPersonal_no1.ReadOnly = false;
                 txtPersonal_no1.BackColor = Color.FromName("#ffffff");
 
@@ -1110,17 +1074,70 @@ namespace CLT.WEB.UI.LMS.MANAGE
             }
             else
             {
-                txtPass.ReadOnly = true;
-                txtPass.BackColor = Color.FromName("#dcdcdc");
+                //비밀번호와 주민등록번호는 "법인사 관리자", "법인사 수강자"일 경우만 입력가능하게 한다.
+                if (sUserGroup == "000008" || sUserGroup == "000007" || sUserGroup == "000010")
+                {
+                    //법인수강자 신규 등록시는 비번 안넣음. 무조건 주민번호 뒷자리
+                    if (ViewState["EDITMODE"].ToString() == "NEW" && sUserGroup == "000008")
+                    {
+                        txtPass.ReadOnly = true;
+                        txtPass.BackColor = Color.FromName("#dcdcdc");
 
-                txtPassCheck.ReadOnly = true;
-                txtPassCheck.BackColor = Color.FromName("#dcdcdc");
+                        txtPassCheck.ReadOnly = true;
+                        txtPassCheck.BackColor = Color.FromName("#dcdcdc");
 
-                txtPersonal_no1.ReadOnly = true;
-                txtPersonal_no1.BackColor = Color.FromName("#dcdcdc");
+                        txtID.ReadOnly = true;
+                        txtID.BackColor = Color.FromName("#dcdcdc");
+                        btnIDcheck.Enabled = false;
 
-                txtPersonal_no2.ReadOnly = true;
-                txtPersonal_no2.BackColor = Color.FromName("#dcdcdc");
+                        txtID.Text = string.Empty;
+                        txtPass.Text = string.Empty;
+                        txtPassCheck.Text = string.Empty;
+                    }
+                    //법인관리자 신규 등록시는 비번 안넣음. 무조건 사업자 뒷자리
+                    else if (ViewState["EDITMODE"].ToString() == "NEW" && sUserGroup == "000007")
+                    {
+                        txtPass.ReadOnly = true;
+                        txtPass.BackColor = Color.FromName("#dcdcdc");
+
+                        txtPassCheck.ReadOnly = true;
+                        txtPassCheck.BackColor = Color.FromName("#dcdcdc");
+
+                        txtPass.Text = string.Empty;
+                        txtPassCheck.Text = string.Empty;
+                    }
+                    else
+                    {
+                        txtPass.ReadOnly = false;
+                        txtPass.BackColor = Color.FromName("#ffffff");
+
+                        txtPassCheck.ReadOnly = false;
+                        txtPassCheck.BackColor = Color.FromName("#ffffff");
+
+                        txtID.ReadOnly = false;
+                        txtID.BackColor = Color.FromName("#ffffff");
+                        btnIDcheck.Enabled = true;
+                    }
+                    txtPersonal_no1.ReadOnly = false;
+                    txtPersonal_no1.BackColor = Color.FromName("#ffffff");
+
+                    txtPersonal_no2.ReadOnly = false;
+                    txtPersonal_no2.BackColor = Color.FromName("#ffffff");
+                }
+                else
+                {
+                    txtPass.ReadOnly = true;
+                    txtPass.BackColor = Color.FromName("#dcdcdc");
+
+                    txtPassCheck.ReadOnly = true;
+                    txtPassCheck.BackColor = Color.FromName("#dcdcdc");
+
+                    txtPersonal_no1.ReadOnly = true;
+                    txtPersonal_no1.BackColor = Color.FromName("#dcdcdc");
+
+                    txtPersonal_no2.ReadOnly = true;
+                    txtPersonal_no2.BackColor = Color.FromName("#dcdcdc");
+                }
             }
         }
 

@@ -1,5 +1,4 @@
-﻿@charset "utf-8";
-@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@charset "utf-8";
 
 /*
 
@@ -11,28 +10,6 @@
    Author Email :
 
 */
-/** ----------------------------------------------------------------------------
- * Table of Contents:
- *
- * 1.0 - Normalize
- * 2.0 - Common
- * 3.0 - Heading
- * 4.0 - Image Replace
- * 5.0 - Grid
- * 6.0 - Button
- * 7.0 - List
- * 8.0 - Table
- * 9.0 - Form
- * 10.0 - Boxes
- * 11.0 - Popup
- *
- * -----------------------------------------------------------------------------
- */
-
-/** ----------------------------------------------------------------------------
- * 1.0 - Normalize
- * -----------------------------------------------------------------------------
- */
 html, body, div,
 dl, dt, dd, ul, ol, li,
 h1, h2, h3, h4, h5, h6,
@@ -100,88 +77,123 @@ menu {
     list-style: none;
 }
 
-/** ----------------------------------------------------------------------------
- * 2.0 - Common
- * -----------------------------------------------------------------------------
- */
 body {
     position:relative;
-    padding:10px;
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Times New Roman', 'HYSinMyeongJo', 'HY신명조', serif;
     color:rgba(0,0,0,1);
-    font-size:1rem;
-    font-weight:normal;
+    font-size:15px;
+    font-weight:bold;
+}
+.cont-wrap {
+    width: 297mm;
+    height: 208mm;
+    padding: 21mm 13mm 8mm;
 }
 #wrap {
-    width:1240px;
-    height:848px;
+    width:271mm;
+    height: 179mm;
     margin:0 auto;
-    padding:15px;
     position:relative;
+    padding:5mm;
+    border:1px solid #000;
 }
 #wrap:before {
     content:"";
     display:block;
-    width:1240px;
-    height:848px;
+    width:275mm;
+    height:183mm;
     position:absolute;
-    left:0;
-    top:0;
-    border:1px solid rgba(0,0,0,1);
+    left:-2mm;
+    top:-2mm;
+    border:2px solid #000;
 }
-#wrap:after {
-    content:"";
-    display:block;
-    width:1260px;
-    height:868px;
-    position:absolute;
-    left:-10px;
-    top:-10px;
-    border:3px solid rgba(0,0,0,1);
+.cert-no p {
+    font-size:16px;
+}
+.cert-no .title {
+    letter-spacing:4px;
 }
 .cert-box {
-    width:50%;
+    width:130mm;
     position:relative;
     z-index:99;
 }
+.block:after {
+    content:"";
+    display:block;
+    clear:both;
+}
 .cert-ko {
     float:left;
-    padding-right:100px;
+    padding-right:5mm;
     position:relative;
 }
 .cert-en {
     float:right;
-    padding-left:100px;
+    padding-left:5mm;
+}
+.cert-no,
+.completer,
+.graduate-date {
+    padding-left:10mm;
 }
 .title {
     display:inline-block;
-    margin-right:8px;
+    margin-right:2mm;
 }
 .cert-box h1 {
-    padding-top:50px;
-    padding-bottom:50px;
+    padding-top:7mm;
+    padding-bottom:15mm;
     text-align:center;
-    font-size:2.25rem;
+    font-size:32px;
+    margin-left:17.5mm;
+}
+.cert-box.cert-ko h1 {
+    letter-spacing:10px;
 }
 .cert-box .completer {
     position:relative;
+    margin-bottom:10mm;
 }
 .cert-box .completer li {
-    margin-bottom:30px;
-    font-family: '맑은 고딕', 'Malgun Gothic', 'Noto Serif KR', 'Noto Serif', serif;
+    margin-bottom:2mm;
+}
+.block1 {
+    display:inline-block;
+    width:16mm;
+}
+.block2 {
+    display:inline-block;
+    width:10mm;
+}
+.block3 {
+    display:inline-block;
+    width:38px;
 }
 .cert-box .completer .picture {
+    width:20mm;
+    height:25mm;
+    overflow-y:hidden;
     position:absolute;
     right:0;
     top:-40px;
 }
+.cert-box .completer .picture img {
+    max-width:100%;
+}
 .cert-box .graduate-cont {
-    height:240px;
+    height:50mm;
     position:relative;
     overflow:hidden;
-    line-height:2;
-    font-size:1.25rem;
-    margin-bottom:40px;
+    line-height:1.5;
+    font-size:18px;
+    margin-bottom:10mm;
+}
+.cert-box.cert-ko .graduate-cont {
+    line-height:2.6;
+}
+.cert-box.cert-en .graduate-cont {
+    font-weight:normal;
 }
 .cert-box .graduate-cont:before {
     content:"";
@@ -190,40 +202,272 @@ body {
     height:10px;
 }
 .cert-box .graduate-date li {
-    margin-bottom:20px;
-    font-family: '맑은 고딕', 'Malgun Gothic', 'Noto Serif KR', 'Noto Serif', serif;
+    margin-bottom:2mm;
+    font-size:17px;
 }
-.stamp {
-    position:absolute;
-    right:100px;
-    bottom:0;
+.cert-box .graduate-date li:after {
+    content:"";
+    display:block;
+    overflow:hidden;
 }
-.mof {
-    position:absolute;
-    right:0;
-    bottom:0;
+.cert-box .graduate-date li .title {
+    display:inline-block;
+    width:28mm;
+    margin-right:0;
 }
-.mof img {
-    width:140px;
-}
-footer {
-    position:relative;
-    width:100%;
-    height:100px;
-}
-.cert-ko footer {
-    padding-top:50px;
-    font-size:1.5rem;
-    letter-spacing:3px;
+.cert-box .graduate-date li .edu-date,
+.cert-box .graduate-date li .issue-date {
+    display:inline-block;
+    width:80mm;
     text-align:center;
 }
-.cert-en footer .sign img {
+footer {
+    width:100%;
+    height:22mm;
+    margin-top:10mm;
+}
+footer img {
+    height:100%;
+}
+.cert-ko footer {
+    text-align:right;
+}
+.cert-ko footer img {
+}
+.cert-en footer {
+    text-align:center;
+}
+.cert-en footer img {
+}
+.cert-no2 {
+    position:absolute;
+    right:5mm;
+    top:5mm;
+}
+.cert-no2 p {
+    text-align:right;
+    font-size:14px;
+    line-height:1.5;
+}
+.cert-no2 .title {
     width:80px;
+    text-align:left;
 }
-.copyright {
-    font-size:0.875rem;
+.cert-no2 .cert-no-cont {
+    display:inline-block;
+    width:120px;
+    text-align:left;
 }
-.copyright .designed {
+.jrc {
+    margin-bottom:16mm;
+}
+.jrc img {
+    width:20mm;
+}
+.cert-box2  {
+    width:130mm;
+    float:left;
+    text-align:center;
+    padding-right:10mm;
+}
+.cert-box2 h1 {
+    padding-bottom:10mm;
+    text-align:center;
+    font-size:32px;
+}
+.cert-box2 p {
+    margin-bottom:5mm;
+    font-size:20px;
+}
+.cert-box2 p:nth-child(2),
+.cert-box2 p:nth-child(5) {
+    font-weight:normal;
+}
+.cert-box2 h1 span {
     display:block;
-    font-size:0.75rem;
+    font-size:26px;
+}
+.cert-box2 .completer {
+    color:#5a63fe;
+}
+.cert-box2.contents {
+    padding-right:0;
+    padding-left:10mm;
+}
+.cert-box2.contents .picture {
+    margin-bottom:30px;
+    padding-right:30mm;
+    text-align:right;
+}
+.cert-box2.contents .picture img {
+    width:100px;
+}
+.cert-box2.contents p {
+    margin-bottom:15px;
+}
+.contents-subject ul {
+    margin-bottom:20px;
+}
+.contents-subject li {
+    font-size:0;
+    line-height:40px;
+}
+.contents-subject li span,
+.contents-subject li span td {
+    vertical-align:top;
+}
+.contents-subject li span td {
+    min-width:50px;
+    line-height:30px;
+}
+.contents-subject li .title {
+    width:65mm;
+    margin-right:0;
+    padding-right:20px;
+    font-weight:normal;
+    font-size:20px;
+    text-align:right;
+}
+.subject-cont {
+    display:inline-block;
+    width:55mm;
+    font-size:14px;
+    font-weight:bold;
+    text-align:left;
+}
+.cert-box2 footer {
+    margin-top:15mm;
+}
+.cert-box2.contents footer {
+    margin-top:12mm;
+}
+.cert-box2.contents footer img {
+}
+.remarks {
+    padding-top:5mm;
+    font-size:13px;
+    font-family:'calibri', 'Malgun Gothic', '맑은고딕', sans-serif;
+    color:rgba(0,0,0,.8);
+}
+.cert-form2 .cert-box.cert-en .completer li:first-child .title {
+    padding-left:55px;
+}
+.cert-form2 .cert-box .graduate-cont {
+    height:45mm;
+    position:relative;
+    overflow:hidden;
+    line-height:1.5;
+    font-size:18px;
+    margin-bottom:5mm;
+}
+.cert-form2 .cert-box.cert-ko .graduate-cont {
+    line-height:2;
+}
+.graduate-date2 {
+    text-align:center;
+}
+.graduate-date2 li {
+    line-height:30px;
+    font-size:0;
+}
+.graduate-date2 li span {
+    display:inline-block;
+    margin-right:0;
+    width:50%;
+    font-size:17px;
+    text-align:left;
+}
+.graduate-date2 li .title {
+    padding-right:10px;
+    text-align:right;
+}
+.cert-form3 .cert-no {
+    font-weight:normal;
+}
+.cert-form3 h1 {
+    padding-top:12mm;
+    padding-bottom:10mm;
+    text-align:center;
+    font-size:32px;
+}
+.cert-form3 h1 span {
+    display:block;
+    text-align:center;
+    letter-spacing:20px;
+    margin-left:20px;
+}
+.cert-form3 .completer li {
+    line-height:30px;
+}
+.cert-form3 .completer li:nth-child(2) .title,
+.cert-form3 .completer li:nth-child(4) .title {
+    letter-spacing:1.7px;
+}
+.block4 {
+    display:inline-block;
+    width:15mm;
+}
+.cert-form3 .graduate-cont {
+    text-align:center;
+    padding:12mm 0;
+    font-size:20px;
+    line-height:1.6;
+}
+.cert-form3 .graduate-date {
+    text-align:center;
+    padding-left:0;
+}
+.cert-form3 footer {
+    height:27mm;
+    padding-top:5mm;
+    font-size:0;
+    text-align:center;
+}
+.cert-form3 footer .stamp {
+    display:inline-block;
+    height:22mm;
+}
+.cert-form3 footer .sign {
+    height:22mm;
+    display:inline-block;
+    margin-left:100px;
+}
+.cert-form3 footer .sign img {
+}
+@page {
+
+    size: A4;
+
+    margin: 0;
+
+}
+
+@media print {
+
+    html, body {
+
+        width: 297mm;
+
+        height: 208mm;
+
+    }
+
+    .cont-wrap {
+
+        margin: 0;
+
+        border: initial;
+
+        width: initial;
+
+        min-height: initial;
+
+        box-shadow: initial;
+
+        background: initial;
+
+        page-break-after: always;
+
+    }
+
 }

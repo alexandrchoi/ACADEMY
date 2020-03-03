@@ -1768,9 +1768,11 @@
     <Content Include="asset\images\main\main-icon2.png" />
     <Content Include="asset\images\main\main-icon3.png" />
     <Content Include="asset\images\main\visual.png" />
-    <Content Include="asset\images\report\logo-mof.png" />
+    <Content Include="asset\images\report\jrc.gif" />
     <Content Include="asset\images\report\picture.jpg" />
-    <Content Include="asset\images\report\signature.png" />
+    <Content Include="asset\images\report\sign.gif" />
+    <Content Include="asset\images\report\sign2.gif" />
+    <Content Include="asset\images\report\stamp.gif" />
     <Content Include="asset\images\report\stamp.png" />
     <Content Include="asset\images\sub\bg-join.png" />
     <Content Include="asset\images\sub\classroom1.jpg" />
@@ -2010,7 +2012,10 @@
     <Content Include="html\curr\survey_list.html" />
     <Content Include="html\curr\survey_write.html" />
     <Content Include="html\curr\survey_write2.html" />
-    <Content Include="html\edum\certificate-sample.html" />
+    <Content Include="html\edum\certificate1-8.html" />
+    <Content Include="html\edum\certificate11-13.html" />
+    <Content Include="html\edum\certificate14.html" />
+    <Content Include="html\edum\certificate9-10.html" />
     <Content Include="html\include\footer-eng.html" />
     <Content Include="html\include\footer.html" />
     <Content Include="html\include\gnb.html" />
@@ -2025,7 +2030,6 @@
     <Content Include="html\intro\map.html" />
     <Content Include="html\intro\organization.html" />
     <Content Include="html\intro\refund.html" />
-    <Content Include="html\main.html" />
     <Content Include="html\main\main.html" />
     <Content Include="html\manage\codemaster.html" />
     <Content Include="html\manage\company.html" />
@@ -2297,7 +2301,6 @@
     <Folder Include="file\contents\" />
     <Folder Include="file\excel\" />
     <Folder Include="file\tempfile\" />
-    <Folder Include="html\etc\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

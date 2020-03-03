@@ -157,7 +157,7 @@
                             <asp:Label ID="lblGrade" runat="server" meta:resourcekey="lblGrade" />
                         </th>
                         <td>
-                            <asp:Panel runat="server" Height="70px" ScrollBars="Vertical"  >
+                            <asp:Panel runat="server" Height="200px" ScrollBars="Vertical"  >
                                 <asp:DataList ID="dtlStep" runat="server"  ShowFooter="False" ShowHeader="False"
                                     ItemStyle-BorderStyle="None" ItemStyle-BorderWidth="0px" ItemStyle-HorizontalAlign="Center"
                                     HorizontalAlign="Center" BorderStyle="None" CellPadding="0" CellSpacing="0" BorderWidth="0" >
@@ -190,7 +190,7 @@
                             <asp:Label ID="lblRank" runat="server" meta:resourcekey="lblRank" />
                         </th>
                         <td>
-                            <asp:Panel runat="server" Height="70px" ScrollBars="Vertical"  >
+                            <asp:Panel runat="server" Height="200px" ScrollBars="Vertical"  >
                                 <asp:DataList ID="dtlRank" runat="server"  ShowFooter="False" ShowHeader="False"
                                     ItemStyle-BorderStyle="None" ItemStyle-BorderWidth="0px" ItemStyle-HorizontalAlign="Center"
                                     HorizontalAlign="Center" BorderStyle="None" CellPadding="0" CellSpacing="0" BorderWidth="0" >

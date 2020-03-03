@@ -17,11 +17,11 @@
     <section class="referral sub-design">
         <h3>사업목적</h3>
 
-        <p class="content-box headline black">사업주가 노동자 등을 대상으로 직업능력개발훈련을 실시할 경우 소요비용을 지원해 인적자원개발 및 기업 경쟁력 제고</p>
+        <p class="content-box headline black">사업주가 노동자 등을 대상으로 자체 또는 위탁으로 직업능력개발훈련을 실시할 경우 훈련비 일부를 지원해 인적자원개발 및 기업 경쟁력 제고</p>
         <h3>사업내용</h3>
         <div class="content-box">
             <ul class="bullet-list">
-                <li>사업주가 비용을 전적으로 부담하여 소속 근로자, 채용예정자, 구직자 등을 대상으로 직업능력개발훈련을 실시(자체 또는 위탁)했을 때 정해진 수료기준을 충족한 근로자에게 소요된 비용에 한해서 지원</li>
+                <li>사업주가 비용을 전적으로 부담하여 소속 근로자를 대상으로 직업능력개발훈련을 실시(자체 또는 위탁)했을 때 정해진 수료기준을 충족한 근로자에게 소요된 비용에 한해서 훈련비 단가를 적용하여 일부 비용 환급 지원</li>
                 <li>지원대상 : 고용보험가입 사업주</li>
                 <li>지원내용</li>
             </ul>
@@ -102,33 +102,45 @@
         <h3>진행절차</h3>
         <div class="content-box process-step">
             <div class="step-1">
-                <span class="title">회원사등록</span>
-                <p>유선/이메일/사이트를 통해 회원사 등록<br>교육문의 : 051.330.9387</p>
+                <div>
+                    <span class="title">회원사등록</span>
+                    <p>유선/이메일/사이트를 통해 회원사 등록<br>교육문의 : 051.330.9382</p>
+                </div>
             </div>
 
             <div class="step-2">
-                <span class="title">수강신청</span>
-                <p>참여 훈련과정을 선택후, 유선/이메일/사이트를 통해 수강신청</p>
+                <div>
+                    <span class="title">수강신청</span>
+                    <p>참여 훈련과정을 선택후, 유선/이메일/사이트를 통해 수강신청</p>
+                </div>
             </div>
 
             <div class="step-3">
-                <span class="title">위탁계약서 작성</span>
-                <p>참여 훈련과정에 대한 훈련위탁계약서 작성후 이메일 발송(1부 사업주 보관, 1부 교육기관 제출)</p>
+                <div>
+                    <span class="title">위탁계약서 작성</span>
+                    <p>참여 훈련과정에 대한 훈련위탁계약서 작성후 이메일 발송(1부 사업주 보관, 1부 교육기관 제출)</p>
+                </div>
             </div>
 
             <div class="step-4">
-                <span class="title">훈련진행</span>
-                <p>훈련과정 참여자에게 문자 등 입과안내, 교육과정 진행</p>
+                <div>
+                    <span class="title">훈련진행</span>
+                    <p>훈련과정 참여자에게 문자 등 입과안내, 교육과정 진행</p>
+                </div>
             </div>
 
             <div class="step-5">
-                <span class="title">평가</span>
-                <p>과정종료시 평가 및 피드백 시행</p>
+                <div>
+                    <span class="title">평가</span>
+                    <p>과정종료시 평가 및 피드백 시행</p>
+                </div>
             </div>
 
             <div class="step-6">
-                <span class="title">수료</span>
-                <p>교육과정 80%이상 이수시 수료 처리</p>
+                <div>
+                    <span class="title">수료</span>
+                    <p>교육과정 80%이상 이수시 수료 처리</p>
+                </div>
             </div>
         </div>
 

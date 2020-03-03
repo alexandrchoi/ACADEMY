@@ -79,10 +79,10 @@
                     </dd>
                     <dt><asp:Label ID="lbluser_nm_eng" runat="server" Text="성명(영문)" meta:resourcekey="lbluser_nm_eng" /><span class="required">필수입력</span></dt>
                     <dd>
-                        <asp:Label ID="lbluser_nm_eng_first" runat="server" Text="First" Visible="False" meta:resourcekey="lbluser_nm_eng_first"  />
-                        <asp:TextBox ID="txtuser_nm_eng_first" runat="server" CssClass="w30per" meta:resourcekey="txtuser_nm_eng_firstResource" placeholder="First"/>
-                        <asp:Label ID="lbluser_nm_eng_last" runat="server" Text="Last" Visible="False" meta:resourcekey="lbluser_nm_eng_last" />
-                        <asp:TextBox ID="txtuser_nm_eng_last" runat="server" CssClass="w30per" meta:resourcekey="txtuser_nm_eng_lastResource" placeholder="Last"/>
+                        <asp:Label ID="lbluser_nm_eng_first" runat="server" Text="성" Visible="False" meta:resourcekey="lbluser_nm_eng_first"  />
+                        <asp:TextBox ID="txtuser_nm_eng_first" runat="server" CssClass="w30per" meta:resourcekey="txtuser_nm_eng_firstResource" placeholder="성"/>
+                        <asp:Label ID="lbluser_nm_eng_last" runat="server" Text="이름" Visible="False" meta:resourcekey="lbluser_nm_eng_last" />
+                        <asp:TextBox ID="txtuser_nm_eng_last" runat="server" CssClass="w30per" meta:resourcekey="txtuser_nm_eng_lastResource" placeholder="이름"/>
                     </dd>
                     <dt><asp:Label ID="lblbirth_dt" runat="server" Text="생년월일" meta:resourcekey="lblbirth_dt" /><span class="required">필수입력</span></dt>
                     <dd>

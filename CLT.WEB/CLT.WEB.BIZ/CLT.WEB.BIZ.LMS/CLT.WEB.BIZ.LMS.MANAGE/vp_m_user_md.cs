@@ -223,7 +223,7 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
             DataTable xDt = null;
             try
             {
-                string xSql = "SELECT user_id, user_no, personal_no, user_nm_kor, user_nm_eng_first, user_nm_eng_last, " +
+                string xSql = "SELECT user_id, user_no, HINDEV.CRYPTO_AES256.DEC_AES(personal_no) as personal_no, user_nm_kor, user_nm_eng_first, user_nm_eng_last, " +
                               "       tuser.duty_step, mobile_phone, email_id, office_phone, tuser.company_id, user_zip_code, " +
                               "       tcompany.company_nm, user_addr, tuser.user_group, sms_yn, mail_yn " +
                               " , tuser.dept_code, nvl((SELECT dept_name FROM v_hdeptcode WHERE dept_code = tuser.dept_code), tuser.dept_code) AS dept_name " +

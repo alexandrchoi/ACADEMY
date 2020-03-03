@@ -215,10 +215,16 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                 xSql = " SELECT ";
                 xSql += " c.company_nm, ";
                 xSql += " b.user_nm_kor, ";
+                xSql += " b.user_nm_eng_first, ";
+                xSql += " b.user_nm_eng_last, ";
+                xSql += " TO_CHAR(b.birth_dt, 'yyyy.MM.dd') AS birth_dt, ";
                 xSql += " HINDEV.CRYPTO_AES256.DEC_AES(b.personal_no) as personal_no, ";
                 xSql += " f.course_nm, ";
                 xSql += " TO_CHAR(e.course_begin_dt, 'yyyy.MM.dd') || '~' || TO_CHAR(e.course_end_dt, 'yyyy.MM.dd') AS course_begin_end_dt, ";
                 xSql += " TO_CHAR(sysdate, 'yyyy') || '년 ' || TO_CHAR(sysdate, 'mm') || '월 ' || TO_CHAR(sysdate, 'dd') || '일' AS agree_datetime, ";
+                xSql += " replace(to_char(e.course_begin_dt, 'Monthdd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), ' 0', ' ') as course_begin_dt_eng, ";
+                xSql += " replace(to_char(e.course_end_dt, 'Monthdd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), ' 0', ' ') as course_end_dt_eng, ";
+                xSql += " replace(to_char(a.approval_dt, 'Monthdd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), ' 0', ' ') AS approval_dt_eng, ";
                 xSql += " '" + rImgPath + "' AS logo1 ";
                 xSql += "FROM ";
                 xSql += " t_course_result a, ";

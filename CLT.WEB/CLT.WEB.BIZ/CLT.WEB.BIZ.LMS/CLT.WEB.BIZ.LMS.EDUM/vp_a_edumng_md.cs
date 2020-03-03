@@ -3678,7 +3678,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                 , (select step_ename from v_hdutystep where duty_step = u.duty_step) as step_name
                                 , HINDEV.CRYPTO_AES256.DEC_AES(u.personal_no) as personal_no
                                 , to_char(o.course_begin_dt, 'YYYY.MM.DD') as course_begin_dt
-                                , to_char(o.course_end_dt, 'yyyy.mm.dd') as course_end_dt            
+                                , to_char(o.course_end_dt, 'yyyy.mm.dd') as course_end_dt
                                 , u.pic_file_nm
                                 , u.pic_file
                                 , '' AS LECTURER_NM
@@ -3691,22 +3691,29 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                             AND DCODE = U.COUNTRY_KIND
                                             AND ROWNUM = 1
                                     ) as COUNTRY_KIND_NM
-                                , '' as birth
-                                , '' as course_begin_dt_eng
-                                , '' as course_end_dt_eng            
+                                , to_char(u.birth_dt, 'yyyy.mm.dd') as birth_dt
+                                , replace(to_char(u.birth_dt, 'Monthdd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), ' 0', ' ') as birth_dt_eng
+                                , replace(to_char(o.course_begin_dt, 'Mon. dd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), '. 0', '. ') as course_begin_dt_en
+                                , replace(to_char(o.course_end_dt, 'Mon. dd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), '. 0', '. ') as course_end_dt_en
+                                , replace(to_char(o.course_begin_dt, 'Monthdd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), ' 0', ' ') as course_begin_dt_eng
+                                , replace(to_char(o.course_end_dt, 'Monthdd, yyyy', 'NLS_DATE_LANGUAGE=AMERICAN'), ' 0', ' ') as course_end_dt_eng
                                 , T.REPORT_TYPE_ID
                                 , O.COURSE_GUBUN   -- 국토해양부 과정 여부 
                                 , R.CERTIFICATE_NAME || R.CERTIFICATE_KEY as CERTIFICATE_CODE -- 증서번호
 
                                 /* 리더십 및 팀워크교육(20020005), 리더십 및 관리기술 직무교육(20020006)을 항해/기관으로 분류
                                    : 회원정보의 현재 직급으로 분류
-                                    - 분류가 안되면 항해를 우선 출력 (해상 -> 육상으로 변경하여 현 직급이 구분이 안될 경우)
+                                    - 분류가 안되면 항해를 우선 출력 (근무가 해상에서 육상으로 변경되어 현 직급이 구분이 안될 경우)
                                 */
-                                , '01' as me_gubun
+                                , (CASE WHEN U.duty_step IN ('SE10','SE08','SE18','SE20','SE30','SE28','SE40','SE38') THEN 'E' ELSE 'M' END)
+                                   as me_gubun  /* M 항해(또는 그외) E 기관 */
                                 /* 선박위험물관리교육(20020010)을 내부/수탁으로 분류
                                    : 과정 개설시, 사내/외구분 코드로 분류함
                                 */
                                 , O.course_inout    /* 000001 사내 000002 사외 */
+
+                                , '' as report_desc_kor
+                                , '' as report_desc_eng
 
                             FROM T_COURSE C 
                                 , T_COURSE_REPORT_ID I

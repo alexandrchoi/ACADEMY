@@ -1028,8 +1028,8 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             xPara[17] = base.AddParam("INSURANCE_FLG", OracleType.VarChar, rParams[2]);
                             xPara[18] = base.AddParam("USE_FLG", OracleType.VarChar, rParams[19]);
                             xPara[19] = base.AddParam("MANAGER", OracleType.VarChar, rParams[21]);
-                            xPara[19] = base.AddParam("INS_ID", OracleType.VarChar, rParams[20]);
-                            xPara[20] = base.AddParam("COURSE_ID", OracleType.VarChar, xQID);
+                            xPara[20] = base.AddParam("INS_ID", OracleType.VarChar, rParams[20]);
+                            xPara[21] = base.AddParam("COURSE_ID", OracleType.VarChar, xQID);
 
                             xCmdLMS.CommandText = xSql;
                             base.Execute(db, xCmdLMS, xPara, xTransLMS);

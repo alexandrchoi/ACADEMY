@@ -28,7 +28,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td><asp:Label ID="lblJob1" runat="server" Text="팀장" meta:resourcekey="lblJob1Resource" /></td>
+                    <td><asp:Label ID="lblJob1" runat="server" Text="원장" meta:resourcekey="lblJob1Resource" /></td>
                     <td><asp:Label ID="lblName1" runat="server" Text="신상일" meta:resourcekey="lblName1Resource" /></td>
                     <td><asp:Label ID="lblDuty1" runat="server" Text="업무 총괄" meta:resourcekey="lblDuty1Resource" /></td>
                     <td class="left">
@@ -45,7 +45,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><asp:Label ID="lblJob2" runat="server" Text="차장" meta:resourcekey="lblJob2Resource" /></td>
+                    <td><asp:Label ID="lblJob2" runat="server" Text="책임매니저" meta:resourcekey="lblJob2Resource" /></td>
                     <td><asp:Label ID="lblName2" runat="server" Text="장진욱" meta:resourcekey="lblName2Resource" /></td>
                     <td><asp:Label ID="lblDuty2" runat="server" Text="교육 기획" meta:resourcekey="lblDuty2Resource" /></td>
                     <td class="left">
@@ -62,9 +62,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><asp:Label ID="lblJob3" runat="server" Text="과장" meta:resourcekey="lblJob3Resource" /></td>
+                    <td><asp:Label ID="lblJob3" runat="server" Text="책임매니저" meta:resourcekey="lblJob3Resource" /></td>
                     <td><asp:Label ID="lblName3" runat="server" Text="정인교" meta:resourcekey="lblName3Resource" /></td>
-                    <td><asp:Label ID="lblDuty3" runat="server" Text="교육 개발" meta:resourcekey="lblDuty3Resource" /></td>
+                    <td><asp:Label ID="lblDuty3" runat="server" Text="교육 개발(컨소시엄 사업)" meta:resourcekey="lblDuty3Resource" /></td>
                     <td class="left">
                         <div class="org-contact">
                             <span class="org-info">
@@ -79,9 +79,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><asp:Label ID="lblJob4" runat="server" Text="대리" meta:resourcekey="lblJob4Resource" /></td>
+                    <td><asp:Label ID="lblJob4" runat="server" Text="매니저" meta:resourcekey="lblJob4Resource" /></td>
                     <td><asp:Label ID="lblName4" runat="server" Text="박경민" meta:resourcekey="lblName4Resource" /></td>
-                    <td><asp:Label ID="lblDuty4" runat="server" Text="교육 운영" meta:resourcekey="lblDuty4Resource" /></td>
+                    <td><asp:Label ID="lblDuty4" runat="server" Text="교육 운영(컨소시엄 사업)" meta:resourcekey="lblDuty4Resource" /></td>
                     <td class="left">
                         <div class="org-contact">
                             <span class="org-info">
@@ -98,7 +98,7 @@
                 <tr>
                     <td><asp:Label ID="lblJob5" runat="server" Text="사원" meta:resourcekey="lblJob5Resource" /></td>
                     <td><asp:Label ID="lblName5" runat="server" Text="설지현" meta:resourcekey="lblName5Resource" /></td>
-                    <td><asp:Label ID="lblDuty5" runat="server" Text="교육 운영" meta:resourcekey="lblDuty5Resource" /></td>
+                    <td><asp:Label ID="lblDuty5" runat="server" Text="교육 운영(컨소시엄 사업)" meta:resourcekey="lblDuty5Resource" /></td>
                     <td class="left">
                         <div class="org-contact">
                             <span class="org-info">

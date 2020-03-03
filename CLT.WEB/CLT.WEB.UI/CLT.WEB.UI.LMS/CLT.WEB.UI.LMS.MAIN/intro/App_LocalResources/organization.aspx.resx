@@ -142,19 +142,19 @@
     <value />
   </data>
   <data name="lblDuty3Resource.Text" xml:space="preserve">
-    <value>교육 개발</value>
+    <value>교육 개발(컨소시엄 사업)</value>
   </data>
   <data name="lblDuty3Resource.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblDuty4Resource.Text" xml:space="preserve">
-    <value>교육 운영</value>
+    <value>교육 운영(컨소시엄 사업)</value>
   </data>
   <data name="lblDuty4Resource.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblDuty5Resource.Text" xml:space="preserve">
-    <value>교육 운영</value>
+    <value>교육 운영(컨소시엄 사업)</value>
   </data>
   <data name="lblDuty5Resource.ToolTip" xml:space="preserve">
     <value />
@@ -184,25 +184,25 @@
     <value />
   </data>
   <data name="lblJob1Resource.Text" xml:space="preserve">
-    <value>팀장</value>
+    <value>원장</value>
   </data>
   <data name="lblJob1Resource.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblJob2Resource.Text" xml:space="preserve">
-    <value>차장</value>
+    <value>책임매니저</value>
   </data>
   <data name="lblJob2Resource.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblJob3Resource.Text" xml:space="preserve">
-    <value>과장</value>
+    <value>책임매니저</value>
   </data>
   <data name="lblJob3Resource.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblJob4Resource.Text" xml:space="preserve">
-    <value>대리</value>
+    <value>매니저</value>
   </data>
   <data name="lblJob4Resource.ToolTip" xml:space="preserve">
     <value />

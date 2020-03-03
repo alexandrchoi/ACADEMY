@@ -417,7 +417,7 @@ namespace CLT.WEB.BIZ.LMS.COMMON
                     xSql += string.Format(" WHERE e.m_cd='0041' AND u.user_id='{0}' AND u.pwd='{1}' ", rParams[0], rParams[1]);
                 else
                     xSql += string.Format(" WHERE e.m_cd='0041' AND u.user_id='{0}' ", rParams[0]);
-                xSql += " AND u.company_id = c.company_id ";
+                xSql += " AND u.company_id = c.company_id(+) ";
                 xSql += " AND u.user_group = e.d_cd ";
                 xSql += " AND u.dept_code = d.dept_code(+) ";
                 xSql += " AND u.duty_step = s.duty_step(+) ";

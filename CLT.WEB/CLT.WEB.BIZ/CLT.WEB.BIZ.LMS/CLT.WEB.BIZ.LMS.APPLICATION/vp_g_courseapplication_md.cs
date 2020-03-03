@@ -313,6 +313,10 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                 {
                     xSql += " AND opencour.course_type Like '%000002%' ";  // 000001 자체교육, 000002 사업주 위수탁, 000003 청년취업 아카데미
                 }
+                //else if (xClass == "000010")  // 사용자 그룹이 개인회원이면,
+                //{
+                //    xSql += " AND opencour.course_type Like '%000005 %' ";  // 000005 자체교육, 000002 사업주 위수탁, 000003 청년취업 아카데미
+                //}
                 else
                 {
                     xSql += " AND opencour.course_type IS NULL ";

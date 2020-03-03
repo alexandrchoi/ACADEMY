@@ -969,6 +969,7 @@ ul.bullet-list > li:before {
 
 /** Data Table **/
 .gm-table.data-table {
+    width:100%;
     border-top:2px solid #1e1e1e;
 }
 .gm-table.data-table table th {

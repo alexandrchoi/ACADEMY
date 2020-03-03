@@ -308,26 +308,28 @@ namespace CLT.WEB.UI.LMS.CURR
                         e.Item.Cells[0].Text = "No.";
                         e.Item.Cells[1].Text = "과정유형";
                         e.Item.Cells[2].Text = "과정분야";
-                        e.Item.Cells[3].Text = "과정명";
-                        e.Item.Cells[4].Text = "유효기간";
-                        e.Item.Cells[5].Text = "선종";
-                        e.Item.Cells[6].Text = "사용";
-                        e.Item.Cells[7].Text = "담당자";
-                        e.Item.Cells[8].Text = "등록일";
-                        e.Item.Cells[9].Text = "temp_save_flg";
+                        e.Item.Cells[3].Text = "과정코드";
+                        e.Item.Cells[4].Text = "과정명";
+                        e.Item.Cells[5].Text = "유효기간";
+                        e.Item.Cells[6].Text = "선종";
+                        e.Item.Cells[7].Text = "사용";
+                        e.Item.Cells[8].Text = "담당자";
+                        e.Item.Cells[9].Text = "등록일";
+                        e.Item.Cells[10].Text = "temp_save_flg";
                     }
                     else
                     {
                         e.Item.Cells[0].Text = "No.";
                         e.Item.Cells[1].Text = "Course Type";
                         e.Item.Cells[2].Text = "Course Field";
-                        e.Item.Cells[3].Text = "Course Name";
-                        e.Item.Cells[4].Text = "Expired period";
-                        e.Item.Cells[5].Text = "Vessel Type";
-                        e.Item.Cells[6].Text = "Usage";
-                        e.Item.Cells[7].Text = "Manager";
-                        e.Item.Cells[8].Text = "Reg. Date";
-                        e.Item.Cells[9].Text = "temp_save_flg";
+                        e.Item.Cells[2].Text = "Course ID";
+                        e.Item.Cells[4].Text = "Course Name";
+                        e.Item.Cells[5].Text = "Expired period";
+                        e.Item.Cells[6].Text = "Vessel Type";
+                        e.Item.Cells[7].Text = "Usage";
+                        e.Item.Cells[8].Text = "Manager";
+                        e.Item.Cells[9].Text = "Reg. Date";
+                        e.Item.Cells[10].Text = "temp_save_flg";
                     }
                 }
             }
