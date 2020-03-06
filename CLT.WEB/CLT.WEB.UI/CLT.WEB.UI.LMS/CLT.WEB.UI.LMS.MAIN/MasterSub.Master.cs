@@ -167,9 +167,9 @@ namespace CLT.WEB.UI.LMS.MAIN
                     
                 }
                 //
-                if (Convert.ToString(Session["USER_GROUP"]) != this.GuestUserID)
+                if (Session["USER_GROUP"].ToString() == this.GuestUserID || string.IsNullOrEmpty(Session["USER_GROUP"].ToString()))
                 {
-
+                    Session["USER_GROUP"] = this.GuestUserID;
                 }
                 else
                 {

@@ -1969,7 +1969,7 @@ namespace CLT.WEB.BIZ.LMS.APPR
                 xSql += @"              , u.dept_code
                                             , u.duty_step
                                             , w.duty_work
-                                            , u.personal_no ";
+                                            , REGEXP_REPLACE(HINDEV.CRYPTO_AES256.DEC_AES(U.PERSONAL_NO),'\d','*', 9) AS PERSONAL_NO ";
                 xSql += "                " + xTbl;
                 xSql += "                " + xWhere;
                 xSql += "             order by s.step_seq, u.user_nm_kor ";

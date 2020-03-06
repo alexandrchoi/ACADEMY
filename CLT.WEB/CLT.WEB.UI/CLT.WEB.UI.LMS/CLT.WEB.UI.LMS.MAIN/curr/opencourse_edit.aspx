@@ -171,7 +171,7 @@
                     </th>
                     <td colspan="3">
                         <asp:Panel ID="Panel1" runat = "server" Height="70px" ScrollBars="auto"  >
-                            <asp:DataList ID="dtlClassification" runat="server" ShowFooter="False" ShowHeader="False" BorderStyle="None">
+                            <asp:DataList ID="dtlClassification" runat="server" ShowFooter="False" ShowHeader="False" BorderStyle="None" RepeatColumns="4" RepeatDirection="Vertical">
                                 <ItemTemplate>
                                     <asp:CheckBox ID="chkClass" runat="server" Style="height: 20px;" Checked='<%# Eval("check") %>' />
                                     <asp:Label ID="lblClassNm" runat="server" Style="height: 20px;padding-top: 7px" Text='<%# Eval("nm") %>' />
@@ -269,8 +269,8 @@
                         <asp:Label ID="lblCompanyAccept" runat="server" meta:resourcekey="lblCompanyAccept" />
                     </th>
                     <td colspan = "3">
-                        <asp:Panel ID="Panel2" runat = "server" Height="70px" ScrollBars="auto"  >
-                            <asp:DataList ID="dtlCompany" runat="server" ShowFooter="False" ShowHeader="False" BorderStyle="None">
+                        <asp:Panel ID="Panel2" runat = "server" Height="78px" ScrollBars="auto"  >
+                            <asp:DataList ID="dtlCompany" runat="server" ShowFooter="False" ShowHeader="False" BorderStyle="None" RepeatLayout="Table" RepeatColumns="4" RepeatDirection="Horizontal">
                                 <ItemTemplate>
                                     <asp:CheckBox ID="chkCompany" runat="server" Style="height: 20px;" Checked='<%# Eval("check") %>' />
                                     <asp:Label ID="lblCompanyNm" runat="server" Style="height: 20px;padding-top: 7px" Text='<%# Eval("nm") %>' />

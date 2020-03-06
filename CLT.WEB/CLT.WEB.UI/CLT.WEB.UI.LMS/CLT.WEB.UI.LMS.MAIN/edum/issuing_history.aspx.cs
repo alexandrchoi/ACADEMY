@@ -170,6 +170,26 @@ namespace CLT.WEB.UI.LMS.EDUM
                 //HyperLink hlkUserId = ((HyperLink)e.Item.FindControl("hlkCourseNM"));
                 //hlkUserId.NavigateUrl = "javascript:;";
                 //hlkUserId.Attributes.Add("onclick", "javascript:GoAppForm('" + DRV["KEYS"].ToString() + "', '" + Convert.ToString(DRV["PAGE_HV"]) + "'); return false;");
+
+                DataRowView xItem = (DataRowView)e.Item.DataItem;
+
+                if (e.Item.ItemType == C1ListItemType.Item || e.Item.ItemType == C1ListItemType.AlternatingItem)
+                {
+                    Label lblType = ((Label)e.Item.FindControl("lblCourseType"));
+
+                    if (xItem["course_type"] != null)
+                    {
+                        string[] xType = xItem["course_type"].ToString().Split('|');
+                        foreach (string xCourseType in xType)
+                        {
+                            if (string.IsNullOrEmpty(lblType.Text))
+                                lblType.Text += GetCourseType(xCourseType);
+                            else
+                                lblType.Text = lblType.Text + "<BR>" + GetCourseType(xCourseType);
+                        }
+                    }
+
+                }
             }
             catch (Exception ex)
             {
@@ -191,6 +211,50 @@ namespace CLT.WEB.UI.LMS.EDUM
             }
         }
         #endregion
+        
+        /************************************************************
+        * Function name : GetCourseType
+        * Purpose       : 개설과정에 대한 교육유형명칭을 가져온다.
+        * Input         : void
+        * Output        : void
+        *************************************************************/
+        #region
+        public string GetCourseType(string rCode)
+        {
+            string xResult = string.Empty;
+            try
+            {
+                if (Thread.CurrentThread.CurrentCulture.Name.ToLower() == "ko-kr")
+                {
+                    if (rCode == "000001") // 자체교육
+                        xResult = "자체교육";
+                    else if (rCode == "000002")  // 사업주위탁
+                        xResult = "사업주위탁";
+                    else if (rCode == "000003") // 청년취업아카데미
+                        xResult = "청년취업아카데미";
+                    else if (rCode == "000004") // 컨소시엄훈련 
+                        xResult = "컨소시엄훈련 ";
+                }
+                else
+                {
+                    if (rCode == "000001") // 자체교육
+                        xResult = "Internal Training";
+                    else if (rCode == "000002")  // 사업주위탁
+                        xResult = "Commissioned Education";
+                    else if (rCode == "000003") // 청년취업아카데미
+                        xResult = "Youth Job Academy";
+                    else if (rCode == "000004") // 컨소시엄훈련
+                        xResult = "Consortium";
+                }
+            }
+            catch (Exception ex)
+            {
+                bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
+                if (rethrow) throw;
+            }
+            return xResult;
+        }
+        #endregion
 
         protected void grdList_ItemCreated(object sender, C1.Web.C1WebGrid.C1ItemEventArgs e)
         {
@@ -201,30 +265,34 @@ namespace CLT.WEB.UI.LMS.EDUM
                     if (this.IsSettingKorean())
                     {
                         e.Item.Cells[0].Text = "번호";
-                        e.Item.Cells[1].Text = "교육유형";
-                        e.Item.Cells[2].Text = "회사명";
-                        e.Item.Cells[3].Text = "과정명";
-                        e.Item.Cells[4].Text = "증서번호";
-                        e.Item.Cells[5].Text = "성명";
-                        e.Item.Cells[6].Text = "영문명";
-                        e.Item.Cells[7].Text = "생년월일";
-                        e.Item.Cells[8].Text = "교육기간";
-                        e.Item.Cells[9].Text = "발급일자";
-                        e.Item.Cells[10].Text = "발급사유";
+                        e.Item.Cells[1].Text = "과정유형";
+                        e.Item.Cells[2].Text = "교육유형";
+                        e.Item.Cells[3].Text = "회사명";
+                        e.Item.Cells[4].Text = "과정명";
+                        e.Item.Cells[5].Text = "차수";
+                        e.Item.Cells[6].Text = "증서번호";
+                        e.Item.Cells[7].Text = "성명";
+                        e.Item.Cells[8].Text = "영문명";
+                        e.Item.Cells[9].Text = "생년월일";
+                        e.Item.Cells[10].Text = "교육기간";
+                        e.Item.Cells[11].Text = "발급일자";
+                        e.Item.Cells[12].Text = "발급사유";
                     }
                     else
                     {
                         e.Item.Cells[0].Text = "No.";
                         e.Item.Cells[1].Text = "Course Type";
-                        e.Item.Cells[2].Text = "Company";
-                        e.Item.Cells[3].Text = "Couse Name";
-                        e.Item.Cells[4].Text = "Certificate no.";
-                        e.Item.Cells[5].Text = "Name";
-                        e.Item.Cells[6].Text = "Eng.Name";
-                        e.Item.Cells[7].Text = "Birthday";
-                        e.Item.Cells[8].Text = "Edu.Period";
-                        e.Item.Cells[9].Text = "Issue date";
-                        e.Item.Cells[10].Text = "Reason";
+                        e.Item.Cells[2].Text = "Course Type";
+                        e.Item.Cells[3].Text = "Company";
+                        e.Item.Cells[4].Text = "Couse Name";
+                        e.Item.Cells[5].Text = "Seq";
+                        e.Item.Cells[6].Text = "Certificate no.";
+                        e.Item.Cells[7].Text = "Name";
+                        e.Item.Cells[8].Text = "Eng.Name";
+                        e.Item.Cells[9].Text = "Birthday";
+                        e.Item.Cells[10].Text = "Edu.Period";
+                        e.Item.Cells[11].Text = "Issue date";
+                        e.Item.Cells[12].Text = "Reason";
                     }
                 }
             }
@@ -241,50 +309,56 @@ namespace CLT.WEB.UI.LMS.EDUM
             {
                 DataTable xDt = GetDtGrdList("all");
 
-                int xColumnCnt = 11;
+                int xColumnCnt = 13;
                 string[] xExcelHeader = new string[xColumnCnt];
                 if (this.IsSettingKorean())
                 {
                     xExcelHeader[0] = "번호";
-                    xExcelHeader[1] = "교육유형";
-                    xExcelHeader[2] = "회사명";
-                    xExcelHeader[3] = "과정명";
-                    xExcelHeader[4] = "증서번호";
-                    xExcelHeader[5] = "성명";
-                    xExcelHeader[6] = "영문명";
-                    xExcelHeader[7] = "생년월일";
-                    xExcelHeader[8] = "교육기간";
-                    xExcelHeader[9] = "발급일자";
-                    xExcelHeader[10] = "발급사유";
+                    xExcelHeader[1] = "과정유형";
+                    xExcelHeader[2] = "교육유형";
+                    xExcelHeader[3] = "회사명";
+                    xExcelHeader[4] = "과정명";
+                    xExcelHeader[5] = "차수";
+                    xExcelHeader[6] = "증서번호";
+                    xExcelHeader[7] = "성명";
+                    xExcelHeader[8] = "영문명";
+                    xExcelHeader[9] = "생년월일";
+                    xExcelHeader[10] = "교육기간";
+                    xExcelHeader[11] = "발급일자";
+                    xExcelHeader[12] = "발급사유";
                 }
                 else
                 {
                     xExcelHeader[0] = "No.";
                     xExcelHeader[1] = "Course Type";
-                    xExcelHeader[2] = "Company";
-                    xExcelHeader[3] = "Couse Name";
-                    xExcelHeader[4] = "Certificate no.";
-                    xExcelHeader[5] = "Name";
-                    xExcelHeader[6] = "Eng.Name";
-                    xExcelHeader[7] = "Birthday";
-                    xExcelHeader[8] = "Edu.Period";
-                    xExcelHeader[9] = "Issue date";
-                    xExcelHeader[10] = "Reason";
+                    xExcelHeader[2] = "Course Type";
+                    xExcelHeader[3] = "Company";
+                    xExcelHeader[4] = "Couse Name";
+                    xExcelHeader[5] = "Seq";
+                    xExcelHeader[6] = "Certificate no.";
+                    xExcelHeader[7] = "Name";
+                    xExcelHeader[8] = "Eng.Name";
+                    xExcelHeader[9] = "Birthday";
+                    xExcelHeader[10] = "Edu.Period";
+                    xExcelHeader[11] = "Issue date";
+                    xExcelHeader[12] = "Reason";
 
                 }
 
                 string[] xDtHeader = new string[xColumnCnt];
                 xDtHeader[0] = "rnum";
                 xDtHeader[1] = "course_type_nm";
-                xDtHeader[2] = "company_nm";
-                xDtHeader[3] = "course_nm";
-                xDtHeader[4] = "certificate_no";
-                xDtHeader[5] = "user_nm_kor";
-                xDtHeader[6] = "user_nm_eng";
-                xDtHeader[7] = "birth_date";
-                xDtHeader[8] = "course_date";
-                xDtHeader[9] = "issue_date";
-                xDtHeader[10] = "reason";
+                xDtHeader[2] = "course_type";
+                xDtHeader[3] = "company_nm";
+                xDtHeader[4] = "course_nm";
+                xDtHeader[5] = "course_seq";
+                xDtHeader[6] = "certificate_no";
+                xDtHeader[7] = "user_nm_kor";
+                xDtHeader[8] = "user_nm_eng";
+                xDtHeader[9] = "birth_date";
+                xDtHeader[10] = "course_date";
+                xDtHeader[11] = "issue_date";
+                xDtHeader[12] = "reason";
                 
                 this.GetExcelFile(xDt, xExcelHeader, xDtHeader, "0");
             }

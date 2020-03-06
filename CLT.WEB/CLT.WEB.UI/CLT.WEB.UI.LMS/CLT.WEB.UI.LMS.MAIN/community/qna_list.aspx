@@ -38,7 +38,7 @@
         <div class="gm-table data-table list-type">
             <C1WebGrid:C1WebGrid ID="C1WebGrid1" AllowSorting="True" AllowColSizing="True" runat="server" AutoGenerateColumns="false" OnItemDataBound="C1WebGrid1_ItemDataBound" DataKeyField="boa_no" OnItemCreated="grd_ItemCreated">
                 <Columns>
-                    <C1WebGrid:C1BoundColumn DataField="rnum" HeaderText="번호">
+                    <C1WebGrid:C1BoundColumn DataField="boa_no" HeaderText="번호">
                         <ItemStyle Width="5%" HorizontalAlign="Center"></ItemStyle>
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1TemplateColumn HeaderText="제목">

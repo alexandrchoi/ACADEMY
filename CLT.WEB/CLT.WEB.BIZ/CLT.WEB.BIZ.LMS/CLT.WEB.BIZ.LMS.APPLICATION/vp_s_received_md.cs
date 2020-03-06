@@ -53,7 +53,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                     (
                         SELECT 
                           O.OPEN_COURSE_ID 
-                          , (SELECT D_KNM FROM T_CODE_DETAIL WHERE M_CD = '0006' AND D_CD = C.COURSE_TYPE) AS COURSE_TYPE ";
+                          , O.COURSE_TYPE ";
                 if (rArgCultureInfo.Name.ToLower() == "ko-kr")
                 {
                     xSql += "     , C.course_nm ";  // 과정명
@@ -111,14 +111,14 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                 if (rParams[5] != string.Empty)
                     xSql += " AND C.COURSE_TYPE = '" + rParams[5] + "' ";
 
-                xSql += @"   ORDER BY O.COURSE_BEGIN_DT desc, C.COURSE_NM " + "\r\n";
+                xSql += @"   ORDER BY O.INS_DT desc, C.COURSE_NM " + "\r\n";
                 xSql += @" ) O
                 )
                 ";
 
                 xSql += string.Format(" WHERE  rnum > {0} ", Convert.ToInt32(rParams[0]) * (Convert.ToInt32(rParams[1]) - 1));
                 xSql += string.Format(" AND    rnum <= {0} ", Convert.ToInt32(rParams[0]) * Convert.ToInt32(rParams[1]));
-                xSql += " AND SUBSTR(CLASS_MAN_COUNT, 1, 1) > 0 "; // 수강신청 인원이 있는 과정만 표시 (신청인원/전체인원)
+                //xSql += " AND SUBSTR(CLASS_MAN_COUNT, 1, 1) > 0 "; // 수강신청 인원이 있는 과정만 표시 (신청인원/전체인원)
                 xSql = string.Format(xSql, rParams[6]); 
 
                 return base.ExecuteDataTable("LMS", xSql);
@@ -293,7 +293,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                         SELECT ROWNUM AS RNUM, O.* FROM 
                         (
                             SELECT U.USER_NM_KOR
-                              , U.PERSONAL_NO
+                              , REGEXP_REPLACE(HINDEV.CRYPTO_AES256.DEC_AES(U.PERSONAL_NO),'\d','*', 9) AS PERSONAL_NO
                               , (SELECT DUTY_WORK_NAME FROM V_HDUTYWORK WHERE DUTY_WORK = U.DUTY_WORK) AS DUTY_WORK
                               , (SELECT D_KNM FROM T_CODE_DETAIL WHERE M_CD = '0062' AND D_CD = U.TRAINEE_CLASS) AS STATUS 
                               , U.INS_DT 
@@ -392,7 +392,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                         (
                             SELECT 
                                 UD.USER_NM_KOR
-                                , UD.PERSONAL_NO
+                                , REGEXP_REPLACE(HINDEV.CRYPTO_AES256.DEC_AES(UD.PERSONAL_NO),'\d','*', 9) AS PERSONAL_NO
                                 , (SELECT DUTY_WORK_NAME FROM V_HDUTYWORK WHERE DUTY_WORK = UD.DUTY_WORK) AS DUTY_WORK
                                 , (SELECT D_KNM FROM T_CODE_DETAIL WHERE M_CD = '0062' AND D_CD = UD.TRAINEE_CLASS) AS STATUS 
                                 
@@ -555,7 +555,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                                                         , U.COMPANY_ID
                                                         , U.DEPT_CODE
                                                         , U.DUTY_STEP
-                                                        , '000001' /*APPROVAL_FLG    M_CD = '0019'*/
+                                                        , '000003' /*APPROVAL_FLG    M_CD = '0019'*/
                                                         , SYSDATE
                                                         , '000004' /*PASS_FLG        M_CD = '0010'*/
                                                         , O.COURSE_BEGIN_DT
@@ -598,7 +598,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                         //=============================================
                         /*SMS 문자는 데이터 저장 후 발송...*/
                         string[] xMasterParams = new string[9];
-                        xMasterParams[0] = "한진해운 운항훈련원";
+                        xMasterParams[0] = "지마린 운항훈련원";
                         xMasterParams[1] = string.Empty; // SMS 회신번호
                         xMasterParams[2] = rParams[3] + " [예약] " + rParams[4];  // SMS 발송내용
                         xMasterParams[3] = xarrSMSUser.Count.ToString(); //보낼사람 count 

@@ -200,8 +200,6 @@ namespace CLT.WEB.UI.LMS.APPLICATION
         {
             try
             {
-                return;
-
                 DataRowView xItem = (DataRowView)e.Item.DataItem;
 
                 if (e.Item.ItemType == C1ListItemType.Item || e.Item.ItemType == C1ListItemType.AlternatingItem)
@@ -245,21 +243,23 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                 {
                     if (rCode == "000001") // 자체교육
                         xResult = "자체교육";
-                    else if (rCode == "000002")  // 사업주위탁
-
+                    else if (rCode == "000002")  // 사업주위탁
                         xResult = "사업주위탁";
                     else if (rCode == "000003") // 청년취업아카데미
                         xResult = "청년취업아카데미";
+                    else if (rCode == "000004") // 컨소시엄훈련 
+                        xResult = "컨소시엄훈련 ";
                 }
                 else
                 {
                     if (rCode == "000001") // 자체교육
                         xResult = "Internal Training";
-                    else if (rCode == "000002")  // 사업주위탁
-
+                    else if (rCode == "000002")  // 사업주위탁
                         xResult = "Commissioned Education";
                     else if (rCode == "000003") // 청년취업아카데미
                         xResult = "Youth Job Academy";
+                    else if (rCode == "000004") // 컨소시엄훈련
+                        xResult = "Consortium";
                 }
             }
             catch (Exception ex)

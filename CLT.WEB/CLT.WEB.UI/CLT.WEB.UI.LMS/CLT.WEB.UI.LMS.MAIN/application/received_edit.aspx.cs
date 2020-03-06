@@ -78,7 +78,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                     {
                         iManTotCnt = Request.QueryString["ManTotCnt"].ToString();
 
-                        iManTot = Convert.ToInt16(Request.QueryString["ManTotCnt"].Substring(Request.QueryString["ManTotCnt"].Length - Convert.ToInt16(Request.QueryString["ManTotCnt"].LastIndexOf('/').ToString())));
+                        iManTot = Convert.ToInt16(Request.QueryString["ManTotCnt"].Substring(Request.QueryString["ManTotCnt"].Length - Convert.ToInt16(Request.QueryString["ManTotCnt"].LastIndexOf('/').ToString())).Replace("/", ""));
                         //iManCnt = Convert.ToInt16(Request.QueryString["ManTotCnt"].Substring(0, Convert.ToInt16(Request.QueryString["ManTotCnt"].IndexOf('/').ToString())));
 
                         //iUseMan = iManTot - iManCnt;

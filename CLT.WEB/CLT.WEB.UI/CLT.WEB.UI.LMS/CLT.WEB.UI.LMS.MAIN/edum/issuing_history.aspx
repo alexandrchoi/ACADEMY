@@ -63,18 +63,25 @@
                 <Columns>
 
                     <C1WebGrid:C1TemplateColumn HeaderText="No.">
-                        <ItemStyle Width="5%" />
+                        <ItemStyle Width="" />
                         <ItemTemplate>
                             <%# Container.DataItemIndex + 1 + this.PageSize * (this.CurrentPageIndex - 1)%>
                         </ItemTemplate>
                     </C1WebGrid:C1TemplateColumn>
 
-                    <C1WebGrid:C1BoundColumn DataField="COURSE_TYPE_NM" HeaderText="교육유형">
-                        <ItemStyle Width="5%"/>
+                    <C1WebGrid:C1BoundColumn DataField="COURSE_TYPE_NM" HeaderText="과정유형">
+                        <ItemStyle Width=""/>
                     </C1WebGrid:C1BoundColumn>
 
+                    <C1WebGrid:C1TemplateColumn HeaderText="교육유형">
+                        <ItemTemplate>
+                            <asp:Label ID="lblCourseType" runat="server"></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle Width="" />
+                    </C1WebGrid:C1TemplateColumn>
+
                     <C1WebGrid:C1BoundColumn DataField="COMPANY_NM" HeaderText="회사명">
-                        <ItemStyle Width="10%"/>
+                        <ItemStyle Width=""/>
                     </C1WebGrid:C1BoundColumn>
 
                     <C1WebGrid:C1TemplateColumn HeaderText="과정명">
@@ -83,33 +90,36 @@
                         </ItemTemplate>
                         <ItemStyle CssClass="left" Width=""/>
                     </C1WebGrid:C1TemplateColumn>
+                    <C1WebGrid:C1BoundColumn DataField="COURSE_SEQ" HeaderText="차수">
+                        <ItemStyle Width=""/>
+                    </C1WebGrid:C1BoundColumn>
 
                     <C1WebGrid:C1BoundColumn DataField="CERTIFICATE_NO" HeaderText="증서번호">
-                        <ItemStyle Width="7%"/>
+                        <ItemStyle Width=""/>
                     </C1WebGrid:C1BoundColumn>
 
                     <C1WebGrid:C1BoundColumn DataField="USER_NM_KOR" HeaderText="성명">
-                        <ItemStyle Width="7%"/>
+                        <ItemStyle Width=""/>
                     </C1WebGrid:C1BoundColumn>
 
                     <C1WebGrid:C1BoundColumn DataField="USER_NM_ENG" HeaderText="영문성명">
-                        <ItemStyle Width="10%"/>
+                        <ItemStyle Width=""/>
                     </C1WebGrid:C1BoundColumn>
 
                     <C1WebGrid:C1BoundColumn DataField="BIRTH_DATE" HeaderText="생년월일">
-                        <ItemStyle Width="7%"/>
+                        <ItemStyle Width=""/>
                     </C1WebGrid:C1BoundColumn>
 
                     <C1WebGrid:C1BoundColumn DataField="COURSE_DATE"  HeaderText="교육기간">
-                        <ItemStyle Width="10%"/>
+                        <ItemStyle Width=""/>
                     </C1WebGrid:C1BoundColumn>
 
                     <C1WebGrid:C1BoundColumn DataField="ISSUE_DATE" HeaderText="발급일자">
-                        <ItemStyle Width="5%"/>
+                        <ItemStyle Width=""/>
                     </C1WebGrid:C1BoundColumn>
 
                     <C1WebGrid:C1BoundColumn DataField="REASON" HeaderText="발급사유">
-                        <ItemStyle CssClass="left" Width="15%"/>
+                        <ItemStyle CssClass="left" Width=""/>
                     </C1WebGrid:C1BoundColumn>
 
                 </Columns>

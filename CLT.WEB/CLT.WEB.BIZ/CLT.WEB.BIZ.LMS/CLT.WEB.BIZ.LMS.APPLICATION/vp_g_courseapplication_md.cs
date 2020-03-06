@@ -84,6 +84,11 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                 xSql += "                         AND open_course_id = opencour.open_course_id ";
                 xSql += string.Format("           AND user_id = '{0}') approval_flg, ", rParams[2]);  // 사용자 ID
                 xSql += "          opencour.open_course_id ";
+                xSql += " , (SELECT COUNT(R.USER_ID) FROM T_COURSE_RESULT R, T_USER U  ";
+                xSql += "    WHERE R.OPEN_COURSE_ID = opencour.OPEN_COURSE_ID ";
+                xSql += "      AND R.USER_ID = U.USER_ID ";
+                xSql += "      AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_USER WHERE USER_ID = '" + rParams[2] + "')  ";
+                xSql += "   ) || ' / ' || cour.CLASS_MAN_COUNT AS CLASS_MAN_COUNT ";
                 xSql += "   FROM t_open_course opencour ";
                 xSql += "   INNER JOIN t_course cour ";
                 xSql += "   ON opencour.course_id = cour.course_id ";
@@ -125,7 +130,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                     xSql += " AND opencour.course_type Like '%000002%' ";  // 000001 자체교육, 000002 사업주 위수탁, 000003 청년취업 아카데미
                 }
 
-                xSql += " ORDER BY opencour.course_begin_dt DESC";
+                xSql += " ORDER BY opencour.ins_dt DESC";
                 xSql += " ) b ";
                 xSql += " ) ";
                 xSql += string.Format(" WHERE  rnum > {0} ", Convert.ToInt32(rParams[0]) * (Convert.ToInt32(rParams[1]) - 1));

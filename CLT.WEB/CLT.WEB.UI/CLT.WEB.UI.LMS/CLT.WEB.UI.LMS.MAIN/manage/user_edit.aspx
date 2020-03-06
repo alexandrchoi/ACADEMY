@@ -7,7 +7,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderHead" runat="Server">
     <script language="javascript" type="text/javascript">
-    document.domain = "academy-t.gmarineservice.com";
+    document.domain = "academy.gmarineservice.com";
     function chkJumin(fldId1, fldId2, error_msg) 
     {
         var jumin = fldId1.value.replace(/\s/gi, "") + '-' + fldId2.value.replace(/\s/gi, "");

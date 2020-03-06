@@ -92,6 +92,10 @@
                             <ItemStyle Width="" />
                         </C1WebGrid:C1BoundColumn>
 
+                        <C1WebGrid:C1BoundColumn DataField="STEP_NAME" HeaderText="직책">
+                            <ItemStyle Width="" />
+                        </C1WebGrid:C1BoundColumn>
+
                         <C1WebGrid:C1BoundColumn DataField="USER_NM_KOR" HeaderText="성명">
                             <ItemStyle Width="" />
                         </C1WebGrid:C1BoundColumn>
@@ -113,24 +117,14 @@
                             <ItemStyle Width="" />
                         </C1WebGrid:C1TemplateColumn>
                         
-                        <C1WebGrid:C1TemplateColumn>
-                            <HeaderTemplate>
-                                신규발급
-                                <input type="checkbox" id="chk_all_new" name="chk_all_new" onclick="CheckAllNew(this, 'chk_new');" />
-                            </HeaderTemplate>
-                            <ItemTemplate>
-                                <input type="checkbox" id="chk_new" name="chk_new" onchange="chk_new_reason(this)" <%# DataBinder.Eval(Container.DataItem, "IS_DISABLED")%> />
-                            </ItemTemplate>
-                            <ItemStyle Width="100px"/>
-                        </C1WebGrid:C1TemplateColumn>
-                        
                         <C1WebGrid:C1TemplateColumn HeaderText="발급사유">
                             <ItemTemplate>
-                                <input type="text" id="txtReason" name="txtReason" runat="server" />
+                                <input type="text" id="txtReason" name="txtReason" runat="server" value='<%# DataBinder.Eval(Container.DataItem, "REASON")%>'  />
                                 <input type="hidden" id="txtCertKey" runat="server" value='<%# DataBinder.Eval(Container.DataItem, "CERTIFICATE_KEY")%>' />
                                 <input type="hidden" id="txtCertName" runat="server" value='<%# DataBinder.Eval(Container.DataItem, "CERTIFICATE_NAME")%>' />
+                                <input type="hidden" id="txtDisabled" runat="server" value='<%# DataBinder.Eval(Container.DataItem, "IS_DISABLED")%>' />
                             </ItemTemplate>
-                            <ItemStyle Width="160px"/>
+                            <ItemStyle Width="120px"/>
                         </C1WebGrid:C1TemplateColumn>
 
                     </Columns>

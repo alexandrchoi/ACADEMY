@@ -46,6 +46,8 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                             --, TO_CHAR(R.USER_COURSE_BEGIN_DT, 'YYYY.MM.DD') || ' ~ ' || TO_CHAR(R.USER_COURSE_END_DT, 'YYYY.MM.DD') AS COURSE_DT
                             , COUNT(*) OVER() TOTALRECORDCOUNT 
                             , COUNT(DISTINCT U.USER_ID) AS REG_COUNT 
+                            , MAX(O.COURSE_SEQ) AS COURSE_SEQ
+                            , MAX(O.INS_DT) AS INS_DT
                         FROM T_COURSE C, T_OPEN_COURSE O, T_COURSE_RESULT R , T_USER U
                         WHERE C.COURSE_ID = O.COURSE_ID
                           AND O.OPEN_COURSE_ID = R.OPEN_COURSE_ID
@@ -61,7 +63,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
 
                 xSql += @" 
                         GROUP BY O.OPEN_COURSE_ID, C.COURSE_NM, O.COURSE_BEGIN_DT, O.COURSE_END_DT
-                        ORDER BY O.COURSE_BEGIN_DT DESC
+                        ORDER BY MAX(O.INS_DT) DESC
                     ) O
                 )
                 ";

@@ -94,7 +94,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                             , O.INS_DT
                             , DECODE(O.USE_FLG , 'Y', 'YES', 'NO') AS USE_FLG 
                             , COUNT(*) OVER() TOTALRECORDCOUNT 
-                            , C.COURSE_TYPE
+                            , O.COURSE_TYPE
                             , O.MANAGER
                         FROM T_OPEN_COURSE O, T_COURSE C
                         WHERE O.COURSE_ID = C.COURSE_ID(+) 

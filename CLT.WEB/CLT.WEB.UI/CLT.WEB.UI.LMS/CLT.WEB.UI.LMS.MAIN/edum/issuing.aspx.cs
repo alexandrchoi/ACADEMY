@@ -62,6 +62,20 @@ namespace CLT.WEB.UI.LMS.EDUM
                 DataSet xDs = GetDsGrdList(rGubun);
                 DataTable xDtTotalCnt = xDs.Tables[0];
                 DataTable xDt = xDs.Tables[1];
+                
+                for (int i = 0; i < xDt.Rows.Count; i++)
+                {
+                    if (Convert.ToString(xDt.Rows[i]["IS_NEW"]) == "Y")
+                    {
+                        xDt.Rows[i]["REASON"] = "신규발급";
+                        xDt.Rows[i]["IS_DISABLED"] = "disabled";
+                    }
+                    if (Convert.ToString(xDt.Rows[i]["IS_RENEW"]) == "Y")
+                    {
+                        xDt.Rows[i]["REASON"] = "신규발급(당일 재발급)";
+                        xDt.Rows[i]["IS_DISABLED"] = "disabled";
+                    }
+                }
 
                 if (Convert.ToInt32(xDtTotalCnt.Rows[0][0]) < 1)
                 {
@@ -79,6 +93,15 @@ namespace CLT.WEB.UI.LMS.EDUM
                 }
                 grdList.DataSource = xDt;
                 grdList.DataBind();
+
+                
+                for (int i = 0; i < this.grdList.Items.Count; i++)
+                {
+                    if (((HtmlInputHidden)((C1.Web.C1WebGrid.C1GridItem)this.grdList.Items[i]).FindControl("txtDisabled")).Value == "disabled")
+                    {
+                        ((HtmlInputText)((C1.Web.C1WebGrid.C1GridItem)this.grdList.Items[i]).FindControl("txtReason")).Disabled = true;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -125,7 +148,7 @@ namespace CLT.WEB.UI.LMS.EDUM
                     {
                         InitControl();
                         
-                        BindGrdList(1, "");
+                        BindGrdList(1, "all");
                     }
                 }
             }
@@ -142,7 +165,7 @@ namespace CLT.WEB.UI.LMS.EDUM
         {
             try
             {
-                BindGrdList(1, "");
+                BindGrdList(1, "all");
             }
             catch (Exception ex)
             {
@@ -246,11 +269,11 @@ namespace CLT.WEB.UI.LMS.EDUM
                         e.Item.Cells[1].Text = "회사명";
                         e.Item.Cells[2].Text = "과정명";
                         e.Item.Cells[3].Text = "증서번호";
-                        e.Item.Cells[4].Text = "성명";
-                        e.Item.Cells[5].Text = "주민등록번호";
-                        e.Item.Cells[6].Text = "사진";
-                        e.Item.Cells[7].Text = "정보수정";
-                        e.Item.Cells[8].Text = e.Item.Cells[8].Text.Replace("1st issue", "신규발급");
+                        e.Item.Cells[4].Text = "직책";
+                        e.Item.Cells[5].Text = "성명";
+                        e.Item.Cells[6].Text = "주민등록번호";
+                        e.Item.Cells[7].Text = "사진";
+                        e.Item.Cells[8].Text = "정보수정";
                         e.Item.Cells[9].Text = "발급사유";
                     }
                     else
@@ -258,11 +281,11 @@ namespace CLT.WEB.UI.LMS.EDUM
                         e.Item.Cells[1].Text = "Company";
                         e.Item.Cells[2].Text = "Course";
                         e.Item.Cells[3].Text = "Cert.No";
-                        e.Item.Cells[4].Text = "Name";
-                        e.Item.Cells[5].Text = "Registration";
-                        e.Item.Cells[6].Text = "Photo";
-                        e.Item.Cells[7].Text = "Modification";
-                        e.Item.Cells[8].Text = e.Item.Cells[8].Text.Replace("신규발급", "1st issue");
+                        e.Item.Cells[4].Text = "Grade";
+                        e.Item.Cells[5].Text = "Name";
+                        e.Item.Cells[6].Text = "Registration";
+                        e.Item.Cells[7].Text = "Photo";
+                        e.Item.Cells[8].Text = "Modification";
                         e.Item.Cells[9].Text = "Reason";
                     }
                 }

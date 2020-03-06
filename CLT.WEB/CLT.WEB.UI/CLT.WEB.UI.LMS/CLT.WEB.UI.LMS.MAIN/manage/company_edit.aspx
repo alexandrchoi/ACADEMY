@@ -7,7 +7,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderHead" runat="Server">
     <script language="javascript" type="text/javascript">
-    document.domain = "academy-t.gmarineservice.com";
+    document.domain = "academy.gmarineservice.com";
     function checkBizID(bizID, error_msg)  //사업자등록번호 체크 
     { 
         // bizID는 숫자만 10자리로 해서 문자열로 넘긴다. 

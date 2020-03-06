@@ -90,7 +90,7 @@
                 }, eventClick: function(event, element) {
                     if( event['type'] == "edu") {
                         var url = "";
-                        url = calendar.edu_url + "?ropen_course_id=" + event['id'] + "&approval_code=" + event['approval_code'] + "&MenuCode=421";
+                        url = calendar.edu_url + "?ropen_course_id=" + event['id'] + "&approval_code=" + event['approval_code'] + "&MenuCode=431";
                     } else// if( event['type'] == "event")
                     {
                         url = calendar.event_url + "?rseq=" + event['seq'] +"&MenuCode=610";

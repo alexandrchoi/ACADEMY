@@ -110,7 +110,7 @@ namespace CLT.WEB.BIZ.LMS.COMMUNITY
                 if (!string.IsNullOrEmpty(rParams[9]))
                     xSql += string.Format(" AND notice.del_yn = '{0}' ", rParams[9]);
 
-                xSql += " ORDER BY  notice.ins_dt DESC ";
+                xSql += " ORDER BY  notice.not_no DESC ";
                 xSql += " ) b ";
                 xSql += " ) ";
                 xSql += string.Format(" WHERE  rnum > {0} ", Convert.ToInt32(rParams[0]) * (Convert.ToInt32(rParams[1]) - 1));

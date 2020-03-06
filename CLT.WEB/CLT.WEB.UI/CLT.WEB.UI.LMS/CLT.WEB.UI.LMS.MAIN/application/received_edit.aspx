@@ -73,12 +73,9 @@
                         <ItemStyle Width="0%" />
                     </C1WebGrid:C1BoundColumn>   
                                 
-                    <C1WebGrid:C1TemplateColumn >
-                        <ItemTemplate>
-                            <%# Container.DataItemIndex + 1 + this.PageSize * (this.CurrentPageIndex - 1)%>
-                        </ItemTemplate> 
+                    <C1WebGrid:C1BoundColumn DataField="rnum">
                         <ItemStyle Width="5%" />
-                    </C1WebGrid:C1TemplateColumn>                                                      
+                    </C1WebGrid:C1BoundColumn>   
                                     
                     <C1WebGrid:C1BoundColumn DataField="personal_no">
                         <ItemStyle Width="15%" />
@@ -96,7 +93,7 @@
                         <ItemStyle Width="15%" />
                     </C1WebGrid:C1BoundColumn>
                                     
-                    <C1WebGrid:C1BoundColumn DataField="enter_dt" Visible="false" DataFormatString="{0:yyyy.MM.dd}">
+                    <C1WebGrid:C1BoundColumn DataField="enter_dt" Visible="false">
                         <ItemStyle Width="10%" />
                     </C1WebGrid:C1BoundColumn>               
                                     

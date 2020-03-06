@@ -12,6 +12,8 @@
             if(isEmpty(document.getElementById('<%=txtPassword.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { "패스워드" }, new string[] { "Password" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
             return true;
         }
+        
+        
     </script>
 
 </asp:Content>
@@ -30,6 +32,7 @@
         </h2>
         <section class="login gm-des-input">
             <div class="login-box">
+                <asp:Panel runat="server" DefaultButton="btn_login"> 
                     <div class="idpw">
                         <label for="<%=txtUserID.ClientID %>"><%=GetLocalResourceObject("lblUserID") %><!--아이디--></label>
                         <asp:TextBox ID="txtUserID" runat="server"></asp:TextBox>
@@ -48,7 +51,7 @@
                             <span class="slider round"></span>
                         </label>
                     </div>
-
+                </asp:Panel>
                 <!-- 2019.12.30 아이디찾기, 비밀번호찾기 주석처리
                 <div class="log-link">
                     <a href="#none"><%=GetLocalResourceObject("txtFindID") %>아이디찾기</a>

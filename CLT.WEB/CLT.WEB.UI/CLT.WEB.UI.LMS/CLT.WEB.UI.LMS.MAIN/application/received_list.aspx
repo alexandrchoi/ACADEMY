@@ -72,13 +72,16 @@
                         <ItemStyle Width="5%" />
                     </C1WebGrid:C1TemplateColumn> 
                 
-                   <C1WebGrid:C1BoundColumn DataField="course_type">
+                    <C1WebGrid:C1TemplateColumn HeaderText="교육유형">
+                        <ItemTemplate>
+                            <asp:Label ID="lblCourseType" runat="server"></asp:Label>
+                        </ItemTemplate>
                         <ItemStyle Width="12%" />
-                    </C1WebGrid:C1BoundColumn>
+                    </C1WebGrid:C1TemplateColumn>
                               
                    <C1WebGrid:C1TemplateColumn>
                         <ItemTemplate> 
-                        <a href="#" onclick="javascript:openPopWindow('/application/received_edit.aspx?open_course_id=<%# DataBinder.Eval(Container.DataItem, "OPEN_COURSE_ID")%>&MenuCode=<%=Session["MENU_CODE"]%>&ManTotCnt=<%# DataBinder.Eval(Container.DataItem, "CLASS_MAN_COUNT")%>','received_edit_win', '700', '740');"><%# DataBinder.Eval(Container.DataItem, "COURSE_NM")%></a>
+                        <a href="#" onclick="javascript:openPopWindow('/application/received_edit.aspx?open_course_id=<%# DataBinder.Eval(Container.DataItem, "OPEN_COURSE_ID")%>&MenuCode=<%=Session["MENU_CODE"]%>&ManTotCnt=<%# DataBinder.Eval(Container.DataItem, "CLASS_MAN_COUNT")%>','received_edit_win', '800', '740');"><%# DataBinder.Eval(Container.DataItem, "COURSE_NM")%></a>
                         </ItemTemplate>
                         <ItemStyle Width="" CssClass="left"/>
                     </C1WebGrid:C1TemplateColumn>

@@ -100,12 +100,15 @@
             <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="button-default blue" OnClick="btn_save_Click" OnClientClick="return fnValidateForm();" meta:resourcekey="btnSaveResource" />
         </div>
 
-        <CLTWebControl:PageInfo ID="PageInfo1" runat="server" />
+        <!--<CLTWebControl:PageInfo ID="PageInfo1" runat="server" />-->
         <div class="gm-table data-table list-type">
             <C1WebGrid:C1WebGrid ID="grdList" runat="server" AllowSorting="True" AllowColSizing="True" AutoGenerateColumns="False" OnItemDataBound="grdUserList_ItemDataBound" DataKeyField="KEYS" OnItemCreated="grdList_ItemCreated">
                 <Columns>
                     
                     <C1WebGrid:C1BoundColumn DataField="INS_DT" HeaderText="신청&lt;br/&gt;일자">
+                        <ItemStyle />
+                    </C1WebGrid:C1BoundColumn>
+                    <C1WebGrid:C1BoundColumn DataField="INS_TIME" HeaderText="시간">
                         <ItemStyle />
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="USER_ID" HeaderText="사번">
@@ -194,9 +197,9 @@
             </C1WebGrid:C1WebGrid>
         </div>
         
-        <div class="gm-paging">
+        <!--div class="gm-paging">
             <CLTWebControl:PageNavigator ID="PageNavigator1" runat="server" OnOnPageIndexChanged="PageNavigator1_OnPageIndexChanged" />
-        </div>
+        </div-->
 
         <!-- 버튼
         클래스명 button-group : 사방 20px 여백 포함됨.

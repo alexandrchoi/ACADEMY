@@ -237,7 +237,7 @@ namespace CLT.WEB.UI.LMS.CURR
                 {
                     xHeader[0] = "No.";
                     xHeader[1] = "년도";
-                    xHeader[2] = "교육구분";
+                    xHeader[2] = "교육유형";
                     xHeader[3] = "과정명";
                     xHeader[4] = "차수";
                     xHeader[5] = "수강신청기간";
@@ -321,21 +321,23 @@ namespace CLT.WEB.UI.LMS.CURR
                 {
                     if (rCode == "000001") // 자체교육
                         xResult = "자체교육";
-                    else if (rCode == "000002")  // 사업주위탁
-
+                    else if (rCode == "000002")  // 사업주위탁
                         xResult = "사업주위탁";
                     else if (rCode == "000003") // 청년취업아카데미
                         xResult = "청년취업아카데미";
+                    else if (rCode == "000004") // 컨소시엄훈련 
+                        xResult = "컨소시엄훈련 ";
                 }
                 else
                 {
                     if (rCode == "000001") // 자체교육
                         xResult = "Internal Training";
-                    else if (rCode == "000002")  // 사업주위탁
-
+                    else if (rCode == "000002")  // 사업주위탁
                         xResult = "Commissioned Education";
                     else if (rCode == "000003") // 청년취업아카데미
                         xResult = "Youth Job Academy";
+                    else if (rCode == "000004") // 컨소시엄훈련
+                        xResult = "Consortium";
                 }
             }
             catch (Exception ex)
@@ -365,7 +367,7 @@ namespace CLT.WEB.UI.LMS.CURR
                     {
                         e.Item.Cells[0].Text = "No.";
                         e.Item.Cells[1].Text = "년도";
-                        e.Item.Cells[2].Text = "교육구분";
+                        e.Item.Cells[2].Text = "교육유형";
                         e.Item.Cells[3].Text = "과정명";
                         e.Item.Cells[4].Text = "차수";
                         e.Item.Cells[5].Text = "수강신청기간";

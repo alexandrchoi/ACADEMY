@@ -104,7 +104,7 @@ namespace CLT.WEB.BIZ.LMS.CURR
                     if (rParams.Length == 6) // 설문 결과 화면에서 조회시 게시된 설문조사만 조회
                         xSql += string.Format(" AND notice_yn = '{0}' ", rParams[5]);
 
-                    xSql += " ORDER BY ins_dt ASC ";
+                    xSql += " ORDER BY ins_dt DESC ";
                 }
 
                 xDt = base.ExecuteDataTable("LMS", xSql);

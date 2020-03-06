@@ -94,7 +94,12 @@
                     </C1WebGrid:C1BoundColumn>            
                     <C1WebGrid:C1BoundColumn  DataField="course_day" HeaderText="교육일수">
                         <ItemStyle Width="8%" />
-                    </C1WebGrid:C1BoundColumn>                                    
+                    </C1WebGrid:C1BoundColumn>         
+               
+                   <C1WebGrid:C1BoundColumn DataField="class_man_count" HeaderText="정원">
+                        <ItemStyle Width="8%" />
+                    </C1WebGrid:C1BoundColumn>  
+                    
                     <C1WebGrid:C1BoundColumn  DataField="approval_flg" HeaderText="상태">
                         <ItemStyle Width="8%" />
                     </C1WebGrid:C1BoundColumn>   

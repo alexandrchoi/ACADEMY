@@ -82,14 +82,18 @@
                 
                     <C1WebGrid:C1BoundColumn DataField="course_nm">
                         <ItemStyle Width="" CssClass ="left" />
-                    </C1WebGrid:C1BoundColumn>                               
+                    </C1WebGrid:C1BoundColumn>         
+               
+                    <C1WebGrid:C1BoundColumn DataField="course_seq" >
+                        <ItemStyle Width="8%" />
+                    </C1WebGrid:C1BoundColumn>                       
                
                     <C1WebGrid:C1BoundColumn DataField="course_dt" >
                         <ItemStyle Width="20%" />
                     </C1WebGrid:C1BoundColumn> 
                
                     <C1WebGrid:C1BoundColumn DataField="reg_count" >
-                        <ItemStyle Width="10%" />
+                        <ItemStyle Width="8%" />
                     </C1WebGrid:C1BoundColumn> 
                
                     <C1WebGrid:C1TemplateColumn>

@@ -89,7 +89,7 @@ namespace CLT.WEB.BIZ.LMS.COMMUNITY
                 {
                     xSql += " AND del_yn = 'N' ";
                 }
-                xSql += " ORDER BY  boa.ins_dt DESC ";
+                xSql += " ORDER BY  boa.boa_no DESC ";
                 xSql += " ) b ";
                 xSql += " ) ";
 

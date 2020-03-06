@@ -190,7 +190,8 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                         e.Item.Cells[4].Text = "수강신청기간";
                         e.Item.Cells[5].Text = "교육기간";
                         e.Item.Cells[6].Text = "교육일수";
-                        e.Item.Cells[7].Text = "상태";
+                        e.Item.Cells[7].Text = "정원";
+                        e.Item.Cells[8].Text = "상태";
                     }
                     else
                     {
@@ -201,7 +202,8 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                         e.Item.Cells[4].Text = "Application Period";
                         e.Item.Cells[5].Text = "Education Period";
                         e.Item.Cells[6].Text = "Days";
-                        e.Item.Cells[7].Text = "Status";
+                        e.Item.Cells[7].Text = "Count";
+                        e.Item.Cells[8].Text = "Status";
                     }
                 }
             }
@@ -324,21 +326,23 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                 {
                     if (rCode == "000001") // 자체교육
                         xResult = "자체교육";
-                    else if (rCode == "000002")  // 사업주위탁
-
+                    else if (rCode == "000002")  // 사업주위탁
                         xResult = "사업주위탁";
                     else if (rCode == "000003") // 청년취업아카데미
                         xResult = "청년취업아카데미";
+                    else if (rCode == "000004") // 컨소시엄훈련 
+                        xResult = "컨소시엄훈련 ";
                 }
                 else
                 {
                     if (rCode == "000001") // 자체교육
                         xResult = "Internal Training";
-                    else if (rCode == "000002")  // 사업주위탁
-
+                    else if (rCode == "000002")  // 사업주위탁
                         xResult = "Commissioned Education";
                     else if (rCode == "000003") // 청년취업아카데미
                         xResult = "Youth Job Academy";
+                    else if (rCode == "000004") // 컨소시엄훈련
+                        xResult = "Consortium";
                 }
             }
             catch (Exception ex)

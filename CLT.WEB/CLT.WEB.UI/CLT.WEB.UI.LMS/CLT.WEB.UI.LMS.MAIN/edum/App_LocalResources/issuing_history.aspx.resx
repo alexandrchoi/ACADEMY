@@ -127,7 +127,7 @@
     <value>성명</value>
   </data>
   <data name="lblCourseType.Text" xml:space="preserve">
-    <value>교육유형</value>
+    <value>과정유형</value>
   </data>
   <data name="lblMenuTitle.Text" xml:space="preserve">
     <value>증서발급이력 </value>

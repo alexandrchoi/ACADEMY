@@ -7,7 +7,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderHead" runat="Server">
     <script language="javascript" type="text/javascript">
-    document.domain = "academy-t.gmarineservice.com";
+    document.domain = "academy.gmarineservice.com";
     function fnValidateForm()
 	{
 	    // 필수 입력값 체크

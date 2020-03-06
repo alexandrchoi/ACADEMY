@@ -72,7 +72,7 @@
                         <ItemStyle Width="4%"/>
                     </C1WebGrid:C1BoundColumn>
                     
-                    <C1WebGrid:C1TemplateColumn HeaderText="교육구분">
+                    <C1WebGrid:C1TemplateColumn HeaderText="교육유형">
                         <ItemTemplate>
                             <asp:Label ID="lblCourseType" runat="server"></asp:Label>
                         </ItemTemplate>

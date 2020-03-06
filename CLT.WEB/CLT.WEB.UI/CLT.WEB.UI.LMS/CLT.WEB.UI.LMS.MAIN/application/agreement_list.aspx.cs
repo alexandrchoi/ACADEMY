@@ -157,10 +157,11 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                         e.Item.Cells[1].Text = "";
                         e.Item.Cells[2].Text = "No.";
                         e.Item.Cells[3].Text = "과정명";
-                        e.Item.Cells[4].Text = "교육기간";
-                        e.Item.Cells[5].Text = "인원";
-                        e.Item.Cells[6].Text = "훈련위탁계약서";
-                        e.Item.Cells[7].Text = "채용예정약정서";
+                        e.Item.Cells[4].Text = "차수";
+                        e.Item.Cells[5].Text = "교육기간";
+                        e.Item.Cells[6].Text = "인원";
+                        e.Item.Cells[7].Text = "훈련위탁계약서";
+                        e.Item.Cells[8].Text = "채용예정약정서";
                     }
                     else
                     {
@@ -168,10 +169,11 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                         e.Item.Cells[1].Text = "";
                         e.Item.Cells[2].Text = "No.";
                         e.Item.Cells[3].Text = "Course Name";
-                        e.Item.Cells[4].Text = "Course Period";
-                        e.Item.Cells[5].Text = "Count";
-                        e.Item.Cells[6].Text = "Consignment Agreement";
-                        e.Item.Cells[7].Text = "Employment Agreement";
+                        e.Item.Cells[4].Text = "Seq";
+                        e.Item.Cells[5].Text = "Course Period";
+                        e.Item.Cells[6].Text = "Count";
+                        e.Item.Cells[7].Text = "Consignment Agreement";
+                        e.Item.Cells[8].Text = "Employment Agreement";
                     }
                 }
             }

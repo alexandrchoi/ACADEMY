@@ -273,12 +273,75 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                 HyperLink hlkUserId = ((HyperLink)e.Item.FindControl("hlkCourseNM"));
                 hlkUserId.NavigateUrl = "javascript:;";
                 hlkUserId.Attributes.Add("onclick", "javascript:GoAppForm('" + DRV["KEYS"].ToString() + "'); return false;");
+
+                DataRowView xItem = (DataRowView)e.Item.DataItem;
+
+                if (e.Item.ItemType == C1ListItemType.Item || e.Item.ItemType == C1ListItemType.AlternatingItem)
+                {
+                    Label lblType = ((Label)e.Item.FindControl("lblCourseType"));
+
+                    if (xItem["course_type"] != null)
+                    {
+                        string[] xType = xItem["course_type"].ToString().Split('|');
+                        foreach (string xCourseType in xType)
+                        {
+                            if (string.IsNullOrEmpty(lblType.Text))
+                                lblType.Text += GetCourseType(xCourseType);
+                            else
+                                lblType.Text = lblType.Text + "<BR>" + GetCourseType(xCourseType);
+                        }
+                    }
+
+                }
             }
             catch (Exception ex)
             {
                 base.NotifyError(ex);
             }
         }
+        /************************************************************
+        * Function name : GetCourseType
+        * Purpose       : 개설과정에 대한 교육유형명칭을 가져온다.
+        * Input         : void
+        * Output        : void
+        *************************************************************/
+        #region
+        public string GetCourseType(string rCode)
+        {
+            string xResult = string.Empty;
+            try
+            {
+                if (Thread.CurrentThread.CurrentCulture.Name.ToLower() == "ko-kr")
+                {
+                    if (rCode == "000001") // 자체교육
+                        xResult = "자체교육";
+                    else if (rCode == "000002")  // 사업주위탁
+                        xResult = "사업주위탁";
+                    else if (rCode == "000003") // 청년취업아카데미
+                        xResult = "청년취업아카데미";
+                    else if (rCode == "000004") // 컨소시엄훈련 
+                        xResult = "컨소시엄훈련 ";
+                }
+                else
+                {
+                    if (rCode == "000001") // 자체교육
+                        xResult = "Internal Training";
+                    else if (rCode == "000002")  // 사업주위탁
+                        xResult = "Commissioned Education";
+                    else if (rCode == "000003") // 청년취업아카데미
+                        xResult = "Youth Job Academy";
+                    else if (rCode == "000004") // 컨소시엄훈련
+                        xResult = "Consortium";
+                }
+            }
+            catch (Exception ex)
+            {
+                bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
+                if (rethrow) throw;
+            }
+            return xResult;
+        }
+        #endregion
         protected void PageNavigator1_OnPageIndexChanged(object sender, CLT.WEB.UI.COMMON.CONTROL.PagingEventArgs e)
         {
             try

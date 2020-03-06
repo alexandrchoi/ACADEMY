@@ -83,7 +83,7 @@
             <C1WebGrid:C1WebGrid ID="C1WebGrid1" AllowSorting="True" AllowColSizing="True" runat="server" AutoGenerateColumns="False" OnItemDataBound="C1WebGrid1_ItemDataBound" DataKeyField="not_no" OnItemCreated="grd_ItemCreated">
                 <Columns>
                     
-                    <C1WebGrid:C1BoundColumn DataField="rnum" HeaderText="번호">
+                    <C1WebGrid:C1BoundColumn DataField="not_no" HeaderText="번호">
                         <ItemStyle Width="5%" HorizontalAlign="Center"></ItemStyle>
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1TemplateColumn HeaderText="제목">

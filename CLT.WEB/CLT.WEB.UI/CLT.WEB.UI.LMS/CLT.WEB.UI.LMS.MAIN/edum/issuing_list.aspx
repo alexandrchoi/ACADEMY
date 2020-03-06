@@ -14,7 +14,7 @@
     function GoAppForm(rSearch, rPageHV)
     {	
         //open_course_id
-        openPopWindow('/EDUM/issuing.aspx?search='+rSearch+'&MenuCode=<%=Session["MENU_CODE"]%>&page_hv=' + rPageHV, "IssuingForm", "1024", "860", "status=yes");
+        openPopWindow('/EDUM/issuing.aspx?search='+rSearch+'&MenuCode=<%=Session["MENU_CODE"]%>&page_hv=' + rPageHV, "IssuingForm", "1200", "860", "status=yes");
 	    return false;
     }
     </script> 
@@ -77,15 +77,22 @@
             <Columns>
 
                 <C1WebGrid:C1TemplateColumn HeaderText="No.">
-                    <ItemStyle VerticalAlign="Middle" Width="5%" />
+                    <ItemStyle VerticalAlign="Middle" Width="7%" />
                     <ItemTemplate>
                         <%# Container.DataItemIndex + 1 + this.PageSize * (this.CurrentPageIndex - 1)%>
                     </ItemTemplate>
                 </C1WebGrid:C1TemplateColumn>
 
-                <C1WebGrid:C1BoundColumn DataField="COURSE_TYPE_NM" HeaderText="교육유형">
-                    <ItemStyle Width="8%"/>
+                <C1WebGrid:C1BoundColumn DataField="COURSE_TYPE_NM" HeaderText="과정유형">
+                    <ItemStyle Width="10%"/>
                 </C1WebGrid:C1BoundColumn>
+
+                <C1WebGrid:C1TemplateColumn HeaderText="교육유형">
+                    <ItemTemplate>
+                        <asp:Label ID="lblCourseType" runat="server"></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle Width="12%" />
+                </C1WebGrid:C1TemplateColumn>
 
                 <C1WebGrid:C1TemplateColumn HeaderText="과정명">
                     <ItemStyle CssClass="left" Width="" />
@@ -93,16 +100,19 @@
                         <asp:HyperLink ID="hlkCourseNM" runat="server"><%# DataBinder.Eval(Container.DataItem, "COURSE_NM")%></asp:HyperLink>
                     </ItemTemplate>
                 </C1WebGrid:C1TemplateColumn>
+                <C1WebGrid:C1BoundColumn DataField="COURSE_SEQ" HeaderText="차수">
+                    <ItemStyle Width="7%"/>
+                </C1WebGrid:C1BoundColumn>
 
                 <C1WebGrid:C1TemplateColumn HeaderText="교육기간">
-                    <ItemStyle Width="12%"/>
+                    <ItemStyle Width="15%"/>
                     <ItemTemplate>
                         <asp:Label ID="lblCourseDate" runat="server"><%# DataBinder.Eval(Container.DataItem, "COURSE_DATE")%></asp:Label>
                     </ItemTemplate>
                 </C1WebGrid:C1TemplateColumn>
 
                 <C1WebGrid:C1BoundColumn DataField="CNT_PASS" HeaderText="수료인원">
-                    <ItemStyle Width="7%"/>
+                    <ItemStyle Width="10%"/>
                 </C1WebGrid:C1BoundColumn>
 
             </Columns>

@@ -148,27 +148,27 @@ namespace CLT.WEB.UI.LMS.EDUM
                         {
                             case "000001":
                                 //1. 선박조종시뮬레이터 교육
-                                xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제 Ⅰ장 표 A-Ⅰ/12, 제Ⅱ장 A-Ⅱ / 1, A - Ⅱ / 2 및 B-Ⅰ / 12, B - V / a의 규정에 의거하여 실시한 선박조종시뮬레이터 교육 과정을 수료하였음을 증명합니다.";
-                                xReportDescEng = "This is to certify that the above person has successfully completed a course \"Ship Handling Simulator\" in accordance with the provision of ChapterⅠ Section A-Ⅰ / 12, Chapter Ⅱ Section A Tables A-Ⅱ / 1, A - Ⅱ / 2 and Section B - Ⅰ / 12 and B-V / a of STCW Convention & Code(1978 and 2010 Amendment), applicable to issue of  this certificate.";
+                                xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제 Ⅰ장 표 A-Ⅰ/12, 제Ⅱ장 A-Ⅱ/1, A-Ⅱ/2 및 B-Ⅰ/12, B-V/a의 규정에 의거하여 실시한 선박조종시뮬레이터 교육 과정을 수료하였음을 증명합니다.";
+                                xReportDescEng = "This is to certify that the above person has successfully completed a course \"Ship Handling Simulator\" in accordance with the provision of ChapterⅠ Section A-Ⅰ/12, Chapter Ⅱ Section A Tables A-Ⅱ/1, A-Ⅱ/2 and Section B-Ⅰ/12 and B-V/a of STCW Convention & Code(1978 and 2010 Amendment), applicable to issue of this certificate.";
                                 
                                 break;
                             case "000002":
                                 //2. 선박모의조종 및 선교 팀워크 교육
-                                xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제 Ⅰ장 표 A-Ⅰ/12, 제Ⅱ장 A-Ⅱ / 1, A - Ⅱ / 2 및 IMO Model Course 1.22의 규정에 의거하여 실시한 선박 모의조종 및 선교 팀워크 교육 과정을 수료하였음을 증명합니다.";
-                                xReportDescEng = "This is to certify that the above person has successfully completed a course \"Ship Simulator and Bridge Teamwork\" in accordance with the provision of Chapter Ⅰ Section A - Ⅰ / 12, Chapter Ⅱ Section A Tables A-Ⅱ / 1, A - Ⅱ / 2 of STCW Convention & Code(1978 and 2010 Amendment) and IMO Model Course 1.22, applicable to issue of this certificate.";
+                                xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제 Ⅰ장 표 A-Ⅰ/12, 제Ⅱ장 A-Ⅱ/1, A-Ⅱ/2 및 IMO Model Course 1.22의 규정에 의거하여 실시한 선박 모의조종 및 선교 팀워크 교육 과정을 수료하였음을 증명합니다.";
+                                xReportDescEng = "This is to certify that the above person has successfully completed a course \"Ship Simulator and Bridge Teamwork\" in accordance with the provision of Chapter Ⅰ Section A-Ⅰ/12, Chapter Ⅱ Section  A Tables A-Ⅱ/1, A-Ⅱ/2 of STCW Convention & Code(1978 and 2010 Amendment) and IMO Model Course 1.22, applicable to issue of this certificate.";
                                 
                                 break;
                             case "000003":
                                 //3. 엔진룸 시뮬레이터 교육
-                                xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제 Ⅲ장 표 A-Ⅲ/1의 규정에 의거하여 실시한 엔진룸 시뮬레이터 교육 과정을 수료하였음을 증명합니다.";
-                                xReportDescEng = "This is to certify that the above person has successfully completed a course \"Engine Room Simulator\" in accordance with the provision of Chapter Ⅲ Section A Tables A - Ⅲ / 1 of STCW Convention & Code (1978 and 2010 Amendment), applicable to issue of this certificate.";
-                                
+                                xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제 Ⅲ장 표 A-Ⅲ/1의 규정에 의거하여 실시한 엔진룸 시뮬레이터 교육 과정을<br>수료하였음을 증명합니다.";
+                                xReportDescEng = "This is to certify that the above person has successfully completed a course \"Engine Room Simulator\" in accordance with the provision of Chapter Ⅲ Section A Tables A-Ⅲ/1 of STCW Convention & Code (1978 and 2010 Amendment), applicable to issue of this certificate.";
+
                                 break;
                             case "000004":
                                 //4. 전자해도장치 교육
-                                xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제Ⅱ장 A-Ⅱ/1, A-Ⅱ/2, A - Ⅱ / 3 및 IMO Model Course 1.27의 규정에 의거하여 전자해도장치(ECDIS) 교육 과정을 수료하였음을 증명합니다.";
+                                xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제Ⅱ장 A-Ⅱ/1, A-Ⅱ/2, A-Ⅱ/3 및 IMO Model Course 1.27의 규정에 의거하여 전자해도장치 (ECDIS) 교육 과정을 수료하였음을 증명합니다.";
                                 xReportDescEng = "This is to certify that the above person has successfully completed a course \"The operational use of Electronic Chart Display and Information System(ECDIS)\" in accordance with the provision of Chapter Ⅱ Section A Tables A-Ⅱ/1, A-Ⅱ/2 and A-Ⅱ/3 of STCW Convention and Code(1978 and 2010 Amendment) and IMO Model Course 1.27, applicable to issue of  this certificate.";
-                                
+
                                 break;
                             case "000005":
                                 if (iDtCourseResult.Rows[i]["ME_GUBUN"].ToString() == "M")     /* 직급 M 항해 E 기관 */
@@ -222,13 +222,13 @@ namespace CLT.WEB.UI.LMS.EDUM
                                 if (iDtCourseResult.Rows[i]["COURSE_INOUT"].ToString() == "000001")     /* 000001 사내 000002 사외 */
                                 {
                                     //12. 선박위험물관리교육 - 내부
-                                    xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제 Ⅱ장 표 A-Ⅱ/1, A - Ⅱ / 2, 제 Ⅶ장, MARPOL 73 / 78 부속서 Ⅲ 및 49 CFR 172의 규정에 의거하여 실시한 선박위험물관리교육 과정을 수료하였음을 증명합니다.";
+                                    xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제 Ⅱ장 표 A-Ⅱ/1, A-Ⅱ/2, 제 Ⅶ장, MARPOL 73/78 부속서 Ⅲ 및 49 CFR 172의 규정에 의거하여 실시한 선박위험물관리교육 과정을 수료하였음을 증명합니다.";
                                     xReportDescEng = "This is to certify that the above person had completed the training course \"Transportation of Dangerous goods\" in accordance with STCW A-Ⅱ/1, A-Ⅱ/2, IMDG Code, SOLAS 1974 amended Chapter Ⅶ, MARPOL 73/78 Annex Ⅲ and 49 CFR 172 and been qualified for cargo handling on ships carrying dangerous and hazardous substances in packaged form.";
                                 }
                                 else
                                 {
                                     //13. 선박위험물관리교육 - 외부
-                                    xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제 Ⅱ장 표 A-Ⅱ/1, A - Ⅱ / 2, 제 Ⅶ장, MARPOL 73 / 78 부속서 Ⅲ 및 49 CFR 172의 규정에 의거하여 실시한 선박위험물관리교육 과정을 수료하였음을 증명합니다.";
+                                    xReportDescKor = "위 사람은 STCW 개정협약 및 코드 제 Ⅱ장 표 A-Ⅱ/1, A-Ⅱ/2, 제 Ⅶ장, MARPOL 73/78 부속서 Ⅲ 및 49 CFR 172의 규정에 의거하여 실시한 선박위험물관리교육 과정을 수료하였음을 증명합니다.";
                                     xReportDescEng = "This is to certify that the above person had completed the training course \"Transportation of Dangerous goods\" in accordance with STCW A-Ⅱ/1, A-Ⅱ/2, IMDG Code, SOLAS 1974 amended Chapter Ⅶ, MARPOL 73/78 Annex Ⅲ and 49 CFR 172 and been qualified for cargo handling on ships carrying dangerous and hazardous substances in packaged form.";
                                 }
 

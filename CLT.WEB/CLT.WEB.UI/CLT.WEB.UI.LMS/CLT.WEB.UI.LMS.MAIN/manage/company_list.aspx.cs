@@ -366,7 +366,7 @@ namespace CLT.WEB.UI.LMS.MANAGE
                     if (((HtmlInputCheckBox)((C1.Web.C1WebGrid.C1GridItem)this.C1WebGrid1.Items[i]).FindControl("chkEdit")).Checked)
                     {
                         TableCell xTCC = new TableCell();
-                        xTCC = (TableCell)this.C1WebGrid1.Items[i].Cells[9];  // 승인여부 
+                        xTCC = (TableCell)this.C1WebGrid1.Items[i].Cells[10];  // 승인여부 
                         
                         string xCompanyID = this.C1WebGrid1.DataKeys[i].ToString();  // 체크한 그리드의 사용자 Key 값 가져오기                        
                         if (!xalChk.Contains(xCompanyID))
@@ -497,7 +497,7 @@ namespace CLT.WEB.UI.LMS.MANAGE
                     if (((HtmlInputCheckBox)((C1.Web.C1WebGrid.C1GridItem)this.C1WebGrid1.Items[i]).FindControl("chkEdit")).Checked)
                     {
                         TableCell xTCC = new TableCell();
-                        xTCC = (TableCell)this.C1WebGrid1.Items[i].Cells[9];  // 승인여부 
+                        xTCC = (TableCell)this.C1WebGrid1.Items[i].Cells[10];  // 승인여부 
 
                         string xUserID = this.C1WebGrid1.DataKeys[i].ToString();  // 체크한 그리드의 사용자 Key 값 가져오기                        
                         if (xTCC.Text == "000003") // 승인상태일 경우
@@ -614,7 +614,7 @@ namespace CLT.WEB.UI.LMS.MANAGE
                     if (((HtmlInputCheckBox)((C1.Web.C1WebGrid.C1GridItem)this.C1WebGrid1.Items[i]).FindControl("chkEdit")).Checked)
                     {
                         TableCell xTCC = new TableCell();
-                        xTCC = (TableCell)this.C1WebGrid1.Items[i].Cells[9];  // 승인여부 
+                        xTCC = (TableCell)this.C1WebGrid1.Items[i].Cells[10];  // 승인여부 
 
                         string xUserID = this.C1WebGrid1.DataKeys[i].ToString();  // 체크한 그리드의 사용자 Key 값 가져오기                        
                         if (xTCC.Text != "000004") // 승인대기 상태가 아닐경우
@@ -697,7 +697,7 @@ namespace CLT.WEB.UI.LMS.MANAGE
                     if (((HtmlInputCheckBox)((C1.Web.C1WebGrid.C1GridItem)this.C1WebGrid1.Items[i]).FindControl("chkEdit")).Checked)
                     {
                         TableCell xTCC = new TableCell();
-                        xTCC = (TableCell)this.C1WebGrid1.Items[i].Cells[9];  // 승인여부 
+                        xTCC = (TableCell)this.C1WebGrid1.Items[i].Cells[10];  // 승인여부 
 
                         string xUserID = this.C1WebGrid1.DataKeys[i].ToString();  // 체크한 그리드의 사용자 Key 값 가져오기                        
                         if (xTCC.Text == "000004" || xTCC.Text == "000003") // 승인대기 상태가 아닐경우

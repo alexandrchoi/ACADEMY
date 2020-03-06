@@ -555,6 +555,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                     xSql += @"              , (select d_enm from t_code_detail where m_cd='0050' and d_cd = r.non_pass_cd) as non_pass_nm ";//   --미이수사유  
                 }
                 xSql += @"                  , r.non_pass_remark 
+                                            , o.course_seq
                                             ";
                 xSql += "                   , count(*) over() totalrecordcount " + "\r\n";
 
@@ -699,7 +700,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                         , O.COURSE_SEQ                            
                                         , TO_CHAR(O.COURSE_BEGIN_APPLY_DT, 'YYYY.MM.DD') AS COURSE_BEGIN_APPLY_DT
                                         , TO_CHAR(O.COURSE_END_APPLY_DT, 'YYYY.MM.DD') AS COURSE_END_APPLY_DT
-                                        , (TRUNC(O.COURSE_END_APPLY_DT) - TRUNC(O.COURSE_BEGIN_APPLY_DT)) + 1 as COURSE_DAY
+                                        , (TRUNC(O.COURSE_END_DT) - TRUNC(O.COURSE_BEGIN_DT)) + 1 as COURSE_DAY
                                         , (SELECT COUNT(*) FROM T_COURSE_RESULT r, t_user u WHERE r.user_id = u.user_id and r.OPEN_COURSE_ID = O.OPEN_COURSE_ID and CONFIRM='1') AS MAN
                                         , decode(C.expired_period, '0', '', C.expired_period) as expired_period
                                         , C.ESS_DUTY_STEP
@@ -707,7 +708,8 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                  FROM  T_OPEN_COURSE O, T_COURSE C
                                 WHERE  O.COURSE_ID = C.COURSE_ID " + "\r\n"
                                      + xWhere;
-                xSql += "    ORDER BY COURSE_BEGIN_DT DESC, C.COURSE_NM ";
+                //xSql += "    ORDER BY COURSE_BEGIN_DT DESC, C.COURSE_NM ";
+                xSql += "    ORDER BY O.INS_DT DESC, C.COURSE_NM ";
                 xSql += @"      ) a ";
                 xSql += @"  ) a  ";
 
@@ -2049,7 +2051,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                               O.COURSE_ID ||'^'|| O.OPEN_COURSE_ID as KEYS
                                             , O.COURSE_ID
                                             , O.OPEN_COURSE_ID
-                                            , C.COURSE_TYPE ";
+                                            , O.COURSE_TYPE ";
                         if (rArgCultureInfo.Name.ToLower() == "ko-kr")
                         {
                             xSql += @"      , (SELECT D_KNM FROM T_CODE_DETAIL WHERE M_CD='0006' AND D_CD = C.COURSE_TYPE) AS COURSE_TYPE_NM 
@@ -2071,7 +2073,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                             , T_COURSE C
                                      WHERE O.COURSE_ID = C.COURSE_ID
                                             " + xWhere;
-                        xSql += @"   ORDER BY O.COURSE_BEGIN_DT desc, C.COURSE_NM " + "\r\n";
+                        xSql += @"   ORDER BY O.INS_DT desc, C.COURSE_NM " + "\r\n";
                         xSql += @"         ) A " + "\r\n";
                         xSql += @"  ) A " + "\r\n";
 
@@ -2143,7 +2145,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                             , S.STEP_NAME
                             , U.USER_NM_KOR
                             , P.COMPANY_NM
-                            , TRIM(REPLACE(U.PERSONAL_NO, '-', '')) AS PERSONAL_NO
+                            , HINDEV.CRYPTO_AES256.DEC_AES(U.PERSONAL_NO) AS PERSONAL_NO
                             , U.USER_ADDR
                             , U.MOBILE_PHONE
                             , C.COURSE_DAY
@@ -2242,6 +2244,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                             , R.OPEN_COURSE_ID
                                             , R.COURSE_RESULT_SEQ
                                             , TO_CHAR(R.INS_DT, 'YYYY.MM.DD') AS INS_DT
+                                            , TO_CHAR(R.INS_DT, 'HH24:MI:SS') AS INS_TIME
                                             , R.USER_ID ";
                         if (rArgCultureInfo.Name.ToLower() == "ko-kr")
                         {
@@ -2260,7 +2263,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                         {
                             xSql += @"      , C.COMPANY_NM_ENG AS COMPANY_NM ";
                         }
-                        xSql += @"          , U.PERSONAL_NO
+                        xSql += @"          , REGEXP_REPLACE(HINDEV.CRYPTO_AES256.DEC_AES(U.PERSONAL_NO),'\d','*', 9) AS PERSONAL_NO
                                             , U.DEPT_CODE ";
                         if (rArgCultureInfo.Name.ToLower() == "ko-kr")
                         {
@@ -2306,7 +2309,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                             AND U.DEPT_CODE = D.DEPT_CODE(+)
                                             AND U.DUTY_STEP = S.DUTY_STEP(+)
                                             
-                                    ORDER BY U.DUTY_STEP, U.USER_NM_KOR, R.USER_ID";
+                                    ORDER BY R.INS_DT, U.DUTY_STEP, U.USER_NM_KOR, R.USER_ID";
                         xSql += @"         ) a " + "\r\n";
                         xSql += @" ) a " + "\r\n";
 
@@ -3267,7 +3270,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                    C.COURSE_ID||'^'||O.OPEN_COURSE_ID AS KEYS
                                    , C.COURSE_ID
                                    , O.OPEN_COURSE_ID
-                                   , C.COURSE_TYPE ";
+                                   , O.COURSE_TYPE ";
                     if (rArgCultureInfo.Name.ToLower() == "ko-kr")
                     {
                         xSql += @" , (SELECT D_KNM FROM T_CODE_DETAIL WHERE M_CD='0006' AND D_CD = C.COURSE_TYPE) AS COURSE_TYPE_NM
@@ -3283,6 +3286,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                    , TO_CHAR(O.COURSE_BEGIN_DT,'YYYY.MM.DD') ||'~'|| TO_CHAR(O.COURSE_END_DT,'YYYY.MM.DD') AS COURSE_DATE
                                    , (SELECT COUNT(*) FROM T_COURSE_RESULT WHERE OPEN_COURSE_ID = O.OPEN_COURSE_ID AND PASS_FLG = '000001') AS CNT_PASS --M_CD : 0010 --수료총원
                                    , T.PAGE_HV
+                                   , O.COURSE_SEQ
                               FROM T_COURSE C
                                     , T_COURSE_REPORT_ID I
                                     , T_COURSE_REPORT_TYPE T
@@ -3337,7 +3341,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                    C.COURSE_ID||'^'||O.OPEN_COURSE_ID AS KEYS
                                    , C.COURSE_ID
                                    , O.OPEN_COURSE_ID
-                                   , C.COURSE_TYPE ";
+                                   , O.COURSE_TYPE ";
                     if (rArgCultureInfo.Name.ToLower() == "ko-kr")
                     {
                         xSql += @" , (SELECT D_KNM FROM T_CODE_DETAIL WHERE M_CD='0006' AND D_CD = C.COURSE_TYPE) AS COURSE_TYPE_NM
@@ -3353,6 +3357,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                    , TO_CHAR(O.COURSE_BEGIN_DT,'YYYY.MM.DD') ||'~'|| TO_CHAR(O.COURSE_END_DT,'YYYY.MM.DD') AS COURSE_DATE
                                    , (SELECT COUNT(*) FROM T_COURSE_RESULT R, T_USER U WHERE R.USER_ID=U.USER_ID AND R.OPEN_COURSE_ID = O.OPEN_COURSE_ID AND R.PASS_FLG = '000001') AS CNT_PASS --M_CD : 0010 --수료총원
                                    , T.PAGE_HV
+                                   , O.COURSE_SEQ
                               FROM T_COURSE C
                                     , T_COURSE_REPORT_ID I
                                     , T_COURSE_REPORT_TYPE T
@@ -3488,7 +3493,10 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                         , REGEXP_REPLACE(HINDEV.CRYPTO_AES256.DEC_AES(U.PERSONAL_NO), '\d', '*', 9) AS PERSONAL_NO
                                         , U.PIC_FILE
                                         , DECODE(U.pic_file_nm, NULL, 'Ⅹ', '○') AS is_pic_file
-                                        , DECODE((select count(*) from t_course_report_hist where user_id = r.user_id and open_course_id = r.open_course_id and course_result_seq = r.course_result_seq), 0, '', 'disabled') as is_disabled
+                                        , DECODE((select count(*) from t_course_report_hist where user_id = r.user_id and open_course_id = r.open_course_id and course_result_seq = r.course_result_seq), 0, 'Y', 'N') as is_new
+                                        , DECODE((select count(*) from t_course_report_hist where user_id = r.user_id and open_course_id = r.open_course_id and course_result_seq = r.course_result_seq and seq = 1 and to_char(ins_dt, 'yyyymmdd') = to_char(sysdate, 'yyyymmdd')), 1, 'Y', 'N') as is_renew
+                                        , '' as reason
+                                        , '' as is_disabled
                                   FROM    T_OPEN_COURSE O
                                         , T_COURSE I
                                         , (select * from T_COURSE_RESULT where PASS_FLG = '000001') R 
@@ -3499,7 +3507,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                       AND O.OPEN_COURSE_ID = R.OPEN_COURSE_ID
                                       AND R.USER_ID = U.USER_ID
                                       AND U.COMPANY_ID = C.COMPANY_ID(+)
-                                      AND U.DUTY_STEP = S.DUTY_STEP
+                                      AND U.DUTY_STEP = S.DUTY_STEP(+)
                                         " + xWhere;
                 xSql += @"    ORDER BY R.CERTIFICATE_NAME, R.CERTIFICATE_KEY, STEP_SEQ, U.USER_NM_KOR " + "\r\n";
                 xSql += @"         ) a " + "\r\n";
@@ -4517,7 +4525,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                 , H.OPEN_COURSE_ID
                                 , H.COURSE_RESULT_SEQ
                                 , H.SEQ
-                                , C.COURSE_TYPE
+                                , O.COURSE_TYPE
                                 , NVL(P.COMPANY_NM, ' ') AS COMPANY_NM ";
                 if (rArgCultureInfo.Name.ToLower() == "ko-kr")
                 {
@@ -4541,6 +4549,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                 , T.REPORT_TYPE_ID
                                 , T.REPORT_NM
                                 , T.PAGE_HV
+                                , O.COURSE_SEQ
                                 , count(*) over() totalrecordcount 
                              FROM T_COURSE_REPORT_HIST H
                                 , T_COURSE_RESULT R
@@ -4622,34 +4631,56 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                     for (int i = 0; i < rParams.GetLength(0); i++)
                     {
                         string xSql = string.Empty;
+                        
+                        xSql = " SELECT user_id, open_course_id, course_result_seq, seq FROM t_course_report_hist WHERE user_id='" + rParams[i, 0] + "' AND open_course_id='" + rParams[i, 1] + "' AND course_result_seq=" + rParams[i, 2] + " AND seq = 1 AND TO_CHAR(ins_dt, 'yyyymmdd') = TO_CHAR(sysdate, 'yyyymmdd') ";
+                        DataTable xDt = base.ExecuteDataTable(db, xSql);
+                        if (xDt.Rows.Count == 0)
+                        {
+                            xSql = string.Empty;
+                            xSql += " INSERT INTO t_course_report_hist ( ";
+                            xSql += " user_id, ";
+                            xSql += " open_course_id, ";
+                            xSql += " course_result_seq, ";
+                            xSql += " seq, ";
+                            xSql += " certificate_key, ";
+                            xSql += " certificate_name, ";
+                            xSql += " reason, ";
+                            xSql += " ins_id, ";
+                            xSql += " ins_dt ";
+                            xSql += " ) ";
+                            xSql += " VALUES ( ";
+                            xSql += string.Format(" '{0}', ", rParams[i, 0]);
+                            xSql += string.Format(" '{0}', ", rParams[i, 1]);
+                            xSql += string.Format(" {0}, ", rParams[i, 2]);
+                            xSql += string.Format(" (select (NVL(max(seq),0)+1) from t_course_report_hist WHERE user_id='{0}' AND open_course_id='{1}' AND course_result_seq={2}), ", rParams[i, 0], rParams[i, 1], rParams[i, 2]);
+                            xSql += string.Format(" '{0}', ", rParams[i, 3]);
+                            xSql += string.Format(" '{0}', ", rParams[i, 4]);
+                            xSql += string.Format(" '{0}', ", rParams[i, 5]);
+                            xSql += string.Format(" '{0}', ", rParams[i, 6]);
+                            xSql += " SYSDATE ";
+                            xSql += " ) ";
+                        
+                            xCmdLMS.CommandText = xSql;
+                            base.Execute(db, xCmdLMS, xTrnsLMS);
+                        }
+                        else
+                        {
+                            xSql = string.Empty;
+                            xSql += " UPDATE t_course_report_hist ";
+                            xSql += " SET ";
+                            //xSql += " reason = '" + rParams[i, 5] + "', ";
+                            xSql += " ins_id = '" + rParams[i, 6] + "', ";
+                            xSql += " ins_dt = SYSDATE ";
+                            xSql += " WHERE ";
+                            xSql += " user_id = '" + xDt.Rows[0]["user_id"] + "' AND ";
+                            xSql += " open_course_id = '" + xDt.Rows[0]["open_course_id"] + "' AND ";
+                            xSql += " course_result_seq = " + xDt.Rows[0]["course_result_seq"] + " AND ";
+                            xSql += " seq = " + xDt.Rows[0]["seq"] + " ";
 
-                        xSql = string.Empty;
-                        xSql += " INSERT INTO t_course_report_hist ( ";
-                        xSql += " user_id, ";
-                        xSql += " open_course_id, ";
-                        xSql += " course_result_seq, ";
-                        xSql += " seq, ";
-                        xSql += " certificate_key, ";
-                        xSql += " certificate_name, ";
-                        xSql += " reason, ";
-                        xSql += " ins_id, ";
-                        xSql += " ins_dt ";
-                        xSql += " ) ";
-                        xSql += " VALUES ( ";
-                        xSql += string.Format(" '{0}', ", rParams[i, 0]);
-                        xSql += string.Format(" '{0}', ", rParams[i, 1]);
-                        xSql += string.Format(" {0}, ", rParams[i, 2]);
-                        xSql += string.Format(" (select (NVL(max(seq),0)+1) from t_course_report_hist WHERE user_id='{0}' AND open_course_id='{1}' AND course_result_seq={2}), ", rParams[i, 0], rParams[i, 1], rParams[i, 2]);
-                        xSql += string.Format(" '{0}', ", rParams[i, 3]);
-                        xSql += string.Format(" '{0}', ", rParams[i, 4]);
-                        xSql += string.Format(" '{0}', ", rParams[i, 5]);
-                        xSql += string.Format(" '{0}', ", rParams[i, 6]);
-                        xSql += " SYSDATE ";
-                        xSql += " ) ";
-                        
-                        xCmdLMS.CommandText = xSql;
-                        base.Execute(db, xCmdLMS, xTrnsLMS);
-                        
+                            xCmdLMS.CommandText = xSql;
+                            base.Execute(db, xCmdLMS, xTrnsLMS);
+
+                        }
                     }
                     xTrnsLMS.Commit(); // 트랜잭션 커밋
                     xRtn = Boolean.TrueString;

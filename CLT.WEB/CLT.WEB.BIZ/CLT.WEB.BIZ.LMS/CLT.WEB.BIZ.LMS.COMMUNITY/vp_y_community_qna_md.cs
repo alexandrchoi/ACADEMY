@@ -83,7 +83,7 @@ namespace CLT.WEB.BIZ.LMS.COMMUNITY
                     xSql += " AND boa.del_yn = 'N' ";
                 }
 
-                xSql += "            ORDER BY boa.ins_dt DESC ) b ) ";
+                xSql += "            ORDER BY boa.boa_no DESC ) b ) ";
                 xSql += string.Format(" WHERE  rnum > {0} ", Convert.ToInt32(rParams[0]) * (Convert.ToInt32(rParams[1]) - 1));
                 xSql += string.Format(" AND    rnum <= {0} ", Convert.ToInt32(rParams[0]) * Convert.ToInt32(rParams[1]));                    
 

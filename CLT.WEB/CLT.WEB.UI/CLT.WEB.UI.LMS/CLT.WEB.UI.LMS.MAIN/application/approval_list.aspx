@@ -83,9 +83,14 @@
                             <%# Container.DataItemIndex + 1 + this.PageSize * (this.CurrentPageIndex - 1)%>
                         </ItemTemplate>
                     </C1WebGrid:C1TemplateColumn>
-                    <C1WebGrid:C1BoundColumn DataField="COURSE_TYPE_NM" HeaderText="교육유형">
-                        <ItemStyle Width="8%"/>
-                    </C1WebGrid:C1BoundColumn>
+                    
+                    <C1WebGrid:C1TemplateColumn HeaderText="교육구분">
+                        <ItemTemplate>
+                            <asp:Label ID="lblCourseType" runat="server"></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle Width="12%" />
+                    </C1WebGrid:C1TemplateColumn>
+
                     <C1WebGrid:C1TemplateColumn HeaderText="과정명">
                         <ItemStyle CssClass="left" Width="30%"/>
                         <ItemTemplate>

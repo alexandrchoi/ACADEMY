@@ -35,6 +35,7 @@ namespace CLT.WEB.UI.LMS.EDUM
                 xDt.Columns.Add("end_dt");
                 xDt.Columns.Add("course_type");
                 xDt.Columns.Add("course_nm");
+                xDt.Columns.Add("course_seq");
                 xDt.Columns.Add("non_approval_cd");
                 xDt.Columns.Add("non_pass_cd");
 
@@ -221,6 +222,26 @@ namespace CLT.WEB.UI.LMS.EDUM
                 HyperLink hlkUserId = ((HyperLink)e.Item.FindControl("hlkCourseNM"));
                 hlkUserId.NavigateUrl = "javascript:;";
                 hlkUserId.Attributes.Add("onclick", "javascript:GoAppForm('" + DRV["KEYS"].ToString() + "', '" + Convert.ToString(DRV["PAGE_HV"]) + "'); return false;");
+
+                DataRowView xItem = (DataRowView)e.Item.DataItem;
+
+                if (e.Item.ItemType == C1ListItemType.Item || e.Item.ItemType == C1ListItemType.AlternatingItem)
+                {
+                    Label lblType = ((Label)e.Item.FindControl("lblCourseType"));
+
+                    if (xItem["course_type"] != null)
+                    {
+                        string[] xType = xItem["course_type"].ToString().Split('|');
+                        foreach (string xCourseType in xType)
+                        {
+                            if (string.IsNullOrEmpty(lblType.Text))
+                                lblType.Text += GetCourseType(xCourseType);
+                            else
+                                lblType.Text = lblType.Text + "<BR>" + GetCourseType(xCourseType);
+                        }
+                    }
+
+                }
             }
             catch (Exception ex)
             {
@@ -242,6 +263,50 @@ namespace CLT.WEB.UI.LMS.EDUM
             }
         }
         #endregion
+        
+        /************************************************************
+        * Function name : GetCourseType
+        * Purpose       : 개설과정에 대한 교육유형명칭을 가져온다.
+        * Input         : void
+        * Output        : void
+        *************************************************************/
+        #region
+        public string GetCourseType(string rCode)
+        {
+            string xResult = string.Empty;
+            try
+            {
+                if (Thread.CurrentThread.CurrentCulture.Name.ToLower() == "ko-kr")
+                {
+                    if (rCode == "000001") // 자체교육
+                        xResult = "자체교육";
+                    else if (rCode == "000002")  // 사업주위탁
+                        xResult = "사업주위탁";
+                    else if (rCode == "000003") // 청년취업아카데미
+                        xResult = "청년취업아카데미";
+                    else if (rCode == "000004") // 컨소시엄훈련 
+                        xResult = "컨소시엄훈련 ";
+                }
+                else
+                {
+                    if (rCode == "000001") // 자체교육
+                        xResult = "Internal Training";
+                    else if (rCode == "000002")  // 사업주위탁
+                        xResult = "Commissioned Education";
+                    else if (rCode == "000003") // 청년취업아카데미
+                        xResult = "Youth Job Academy";
+                    else if (rCode == "000004") // 컨소시엄훈련
+                        xResult = "Consortium";
+                }
+            }
+            catch (Exception ex)
+            {
+                bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
+                if (rethrow) throw;
+            }
+            return xResult;
+        }
+        #endregion
 
         protected void grdList_ItemCreated(object sender, C1.Web.C1WebGrid.C1ItemEventArgs e)
         {
@@ -252,18 +317,22 @@ namespace CLT.WEB.UI.LMS.EDUM
                     if (this.IsSettingKorean())
                     {
                         e.Item.Cells[0].Text = "No.";
-                        e.Item.Cells[1].Text = "교육유형";
-                        e.Item.Cells[2].Text = "과정명";
-                        e.Item.Cells[3].Text = "교육기간";
-                        e.Item.Cells[4].Text = "수료인원";
+                        e.Item.Cells[1].Text = "과정유형";
+                        e.Item.Cells[2].Text = "교육유형";
+                        e.Item.Cells[3].Text = "과정명";
+                        e.Item.Cells[4].Text = "차수";
+                        e.Item.Cells[5].Text = "교육기간";
+                        e.Item.Cells[6].Text = "수료인원";
                     }
                     else
                     {
                         e.Item.Cells[0].Text = "No.";
                         e.Item.Cells[1].Text = "Course Type";
-                        e.Item.Cells[2].Text = "Couse Name";
-                        e.Item.Cells[3].Text = "Period";
-                        e.Item.Cells[4].Text = "Completion";
+                        e.Item.Cells[2].Text = "Open Course Type";
+                        e.Item.Cells[3].Text = "Couse Name";
+                        e.Item.Cells[4].Text = "Seq";
+                        e.Item.Cells[5].Text = "Period";
+                        e.Item.Cells[6].Text = "Completion";
                     }
                 }
             }
@@ -280,7 +349,7 @@ namespace CLT.WEB.UI.LMS.EDUM
             {
                 DataTable xDt = GetDtResultList("all");
 
-                int xColumnCnt = 9;
+                int xColumnCnt = 10;
                 string[] xExcelHeader = new string[xColumnCnt];
                 if (this.IsSettingKorean())
                 {
@@ -288,11 +357,12 @@ namespace CLT.WEB.UI.LMS.EDUM
                     xExcelHeader[1] = "직급";
                     xExcelHeader[2] = "성명";
                     xExcelHeader[3] = "과정명";
-                    xExcelHeader[4] = "교육기간";
-                    xExcelHeader[5] = "교육불가사유";
-                    xExcelHeader[6] = "불가사유";
-                    xExcelHeader[7] = "미이수사유";
-                    xExcelHeader[8] = "비고";
+                    xExcelHeader[4] = "차수";
+                    xExcelHeader[5] = "교육기간";
+                    xExcelHeader[6] = "교육불가사유";
+                    xExcelHeader[7] = "불가사유";
+                    xExcelHeader[8] = "미이수사유";
+                    xExcelHeader[9] = "비고";
                 }
                 else
                 {
@@ -300,11 +370,12 @@ namespace CLT.WEB.UI.LMS.EDUM
                     xExcelHeader[1] = "Grade";
                     xExcelHeader[2] = "Name";
                     xExcelHeader[3] = "Corse Name";
-                    xExcelHeader[4] = "Period";
-                    xExcelHeader[5] = "Absent";
-                    xExcelHeader[6] = "Remark";
-                    xExcelHeader[7] = "Comments";
-                    xExcelHeader[8] = "Remark";
+                    xExcelHeader[4] = "Seq";
+                    xExcelHeader[5] = "Period";
+                    xExcelHeader[6] = "Absent";
+                    xExcelHeader[7] = "Remark";
+                    xExcelHeader[8] = "Comments";
+                    xExcelHeader[9] = "Remark";
                 }
 
                 string[] xDtHeader = new string[xColumnCnt];
@@ -312,11 +383,12 @@ namespace CLT.WEB.UI.LMS.EDUM
                 xDtHeader[1] = "step_name";
                 xDtHeader[2] = "user_nm_kor";
                 xDtHeader[3] = "course_nm";
-                xDtHeader[4] = "course_dt";
-                xDtHeader[5] = "non_approval_nm";
-                xDtHeader[6] = "non_approval_remark";
-                xDtHeader[7] = "non_pass_nm";
-                xDtHeader[8] = "non_pass_remark";
+                xDtHeader[4] = "course_seq";
+                xDtHeader[5] = "course_dt";
+                xDtHeader[6] = "non_approval_nm";
+                xDtHeader[7] = "non_approval_remark";
+                xDtHeader[8] = "non_pass_nm";
+                xDtHeader[9] = "non_pass_remark";
 
                 this.GetExcelFile(xDt, xExcelHeader, xDtHeader, "1");
             }

@@ -191,7 +191,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                     if (!IsPostBack)
                     {
                         InitControl();
-                        BindGrdList(1, "");
+                        BindGrdList(1, "all");
                     }
                 }
             }
@@ -207,7 +207,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
         {
             try
             {
-                BindGrdList(1, "");
+                BindGrdList(1, "all");
             }
             catch (Exception ex)
             {
@@ -330,38 +330,40 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                     if (this.IsSettingKorean())
                     {
                         e.Item.Cells[0].Text = "신청일자";
-                        e.Item.Cells[1].Text = "사번";
-                        e.Item.Cells[2].Text = "성명";
-                        e.Item.Cells[3].Text = "회사명";
-                        e.Item.Cells[4].Text = "주민등록번호";
-                        e.Item.Cells[5].Text = "부서명";
-                        e.Item.Cells[6].Text = "직급";
-                        e.Item.Cells[7].Text = "상태";
-                        //e.Item.Cells[8].Text = "승인<br/>처리";
-                        e.Item.Cells[9].Text = "훈련생 구분";
-                        e.Item.Cells[10].Text = "고용보험<br/>취득일자";
-                        e.Item.Cells[11].Text = "교육<br/>불가사유";
-                        e.Item.Cells[12].Text = "불가<br/>사유";
-                        e.Item.Cells[13].Text = "승인일자";
-                        //e.Item.Cells[14].Text = "교육<br/>입과";
+                        e.Item.Cells[1].Text = "시간";
+                        e.Item.Cells[2].Text = "사번";
+                        e.Item.Cells[3].Text = "성명";
+                        e.Item.Cells[4].Text = "회사명";
+                        e.Item.Cells[5].Text = "주민등록번호";
+                        e.Item.Cells[6].Text = "부서명";
+                        e.Item.Cells[7].Text = "직급";
+                        e.Item.Cells[8].Text = "상태";
+                        //e.Item.Cells[9].Text = "승인<br/>처리";
+                        e.Item.Cells[10].Text = "훈련생 구분";
+                        e.Item.Cells[11].Text = "고용보험<br/>취득일자";
+                        e.Item.Cells[12].Text = "교육<br/>불가사유";
+                        e.Item.Cells[13].Text = "불가<br/>사유";
+                        e.Item.Cells[14].Text = "승인일자";
+                        //e.Item.Cells[15].Text = "교육<br/>입과";
                     }
                     else
                     {
                         e.Item.Cells[0].Text = "Date of<br/>Application";
-                        e.Item.Cells[1].Text = "ID";
-                        e.Item.Cells[2].Text = "Name";
-                        e.Item.Cells[3].Text = "Company";
-                        e.Item.Cells[4].Text = "Registration";
-                        e.Item.Cells[5].Text = "Department";
-                        e.Item.Cells[6].Text = "Grade";
-                        e.Item.Cells[7].Text = "Status";
-                        //e.Item.Cells[8].Text = "Approval";
-                        e.Item.Cells[9].Text = "Classification";
-                        e.Item.Cells[10].Text = "Hire Date";
-                        e.Item.Cells[11].Text = "Absent";
-                        e.Item.Cells[12].Text = "Remark";
-                        e.Item.Cells[13].Text = "Date of<br/>Approval";
-                        //e.Item.Cells[14].Text = "Attendance";
+                        e.Item.Cells[1].Text = "Time";
+                        e.Item.Cells[2].Text = "ID";
+                        e.Item.Cells[3].Text = "Name";
+                        e.Item.Cells[4].Text = "Company";
+                        e.Item.Cells[5].Text = "Registration";
+                        e.Item.Cells[6].Text = "Department";
+                        e.Item.Cells[7].Text = "Grade";
+                        e.Item.Cells[8].Text = "Status";
+                        //e.Item.Cells[9].Text = "Approval";
+                        e.Item.Cells[10].Text = "Classification";
+                        e.Item.Cells[11].Text = "Hire Date";
+                        e.Item.Cells[12].Text = "Absent";
+                        e.Item.Cells[13].Text = "Remark";
+                        e.Item.Cells[14].Text = "Date of<br/>Approval";
+                        //e.Item.Cells[15].Text = "Attendance";
                     }
                 }
             }
