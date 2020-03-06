@@ -106,7 +106,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                 // Course Result Information
                 xSql = " SELECT ";
                 xSql += " b.user_nm_kor, ";
-                xSql += " b.personal_no, ";
+                xSql += " HINDEV.CRYPTO_AES256.DEC_AES(b.PERSONAL_NO) personal_no, ";
                 xSql += " c.empoly_ins_no, ";
                 xSql += " d.duty_work_ename, ";
                 xSql += " TO_CHAR(b.enter_dt, 'yyyy.MM.dd') as enter_dt, ";
@@ -234,7 +234,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                 xSql = " SELECT ";
                 xSql += " rownum AS row_seq, ";
                 xSql += " b.user_nm_kor, ";
-                xSql += " b.personal_no, ";
+                xSql += " HINDEV.CRYPTO_AES256.DEC_AES(b.PERSONAL_NO) personal_no, ";
                 xSql += " REPLACE(b.user_addr, '|', '') AS user_addr, ";
                 xSql += " b.mobile_phone ";
                 xSql += "FROM ";

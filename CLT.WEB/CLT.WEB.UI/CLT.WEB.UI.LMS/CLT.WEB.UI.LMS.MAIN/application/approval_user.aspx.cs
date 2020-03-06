@@ -342,7 +342,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                         e.Item.Cells[10].Text = "훈련생 구분";
                         e.Item.Cells[11].Text = "고용보험<br/>취득일자";
                         e.Item.Cells[12].Text = "교육<br/>불가사유";
-                        e.Item.Cells[13].Text = "불가<br/>사유";
+                        e.Item.Cells[13].Text = "비고";
                         e.Item.Cells[14].Text = "승인일자";
                         //e.Item.Cells[15].Text = "교육<br/>입과";
                     }

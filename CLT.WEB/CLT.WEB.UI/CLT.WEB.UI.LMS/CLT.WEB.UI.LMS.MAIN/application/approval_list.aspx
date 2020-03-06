@@ -118,7 +118,7 @@
                     <C1WebGrid:C1BoundColumn DataField="CNT_IN" HeaderText="교육입과">
                         <ItemStyle Width="7%"/>
                     </C1WebGrid:C1BoundColumn>
-                    <C1WebGrid:C1TemplateColumn HeaderText="실시신고">
+                    <C1WebGrid:C1TemplateColumn HeaderText="실시신고" Visible="false">
                         <ItemStyle Width="8%"/>
                         <ItemTemplate>
                             <asp:Button ID="btn_down" runat="server" Text="Down" CssClass="button-underline" CommandName="Excel"/>

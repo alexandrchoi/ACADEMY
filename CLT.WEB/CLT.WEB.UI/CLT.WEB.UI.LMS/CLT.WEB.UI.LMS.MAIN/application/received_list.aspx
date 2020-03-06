@@ -46,6 +46,8 @@
         </div>
 
         <div class="button-box right">
+            <input type="button" name="btnDnConsignment" value="사업주위탁훈련계약서" onclick="location.href='/file/download/consignment_contract.xlsx';" id="btnDnConsignment" class="button-default" />
+            <input type="button" name="btnDnConsortium" value="컨소시엄 수강신청서" onclick="location.href='/file/download/consortium_apply.xlsx';" id="btnDnConsortium" class="button-default" />
             <asp:Button ID="btnExcel" runat="server" Text="Excel" CssClass="button-default" OnClick="btnExcel_Click" meta:resourcekey="btnExcelResource" /> 
         </div>
 

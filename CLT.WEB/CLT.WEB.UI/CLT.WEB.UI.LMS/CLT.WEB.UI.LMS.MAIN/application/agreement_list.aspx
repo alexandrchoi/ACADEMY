@@ -96,14 +96,14 @@
                         <ItemStyle Width="8%" />
                     </C1WebGrid:C1BoundColumn> 
                
-                    <C1WebGrid:C1TemplateColumn>
+                    <C1WebGrid:C1TemplateColumn Visible="false">
                         <ItemTemplate>
                             <asp:Button ID="btn" Text ="Print" CssClass="button-default blue" runat = "server" OnClick ="grdbtn_Click"/>
                         </ItemTemplate>
                         <ItemStyle Width="10%" />
                     </C1WebGrid:C1TemplateColumn>   
                
-                    <C1WebGrid:C1TemplateColumn>
+                    <C1WebGrid:C1TemplateColumn Visible="false">
                         <ItemTemplate>
                             <asp:Button ID="btn2" Text ="Print" CssClass="button-default blue" runat = "server" OnClick ="grdbtn2_Click"/>
                         </ItemTemplate>
