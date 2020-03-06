@@ -723,7 +723,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                         e.Item.Cells[3].Text = "사번";
                         e.Item.Cells[4].Text = "성명";
                         e.Item.Cells[5].Text = "최종선박하선일";
-                        e.Item.Cells[6].Text = "교육신청일";
+                        e.Item.Cells[6].Text = "교육신청일시";
                         e.Item.Cells[7].Text = "이전이수일";
                         //e.Item.Cells[8].Text = "확정";
                         e.Item.Cells[9].Text = "교육불가사유";

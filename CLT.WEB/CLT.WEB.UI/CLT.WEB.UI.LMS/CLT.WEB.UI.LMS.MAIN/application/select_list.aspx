@@ -6,16 +6,22 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderHead" runat="Server">
     <script type="text/javascript" language="javascript">
-         function fnValidateForm()
-         {  
-            if(!compareDate(document.getElementById('<%=txtSTART_DATE.ClientID %>'),document.getElementById('<%=txtEND_DATE.ClientID %>'))) return false;
+        function fnValidateForm()
+        {  
+        if(!compareDate(document.getElementById('<%=txtSTART_DATE.ClientID %>'),document.getElementById('<%=txtEND_DATE.ClientID %>'))) return false;
         
-            return true;
-         }
+        return true;
+        }
         function GoAppForm(rSearch, gubun)
         {	
             //open_course_id
             openPopWindow('/application/select_user_list.aspx?search='+rSearch+'&MenuCode=<%=Session["MENU_CODE"]%>', "UserList", "1250", "860", "status=yes");
+	        return false;
+        }
+        function GoConfirmForm(rSearch, gubun)
+        {	
+            //open_course_id
+            openPopWindow('/application/select_user_result_list.aspx?search='+rSearch+'&MenuCode=<%=Session["MENU_CODE"]%>', "UserResultList", "1000", "860", "status=yes");
 	        return false;
         }
     </script>
@@ -96,9 +102,14 @@
                     <C1WebGrid:C1BoundColumn DataField="COURSE_DAY" HeaderText="일수">
                         <ItemStyle Width="5%"/>
                     </C1WebGrid:C1BoundColumn>
-                    <C1WebGrid:C1BoundColumn DataField="MAN" HeaderText="확정인원">
-                        <ItemStyle Width="7%"/>
-                    </C1WebGrid:C1BoundColumn>
+                    
+                    <C1WebGrid:C1TemplateColumn HeaderText="확정인원">
+                        <ItemStyle Width="7%" />
+                        <ItemTemplate>
+                            <asp:HyperLink ID="hlkMAN" runat="server"><%# DataBinder.Eval(Container.DataItem, "MAN")%></asp:HyperLink>
+                        </ItemTemplate>
+                    </C1WebGrid:C1TemplateColumn>
+
                     <C1WebGrid:C1BoundColumn DataField="expired_period" HeaderText="유효기간(년)">
                         <ItemStyle Width="7%"/>
                         <HeaderStyle Wrap="false" />

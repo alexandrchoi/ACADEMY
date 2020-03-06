@@ -220,6 +220,11 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                 //open_course_id
                 hlkUserId.Attributes.Add("onclick", "javascript:GoAppForm('" + DRV["course_id"].ToString() + "^" + DRV["open_course_id"].ToString() + "'); return false;");
 
+                HyperLink hlkMan = ((HyperLink)e.Item.FindControl("hlkMAN"));
+                hlkMan.NavigateUrl = "javascript:;";
+                //open_course_id
+                hlkMan.Attributes.Add("onclick", "javascript:GoConfirmForm('" + DRV["course_id"].ToString() + "^" + DRV["open_course_id"].ToString() + "'); return false;");
+
                 if (!Util.IsNullOrEmptyObject(Convert.ToString(DRV["ESS_DUTY_STEP"])) || !Util.IsNullOrEmptyObject(Convert.ToString(DRV["OPT_DUTY_WORK"])))
                 {
                     if (iDutyStep == null)

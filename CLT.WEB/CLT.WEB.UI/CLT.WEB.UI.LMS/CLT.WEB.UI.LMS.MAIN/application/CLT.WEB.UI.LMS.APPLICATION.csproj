@@ -137,6 +137,13 @@
     <Compile Include="report.aspx.designer.cs">
       <DependentUpon>report.aspx</DependentUpon>
     </Compile>
+    <Compile Include="select_user_result_list.aspx.cs">
+      <DependentUpon>select_user_result_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="select_user_result_list.aspx.designer.cs">
+      <DependentUpon>select_user_result_list.aspx</DependentUpon>
+    </Compile>
     <Compile Include="select_user_list_old.aspx.cs">
       <DependentUpon>select_user_list_old.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -256,6 +263,7 @@
     <Content Include="mail_detail.aspx" />
     <Content Include="mail_send.aspx" />
     <Content Include="report.aspx" />
+    <Content Include="select_user_result_list.aspx" />
     <Content Include="select_user_list_old.aspx" />
     <Content Include="sms_send.aspx" />
     <Content Include="sms_detail.aspx" />
@@ -392,6 +400,12 @@
     </Content>
     <Content Include="App_LocalResources\agreement_list.aspx.en.resx" />
     <Content Include="App_LocalResources\agreement_list.aspx.resx" />
+    <Content Include="App_LocalResources\select_user_result_list.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\select_user_result_list.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>

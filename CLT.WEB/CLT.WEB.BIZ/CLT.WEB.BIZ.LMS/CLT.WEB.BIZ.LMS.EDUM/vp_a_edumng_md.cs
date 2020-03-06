@@ -893,6 +893,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                         ,R.MOBILE_PHONE
                                         ,R.OFFICE_PHONE
                                         ,(SELECT COMPANY_NM FROM T_COMPANY WHERE COMPANY_ID = R.COMPANY_ID) as COMPANY_NM
+                                        ,R.INS_DTIME
                                  FROM  (
                                     ";
                 xSql += @"          SELECT (U.USER_ID||'^') AS KEYS
@@ -934,6 +935,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                             ,U.OFFICE_PHONE
                                             ,U.COMPANY_ID
                                            --, S.STEP_SEQ
+                                            ,'' as INS_DTIME
                                       FROM (
                                               SELECT * 
                                                 FROM (select user_id,DEPT_CODE,DUTY_STEP,PERSONAL_NO,
@@ -1071,7 +1073,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                             ,U.MOBILE_PHONE
                                             ,U.OFFICE_PHONE
                                             ,U.COMPANY_ID
-                                           
+                                            ,TO_CHAR(R.INS_DT, 'YYYY.MM.DD HH24:MI:SS') AS INS_DTIME
 
                                            --, S.STEP_SEQ
                                       FROM T_COURSE_RESULT R
@@ -1085,7 +1087,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                                             AND R.USER_ID = F.SNO(+)
                                             " + xWhere;
                 xSql += "              ) R " + "\r\n";
-                xSql += "          ORDER BY R.DUTY_STEP, R.USER_NM_KOR, R.USER_ID " + "\r\n";
+                xSql += "          ORDER BY NVL(R.INS_DTIME, '2999.12.31 23:59:59'), R.CONFIRM DESC, R.DUTY_STEP, R.USER_NM_KOR, R.USER_ID " + "\r\n";
                 xSql += @"      ) a " + "\r\n";
                 xSql += " ) a " + "\r\n";
 
@@ -1790,6 +1792,230 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                 db = null;
             }
             return xDs; ;
+        }
+
+
+        /************************************************************
+        * Function name : GetEduConfirmList
+        * Purpose       : 교육대상자:이미확정된 대상자                
+        * Input         : string[] rParams (0: pagesize, 1: pageno)
+        * Output        : DataTable
+        *************************************************************/
+        public DataTable GetEduConfirmList(string[] rParams, CultureInfo rArgCultureInfo)
+        {
+            Database db = null;
+            DataSet xDs = new DataSet();
+            DataTable xDt = new DataTable();
+
+            string xSql = string.Empty;
+
+            try
+            {
+                db = base.GetDataBase("LMS");
+
+                string xWhere = "";
+
+                xSql = @" SELECT TO_CHAR(COURSE_BEGIN_DT, 'YYYYMMDD') AS COURSE_BEGIN_DT
+                                 , TO_CHAR(COURSE_END_DT, 'YYYYMMDD') AS COURSE_END_DT
+                            FROM T_OPEN_COURSE 
+                           WHERE OPEN_COURSE_ID='" + rParams[3] + @"' ";
+                xDt = base.ExecuteDataTable(db, xSql);
+
+                string xCourseBeginDt = Convert.ToString(xDt.Rows[0]["COURSE_BEGIN_DT"]);
+                string xCourseEndDt = Convert.ToString(xDt.Rows[0]["COURSE_END_DT"]);
+
+                xSql = @" SELECT ESS_DUTY_STEP, OPT_DUTY_WORK FROM T_COURSE WHERE COURSE_ID='" + rParams[2] + @"' ";
+                xDt = base.ExecuteDataTable(db, xSql);
+
+                string[] xStrEssDutySteps = Convert.ToString(xDt.Rows[0]["ESS_DUTY_STEP"]).Split(',');
+                string[] xStrOptDutyWorks = Convert.ToString(xDt.Rows[0]["OPT_DUTY_WORK"]).Split(',');
+
+                string xStrWhere = "";
+                if (xStrEssDutySteps.Length > 0 || xStrOptDutyWorks.Length > 0)
+                {
+                    string xStrEssDutyStep = "";
+                    if (xStrEssDutySteps.Length > 0 && !string.IsNullOrEmpty(xStrEssDutySteps[0]))
+                    {
+                        xStrEssDutyStep += " U.DUTY_STEP IN (";
+                        for (int i = 0; i < xStrEssDutySteps.Length; i++)
+                        {
+                            if (i > 0)
+                                xStrEssDutyStep += ",";
+                            xStrEssDutyStep += " '" + xStrEssDutySteps[i] + "' ";
+                        }
+                        xStrEssDutyStep += " ) ";
+                    }
+
+                    string xStrOptDutyWork = "";
+                    if (xStrOptDutyWorks.Length > 0 && !string.IsNullOrEmpty(xStrOptDutyWorks[0]))
+                    {
+                        xStrOptDutyWork += " U.DUTY_WORK IN (";
+                        for (int i = 0; i < xStrOptDutyWorks.Length; i++)
+                        {
+                            if (i > 0)
+                                xStrOptDutyWork += ",";
+                            xStrOptDutyWork += " '" + xStrOptDutyWorks[i] + "' ";
+                        }
+                        xStrOptDutyWork += " ) ";
+                    }
+
+                    if (!string.IsNullOrEmpty(xStrEssDutyStep) && !string.IsNullOrEmpty(xStrOptDutyWork))
+                    {
+                        xStrWhere = @"  AND (
+                                        " + xStrEssDutyStep + @"
+                                        OR " + xStrOptDutyWork + @"
+                                        ) ";
+                    }
+                    else if (!string.IsNullOrEmpty(xStrEssDutyStep))
+                    {
+                        xStrWhere = @"  AND (
+                                        " + xStrEssDutyStep + @"
+                                        ) ";
+                    }
+                    else if (!string.IsNullOrEmpty(xStrOptDutyWork))
+                    {
+                        xStrWhere = @"  AND (
+                                         " + xStrOptDutyWork + @"
+                                        ) ";
+                    }
+                }
+
+
+                //OPEN_COURSE_ID
+                if (!Util.IsNullOrEmptyObject(rParams[3]))
+                    xWhere += @" AND R.OPEN_COURSE_ID = '" + rParams[3] + "' " + "\r\n";
+
+
+                xSql = @"   select *
+                               from (
+                                select  rownum rnum ";
+                xSql += "               , a.*  " + "\r\n";
+                xSql += "     FROM ( " + "\r\n";
+                xSql += @"     SELECT  R.KEYS
+                                       , R.OPEN_COURSE_ID
+                                       , R.USER_ID
+                                       , R.COURSE_RESULT_SEQ
+                                       , R.DEPT_CODE
+                                       , R.DEPT_NAME
+                                       , R.DUTY_STEP
+                                       , R.STEP_NAME
+                                       , R.USER_NM_KOR
+                                       , R.ORD_FDATE";
+                if (rArgCultureInfo.Name.ToLower() == "ko-kr")
+                {
+                    xSql += @"         , (SELECT DEPT_NAME";
+                }
+                else
+                {
+                    xSql += @"         , (SELECT DEPT_ENAME";
+                }
+                //FROM HORDERDET@PUSHRMTLINK A, hdeptcode @PUSHRMTLINK B
+                xSql += @"
+                                            FROM HINDEV.HORDERDET A, HINDEV.hdeptcode B
+                                           WHERE A.A_DEPT_CODE = B.DEPT_CODE
+                                             AND A.SNO = R.USER_ID
+                                             AND A.ORD_FDATE = REPLACE(R.ORD_FDATE, '.', '')
+                                             AND ORD_KIND = 'AF8'
+                                             AND A.CONFIRM_YN = 'Y') AS B_DEPT_NAME
+                                       , R.INS_DT
+                                       , R.USER_COURSE_END_DT
+                                       , R.CONFIRM
+                                       , R.NON_APPROVAL_CD
+                                       , R.NON_APPROVAL_REMARK
+                                       , COUNT(*) OVER() TOTALRECORDCOUNT
+                                        ,R.PERSONAL_NO
+                                        ,R.USER_ADDR
+                                        ,R.MOBILE_PHONE
+                                        ,R.OFFICE_PHONE
+                                        ,(SELECT COMPANY_NM FROM T_COMPANY WHERE COMPANY_ID = R.COMPANY_ID) as COMPANY_NM
+                                        ,R.INS_DTIME
+                                 FROM  (
+                                    ";
+                xSql += @"          
+                                    --수강신청한 사람 
+                                    SELECT (R.USER_ID||'^'|| R.COURSE_RESULT_SEQ) AS KEYS
+                                           , R.OPEN_COURSE_ID
+                                           , R.USER_ID
+                                           , R.COURSE_RESULT_SEQ
+                                           , U.DEPT_CODE
+                                           , (SELECT ";
+                if (rArgCultureInfo.Name.ToLower() == "ko-kr")
+                {
+                    xSql += @"                     DEPT_NAME ";
+                }
+                else
+                {
+                    xSql += @"                     DEPT_ENAME ";
+                }
+                xSql += @"                       FROM V_HDEPTCODE WHERE DEPT_CODE = U.DEPT_CODE) AS DEPT_NAME
+                                           , U.DUTY_STEP
+                                           , (SELECT ";
+                if (rArgCultureInfo.Name.ToLower() == "ko-kr")
+                {
+                    xSql += @"                     STEP_NAME ";
+                }
+                else
+                {
+                    xSql += @"                     STEP_ENAME ";
+                }
+                xSql += @"                       FROM V_HDUTYSTEP WHERE DUTY_STEP = U.DUTY_STEP) AS STEP_NAME
+                                            ";
+                if (rArgCultureInfo.Name.ToLower() == "ko-kr")
+                {
+                    xSql += @"                    , USER_NM_KOR ";
+                }
+                else
+                {
+                    xSql += @"                    , USER_NM_ENG_FIRST || ' ' || USER_NM_ENG_LAST AS USER_NM_KOR ";
+                }
+                xSql += @"                                   
+                                           , DECODE(F.ORD_FDATE,'', '', substr(F.ORD_FDATE, 0, 4)||'.'||substr(F.ORD_FDATE, 5, 2)||'.'||substr(F.ORD_FDATE, 7, 2)) AS ORD_FDATE
+                                           , TO_CHAR(R.INS_DT, 'YYYY.MM.DD') AS INS_DT
+                                           , (SELECT TO_CHAR(MAX(USER_COURSE_END_DT), 'YYYY.MM.DD') FROM (SELECT * FROM T_OPEN_COURSE WHERE COURSE_ID='" + rParams[2] + @"' AND OPEN_COURSE_ID < '" + rParams[3] + @"') C , T_COURSE_RESULT R WHERE C.OPEN_COURSE_ID = R.OPEN_COURSE_ID AND PASS_FLG='000001' AND USER_ID = U.USER_ID GROUP BY USER_ID) AS USER_COURSE_END_DT
+                                           , R.NON_APPROVAL_CD
+                                           , TO_CHAR(R.NON_APPROVAL_REMARK) AS NON_APPROVAL_REMARK
+                                           , R.CONFIRM
+                                            ,U.PERSONAL_NO
+                                            ,U.USER_ADDR
+                                            ,U.MOBILE_PHONE
+                                            ,U.OFFICE_PHONE
+                                            ,U.COMPANY_ID
+                                           
+                                            ,TO_CHAR(R.INS_DT, 'YYYY.MM.DD HH24:MI:SS') AS INS_DTIME
+                                           --, S.STEP_SEQ
+                                      FROM T_COURSE_RESULT R
+                                            , T_USER U
+                                            , V_HDEPTCODE D
+                                            , V_HORDERDET_ORD_LATEST_OFFDATE F
+                                            --, V_HDUTYSTEP S
+                                      WHERE R.USER_ID = U.USER_ID
+                                            --AND U.DUTY_STEP = S.DUTY_STEP
+                                            AND U.DEPT_CODE = D.DEPT_CODE(+)
+                                            AND R.USER_ID = F.SNO(+)
+                                            AND R.CONFIRM = '1'
+                                            " + xWhere;
+                xSql += "              ) R " + "\r\n";
+                xSql += "          ORDER BY R.INS_DTIME, R.DUTY_STEP, R.USER_NM_KOR, R.USER_ID " + "\r\n";
+                xSql += @"      ) a " + "\r\n";
+                xSql += " ) a " + "\r\n";
+
+                xSql += string.Format(" WHERE  rnum > {0} ", Convert.ToInt32(rParams[0]) * (Convert.ToInt32(rParams[1]) - 1));
+                xSql += string.Format(" AND    rnum <= {0} ", Convert.ToInt32(rParams[0]) * Convert.ToInt32(rParams[1]));
+                
+                xDt = base.ExecuteDataTable(db, xSql);
+
+            }
+            catch (Exception ex)
+            {
+                bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
+                if (rethrow) throw;
+            }
+            finally
+            {
+                db = null;
+            }
+
+            return xDt;
         }
 
         /************************************************************
@@ -4596,9 +4822,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
             return xDt; ;
         }
         #endregion
-
         
-
         /************************************************************
         * Function name : SetReportHistory
         * Purpose       : 증서발급 History Insert

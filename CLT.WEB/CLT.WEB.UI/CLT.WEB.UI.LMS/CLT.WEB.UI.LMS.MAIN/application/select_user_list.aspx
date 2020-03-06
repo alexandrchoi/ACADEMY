@@ -165,7 +165,7 @@
                             <C1WebGrid:C1BoundColumn DataField="ORD_FDATE" HeaderText="최종선박하선일">
                                 <ItemStyle />
                             </C1WebGrid:C1BoundColumn>
-                            <C1WebGrid:C1BoundColumn DataField="INS_DT" HeaderText="교육신청일">
+                            <C1WebGrid:C1BoundColumn DataField="INS_DTIME" HeaderText="교육신청일시">
                                 <ItemStyle />
                             </C1WebGrid:C1BoundColumn>
                             <C1WebGrid:C1BoundColumn DataField="USER_COURSE_END_DT" HeaderText="이전이수일">
@@ -234,7 +234,7 @@
                             <C1WebGrid:C1BoundColumn DataField="ORD_FDATE" HeaderText="최종선박하선일">
                                 <ItemStyle />
                             </C1WebGrid:C1BoundColumn>
-                            <C1WebGrid:C1BoundColumn DataField="INS_DT" HeaderText="교육신청일">
+                            <C1WebGrid:C1BoundColumn DataField="INS_DTIME" HeaderText="교육신청일">
                                 <ItemStyle />
                             </C1WebGrid:C1BoundColumn>
                             <C1WebGrid:C1BoundColumn DataField="USER_COURSE_END_DT" HeaderText="이전이수일">
