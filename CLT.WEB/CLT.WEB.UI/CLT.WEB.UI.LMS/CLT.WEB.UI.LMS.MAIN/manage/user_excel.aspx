@@ -65,19 +65,20 @@
             if (chks.item(i).className == "chk_sel" && chks.item(i).checked)
             { 
                 var grdIds = chks.item(i).id.split('_');
-                var grdItemCtl = grdIds[0]+'_'+grdIds[1];
+                var grdItemCtl = grdIds[0] + '_' + grdIds[1] + '_' + grdIds[2] + '_' + grdIds[3];
+                //alert(grdItemCtl);
                 
                 if (isEmpty(document.getElementById(grdItemCtl+'_txtUserNMKor'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "이름" }, new string[] { "Name" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
                 if (isEmpty(document.getElementById(grdItemCtl+'_txtPesonalNo'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "주민등록번호" }, new string[] { "Registration" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
                 if (isEmpty(document.getElementById(grdItemCtl+'_txtUserNMEngFirst'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "영문명(First)" }, new string[] { "English Name(First)" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
                 if (isEmpty(document.getElementById(grdItemCtl+'_txtUserNMEngLast'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "영문명(Last)" }, new string[] { "English Name(Last)" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
-                if (isEmpty(document.getElementById(grdItemCtl+'_txtZipCode'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "우편번호" }, new string[] { "Postal Code" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
-                if (isEmpty(document.getElementById(grdItemCtl+'_txtAddress1'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "주소" }, new string[] { "Address" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
-                if (isEmpty(document.getElementById(grdItemCtl+'_txtPhone'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "연락처" }, new string[] { "Phone" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+                //if (isEmpty(document.getElementById(grdItemCtl+'_txtZipCode'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "우편번호" }, new string[] { "Postal Code" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+                //if (isEmpty(document.getElementById(grdItemCtl+'_txtAddress1'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "주소" }, new string[] { "Address" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+                //if (isEmpty(document.getElementById(grdItemCtl+'_txtPhone'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "연락처" }, new string[] { "Phone" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
                 if (isEmpty(document.getElementById(grdItemCtl+'_txtMobilePhone'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A012", new string[] { "휴대폰" }, new string[] { "Mobile Phone" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;	            
 	            
-                if (isSelect(document.getElementById(grdItemCtl+'_ddlDutyStep'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A003", new string[] { "직급" }, new string[] { "Grade" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
-                if (isSelect(document.getElementById(grdItemCtl+'_ddlTraineeClass'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A003", new string[] { "훈련생 구분" }, new string[] { "Trainee Classification" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+                //if (isSelect(document.getElementById(grdItemCtl+'_ddlDutyStep'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A003", new string[] { "직급" }, new string[] { "Grade" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+                //if (isSelect(document.getElementById(grdItemCtl+'_ddlTraineeClass'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A003", new string[] { "훈련생 구분" }, new string[] { "Trainee Classification" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
                 
             	// 주민번호 체크
 	            if (chkJumin(document.getElementById(grdItemCtl+'_txtPesonalNo'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A016", new string[] { "주민등록번호" }, new string[] { "Registration" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
@@ -86,9 +87,9 @@
                 if(isMaxLenth(document.getElementById(grdItemCtl+'_txtUserNMKor'),75,'<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A005", new string[] { "이름","75","50" }, new string[] { "Name","75","50" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
                 if(isMaxLenth(document.getElementById(grdItemCtl+'_txtUserNMEngFirst'),50,'<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A005", new string[] { "영문명(First)","50","30" }, new string[] { "Eng First Name","50","30" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
                 if(isMaxLenth(document.getElementById(grdItemCtl+'_txtUserNMEngLast'),50,'<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A005", new string[] { "영문명(Last)","50","30" }, new string[] { "Eng First Name","50","30" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
-   	            if(isMaxLenth(document.getElementById(grdItemCtl+'_txtAddress1'),100,'<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A005", new string[] { "주소","100","66" }, new string[] { "Address","100","66" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+   	            //if(isMaxLenth(document.getElementById(grdItemCtl+'_txtAddress1'),100,'<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A005", new string[] { "주소","100","66" }, new string[] { "Address","100","66" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
 	            //if(isMaxLenth(document.getElementById(grdItemCtl+'_txtAddress2'),100,'<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A005", new string[] { "주소","100","66" }, new string[] { "Address","100","66" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
-	            if(isMaxLenth(document.getElementById(grdItemCtl+'_txtPhone'),20,'<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A005", new string[] { "전화번호","20","13" }, new string[] { "전화번호","20","13" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+	            //if(isMaxLenth(document.getElementById(grdItemCtl+'_txtPhone'),20,'<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A005", new string[] { "전화번호","20","13" }, new string[] { "전화번호","20","13" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
                 if(isMaxLenth(document.getElementById(grdItemCtl+'_txtEMail'),50,'<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A005", new string[] { "E-Mail","50","30" }, new string[] { "E-Mail","50","30" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
                 if(isMaxLenth(document.getElementById(grdItemCtl+'_txtMobilePhone'),20,'<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A005", new string[] { "휴대폰 번호","20","13" }, new string[] { "Mobile Phone","20","13" }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
                 
@@ -174,72 +175,104 @@
                         </ItemTemplate>
                         <ItemStyle Width="25px" />
                     </C1WebGrid:C1TemplateColumn>
-                    <C1WebGrid:C1TemplateColumn HeaderText="이름">
+
+                    <C1WebGrid:C1TemplateColumn>
+                        <HeaderTemplate>
+                            <asp:Label ID="lblUserNMKor" runat="server" text="이름" />
+                            <span class="required"></span>
+                        </HeaderTemplate>
                         <ItemTemplate>
                             <asp:TextBox ID="txtUserNMKor" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "이름")%>' Width="60px" ></asp:TextBox>
                         </ItemTemplate>
                         <ItemStyle />
                     </C1WebGrid:C1TemplateColumn>
-                    <C1WebGrid:C1TemplateColumn HeaderText="주민등록번호(-포함)">
+
+                    <C1WebGrid:C1TemplateColumn>
+                        <HeaderTemplate>
+                            <asp:Label ID="lblPesonalNo" runat="server" text="주민등록번호(-포함)" />
+                            <span class="required"></span>
+                        </HeaderTemplate>
                         <ItemTemplate>
                             <asp:TextBox ID="txtPesonalNo" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "주민등록번호")%>' Width="110px" ></asp:TextBox>
                         </ItemTemplate>
                         <ItemStyle />
                     </C1WebGrid:C1TemplateColumn>
-                    <C1WebGrid:C1TemplateColumn HeaderText="영문(First)">
+
+                    <C1WebGrid:C1TemplateColumn>
+                        <HeaderTemplate>
+                            <asp:Label ID="lblUserNMEngFirst" runat="server" text="영문(성)" />
+                            <span class="required"></span>
+                        </HeaderTemplate>
                         <ItemTemplate>
                             <asp:TextBox ID="txtUserNMEngFirst" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "영문 First")%>' Width="60px" ></asp:TextBox>
                         </ItemTemplate>
                         <ItemStyle />
                     </C1WebGrid:C1TemplateColumn>
-                    <C1WebGrid:C1TemplateColumn HeaderText="영문(Last)">
+
+                    <C1WebGrid:C1TemplateColumn>
+                        <HeaderTemplate>
+                            <asp:Label ID="lblUserNMEngLast" runat="server" text="영문(이름)" />
+                            <span class="required"></span>
+                        </HeaderTemplate>
                         <ItemTemplate>
                             <asp:TextBox ID="txtUserNMEngLast" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "영문 Last")%>' Width="70px"></asp:TextBox>
                         </ItemTemplate>
                         <ItemStyle />
-                    </C1WebGrid:C1TemplateColumn>                            
+                    </C1WebGrid:C1TemplateColumn>     
+                    
                     <C1WebGrid:C1TemplateColumn HeaderText="우편번호(-포함)">
                         <ItemTemplate>
                             <asp:TextBox ID="txtZipCode" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "우편번호")%>' Width="85px"></asp:TextBox>
                         </ItemTemplate>
                         <ItemStyle />
                     </C1WebGrid:C1TemplateColumn>
+
                     <C1WebGrid:C1TemplateColumn HeaderText="주소">
                         <ItemTemplate>
                             <asp:TextBox ID="txtAddress1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "주소")%>' Width="165px"></asp:TextBox>
                         </ItemTemplate>
                         <ItemStyle />
                     </C1WebGrid:C1TemplateColumn>
+
                     <C1WebGrid:C1TemplateColumn HeaderText="직급">
                         <ItemTemplate>
                             <asp:DropDownList ID="ddlDutyStep" runat="server" Width="80px"></asp:DropDownList>
                         </ItemTemplate>
                         <ItemStyle />
                     </C1WebGrid:C1TemplateColumn>
+
                     <C1WebGrid:C1TemplateColumn HeaderText="연락처(-포함)">
                         <ItemTemplate>
                             <asp:TextBox ID="txtPhone" runat="server" Width="90px" Text='<%# DataBinder.Eval(Container.DataItem, "연락처")%>'/>
                         </ItemTemplate>
                         <ItemStyle />
                     </C1WebGrid:C1TemplateColumn>
+
                     <C1WebGrid:C1TemplateColumn HeaderText="E-Mail">
                         <ItemTemplate>
                             <asp:TextBox ID="txtEMail" runat="server" Width="110px" Text='<%# DataBinder.Eval(Container.DataItem, "E-Mail")%>'/>
                         </ItemTemplate>
                         <ItemStyle />
-                    </C1WebGrid:C1TemplateColumn>                                                        
-                    <C1WebGrid:C1TemplateColumn HeaderText="휴대폰(-포함)">
+                    </C1WebGrid:C1TemplateColumn>           
+                    
+                    <C1WebGrid:C1TemplateColumn>
+                        <HeaderTemplate>
+                            <asp:Label ID="lblMobilePhone" runat="server" text="휴대폰(-포함)" />
+                            <span class="required"></span>
+                        </HeaderTemplate>
                         <ItemTemplate>
                             <asp:TextBox ID="txtMobilePhone" runat="server" Width="90px" Text='<%# DataBinder.Eval(Container.DataItem, "휴대폰")%>'/>
                         </ItemTemplate>
                         <ItemStyle />
-                    </C1WebGrid:C1TemplateColumn>                                                                                                             
+                    </C1WebGrid:C1TemplateColumn>           
+                    
                     <C1WebGrid:C1TemplateColumn HeaderText="훈련생 구분">
                         <ItemTemplate>
                             <asp:DropDownList ID="ddlTraineeClass" runat="server" Width="110px" ></asp:DropDownList>
                         </ItemTemplate>
                         <ItemStyle />
-                    </C1WebGrid:C1TemplateColumn>                                                                                                                
+                    </C1WebGrid:C1TemplateColumn>
+                    
                     <C1WebGrid:C1TemplateColumn HeaderText="고용보험 취득일">
                         <ItemTemplate>
                             <asp:TextBox ID="txtAcquisition" runat="server" MaxLength="10" Width="100px" Text='<%# DataBinder.Eval(Container.DataItem, "고용보험취득일")%>'/>

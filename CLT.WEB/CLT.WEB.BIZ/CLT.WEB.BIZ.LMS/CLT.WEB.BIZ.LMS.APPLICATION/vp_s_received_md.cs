@@ -78,7 +78,8 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                           , (SELECT COUNT(R.USER_ID) FROM T_COURSE_RESULT R, T_USER U 
                              WHERE R.OPEN_COURSE_ID = O.OPEN_COURSE_ID
                                AND R.USER_ID = U.USER_ID
-                               AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_COMPANY WHERE COMPANY_KIND = '000001')
+                               --AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_COMPANY WHERE COMPANY_KIND = '000001')
+                               AND R.CONFIRM = '1'
                             ) 
                             || ' / ' || C.CLASS_MAN_COUNT AS CLASS_MAN_COUNT
                             ";
@@ -89,7 +90,8 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                           , (SELECT COUNT(R.USER_ID) FROM T_COURSE_RESULT R, T_USER U 
                              WHERE R.OPEN_COURSE_ID = O.OPEN_COURSE_ID
                                AND R.USER_ID = U.USER_ID
-                               AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_USER WHERE USER_ID = '{0}') 
+                               --AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_USER WHERE USER_ID = '{0}') 
+                               AND R.CONFIRM = '1'
                             ) 
                             || ' / ' || C.CLASS_MAN_COUNT AS CLASS_MAN_COUNT
                             ";
@@ -178,7 +180,8 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                           , (SELECT COUNT(R.USER_ID) FROM T_COURSE_RESULT R, T_USER U 
                              WHERE R.OPEN_COURSE_ID = O.OPEN_COURSE_ID
                                AND R.USER_ID = U.USER_ID
-                               AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_COMPANY WHERE COMPANY_KIND = '000001')
+                               --AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_COMPANY WHERE COMPANY_KIND = '000001')
+                               AND R.CONFIRM = '1'
                             ) 
                             || ' / ' || C.CLASS_MAN_COUNT AS CLASS_MAN_COUNT
                             ";
@@ -189,7 +192,8 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                           , (SELECT COUNT(R.USER_ID) FROM T_COURSE_RESULT R, T_USER U 
                              WHERE R.OPEN_COURSE_ID = O.OPEN_COURSE_ID
                                AND R.USER_ID = U.USER_ID
-                               AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_USER WHERE USER_ID = '{0}') 
+                               --AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_USER WHERE USER_ID = '{0}') 
+                               AND R.CONFIRM = '1'
                             ) 
                             || ' / ' || C.CLASS_MAN_COUNT AS CLASS_MAN_COUNT
                             ";
@@ -305,11 +309,12 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                             FROM T_OPEN_COURSE O, T_COURSE_RESULT C, T_USER U
                             WHERE O.OPEN_COURSE_ID = C.OPEN_COURSE_ID 
                               AND C.USER_ID = U.USER_ID 
-                              AND O.OPEN_COURSE_ID = '{0}' ";
+                              AND O.OPEN_COURSE_ID = '{0}'
+                              AND C.CONFIRM = '1' ";
 
-                    //그룹사직원일 경우.. 해당 그룹사에 속한 유저 정보 모두 보이게.. 
-                    //그룹사 직원이 아닐 경우 자기 COMPANY와 동일한 유저만 보이게.. 
-                    if(rParams[4] == "000001")                    
+                //그룹사직원일 경우.. 해당 그룹사에 속한 유저 정보 모두 보이게.. 
+                //그룹사 직원이 아닐 경우 자기 COMPANY와 동일한 유저만 보이게.. 
+                if (rParams[4] == "000001")                    
                         xSql += @" AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_COMPANY WHERE COMPANY_KIND = '000001') ";                     
                     else 
                         xSql += @" AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_USER WHERE USER_ID = '{1}') "; 
@@ -803,7 +808,36 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
             return xRtn;//리터값
 
         }
-        #endregion 
+        #endregion
+        
+        public string GetCompareRcvCount(string[] rParams)
+        {
+            string xRtn = Boolean.FalseString;
+            try
+            {
+                DataTable xDt = null;
+                string xSql = string.Empty;
+                xSql += " SELECT TO_NUMBER(NVL(C.CLASS_MAN_COUNT, '0')) - (SELECT COUNT(DISTINCT R.USER_ID) FROM T_COURSE_RESULT R WHERE R.OPEN_COURSE_ID = O.OPEN_COURSE_ID AND R.CONFIRM = '1') AS ODD_MAN_COUNT ";
+                xSql += "   FROM t_open_course O ";
+                xSql += "  INNER JOIN t_course C ";
+                xSql += "     ON O.course_id = C.course_id ";
+                xSql += "  WHERE 1 = 1 ";
+                xSql += string.Format("    AND O.open_course_id = '{0}'", rParams[0]); // 개설과정 ID
+                xDt = base.ExecuteDataTable("LMS", xSql);
 
+                if (Convert.ToInt16(xDt.Rows[0][0]) <= 0)
+                    xRtn = Boolean.FalseString;
+                else
+                {
+                    xRtn = Boolean.TrueString;
+                }
+            }
+            catch (Exception ex)
+            {
+                bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
+                if (rethrow) throw;
+            }
+            return xRtn;
+        }
     }
 }

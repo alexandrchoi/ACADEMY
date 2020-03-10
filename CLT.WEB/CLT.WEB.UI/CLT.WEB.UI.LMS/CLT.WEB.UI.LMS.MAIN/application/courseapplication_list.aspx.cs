@@ -190,7 +190,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                         e.Item.Cells[4].Text = "수강신청기간";
                         e.Item.Cells[5].Text = "교육기간";
                         e.Item.Cells[6].Text = "교육일수";
-                        e.Item.Cells[7].Text = "정원";
+                        e.Item.Cells[7].Text = "신청/정원";
                         e.Item.Cells[8].Text = "상태";
                     }
                     else

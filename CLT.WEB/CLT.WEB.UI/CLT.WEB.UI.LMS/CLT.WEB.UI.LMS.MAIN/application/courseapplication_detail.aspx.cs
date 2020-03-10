@@ -86,6 +86,11 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                     //string xScriptContent = "<script>alert('잘못된 경로를 통해 접근하였습니다.');self.close();</script>";
                     //ScriptHelper.ScriptBlock(this, "courseapplication_detail", xScriptContent);
                 }
+
+                if (!CheckData())
+                    btnApplication.OnClientClick = "return confirm('" + MsgInfo.GetMsg("A027", new string[] { "수강신청 인원이 정원에 초과되었습니다. 그래도 수강신청" }, 
+                                                                                               new string[] { "The number of students for the course has been exceeded. Course Registration" },
+                                                                                               Thread.CurrentThread.CurrentCulture) + "');";
             }
             catch (Exception ex)
             {
@@ -94,6 +99,34 @@ namespace CLT.WEB.UI.LMS.APPLICATION
         }
         #endregion
 
+        #region public bool CheckData(string course_id)
+        public bool CheckData()
+        {
+            try
+            {
+                string xExcessChk = Boolean.TrueString;
+
+                // 직책 or 직급이 수강신청 대상에 해당하는 경우를 찾는다.
+                string[] xChkParams = new string[2];
+                xChkParams[0] = Request.QueryString["ropen_course_id"].ToString();
+                xChkParams[1] = Session["USER_ID"].ToString();
+
+                xExcessChk = SBROKER.GetString("CLT.WEB.BIZ.LMS.APPLICATION.vp_g_courseapplication_md",
+                            "GetCompareAppCount",
+                             LMS_SYSTEM.APPLICATION,
+                            "CLT.WEB.UI.LMS.APPLICATION", (object)xChkParams);
+
+                if (xExcessChk == Boolean.TrueString)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                return true;
+            }
+        }
+        #endregion
 
         /************************************************************
         * Function name : btnApplication_OnClick
@@ -265,8 +298,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
             }
         }
         #endregion
-
-
+        
         /************************************************************
         * Function name : btnList_OnClick
         * Purpose       : 수강신청 List Click 이벤트
@@ -287,8 +319,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
             }
         }
         #endregion
-
-
+        
         /************************************************************
         * Function name : BindData
         * Purpose       : 수강신청정보 바인딩을 위한 처리

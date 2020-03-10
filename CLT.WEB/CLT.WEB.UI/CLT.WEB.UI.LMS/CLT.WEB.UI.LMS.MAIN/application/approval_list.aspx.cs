@@ -369,26 +369,30 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                         e.Item.Cells[1].Text = "No.";
                         e.Item.Cells[2].Text = "교육유형";
                         e.Item.Cells[3].Text = "과정명";
-                        e.Item.Cells[4].Text = "교육기간";
-                        e.Item.Cells[5].Text = "차수";
-                        e.Item.Cells[6].Text = "신청총원";
-                        e.Item.Cells[7].Text = "승인";
-                        e.Item.Cells[8].Text = "미승인";
-                        e.Item.Cells[9].Text = "교육입과";
-                        e.Item.Cells[10].Text = "실시신고";
+                        e.Item.Cells[4].Text = "차수";
+                        e.Item.Cells[5].Text = "교육기간";
+                        e.Item.Cells[6].Text = "정원";
+                        e.Item.Cells[7].Text = "신청";
+                        e.Item.Cells[8].Text = "접수";
+                        e.Item.Cells[9].Text = "승인";
+                        e.Item.Cells[10].Text = "미승인";
+                        e.Item.Cells[11].Text = "교육입과";
+                        e.Item.Cells[12].Text = "실시신고";
                     }
                     else
                     {
                         e.Item.Cells[1].Text = "No.";
                         e.Item.Cells[2].Text = "Course Type";
                         e.Item.Cells[3].Text = "Course Name";
-                        e.Item.Cells[4].Text = "Period";
-                        e.Item.Cells[5].Text = "SEQ";
+                        e.Item.Cells[4].Text = "SEQ";
+                        e.Item.Cells[5].Text = "Period";
                         e.Item.Cells[6].Text = "Total";
-                        e.Item.Cells[7].Text = "Approval";
-                        e.Item.Cells[8].Text = "Reject";
-                        e.Item.Cells[9].Text = "Attendance";
-                        e.Item.Cells[10].Text = "Report";
+                        e.Item.Cells[7].Text = "Apply";
+                        e.Item.Cells[8].Text = "Receipt";
+                        e.Item.Cells[9].Text = "Approval";
+                        e.Item.Cells[10].Text = "Reject";
+                        e.Item.Cells[11].Text = "Attendance";
+                        e.Item.Cells[12].Text = "Report";
                     }
                 }
             }

@@ -315,7 +315,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                     xHeader[4] = "수강신청기간";
                     xHeader[5] = "교육기간";
                     xHeader[6] = "교육일수";
-                    xHeader[7] = "정원";
+                    xHeader[7] = "접수/정원";
                 }
                 else
                 {
@@ -364,7 +364,7 @@ namespace CLT.WEB.UI.LMS.APPLICATION
                         e.Item.Cells[6].Text = "수강신청기간";
                         e.Item.Cells[7].Text = "교육기간";
                         e.Item.Cells[8].Text = "교육일수";
-                        e.Item.Cells[9].Text = "정원";
+                        e.Item.Cells[9].Text = "접수/정원";
                     }
                     else
                     {

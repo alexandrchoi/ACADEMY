@@ -1302,8 +1302,8 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                         //2014.03.20 seojw(문서영 대리 요청)
                         //법인사 수강자인 경우 주민번호로 기등록된 데이터 있는지 검색
                         //만약 데이터 있다면 insert가 아닌 update 처리 
-                        if (GetUserDup(obj).Rows.Count == 0)
-                        {
+                        //if (GetUserDup(obj).Rows.Count == 0)
+                        //{
                             xUserID = GetUserIDOfCode(new string[] { xRow["COMPANY_ID"].ToString() }, xCmdLMS);
 
                             xSql = "INSERT INTO t_user  (user_id, " +   // 사용자 ID
@@ -1348,7 +1348,7 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                             xSql += string.Format(" '{0}', ", xRow["PWD"]);  // 비밀번호
                             xSql += string.Format(" '{0}', ", string.Empty);  // 사번
                             xSql += string.Format(" '{0}', ", xRow["USER_NM_KOR"].ToString());  // 사용자명(한글)
-                            xSql += string.Format(" '{0}', ", xRow["PERSONAL_NO"].ToString());  // 주민번호  
+                            xSql += string.Format(" HINDEV.CRYPTO_AES256.ENC_AES('{0}'), ", xRow["PERSONAL_NO"].ToString());  // 주민번호  
                             xSql += string.Format(" '{0}', ", xRow["USER_NM_ENG_FIRST"].ToString());  // 사용자명 영문(first)
                             xSql += string.Format(" '{0}', ", xRow["USER_NM_ENG_LAST"].ToString());  // 사용자명 영문(last)
                             xSql += string.Format(" '{0}', ", xRow["DUTY_STEP"].ToString());  // 직급  
@@ -1393,6 +1393,7 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
 
                             xSql += " SYSDATE, "; // 수정일자
                             xSql += string.Format(" '{0}') ", xRow["TRAINEE_CLASS"].ToString());  // 훈련생구분
+                        /*
                         }
                         else
                         { 
@@ -1425,7 +1426,7 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                             xSql += string.Format(" WHERE UPPER(user_id) = UPPER('{0}') ", GetUserDup(obj).Rows[0]["USER_ID"].ToString());
 
                         }
-                        
+                        */
 
                         xCmdLMS.CommandText = xSql;
                         base.Execute(db, xCmdLMS, xTransLMS);

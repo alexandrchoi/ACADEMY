@@ -307,7 +307,7 @@ namespace CLT.WEB.UI.LMS.MANAGE
                     xCompanyID = ViewState["COMPANY_ID"].ToString();  //Request.QueryString["COMPANY_ID"].ToString().ToUpper();
                 }
 
-                string[] xParams = new string[18];
+                string[] xParams = new string[20];
                 xParams[0] = xCompanyID;  // 업체ID
                 xParams[1] = this.txtCompanyCode.Text.Replace("'", "''"); // 업체코드
                 xParams[2] = this.txtCompanyName.Text.Replace("'", "''"); // 업체명
@@ -324,9 +324,11 @@ namespace CLT.WEB.UI.LMS.MANAGE
                 xParams[13] = this.txtPhone.Text.Replace("'", "''"); // 전화번호
                 xParams[14] = this.txtFax.Text.Replace("'", "''"); // 팩스번호
                 xParams[15] = Session["USER_ID"].ToString();  // 사용자 ID
-                xParams[16] = this.ddlCompanyKind.SelectedItem.Value; // 회사구분
-                xParams[17] = this.txtCompanyEngName.Text.Replace("'", "''"); // 회사명(영문)
-                
+                xParams[16] = ddlCompanyKind.SelectedItem.Value; // 회사구분
+                xParams[17] = txtCompanyEngName.Text.Replace("'", "''"); // 회사명(영문)
+                xParams[18] = txtEmpCountVessel.Text.Replace("'", "''");  // 근로자수(해상직원)
+                xParams[19] = txtEmpCountShore.Text.Replace("'", "''");  // 근로자수(육상직원)
+
                 if (ViewState["EDITMODE"].ToString() == "NEW")  // EDIT Mode가 아니면 INSERT
                 {
                     //2014.03.19 seojw
@@ -436,6 +438,8 @@ namespace CLT.WEB.UI.LMS.MANAGE
                         this.txtAddr2.Text = address.Trim();
                     xCnount++;
                 }
+                this.txtEmpCountShore.Text = xDr["emp_cnt_shore"].ToString();
+                this.txtEmpCountVessel.Text = xDr["emp_cnt_vessel"].ToString();
             }
             catch (Exception ex)
             {

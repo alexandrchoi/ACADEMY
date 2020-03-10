@@ -97,7 +97,7 @@
                         <ItemStyle Width="10%" />
                     </C1WebGrid:C1BoundColumn>
                                     
-                    <C1WebGrid:C1BoundColumn DataField="enter_dt" DataFormatString="{0:yyyy.MM.dd}">
+                    <C1WebGrid:C1BoundColumn DataField="enter_dt">
                         <ItemStyle Width="13%" />
                     </C1WebGrid:C1BoundColumn>                                                                                                                          
                                     

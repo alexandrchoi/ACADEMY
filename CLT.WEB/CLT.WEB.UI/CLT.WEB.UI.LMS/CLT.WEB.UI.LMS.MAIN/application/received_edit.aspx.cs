@@ -89,6 +89,12 @@ namespace CLT.WEB.UI.LMS.APPLICATION
 
                 base.pRender(this.Page, new object[,] { { this.btnDelete, "D" }, { this.btnSave, "E" } }, Convert.ToString(Request.QueryString["MenuCode"]));
 
+
+                if (!CheckData())
+                    btnSave.OnClientClick = "return confirm('" + MsgInfo.GetMsg("A027", new string[] { "접수 인원이 정원에 초과되었습니다. 그래도 접수" },
+                                                                                        new string[] { "The number of students for the course has been exceeded. Course Receipt" },
+                                                                                        Thread.CurrentThread.CurrentCulture) + "');";
+
             }
             catch (Exception ex)
             {
@@ -216,6 +222,35 @@ namespace CLT.WEB.UI.LMS.APPLICATION
             catch (Exception ex)
             {
                 base.NotifyError(ex);
+            }
+        }
+        #endregion
+
+        #region public bool CheckData(string course_id)
+        public bool CheckData()
+        {
+            try
+            {
+                string xExcessChk = Boolean.TrueString;
+
+                // 직책 or 직급이 수강신청 대상에 해당하는 경우를 찾는다.
+                string[] xChkParams = new string[2];
+                xChkParams[0] = Request.QueryString["OPEN_COURSE_ID"].ToString();
+                xChkParams[1] = Session["USER_ID"].ToString();
+
+                xExcessChk = SBROKER.GetString("CLT.WEB.BIZ.LMS.APPLICATION.vp_s_received_md",
+                                                "GetCompareRcvCount",
+                                                 LMS_SYSTEM.APPLICATION,
+                                                "CLT.WEB.UI.LMS.APPLICATION", (object)xChkParams);
+
+                if (xExcessChk == Boolean.TrueString)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                return true;
             }
         }
         #endregion

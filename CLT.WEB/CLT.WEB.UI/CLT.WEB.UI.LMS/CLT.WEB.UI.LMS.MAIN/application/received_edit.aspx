@@ -73,9 +73,12 @@
                         <ItemStyle Width="0%" />
                     </C1WebGrid:C1BoundColumn>   
                                 
-                    <C1WebGrid:C1BoundColumn DataField="rnum">
+                    <C1WebGrid:C1TemplateColumn >
+                        <ItemTemplate>
+                            <%# Container.DataItemIndex + 1 + this.PageSize * (this.CurrentPageIndex - 1)%>
+                        </ItemTemplate> 
                         <ItemStyle Width="5%" />
-                    </C1WebGrid:C1BoundColumn>   
+                    </C1WebGrid:C1TemplateColumn>    
                                     
                     <C1WebGrid:C1BoundColumn DataField="personal_no">
                         <ItemStyle Width="15%" />

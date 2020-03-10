@@ -283,6 +283,22 @@
                         <asp:TextBox ID="txtAddr2" runat="server" CssClass="w100per" />
                     </td>
                 </tr>
+                    
+                <tr>
+                    <th scope="row">
+                        <asp:Label ID="lblEmpCountVessel" runat="server" Text="근로자수(해상직원)" meta:resourcekey="lblEmpCountVessel" />
+                    </th>
+                    <td>
+                        <asp:TextBox ID="txtEmpCountVessel" runat="server" CssClass="w100per" onkeypress="return isNumberKey(event)" />
+                    </td>
+                    <th scope="row">
+                        <asp:Label ID="lblEmpCountShore" runat="server" Text="근로자수(육상직원)" meta:resourcekey="lblEmpCountShore" />
+                    </th>
+                    <td>
+                        <asp:TextBox ID="txtEmpCountShore" runat="server" CssClass="w100per" onkeypress="return isNumberKey(event)" />
+                    </td>
+                </tr>
+
                 </tbody>
             </table>
         

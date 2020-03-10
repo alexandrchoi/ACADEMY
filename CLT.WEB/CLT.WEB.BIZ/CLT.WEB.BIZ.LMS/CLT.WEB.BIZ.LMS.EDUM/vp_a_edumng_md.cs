@@ -2291,7 +2291,9 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                         }
                         xSql += @"          , TO_CHAR(O.COURSE_BEGIN_DT,'YYYY.MM.DD') ||'~'|| TO_CHAR(O.COURSE_END_DT,'YYYY.MM.DD') AS COURSE_DATE
                                             , O.COURSE_SEQ
-                                            , (SELECT COUNT(*) FROM T_COURSE_RESULT R, T_USER U WHERE R.CONFIRM='1' AND R.USER_ID=U.USER_ID AND R.OPEN_COURSE_ID = O.OPEN_COURSE_ID) AS CNT_TOT                                     --신청총원
+                                            , C.CLASS_MAN_COUNT
+                                            , (SELECT COUNT(*) FROM T_COURSE_RESULT R, T_USER U WHERE R.USER_ID=U.USER_ID AND R.OPEN_COURSE_ID = O.OPEN_COURSE_ID) AS CNT_APP                                     --신청
+                                            , (SELECT COUNT(*) FROM T_COURSE_RESULT R, T_USER U WHERE R.CONFIRM='1' AND R.USER_ID=U.USER_ID AND R.OPEN_COURSE_ID = O.OPEN_COURSE_ID) AS CNT_RCV                                     --접수
                                             , (SELECT COUNT(*) FROM T_COURSE_RESULT R, T_USER U WHERE R.CONFIRM='1' AND R.USER_ID=U.USER_ID AND R.OPEN_COURSE_ID = O.OPEN_COURSE_ID AND R.APPROVAL_FLG = '000001') AS CNT_APPR        --승인
                                             , (SELECT COUNT(*) FROM T_COURSE_RESULT R, T_USER U WHERE R.CONFIRM='1' AND R.USER_ID=U.USER_ID AND R.OPEN_COURSE_ID = O.OPEN_COURSE_ID AND R.APPROVAL_FLG != '000001') AS CNT_NONAPPR     --미승인
                                             , (SELECT COUNT(*) FROM T_COURSE_RESULT R, T_USER U WHERE R.CONFIRM='1' AND R.USER_ID=U.USER_ID AND R.OPEN_COURSE_ID = O.OPEN_COURSE_ID AND R.COURSE_START_FLG = 'Y') AS CNT_IN                  --교육입과

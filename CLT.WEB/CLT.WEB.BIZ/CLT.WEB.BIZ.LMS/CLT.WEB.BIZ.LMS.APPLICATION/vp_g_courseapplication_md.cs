@@ -84,10 +84,10 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                 xSql += "                         AND open_course_id = opencour.open_course_id ";
                 xSql += string.Format("           AND user_id = '{0}') approval_flg, ", rParams[2]);  // 사용자 ID
                 xSql += "          opencour.open_course_id ";
-                xSql += " , (SELECT COUNT(R.USER_ID) FROM T_COURSE_RESULT R, T_USER U  ";
+                xSql += " , (SELECT COUNT(DISTINCT R.USER_ID) FROM T_COURSE_RESULT R, T_USER U  ";
                 xSql += "    WHERE R.OPEN_COURSE_ID = opencour.OPEN_COURSE_ID ";
                 xSql += "      AND R.USER_ID = U.USER_ID ";
-                xSql += "      AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_USER WHERE USER_ID = '" + rParams[2] + "')  ";
+                //xSql += "      AND U.COMPANY_ID IN (SELECT COMPANY_ID FROM T_USER WHERE USER_ID = '" + rParams[2] + "')  ";
                 xSql += "   ) || ' / ' || cour.CLASS_MAN_COUNT AS CLASS_MAN_COUNT ";
                 xSql += "   FROM t_open_course opencour ";
                 xSql += "   INNER JOIN t_course cour ";
@@ -545,6 +545,36 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                 {
                     if (!string.IsNullOrEmpty(xDt.Rows[0]["approval_code"].ToString()))
                         xRtn = Boolean.TrueString;
+                }
+            }
+            catch (Exception ex)
+            {
+                bool rethrow = ExceptionPolicy.HandleException(ex, "Propagate Policy");
+                if (rethrow) throw;
+            }
+            return xRtn;
+        }
+
+        public string GetCompareAppCount(string[] rParams)
+        {
+            string xRtn = Boolean.FalseString;
+            try
+            {
+                DataTable xDt = null;
+                string xSql = string.Empty;
+                xSql += " SELECT TO_NUMBER(NVL(C.CLASS_MAN_COUNT, '0')) - (SELECT COUNT(DISTINCT R.USER_ID) FROM T_COURSE_RESULT R WHERE R.OPEN_COURSE_ID = O.OPEN_COURSE_ID) AS ODD_MAN_COUNT ";
+                xSql += "   FROM t_open_course O ";
+                xSql += "  INNER JOIN t_course C ";
+                xSql += "     ON O.course_id = C.course_id ";
+                xSql += "  WHERE 1 = 1 ";
+                xSql += string.Format("    AND O.open_course_id = '{0}'", rParams[0]); // 개설과정 ID
+                xDt = base.ExecuteDataTable("LMS", xSql);
+
+                if (Convert.ToInt16(xDt.Rows[0][0]) <= 0)
+                    xRtn = Boolean.FalseString;
+                else
+                {
+                    xRtn = Boolean.TrueString;
                 }
             }
             catch (Exception ex)

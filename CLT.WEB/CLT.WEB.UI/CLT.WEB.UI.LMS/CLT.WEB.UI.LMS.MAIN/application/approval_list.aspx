@@ -97,26 +97,32 @@
                             <asp:HyperLink ID="hlkCourseNM" runat="server"><%# DataBinder.Eval(Container.DataItem, "COURSE_NM")%></asp:HyperLink>
                         </ItemTemplate>
                     </C1WebGrid:C1TemplateColumn>
+                    <C1WebGrid:C1BoundColumn DataField="COURSE_SEQ" HeaderText="차수">
+                        <ItemStyle Width="5%"/>
+                    </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1TemplateColumn HeaderText="교육기간">
                         <ItemStyle Width="12%"/>
                         <ItemTemplate>
                             <asp:Label ID="lblCourseDate" runat="server"><%# DataBinder.Eval(Container.DataItem, "COURSE_DATE")%></asp:Label>
                         </ItemTemplate>
                     </C1WebGrid:C1TemplateColumn>
-                    <C1WebGrid:C1BoundColumn DataField="COURSE_SEQ" HeaderText="차수">
-                        <ItemStyle Width="5%"/>
+                    <C1WebGrid:C1BoundColumn DataField="CLASS_MAN_COUNT" HeaderText="정원">
+                        <ItemStyle Width="6%"/>
                     </C1WebGrid:C1BoundColumn>
-                    <C1WebGrid:C1BoundColumn DataField="CNT_TOT" HeaderText="신청총원">
-                        <ItemStyle Width="7%"/>
+                    <C1WebGrid:C1BoundColumn DataField="CNT_APP" HeaderText="신청">
+                        <ItemStyle Width="6%"/>
+                    </C1WebGrid:C1BoundColumn>
+                    <C1WebGrid:C1BoundColumn DataField="CNT_RCV" HeaderText="접수">
+                        <ItemStyle Width="6%"/>
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="CNT_APPR" HeaderText="승인">
-                        <ItemStyle Width="5%"/>
+                        <ItemStyle Width="6%"/>
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="CNT_NONAPPR" HeaderText="미승인">
                         <ItemStyle Width="6%"/>
                     </C1WebGrid:C1BoundColumn>
-                    <C1WebGrid:C1BoundColumn DataField="CNT_IN" HeaderText="교육입과">
-                        <ItemStyle Width="7%"/>
+                    <C1WebGrid:C1BoundColumn DataField="CNT_IN" HeaderText="입과">
+                        <ItemStyle Width="6%"/>
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1TemplateColumn HeaderText="실시신고" Visible="false">
                         <ItemStyle Width="8%"/>
