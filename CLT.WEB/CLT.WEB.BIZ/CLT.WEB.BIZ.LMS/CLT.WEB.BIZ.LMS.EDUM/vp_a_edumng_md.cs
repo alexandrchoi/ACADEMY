@@ -414,12 +414,17 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                 xSql += "                   , O.EDUCATIONAL_ORG ";
                 //주민번호
                 xSql += "                   , TRIM(REPLACE(U.PERSONAL_NO,'-','')) PERSONAL_NO ";
+
+                xSql += "                   , O.course_seq ";
+                xSql += "                   , p.company_nm ";
                 xSql += @"            FROM  t_open_course o
                                             , t_course c
                                             , (select * from t_course_result where APPROVAL_FLG = '000001' and PASS_FLG = '000001') r --수료현황
-                                            , t_user u   " + "\r\n";
+                                            , t_user u   
+                                            , t_company p   " + "\r\n";
                 xSql += @"            WHERE o.course_id = c.course_id
                                             and o.open_course_id = r.open_course_id
+                                            and u.company_id = p.company_id(+)
                                             and r.user_id = u.user_id " + "\r\n";
 
                 //교육기간
@@ -455,7 +460,7 @@ namespace CLT.WEB.BIZ.LMS.EDUM
                     xSql += @" AND r.non_pass_cd = '" + Convert.ToString(rRow["non_pass_cd"]) + "' " + "\r\n";
 
                 //xSql += "          ORDER BY o.course_begin_dt desc, u.user_nm_kor  " + "\r\n";
-                xSql += "            ORDER BY DUTY_STEP, USER_NM_KOR, USER_ID " + "\r\n";
+                xSql += "            ORDER BY NVL(r.upt_dt, r.ins_dt) desc, DUTY_STEP, USER_NM_KOR, USER_ID " + "\r\n";
                 xSql += "          ) a " + "\r\n";
                 xSql += "          )  " + "\r\n";
                 xSql += string.Format(" WHERE 1=1 " + "\r\n");

@@ -84,8 +84,8 @@
                             <%# Container.DataItemIndex + 1 + this.PageSize * (this.CurrentPageIndex - 1)%>
                         </ItemTemplate>
                     </C1WebGrid:C1TemplateColumn>
-                    <C1WebGrid:C1BoundColumn DataField="user_id" HeaderText="사번">
-                        <ItemStyle Width="10%"/>
+                    <C1WebGrid:C1BoundColumn DataField="company_nm" HeaderText="회사명">
+                        <ItemStyle CssClass="left" Width="12%"/>
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="step_name" HeaderText="직급">
                         <ItemStyle Width="5%"/>
@@ -94,7 +94,10 @@
                         <ItemStyle Width="5%"/>
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="course_nm" HeaderText="과정명">
-                        <ItemStyle CssClass="left" Width="45%"/>
+                        <ItemStyle CssClass="left" Width=""/>
+                    </C1WebGrid:C1BoundColumn>
+                    <C1WebGrid:C1BoundColumn DataField="course_seq" HeaderText="차수">
+                        <ItemStyle Width="7%"/>
                     </C1WebGrid:C1BoundColumn>
                     <C1WebGrid:C1BoundColumn DataField="course_dt" HeaderText="교육기간">
                         <ItemStyle Width="15%"/>

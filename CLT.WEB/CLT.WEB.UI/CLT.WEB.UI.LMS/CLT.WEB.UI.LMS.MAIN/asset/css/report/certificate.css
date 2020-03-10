@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 /*
 
@@ -218,7 +218,7 @@ body {
 .cert-box .graduate-date li .edu-date,
 .cert-box .graduate-date li .issue-date {
     display:inline-block;
-    width:80mm;
+    width:85mm;
     text-align:center;
 }
 footer {

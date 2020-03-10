@@ -284,7 +284,7 @@ namespace CLT.WEB.UI.LMS.MYPAGE
                 xParams[15] = " ";  // 업체 연락처
                 xParams[16] = " ";  // 업체 담당자
                 xParams[17] = "000004";  // 상태 승인대기
-                xParams[18] = " ";  // 회사ID
+                xParams[18] = "WEB";  // 회사ID
                 xParams[19] = txtAcquisition.Text.Replace(".", "").Trim() == string.Empty ? null : txtAcquisition.Text; //고용보험취득일
                 xParams[20] = "000010";  // 사용자그룹
                 xParams[21] = " "; // 신분 //socialpos

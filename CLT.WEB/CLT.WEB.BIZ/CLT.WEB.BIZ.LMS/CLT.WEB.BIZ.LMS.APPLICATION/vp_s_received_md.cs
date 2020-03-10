@@ -419,6 +419,7 @@ namespace CLT.WEB.BIZ.LMS.APPLICATION
                     xSql += " WHERE UD.COMPANY_ID IN (SELECT COMPANY_ID FROM T_USER WHERE USER_ID = '{0}') ";
 
                 xSql += " AND UPPER(UD.USER_NM_KOR) LIKE '%{1}%' ";
+                xSql += " ORDER BY NVL(UD.UPT_DT, UD.INS_DT) ";
                 xSql += @" ) O
                     )
                     ";

@@ -291,7 +291,9 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                 {
                     // 암호화 모듈제거
                     //xSql = "SELECT RNUM, USER_NO, USER_NM_KOR, SUBSTRB(DAMO.DEC_VARCHAR('LMS','T_USER','PERSONAL_NO',SEC_PERSONAL_NO),1,14) PERSONAL_NO, USER_GROUP, COMPANY_NM, MOBILE_PHONE, STATUS, DUTYSTEP, SOCIALPOS, TRAINEE_CLASS, USER_ID, USER_NM_ENG, STATUSVALUE, TOTALRECORDCOUNT, ENTER_DT FROM ( ";
-                    xSql = "SELECT RNUM, USER_NO, USER_NM_KOR, PERSONAL_NO, USER_GROUP, COMPANY_NM, MOBILE_PHONE, STATUS, DUTYSTEP, SOCIALPOS, TRAINEE_CLASS, USER_ID, USER_NM_ENG, STATUSVALUE, TOTALRECORDCOUNT, ENTER_DT, dept_nm,email_id,edu_cnt,ins_dt FROM ( ";
+                    xSql = "SELECT RNUM, USER_NO, USER_NM_KOR, " +
+                           " REGEXP_REPLACE(HINDEV.CRYPTO_AES256.DEC_AES(PERSONAL_NO),'\\d','*', 9) AS PERSONAL_NO, " +
+                    "USER_GROUP, COMPANY_NM, MOBILE_PHONE, STATUS, DUTYSTEP, SOCIALPOS, TRAINEE_CLASS, USER_ID, USER_NM_ENG, STATUSVALUE, TOTALRECORDCOUNT, ENTER_DT, dept_nm,email_id,edu_cnt,ins_dt FROM ( ";
                     xSql += "    SELECT rownum rnum, b.* FROM ( ";
                 }
                 else
@@ -300,14 +302,16 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
 
                     // 암호화 모듈제거
                     //xSql = "SELECT USER_ID, USER_NM_KOR, SUBSTRB(DAMO.DEC_VARCHAR('LMS','T_USER','PERSONAL_NO',SEC_PERSONAL_NO),1,14) PERSONAL_NO, USER_GROUP, COMPANY_NM, MOBILE_PHONE, STATUS,  TRAINEE_CLASS, DUTYSTEP, ENTER_DT FROM ( ";
-                    xSql = "SELECT USER_ID, USER_NM_KOR, PERSONAL_NO, USER_GROUP, COMPANY_NM, MOBILE_PHONE, STATUS, TRAINEE_CLASS, DUTYSTEP, ENTER_DT, dept_nm,email_id,edu_cnt,ins_dt FROM ( ";
+                    xSql = "SELECT USER_ID, USER_NM_KOR, " +
+                           " REGEXP_REPLACE(HINDEV.CRYPTO_AES256.DEC_AES(PERSONAL_NO),'\\d','*', 9) AS PERSONAL_NO, " +
+                           "USER_GROUP, COMPANY_NM, MOBILE_PHONE, STATUS, TRAINEE_CLASS, DUTYSTEP, ENTER_DT, dept_nm,email_id,edu_cnt,ins_dt FROM ( ";
                     xSql += "    SELECT b.* FROM ( ";
                 }
                 // 암호화 모듈제거
                 //xSql += "        SELECT  tuser.user_no, tuser.user_nm_kor, tuser.SEC_PERSONAL_NO, code.d_knm user_group, tcompany.company_nm, tuser.mobile_phone, ";
                 xSql += "        SELECT  tuser.user_no, tuser.user_nm_kor, ";
                 // 복호화
-                xSql += " REGEXP_REPLACE(HINDEV.CRYPTO_AES256.DEC_AES(tuser.PERSONAL_NO),'\\d','*', 9) AS PERSONAL_NO, ";
+                xSql += "                tuser.PERSONAL_NO, ";
 
                 xSql += "                code.d_knm user_group, tcompany.company_nm, tuser.mobile_phone, ";
                 xSql += "                code2.d_knm status, ";  // hdutystep.step_name dutystep, datachk.dname socialpos
@@ -396,8 +400,8 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
                 //if (!string.IsNullOrEmpty(rParams[8].ToString()))
                 //    xSql += string.Format("           AND tuser.personal_no like '%{0}%' ", rParams[8]);
 
-                if (!string.IsNullOrEmpty(rParams[8].ToString()))
-                    xSql += string.Format("           AND DAMO.PRED_META_VARCHAR2('LMS','T_USER','PERSONAL_NO',TUSER.SEC_PERSONAL_NO) like '%'||DAMO.PRED_META_PLAIN_V('{0}')||'%' ", rParams[8]);
+                //if (!string.IsNullOrEmpty(rParams[8].ToString()))
+                //    xSql += string.Format("           AND DAMO.PRED_META_VARCHAR2('LMS','T_USER','PERSONAL_NO',TUSER.SEC_PERSONAL_NO) like '%'||DAMO.PRED_META_PLAIN_V('{0}')||'%' ", rParams[8]);
                 //                    xSql += string.Format("           AND SUBSTRB(DAMO.DEC_VARCHAR('LMS','T_USER','PERSONAL_NO',SEC_PERSONAL_NO),1,14) like '%{0}%' ", rParams[8]);
 
 
@@ -406,7 +410,7 @@ namespace CLT.WEB.BIZ.LMS.MANAGE
 
                 // --AND (tuser.user_nm_eng_first like 'a%' or  tuser.user_nm_eng_last like '%o%') ;
 
-                xSql += " ORDER BY tuser.user_nm_kor ASC ";
+                xSql += " ORDER BY NVL(tuser.upt_dt, tuser.ins_dt) desc, tuser.user_nm_kor ASC ";
 
                 xSql += "           ) b ";
                 xSql += "    ) ";

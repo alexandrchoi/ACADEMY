@@ -16,8 +16,8 @@
         if(isEmpty(document.getElementById('<%=txtApplyEndDt.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblApplyDt.Text }, new string[] { lblApplyDt.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
         if(isEmpty(document.getElementById('<%=txtBeginDt.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblBeginDt.Text }, new string[] { lblBeginDt.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
         if(isEmpty(document.getElementById('<%=txtEndDt.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblBeginDt.Text }, new string[] { lblBeginDt.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
-        if(isEmpty(document.getElementById('<%=txtProgressRate.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblProgressRate.Text }, new string[] { lblProgressRate.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
-        if(isEmpty(document.getElementById('<%=txtFinalTest.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblFinalTest.Text }, new string[] { lblFinalTest.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+        //if(isEmpty(document.getElementById('<%=txtProgressRate.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblProgressRate.Text }, new string[] { lblProgressRate.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
+        //if(isEmpty(document.getElementById('<%=txtFinalTest.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblFinalTest.Text }, new string[] { lblFinalTest.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
         if(isEmpty(document.getElementById('<%=txtMinCount.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblMinCount.Text }, new string[] { lblMinCount.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
         //if(isEmpty(document.getElementById('<%=txtMaxCount.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblMaxCount.Text }, new string[] { lblMaxCount.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
         //if(isEmpty(document.getElementById('<%=txtMaxCount.ClientID %>'), '<%=CLT.WEB.UI.COMMON.BASE.MsgInfo.GetMsg("A004", new string[] { lblMaxCount.Text }, new string[] { lblMaxCount.Text }, System.Threading.Thread.CurrentThread.CurrentCulture) %>')) return false;
@@ -285,7 +285,6 @@
                 <tr>
                     <th scope="row">
                         <asp:Label ID="lblTScore" runat="server" meta:resourcekey="lblTScore" />
-                        <span class="required"></span>
                     </th>
                     <td colspan="3">
                         <asp:Label ID="lblTotalScore" runat="server" meta:resourcekey="lblTotalScore"   />

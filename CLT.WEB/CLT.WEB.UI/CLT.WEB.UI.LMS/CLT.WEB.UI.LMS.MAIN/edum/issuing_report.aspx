@@ -104,7 +104,7 @@
 
                         <!-- 수료 날짜 -->
                         <ul class="graduate-date">
-                            <li><span class="title">From</span><span class="edu-date"><%=drCourseResult[i]["course_begin_dt_en"]%> <span class="title">to</span><%=drCourseResult[i]["course_end_dt_en"]%></span></li>
+                            <li><span class="title">From</span><span class="edu-date"><%=drCourseResult[i]["course_begin_dt_en"]%> <span style="width:40px; text-align:center; margin:0px;">&nbsp; &nbsp; &nbsp; to &nbsp; &nbsp; &nbsp;</span><%=drCourseResult[i]["course_end_dt_en"]%></span></li>
                             <li><span class="title">Date of Issue :</span><span class="issue-date">
                                 <%=System.DateTime.Now.ToString("MMMM", System.Globalization.CultureInfo.InvariantCulture) + " " + Convert.ToInt32(System.DateTime.Now.ToString("dd")) + ", " + System.DateTime.Now.ToString("yyyy")%>
                             </span></li>

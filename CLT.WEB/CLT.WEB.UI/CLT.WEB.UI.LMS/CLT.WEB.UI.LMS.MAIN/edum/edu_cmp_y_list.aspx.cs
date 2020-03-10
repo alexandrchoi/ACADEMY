@@ -223,37 +223,40 @@ namespace CLT.WEB.UI.LMS.EDUM
             {
                 DataTable xDt = GetDtResultList("all");
 
-                int xColumnCnt = 7;
+                int xColumnCnt = 8;
                 string[] xExcelHeader = new string[xColumnCnt];
                 if (this.IsSettingKorean())
                 {
-                    xExcelHeader[0] = "사번";
+                    xExcelHeader[0] = "회사명";
                     xExcelHeader[1] = "직급";
                     xExcelHeader[2] = "성명";
                     xExcelHeader[3] = "과정명";
-                    xExcelHeader[4] = "교육기간";
-                    xExcelHeader[5] = "유효기간";
-                    xExcelHeader[6] = "주민번호";
+                    xExcelHeader[4] = "차수";
+                    xExcelHeader[5] = "교육기간";
+                    xExcelHeader[6] = "유효기간";
+                    xExcelHeader[7] = "주민번호";
                 }
                 else
                 {
-                    xExcelHeader[0] = "ID";
+                    xExcelHeader[0] = "Company";
                     xExcelHeader[1] = "Grade";
                     xExcelHeader[2] = "Name";
                     xExcelHeader[3] = "Corse Name";
-                    xExcelHeader[4] = "Study Period";
-                    xExcelHeader[5] = "Expired Date";
-                    xExcelHeader[6] = "Personal No";
+                    xExcelHeader[4] = "Seq";
+                    xExcelHeader[5] = "Study Period";
+                    xExcelHeader[6] = "Expired Date";
+                    xExcelHeader[7] = "Personal No";
                 }
 
                 string[] xDtHeader = new string[xColumnCnt];
-                xDtHeader[0] = "user_no";
+                xDtHeader[0] = "company_nm";
                 xDtHeader[1] = "step_name";
                 xDtHeader[2] = "user_nm_kor";
                 xDtHeader[3] = "course_nm";
-                xDtHeader[4] = "course_dt";
-                xDtHeader[5] = "expired_period";
-                xDtHeader[6] = "PERSONAL_NO";
+                xDtHeader[4] = "course_seq";
+                xDtHeader[5] = "course_dt";
+                xDtHeader[6] = "expired_period";
+                xDtHeader[7] = "PERSONAL_NO";
 
                 this.GetExcelFile(xDt, xExcelHeader, xDtHeader, "1");
             }
@@ -273,30 +276,32 @@ namespace CLT.WEB.UI.LMS.EDUM
                     if (this.IsSettingKorean())
                     {
                         e.Item.Cells[0].Text = "No.";
-                        e.Item.Cells[1].Text = "사번";
+                        e.Item.Cells[1].Text = "회사";
                         e.Item.Cells[2].Text = "직급";
                         e.Item.Cells[3].Text = "성명";
                         e.Item.Cells[4].Text = "과정명";
-                        e.Item.Cells[5].Text = "교육기간";
-                        e.Item.Cells[6].Text = "유효기간";
-                        e.Item.Cells[7].Text = "수료증";
-                        e.Item.Cells[8].Text = "교육기관";
+                        e.Item.Cells[5].Text = "차수";
+                        e.Item.Cells[6].Text = "교육기간";
+                        e.Item.Cells[7].Text = "유효기간";
+                        e.Item.Cells[8].Text = "수료증";
+                        e.Item.Cells[9].Text = "교육기관";
                     }
                     else
                     {
                         e.Item.Cells[0].Text = "No.";
-                        e.Item.Cells[1].Text = "ID";
+                        e.Item.Cells[1].Text = "Company";
                         e.Item.Cells[2].Text = "Grade";
                         e.Item.Cells[3].Text = "Name";
                         e.Item.Cells[4].Text = "Course Name";
-                        e.Item.Cells[5].Text = "Study Period";
-                        e.Item.Cells[6].Text = "Expired Date";
-                        e.Item.Cells[7].Text = "Certification";
-                        e.Item.Cells[8].Text = "Learning Institutions";
+                        e.Item.Cells[5].Text = "Seq";
+                        e.Item.Cells[6].Text = "Study Period";
+                        e.Item.Cells[7].Text = "Expired Date";
+                        e.Item.Cells[8].Text = "Certification";
+                        e.Item.Cells[9].Text = "Learning Institutions";
                     }
                 }
                 //교육기관 코드 컬럼은 Print버튼 활성화를 위한 표기로 Visible False 처리
-                e.Item.Cells[8].Visible = false;
+                e.Item.Cells[9].Visible = false;
             }
             catch (Exception ex)
             {
